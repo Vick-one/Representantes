@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embaixadoras Le Moritz · Cupons Junho 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #faf8f5; color: #1a1a1a; min-height: 100vh; }
+
+  .topo { background: #fff; border-bottom: 1px solid #ede9e2; padding: 20px 24px 16px; text-align: center; }
+  .topo-badge { display: inline-block; font-size: 11px; font-weight: 600; color: #993556; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 6px; }
+  .topo h1 { font-size: 22px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+  .topo-sub { font-size: 13px; color: #888; }
+
+  .periodo { text-align: center; padding: 12px 24px; font-size: 14px; font-weight: 600; color: #993556; background: #FBEAF0; border-bottom: 1px solid #f0c8d8; letter-spacing: 0.04em; }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 20px 20px 0; max-width: 700px; margin: 0 auto; }
+  .card-stat { background: #fff; border-radius: 12px; border: 1px solid #ede9e2; padding: 16px; text-align: center; }
+  .card-stat-label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .card-stat-valor { font-size: 22px; font-weight: 600; color: #1a1a1a; }
+
+  .secao { max-width: 700px; margin: 20px auto 0; padding: 0 20px 32px; }
+  .secao-titulo { font-size: 13px; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+
+  .ranking { background: #fff; border-radius: 12px; border: 1px solid #ede9e2; overflow: hidden; }
+  .ranking-header { display: grid; grid-template-columns: 36px 1fr 80px 100px; padding: 10px 16px; background: #D4537E; }
+  .ranking-header span { font-size: 11px; font-weight: 600; color: #fff; text-transform: uppercase; letter-spacing: 0.04em; }
+  .ranking-header span:nth-child(3), .ranking-header span:nth-child(4) { text-align: right; }
+
+  /* linhas normais */
+  .ranking-row { display: grid; grid-template-columns: 36px 1fr 80px 100px; padding: 12px 16px; border-bottom: 1px solid #f5f2ee; align-items: center; }
+  .ranking-row:last-child { border-bottom: none; }
+  .ranking-row.zerado { opacity: 0.4; }
+
+  /* top 3 destacados */
+  .ranking-row.top1 { background: linear-gradient(90deg, #fffbea 0%, #fff 100%); border-left: 4px solid #FFD700; }
+  .ranking-row.top2 { background: linear-gradient(90deg, #f5f5f5 0%, #fff 100%); border-left: 4px solid #C0C0C0; }
+  .ranking-row.top3 { background: linear-gradient(90deg, #fff5ee 0%, #fff 100%); border-left: 4px solid #CD7F32; }
+
+  .pos { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+  .pos-1 { background: #FFD700; color: #7a5c00; box-shadow: 0 2px 6px rgba(255,215,0,0.5); }
+  .pos-2 { background: #C0C0C0; color: #444; box-shadow: 0 2px 6px rgba(192,192,192,0.5); }
+  .pos-3 { background: #CD7F32; color: #fff; box-shadow: 0 2px 6px rgba(205,127,50,0.4); }
+  .pos-n { background: #f0ede8; color: #888; font-size: 11px; }
+
+  .nome-wrap { padding-left: 6px; }
+  .nome { font-size: 14px; font-weight: 500; color: #1a1a1a; }
+  .nome.destaque { font-size: 15px; font-weight: 600; }
+  .cupom { font-size: 11px; color: #bbb; margin-top: 1px; }
+  .barra { height: 3px; background: #f0ede8; border-radius: 2px; margin-top: 4px; max-width: 140px; }
+  .barra-fill { height: 100%; border-radius: 2px; background: #D4537E; }
+
+  .valor { font-size: 13px; font-weight: 500; text-align: right; color: #1a1a1a; }
+  .valor.comissao { color: #2d8a5e; font-weight: 600; }
+  .valor.zero { color: #ccc; }
+
+  .zerado-msg { text-align: center; padding: 24px 20px 0; }
+  .zerado-msg p { font-size: 14px; color: #aaa; line-height: 1.7; }
+  .zerado-msg strong { color: #D4537E; }
+
+  .rodape { text-align: center; padding: 24px 20px; font-size: 12px; color: #bbb; }
+  .rodape a { color: #D4537E; text-decoration: none; }
+
+  @media (max-width: 480px) {
+    .ranking-header { grid-template-columns: 30px 1fr 70px 88px; }
+    .ranking-row { grid-template-columns: 30px 1fr 70px 88px; padding: 10px 12px; }
+    .cards { gap: 8px; padding: 16px 12px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topo">
+  <div class="topo-badge">Le Moritz · Clientes Embaixadoras</div>
+  <h1>Painel de Resultados</h1>
+  <p class="topo-sub">Atualizado pela equipe Le Moritz</p>
+</div>
+
+<div class="periodo">CUPONS JUNHO 2026</div>
+
+<div class="cards">
+  <div class="card-stat">
+    <div class="card-stat-label">Embaixadoras ativas</div>
+    <div class="card-stat-valor">37</div>
+  </div>
+  <div class="card-stat">
+    <div class="card-stat-label">Mês vigente</div>
+    <div class="card-stat-valor">Junho 2026</div>
+  </div>
+</div>
+
+<div class="secao" style="margin-top:20px">
+  <div class="secao-titulo">Ranking do mês</div>
+  <div class="ranking">
+    <div class="ranking-header">
+      <span>#</span>
+      <span>Embaixadora</span>
+      <span style="text-align:right">Pedidos</span>
+      <span style="text-align:right">Comissão</span>
+    </div>
+    <div id="lista-ranking"></div>
+  </div>
+</div>
+
+<div class="zerado-msg">
+  <p>O ranking começa a se mover em <strong>1 de junho</strong>.<br>Cada venda com seu cupom aparece aqui 💜</p>
+</div>
+
+<div class="rodape">
+  <a href="https://lemoritz.com.br" target="_blank">lemoritz.com.br</a> &nbsp;·&nbsp; @lemoritz_oficial
+</div>
+
+<script>
+const embaixadoras = [
+  { exibir: "@valeria.valrodrigues", cupom: "VALERIA10", pedidos: 0, vendido: 0 },
+  { exibir: "@ponteselianee", cupom: "ELIANE10", pedidos: 0, vendido: 0 },
+  { exibir: "@bruartpsi", cupom: "BRUNAINSPIRA", pedidos: 0, vendido: 0 },
+  { exibir: "@claudiacasemiroorganiza", cupom: "CLAUDIA10", pedidos: 0, vendido: 0 },
+  { exibir: "Lucia Helena", cupom: "LUCIA10", pedidos: 0, vendido: 0 },
+  { exibir: "@kelly_lefay", cupom: "ROBERTA10", pedidos: 0, vendido: 0 },
+  { exibir: "@cienciafelicidademadura", cupom: "FELICIDADEMADURA", pedidos: 0, vendido: 0 },
+  { exibir: "Angela Bacca", cupom: "ANGELA10", pedidos: 0, vendido: 0 },
+  { exibir: "@satan_e_voce", cupom: "ALIDA10", pedidos: 0, vendido: 0 },
+  { exibir: "@lu.cia5281", cupom: "LUCIARIBEIRO10", pedidos: 0, vendido: 0 },
+  { exibir: "@maximoeliza", cupom: "ELIZA10", pedidos: 0, vendido: 0 },
+  { exibir: "Anna Lucia", cupom: "ANNALU10", pedidos: 0, vendido: 0 },
+  { exibir: "@euestilosa", cupom: "KATINHA", pedidos: 0, vendido: 0 },
+  { exibir: "Marta Regina", cupom: "MARTAREGINA10", pedidos: 0, vendido: 0 },
+  { exibir: "Maria Angela", cupom: "MARIAANGELA10", pedidos: 0, vendido: 0 },
+  { exibir: "@carlanormande", cupom: "CARLINHA10", pedidos: 0, vendido: 0 },
+  { exibir: "Luciane Munhos", cupom: "BYLUH", pedidos: 0, vendido: 0 },
+  { exibir: "@bethbragacp", cupom: "BETH66", pedidos: 0, vendido: 0 },
+  { exibir: "Erika Cunha", cupom: "ERIKA10", pedidos: 0, vendido: 0 },
+  { exibir: "@amandapriscillaestilo", cupom: "AMANDA10", pedidos: 0, vendido: 0 },
+  { exibir: "@sol_wilsy", cupom: "SOL10", pedidos: 0, vendido: 0 },
+  { exibir: "Fabiana Viana", cupom: "BIANA10", pedidos: 0, vendido: 0 },
+  { exibir: "@inspetoratonia", cupom: "TONIA10", pedidos: 0, vendido: 0 },
+  { exibir: "@celyschneider", cupom: "CELI10", pedidos: 0, vendido: 0 },
+  { exibir: "Regina Filomena", cupom: "FILO10", pedidos: 0, vendido: 0 },
+  { exibir: "Vania Augusto", cupom: "VANINHA56", pedidos: 0, vendido: 0 },
+  { exibir: "Paula Lanziloti", cupom: "LEPAULA", pedidos: 0, vendido: 0 },
+  { exibir: "@ivaniaescudeiropiologo", cupom: "IVANIA10", pedidos: 0, vendido: 0 },
+  { exibir: "Helena Costa", cupom: "HELENAC10", pedidos: 0, vendido: 0 },
+  { exibir: "Neulaide Cabral", cupom: "NEULAIDE10", pedidos: 0, vendido: 0 },
+  { exibir: "@Eucyferreira", cupom: "EUCYFERRERA", pedidos: 0, vendido: 0 },
+  { exibir: "@Sandra-gelmini", cupom: "SANDRAGELMINI", pedidos: 0, vendido: 0 },
+  { exibir: "@requenavania", cupom: "VAN10", pedidos: 0, vendido: 0 },
+  { exibir: "@profjuracysilva", cupom: "JURA10", pedidos: 0, vendido: 0 },
+  { exibir: "@noletorozangela", cupom: "ROZANGELA10", pedidos: 0, vendido: 0 },
+  { exibir: "@thaismathiass", cupom: "THAIS10", pedidos: 0, vendido: 0 },
+  { exibir: "@cirleide_pessoa", cupom: "PESSOA26", pedidos: 0, vendido: 0 },
+];
+
+function fmt(v) {
+  return "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+const sorted = [...embaixadoras].sort((a, b) => b.vendido - a.vendido);
+const maxV = sorted.find(e => e.vendido > 0)?.vendido || 1;
+const lista = document.getElementById("lista-ranking");
+
+sorted.forEach((e, i) => {
+  const pos = i + 1;
+  const z = e.vendido === 0;
+  const com = e.vendido * 0.1;
+  const pct = z ? 0 : (e.vendido / maxV * 100);
+
+  let posClass = "pos-n";
+  let rowClass = "ranking-row";
+  if (!z) {
+    if (pos === 1) { posClass = "pos-1"; rowClass += " top1"; }
+    else if (pos === 2) { posClass = "pos-2"; rowClass += " top2"; }
+    else if (pos === 3) { posClass = "pos-3"; rowClass += " top3"; }
+  }
+  if (z) rowClass += " zerado";
+
+  const row = document.createElement("div");
+  row.className = rowClass;
+  row.innerHTML = `
+    <div class="pos ${posClass}">${pos}</div>
+    <div class="nome-wrap">
+      <div class="nome${pos <= 3 && !z ? ' destaque' : ''}">${e.exibir}</div>
+      <div class="cupom">${e.cupom}</div>
+      ${!z ? `<div class="barra"><div class="barra-fill" style="width:${pct}%"></div></div>` : ""}
+    </div>
+    <div class="valor ${z ? 'zero' : ''}">${z ? "—" : e.pedidos}</div>
+    <div class="valor comissao ${z ? 'zero' : ''}">${z ? "—" : fmt(com)}</div>
+  `;
+  lista.appendChild(row);
+});
+</script>
+</body>
+</html>
