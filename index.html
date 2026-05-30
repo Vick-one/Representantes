@@ -3,116 +3,521 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Embaixadoras Le Moritz · Cupons Junho 2026</title>
+<title>Portal Le Moritz · Cliente Embaixadora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #faf8f5; color: #1a1a1a; min-height: 100vh; }
-
-  .topo { background: #fff; border-bottom: 1px solid #ede9e2; padding: 20px 24px 16px; text-align: center; }
-  .topo-badge { display: inline-block; font-size: 11px; font-weight: 600; color: #993556; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 6px; }
-  .topo h1 { font-size: 22px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
-  .topo-sub { font-size: 13px; color: #888; }
-
-  .periodo { text-align: center; padding: 12px 24px; font-size: 14px; font-weight: 600; color: #993556; background: #FBEAF0; border-bottom: 1px solid #f0c8d8; letter-spacing: 0.04em; }
-
-  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 20px 20px 0; max-width: 700px; margin: 0 auto; }
-  .card-stat { background: #fff; border-radius: 12px; border: 1px solid #ede9e2; padding: 16px; text-align: center; }
-  .card-stat-label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
-  .card-stat-valor { font-size: 22px; font-weight: 600; color: #1a1a1a; }
-
-  .secao { max-width: 700px; margin: 20px auto 0; padding: 0 20px 32px; }
-  .secao-titulo { font-size: 13px; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
-
-  .ranking { background: #fff; border-radius: 12px; border: 1px solid #ede9e2; overflow: hidden; }
-  .ranking-header { display: grid; grid-template-columns: 36px 1fr 80px 100px; padding: 10px 16px; background: #D4537E; }
-  .ranking-header span { font-size: 11px; font-weight: 600; color: #fff; text-transform: uppercase; letter-spacing: 0.04em; }
-  .ranking-header span:nth-child(3), .ranking-header span:nth-child(4) { text-align: right; }
-
-  /* linhas normais */
-  .ranking-row { display: grid; grid-template-columns: 36px 1fr 80px 100px; padding: 12px 16px; border-bottom: 1px solid #f5f2ee; align-items: center; }
-  .ranking-row:last-child { border-bottom: none; }
-  .ranking-row.zerado { opacity: 0.4; }
-
-  /* top 3 destacados */
-  .ranking-row.top1 { background: linear-gradient(90deg, #fffbea 0%, #fff 100%); border-left: 4px solid #FFD700; }
-  .ranking-row.top2 { background: linear-gradient(90deg, #f5f5f5 0%, #fff 100%); border-left: 4px solid #C0C0C0; }
-  .ranking-row.top3 { background: linear-gradient(90deg, #fff5ee 0%, #fff 100%); border-left: 4px solid #CD7F32; }
-
-  .pos { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
-  .pos-1 { background: #FFD700; color: #7a5c00; box-shadow: 0 2px 6px rgba(255,215,0,0.5); }
-  .pos-2 { background: #C0C0C0; color: #444; box-shadow: 0 2px 6px rgba(192,192,192,0.5); }
-  .pos-3 { background: #CD7F32; color: #fff; box-shadow: 0 2px 6px rgba(205,127,50,0.4); }
-  .pos-n { background: #f0ede8; color: #888; font-size: 11px; }
-
-  .nome-wrap { padding-left: 6px; }
-  .nome { font-size: 14px; font-weight: 500; color: #1a1a1a; }
-  .nome.destaque { font-size: 15px; font-weight: 600; }
-  .cupom { font-size: 11px; color: #bbb; margin-top: 1px; }
-  .barra { height: 3px; background: #f0ede8; border-radius: 2px; margin-top: 4px; max-width: 140px; }
-  .barra-fill { height: 100%; border-radius: 2px; background: #D4537E; }
-
-  .valor { font-size: 13px; font-weight: 500; text-align: right; color: #1a1a1a; }
-  .valor.comissao { color: #2d8a5e; font-weight: 600; }
-  .valor.zero { color: #ccc; }
-
-  .zerado-msg { text-align: center; padding: 24px 20px 0; }
-  .zerado-msg p { font-size: 14px; color: #aaa; line-height: 1.7; }
-  .zerado-msg strong { color: #D4537E; }
-
-  .rodape { text-align: center; padding: 24px 20px; font-size: 12px; color: #bbb; }
-  .rodape a { color: #D4537E; text-decoration: none; }
-
-  @media (max-width: 480px) {
-    .ranking-header { grid-template-columns: 30px 1fr 70px 88px; }
-    .ranking-row { grid-template-columns: 30px 1fr 70px 88px; padding: 10px 12px; }
-    .cards { gap: 8px; padding: 16px 12px 0; }
-  }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: #F4F2FA; color: #1a1a1a; min-height: 100vh; }
+.header { background: #3B1F6E; padding: 22px 20px 18px; text-align: center; }
+.header-badge { display: inline-block; background: rgba(201,168,76,0.2); color: #C9A84C; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.06em; margin-bottom: 10px; }
+.header-logo { width: 38px; height: 38px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+.header-logo span { color: #fff; font-size: 13px; font-weight: 500; }
+.header h1 { color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+.header p { color: #C4B0F0; font-size: 13px; }
+.nav { background: #2E1759; display: flex; overflow-x: auto; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 100; }
+.nav::-webkit-scrollbar { display: none; }
+.nav-item { padding: 12px 14px; font-size: 12px; font-weight: 500; color: #B09EDA; white-space: nowrap; border-bottom: 2px solid transparent; cursor: pointer; }
+.nav-item.active { color: #fff; border-bottom-color: #C9A84C; }
+.page { display: none; padding: 16px; max-width: 600px; margin: 0 auto; animation: fadeUp 0.3s ease; }
+.page.active { display: block; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+.subpage { display: none; }
+.subpage.active { display: block; }
+.card { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 14px; margin-bottom: 10px; }
+.card-h { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.ci { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.ct { font-size: 14px; font-weight: 500; }
+.cs { font-size: 11px; color: #999; }
+.ctxt { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 8px; }
+.dica { background: #EDE9FE; border-radius: 8px; padding: 8px 11px; font-size: 11px; color: #5B21B6; display: flex; gap: 7px; line-height: 1.6; margin-top: 8px; }
+.dica-gold { background: #FFFBEB; border-radius: 8px; padding: 8px 11px; font-size: 11px; color: #92620A; display: flex; gap: 7px; line-height: 1.6; margin-top: 8px; }
+.seclabel { font-size: 11px; font-weight: 500; color: #7C3AED; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px; }
+.seclabel.verde { color: #166534; }
+.divider { height: 0.5px; background: #E5E0F8; margin: 10px 0; }
+.tag { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 9px; border-radius: 20px; margin-bottom: 8px; }
+.tag-roxo { background: #EDE9FE; color: #5B21B6; }
+.welcome { background: #fff; border-radius: 14px; border: 0.5px solid #DDD6FE; padding: 16px; margin-bottom: 16px; }
+.welcome h2 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+.welcome p { font-size: 13px; color: #777; line-height: 1.7; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.gc { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 14px; text-align: center; cursor: pointer; }
+.gc:hover { border-color: #7C3AED; }
+.gc-i { font-size: 24px; margin-bottom: 8px; }
+.gc-t { font-size: 13px; font-weight: 500; }
+.gc-s { font-size: 11px; color: #aaa; margin-top: 3px; }
+.back-btn { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #7C3AED; cursor: pointer; margin-bottom: 16px; font-weight: 500; }
+.back-btn.verde { color: #166534; }
+.subheader { border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+.subheader.roxo { background: #EDE9FE; }
+.subheader.verde { background: #DCFCE7; }
+.subheader.gold { background: #FEF3C7; }
+.subheader.rosa { background: #FEE2E2; }
+.subheader-icon { font-size: 28px; margin-bottom: 8px; }
+.subheader-titulo { font-size: 18px; font-weight: 500; margin-bottom: 5px; }
+.subheader-desc { font-size: 13px; color: #555; line-height: 1.6; }
+.step { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+.snum { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: #fff; flex-shrink: 0; margin-top: 1px; }
+.sn-gold { background: #C9A84C; }
+.sn-ig { background: #E11D48; }
+.sn-fb { background: #1877F2; }
+.sn-tt { background: #1a1a1a; }
+.sn-wa { background: #128C7E; }
+.sn-roxo { background: #3B1F6E; }
+.sn-pink { background: #D4537E; }
+.stxt h3 { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+.stxt p { font-size: 12px; color: #666; line-height: 1.5; }
+.tela { background: #F8F6FF; border-radius: 7px; padding: 6px 9px; margin-top: 5px; display: flex; align-items: center; justify-content: space-between; }
+.tela span { font-size: 11px; color: #666; }
+.tbadge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 10px; }
+.tb-roxo { background: #EDE9FE; color: #5B21B6; }
+.tb-verde { background: #DCFCE7; color: #166534; }
+.mural-card-link { border-radius: 12px; padding: 14px; cursor: pointer; margin-bottom: 0; }
+.mc1 { background: #EDE9FE; }
+.mc2 { background: #DCFCE7; }
+.mc3 { background: #FEF3C7; }
+.mc4 { background: #FEE2E2; }
+.mc-icon { font-size: 22px; margin-bottom: 8px; }
+.mc-titulo { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 3px; }
+.mc-sub { font-size: 11px; color: #555; line-height: 1.4; }
+.mc-ler { font-size: 11px; color: #7C3AED; font-weight: 500; margin-top: 8px; }
+.script-box { background: #F8F6FF; border-radius: 10px; border: 0.5px solid #DDD6FE; padding: 12px; font-size: 13px; color: #444; line-height: 1.7; font-style: italic; margin-bottom: 10px; }
+.copy-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #7C3AED; font-weight: 500; background: none; border: none; cursor: pointer; margin-bottom: 10px; }
+.acc { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; margin-bottom: 10px; overflow: hidden; }
+.acc-header { padding: 14px; display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.acc-icon { width: 40px; height: 40px; border-radius: 10px; background: #EDE9FE; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.acc-titulo { font-size: 14px; font-weight: 500; }
+.acc-sub { font-size: 11px; color: #aaa; }
+.acc-arrow { color: #C4B5F0; margin-left: auto; font-size: 18px; transition: transform 0.2s; }
+.acc.open .acc-arrow { transform: rotate(90deg); }
+.acc-content { display: none; padding: 0 14px 14px; border-top: 0.5px solid #F0EDF8; }
+.acc.open .acc-content { display: block; }
+.prod { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; display: flex; align-items: center; margin-bottom: 8px; overflow: hidden; }
+.prod-img { width: 64px; height: 64px; background: #FAF8FF; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+.prod-body { flex: 1; padding: 10px 12px; }
+.prod-nome { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+.prod-desc { font-size: 11px; color: #999; margin-bottom: 6px; }
+.prod-btn { background: #1a1a1a; color: #fff; border: none; border-radius: 7px; padding: 5px 10px; font-size: 11px; font-weight: 500; cursor: pointer; }
+.prod-uso { display: none; background: #F8F6FF; border-top: 0.5px solid #E5E0F8; padding: 12px; }
+.prod-uso.open { display: block; }
+.uso-step { display: flex; gap: 9px; margin-bottom: 8px; }
+.uso-num { width: 20px; height: 20px; background: #3B1F6E; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; flex-shrink: 0; }
+.uso-txt { font-size: 12px; color: #555; line-height: 1.6; }
+.site-btn { display: block; background: #3B1F6E; color: #fff; text-align: center; border-radius: 10px; padding: 12px; font-size: 13px; font-weight: 500; text-decoration: none; margin: 8px 0; }
+.ranking { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; overflow: hidden; }
+.rh { display: grid; grid-template-columns: 32px 1fr 90px; padding: 10px 14px; background: #3B1F6E; gap: 4px; }
+.rh span { font-size: 10px; color: #D4C8F5; text-transform: uppercase; font-weight: 500; }
+.rh span:last-child { text-align: right; }
+.rrow { display: grid; grid-template-columns: 32px 1fr 90px; padding: 11px 14px; border-bottom: 0.5px solid #F0EDF8; align-items: center; gap: 4px; }
+.rrow:last-child { border-bottom: none; }
+.rrow.zerado { opacity: 0.4; }
+.rpos { width: 24px; height: 24px; border-radius: 50%; background: #F0EDF8; color: #999; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
+.rnome { font-size: 12px; font-weight: 500; }
+.rcup { font-size: 10px; color: #bbb; }
+.rcom { font-size: 12px; font-weight: 500; text-align: right; color: #2d8a5e; }
+.rzero { color: #ddd; text-align: right; font-size: 12px; }
+.case-dest { background: linear-gradient(135deg, #3B1F6E, #6B3FA0); border-radius: 14px; padding: 16px; margin-bottom: 10px; }
+.case-tag { display: inline-block; background: #C9A84C; color: #1a1a1a; font-size: 10px; font-weight: 600; padding: 2px 9px; border-radius: 10px; margin-bottom: 10px; }
+.case-nome { color: #fff; font-size: 15px; font-weight: 500; margin-bottom: 3px; }
+.case-sub { color: #C4B0F0; font-size: 11px; margin-bottom: 12px; }
+.case-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.cstat { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 10px; text-align: center; }
+.cstat-v { font-size: 16px; font-weight: 500; color: #C9A84C; }
+.cstat-l { font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+.case-txt { font-size: 12px; color: #C4B0F0; line-height: 1.7; font-style: italic; border-left: 2px solid rgba(201,168,76,0.4); padding-left: 10px; }
+.case-mini { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 12px 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; }
+.cm-av { width: 38px; height: 38px; border-radius: 50%; background: #EDE9FE; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+.cm-nome { font-size: 13px; font-weight: 500; }
+.cm-sub { font-size: 11px; color: #999; }
+.cm-val { text-align: right; margin-left: auto; }
+.cm-com { font-size: 14px; font-weight: 500; color: #2d8a5e; }
+.cm-l { font-size: 10px; color: #bbb; }
+.derma-topo { background: #F0FDF4; padding: 14px; display: flex; align-items: center; gap: 12px; border-bottom: 0.5px solid #D1FAE5; border-radius: 12px 12px 0 0; }
+.derma-av { width: 48px; height: 48px; border-radius: 50%; background: #1B4332; display: flex; align-items: center; justify-content: center; font-size: 22px; border: 2px solid #6EE7B7; flex-shrink: 0; }
+.derma-nome { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+.derma-cargo { font-size: 11px; color: #999; margin-bottom: 4px; }
+.derma-badge { display: inline-block; background: #DCFCE7; color: #166534; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+.ativo { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 13px; margin-bottom: 8px; display: flex; gap: 12px; }
+.ativo-i { width: 38px; height: 38px; border-radius: 9px; background: #F0FDF4; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.ativo-nome { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+.ativo-desc { font-size: 12px; color: #666; line-height: 1.6; }
+.ativo-tag { display: inline-block; background: #F0FDF4; color: #166534; font-size: 10px; padding: 2px 7px; border-radius: 8px; margin-top: 4px; }
+.alt-card { background: #F8F6FF; border-radius: 9px; padding: 10px 12px; margin-bottom: 7px; }
+.alt-titulo { font-size: 12px; font-weight: 500; color: #3B1F6E; margin-bottom: 5px; }
+.alt-step { display: flex; gap: 7px; align-items: center; font-size: 12px; color: #555; margin-bottom: 4px; }
+.dot { width: 5px; height: 5px; border-radius: 50%; background: #7C3AED; flex-shrink: 0; }
+.ideia-item { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 13px; margin-bottom: 8px; display: flex; gap: 12px; align-items: flex-start; }
+.ideia-icon { font-size: 20px; flex-shrink: 0; }
+.ideia-body h3 { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+.ideia-body p { font-size: 12px; color: #666; line-height: 1.5; }
+.angulo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+.angulo-item { background: #F8F6FF; border-radius: 9px; padding: 10px; text-align: center; }
+.angulo-icon { font-size: 20px; margin-bottom: 5px; }
+.angulo-titulo { font-size: 12px; font-weight: 500; margin-bottom: 2px; }
+.angulo-desc { font-size: 11px; color: #666; line-height: 1.4; }
+.cupom-compare { display: flex; gap: 10px; margin-bottom: 10px; }
+.cc { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.cc-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; display: inline-block; }
+.cc-ok { background: #DCFCE7; color: #166534; }
+.cc-no { background: #FEE2E2; color: #991B1B; }
+.phone-mini { width: 100%; height: 100px; background: #2E1759; border-radius: 10px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.pm-emoji { font-size: 26px; }
+.pm-ok { position: absolute; bottom: 7px; left: 6px; right: 6px; background: rgba(255,255,255,0.15); border-radius: 6px; padding: 4px 8px; border: 0.5px solid rgba(255,255,255,0.25); }
+.pm-ok .cl { font-size: 8px; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+.pm-ok .cv { font-size: 12px; color: #fff; font-weight: 500; }
+.pm-no { position: absolute; bottom: 20px; background: #FFD700; border-radius: 4px; padding: 5px 8px; }
+.pm-no span { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+.btn-ver-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); border-radius: 10px; cursor: pointer; }
+.btn-ver-overlay span { background: rgba(255,255,255,0.2); border: 0.5px solid rgba(255,255,255,0.4); color: #fff; font-size: 10px; padding: 4px 10px; border-radius: 12px; }
+.bubbles { display: flex; flex-direction: column; gap: 8px; }
+.local { display: inline-block; background: #F4F2FA; border-radius: 6px; padding: 3px 8px; font-size: 10px; color: #666; margin-bottom: 4px; }
+.brow { display: flex; gap: 7px; align-items: flex-end; }
+.brow.right { justify-content: flex-end; }
+.av { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; background: #EDE9FE; flex-shrink: 0; }
+.av2 { background: #FEE2E2; }
+.bubble { background: #F4F2FA; border-radius: 10px 10px 10px 2px; padding: 8px 10px; font-size: 12px; color: #1a1a1a; line-height: 1.5; max-width: 200px; }
+.bubble.right { background: #EDE9FE; border-radius: 10px 10px 2px 10px; }
+.video-card { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; overflow: hidden; margin-bottom: 8px; cursor: pointer; text-decoration: none; display: block; }
+.video-thumb { height: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; position: relative; }
+.vt-roxo { background: linear-gradient(135deg, #3B1F6E, #6B3FA0); }
+.vt-rosa { background: linear-gradient(135deg, #D4537E, #9B2335); }
+.vt-ig { background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040); }
+.vt-verde { background: linear-gradient(135deg, #1B4332, #2D6A4F); }
+.video-play { width: 44px; height: 44px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(255,255,255,0.4); }
+.video-play span { font-size: 18px; margin-left: 3px; }
+.video-plat { position: absolute; top: 8px; right: 10px; background: rgba(0,0,0,0.4); color: #fff; font-size: 9px; padding: 2px 7px; border-radius: 6px; font-weight: 500; }
+.video-emoji { position: absolute; top: 10px; left: 12px; font-size: 20px; }
+.video-body { padding: 10px 14px; }
+.video-titulo { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 3px; }
+.video-sub { font-size: 11px; color: #999; }
+.video-tag { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 10px; margin-top: 5px; }
+.vt-yt { background: #FEE2E2; color: #991B1B; }
+.vt-ig2 { background: #FDF4FF; color: #833AB4; }
+.video-intro { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 13px; margin-bottom: 10px; font-size: 13px; color: #555; line-height: 1.6; }
+.rodape { text-align: center; padding: 28px 20px; font-size: 12px; color: #bbb; }
+.rodape a { color: #7C3AED; text-decoration: none; }
 </style>
 </head>
 <body>
 
-<div class="topo">
-  <div class="topo-badge">Le Moritz · Clientes Embaixadoras</div>
-  <h1>Painel de Resultados</h1>
-  <p class="topo-sub">Atualizado pela equipe Le Moritz</p>
+<div class="header">
+  <div class="header-logo"><span>LM</span></div>
+  <div class="header-badge">✦ Acesso Exclusivo · Cliente Embaixadora</div>
+  <h1>Portal Le Moritz</h1>
+  <p>Um guia prático para você divulgar, vender e acompanhar seus resultados.</p>
 </div>
 
-<div class="periodo">CUPONS JUNHO 2026</div>
-
-<div class="cards">
-  <div class="card-stat">
-    <div class="card-stat-label">Embaixadoras ativas</div>
-    <div class="card-stat-valor">37</div>
-  </div>
-  <div class="card-stat">
-    <div class="card-stat-label">Mês vigente</div>
-    <div class="card-stat-valor">Junho 2026</div>
-  </div>
+<div class="nav">
+  <div class="nav-item active" onclick="showPage('inicio',this)">Início</div>
+  <div class="nav-item" onclick="showPage('vendas',this)">Vendas</div>
+  <div class="nav-item" onclick="showPage('produtos',this)">Produtos</div>
+  <div class="nav-item" onclick="showPage('ideias',this)">Ideias</div>
+  <div class="nav-item" onclick="showPage('cases',this)">Cases</div>
+  <div class="nav-item" onclick="showPage('ciencia',this)">Ciência & Pele</div>
 </div>
 
-<div class="secao" style="margin-top:20px">
-  <div class="secao-titulo">Ranking do mês</div>
-  <div class="ranking">
-    <div class="ranking-header">
-      <span>#</span>
-      <span>Embaixadora</span>
-      <span style="text-align:right">Pedidos</span>
-      <span style="text-align:right">Comissão</span>
+<!-- ═══ INÍCIO ═══ -->
+<div class="page active" id="page-inicio">
+  <div class="welcome">
+    <div class="tag tag-roxo">Bem-vinda</div>
+    <h2>Oi, Cliente Embaixadora! 💜</h2>
+    <p>Um guia prático para você divulgar, vender e acompanhar seus resultados.</p>
+  </div>
+  <div class="seclabel">Aprenda a vender com seu cupom</div>
+  <div id="sub-redes" class="subpage">
+    <div class="back-btn" onclick="hideSub('redes')">‹ Voltar</div>
+    <div class="subheader roxo"><div class="subheader-icon">📱</div><div class="subheader-titulo">Divulgue nas suas redes</div><div class="subheader-desc">Instagram, Facebook, TikTok</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">📸</div><div><div class="ct">Story e Reels no Instagram</div><div class="cs">Passo a passo</div></div></div>
+      <div class="step"><div class="snum sn-ig">1</div><div class="stxt"><h3>Toque no "+" e escolha Story ou Reels</h3><p>Story para foto rápida (24h). Reels para vídeo curto.</p></div></div>
+      <div class="step"><div class="snum sn-ig">2</div><div class="stxt"><h3>Escolha a foto ou grave o vídeo</h3><p>Selfie com o produto, produto na mão. Simples assim.</p></div></div>
+      <div class="step"><div class="snum sn-ig">3</div><div class="stxt"><h3>Marque @lemoritz_oficial</h3><div class="tela"><span>@lemoritz_oficial</span><span class="tbadge tb-roxo">marcar</span></div></div></div>
+      <div class="step"><div class="snum sn-ig">4</div><div class="stxt"><h3>Publique!</h3><div class="tela"><span>Seu story</span><span class="tbadge tb-verde">publicar ✓</span></div></div></div>
+      <div class="dica" style="margin-top:10px"><span>💡</span>Se esqueceu o cupom, coloca nos comentários ou menciona no próximo story.</div>
     </div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#E3F2FD">📘</div><div><div class="ct">No Facebook</div><div class="cs">Publicação simples</div></div></div>
+      <div class="step"><div class="snum sn-fb">1</div><div class="stxt"><h3>Toque em "O que você está pensando?"</h3></div></div>
+      <div class="step"><div class="snum sn-fb">2</div><div class="stxt"><h3>Adicione uma foto e escreva sua legenda com o cupom</h3></div></div>
+      <div class="step"><div class="snum sn-fb">3</div><div class="stxt"><h3>Publique!</h3><div class="tela"><span>Publicar</span><span class="tbadge tb-verde">✓</span></div></div></div>
+    </div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#F4F2FA">🎵</div><div><div class="ct">No TikTok</div><div class="cs">Vídeo curto</div></div></div>
+      <div class="step"><div class="snum sn-tt">1</div><div class="stxt"><h3>Toque no "+" e grave ou escolha um vídeo</h3></div></div>
+      <div class="step"><div class="snum sn-tt">2</div><div class="stxt"><h3>15 a 30 segundos já basta</h3></div></div>
+      <div class="step"><div class="snum sn-tt">3</div><div class="stxt"><h3>Cupom na legenda e publique</h3><div class="tela"><span>Postar</span><span class="tbadge tb-verde">✓</span></div></div></div>
+      <div class="dica" style="margin-top:10px"><span>💡</span>Fixe um comentário com seu cupom logo depois de publicar.</div>
+    </div>
+  </div>
+  <div id="sub-amigas" class="subpage">
+    <div class="back-btn" onclick="hideSub('amigas')">‹ Voltar</div>
+    <div class="subheader roxo"><div class="subheader-icon">👯</div><div class="subheader-titulo">Divulgando para as amigas</div><div class="subheader-desc">WhatsApp e pessoalmente</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#DCFCE7">💬</div><div><div class="ct">Status do WhatsApp</div><div class="cs">Suas amigas veem sem precisar mandar</div></div></div>
+      <div class="step"><div class="snum sn-wa">1</div><div class="stxt"><h3>Toque em "Status" no menu inferior</h3></div></div>
+      <div class="step"><div class="snum sn-wa">2</div><div class="stxt"><h3>Câmera para foto/vídeo, lápis para texto</h3><div class="tela"><span>📷 Foto · 🎥 Vídeo · ✏️ Texto</span></div></div></div>
+      <div class="step"><div class="snum sn-wa">3</div><div class="stxt"><h3>Escolha a foto e adicione o cupom discreto</h3></div></div>
+      <div class="step"><div class="snum sn-wa">4</div><div class="stxt"><h3>Publique — 24h visível para todos</h3><div class="tela"><span>Enviar para todos</span><span class="tbadge tb-verde">✓</span></div></div></div>
+      <div class="dica" style="margin-top:10px"><span>💡</span>Todo mundo que tem seu número vai ver. É uma forma de divulgar sem precisar chamar ninguém.</div>
+    </div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#EDE9FE">👯</div><div><div class="ct">Vendendo pessoalmente</div><div class="cs">No trabalho, shopping, vizinha</div></div></div>
+      <div class="bubbles">
+        <div class="local">📍 No trabalho ou estudo</div>
+        <div class="brow"><div class="av">👩</div><div class="bubble">"Você tá com a pele linda! O que você tá usando?"</div></div>
+        <div class="brow right"><div class="bubble right">"É da Le Moritz! Tenho cupom de 10% OFF, te mando o link 💜"</div><div class="av av2">👩</div></div>
+        <div style="height:6px"></div>
+        <div class="local">📍 No shopping</div>
+        <div class="brow"><div class="av">👩</div><div class="bubble">"Esse batom é lindo! Onde comprou?"</div></div>
+        <div class="brow right"><div class="bubble right">"É um stick da Le Moritz! Te passo o cupom de 10%."</div><div class="av av2">👩</div></div>
+        <div style="height:6px"></div>
+        <div class="local">📍 WhatsApp para vizinha</div>
+        <div class="brow"><div class="av av2">👩</div><div class="bubble">"Oi! Lembrei de você. Tenho cupom de 10% na Le Moritz, quer o link?"</div></div>
+      </div>
+      <div class="dica" style="margin-top:10px"><span>💡</span>Não precisa parecer que está vendendo. Conta naturalmente, como faria com qualquer produto que você amou.</div>
+    </div>
+  </div>
+  <div id="main-inicio">
+    <div class="acc" onclick="showSub('redes')">
+      <div class="acc-header"><div class="acc-icon">📱</div><div><div class="acc-titulo">Divulgue nas suas redes</div><div class="acc-sub">Instagram, Facebook, TikTok</div></div><span class="acc-arrow">›</span></div>
+    </div>
+    <div class="acc" onclick="showSub('amigas')">
+      <div class="acc-header"><div class="acc-icon">👯</div><div><div class="acc-titulo">Divulgando para as amigas</div><div class="acc-sub">WhatsApp e pessoalmente</div></div><span class="acc-arrow">›</span></div>
+    </div>
+    <div class="divider"></div>
+    <div class="seclabel">Ferramentas para você</div>
+    <div class="grid2">
+      <div class="gc" onclick="showPage('vendas',null)"><div class="gc-i">📊</div><div class="gc-t">Minhas vendas</div><div class="gc-s">Ver ranking</div></div>
+      <div class="gc" onclick="showPage('produtos',null)"><div class="gc-i">💄</div><div class="gc-t">Produtos</div><div class="gc-s">Como usar</div></div>
+      <div class="gc" onclick="showPage('ideias',null)"><div class="gc-i">💡</div><div class="gc-t">Ideias</div><div class="gc-s">Inspirações</div></div>
+      <div class="gc" onclick="showPage('cases',null)"><div class="gc-i">🏆</div><div class="gc-t">Cases reais</div><div class="gc-s">Histórias</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ VENDAS ═══ -->
+<div class="page" id="page-vendas">
+  <div class="dica-gold" style="margin-bottom:12px"><span>🗓️</span>Atualizado a cada 5 dias. Próxima atualização: <strong>05/06/2026</strong></div>
+  <div class="dica" style="margin-bottom:14px"><span>💜</span>Acompanhe sua posição e a comissão acumulada do mês.</div>
+  <div class="seclabel">Ranking completo · Junho 2026</div>
+  <div class="ranking">
+    <div class="rh"><span>#</span><span>Cliente Embaixadora</span><span>Comissão</span></div>
     <div id="lista-ranking"></div>
   </div>
+  <div style="text-align:center;padding:16px;font-size:13px;color:#aaa">O ranking começa em <strong style="color:#7C3AED">1 de junho</strong>. Cada venda com seu cupom aparece aqui 💜</div>
 </div>
 
-<div class="zerado-msg">
-  <p>O ranking começa a se mover em <strong>1 de junho</strong>.<br>Cada venda com seu cupom aparece aqui 💜</p>
+<!-- ═══ PRODUTOS ═══ -->
+<div class="page" id="page-produtos">
+  <div class="dica" style="margin-bottom:14px"><span>💡</span>A Le Moritz é uma linha completa de skincare, maquiagem com tratamento e acessórios para pele madura 50+.</div>
+  <div class="seclabel">Skincare</div>
+  <div id="lista-produtos-skincare"></div>
+  <div class="divider"></div>
+  <div class="seclabel">Maquiagem</div>
+  <div id="lista-produtos-make"></div>
+  <div class="divider"></div>
+  <div class="seclabel">Acessórios</div>
+  <div id="lista-produtos-acessorios"></div>
+  <div class="divider"></div>
+  <div class="seclabel">Kits</div>
+  <div id="lista-produtos-kits"></div>
+  <a href="https://lemoritz.com.br" target="_blank" class="site-btn">Ver todos os produtos em lemoritz.com.br ↗</a>
 </div>
 
-<div class="rodape">
-  <a href="https://lemoritz.com.br" target="_blank">lemoritz.com.br</a> &nbsp;·&nbsp; @lemoritz_oficial
+<!-- ═══ IDEIAS ═══ -->
+<div class="page" id="page-ideias">
+  <div id="sub-onde" class="subpage">
+    <div class="back-btn" onclick="hideSub('onde')">‹ Voltar para ideias</div>
+    <div class="subheader roxo"><div class="subheader-icon">📍</div><div class="subheader-titulo">Onde vender</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#DCFCE7">💬</div><div class="ct">WhatsApp direto</div></div><div class="ctxt">Uma mensagem para uma amiga que você sabe que vai gostar. Sem enrolação, sem parecer propaganda. Guarda o link e seu cupom salvos no celular. Quando surgir a oportunidade, você manda em segundos.</div><div class="dica"><span>💡</span>Que tal mandar hoje para uma amiga que você sabe que vai adorar?</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#DCFCE7">📱</div><div class="ct">Status do WhatsApp</div></div><div class="ctxt">Uma foto simples com o produto aparece para todos os seus contatos sem você precisar mandar mensagem para ninguém. Posta de manhã e esquece.</div><div class="dica"><span>💡</span>Todo mundo que tem seu número vai ver. É uma forma de divulgar sem precisar chamar ninguém.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">📸</div><div class="ct">Instagram stories</div></div><div class="ctxt">Não precisa ser elaborado. Uma foto antes de sair, o produto aparecendo, cupom na legenda. Fica 24 horas no ar e chega para quem te segue sem nenhum esforço extra.</div><div class="dica"><span>💡</span>Se esqueceu o cupom, sem problema. Coloca nos comentários ou menciona no próximo story.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#E3F2FD">📘</div><div class="ct">Facebook</div></div><div class="ctxt">Uma publicação simples no seu perfil ou num grupo de amigas. Conta que está usando, mostra o produto e deixa o seu cupom.</div><div class="dica"><span>💡</span>Se tiver um grupo de amigas por lá, vale compartilhar por lá também.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#EDE9FE">👯</div><div class="ct">Pessoalmente</div></div><div class="ctxt">Às vezes a venda mais natural acontece numa conversa do dia a dia. No trabalho, no salão, na academia. Quando alguém perguntar o que você usa ou elogiar sua pele, você já tem o que contar.</div><div class="dica"><span>💡</span>Deixa o link da loja salvo no celular para quando precisar.</div></div>
+  </div>
+  <div id="sub-como" class="subpage">
+    <div class="back-btn" onclick="hideSub('como')">‹ Voltar para ideias</div>
+    <div class="subheader verde"><div class="subheader-icon">📸</div><div class="subheader-titulo">Como postar</div><div class="subheader-desc">Sem edição, sem filtro. Uma foto real vende mais do que você imagina.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#EDE9FE">🎥</div><div class="ct">Ângulos que funcionam</div></div>
+      <div class="angulo-grid">
+        <div class="angulo-item"><div class="angulo-icon">🤳</div><div class="angulo-titulo">Pertinho do rosto</div><div class="angulo-desc">Mostra a pele de verdade.</div></div>
+        <div class="angulo-item"><div class="angulo-icon">😊</div><div class="angulo-titulo">Expressão feliz</div><div class="angulo-desc">Sorrindo com o produto na mão.</div></div>
+        <div class="angulo-item"><div class="angulo-icon">💧</div><div class="angulo-titulo">Detalhe do produto</div><div class="angulo-desc">Foco na embalagem ou textura.</div></div>
+        <div class="angulo-item"><div class="angulo-icon">✨</div><div class="angulo-titulo">Resultado na pele</div><div class="angulo-desc">Glow, hidratação, olhar descansado.</div></div>
+      </div>
+      <div class="dica"><span>💡</span>A luz natural é a melhor. Janela aberta ou no carro já resolve.</div>
+    </div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEF3C7">🏷️</div><div class="ct">Como colocar o cupom</div></div>
+      <div class="cupom-compare">
+        <div class="cc"><span class="cc-badge cc-ok">✓ assim</span><div class="phone-mini"><span class="pm-emoji">🧴</span><div class="pm-ok"><div class="cl">cupom 10% off</div><div class="cv">SEUCUPOM</div></div><div class="btn-ver-overlay"><span>toque para ver exemplo</span></div></div></div>
+        <div class="cc"><span class="cc-badge cc-no">✗ evite</span><div class="phone-mini"><span class="pm-emoji">🧴</span><div class="pm-no"><span>CUPOM10</span></div></div></div>
+      </div>
+      <div class="ctxt">Se for vídeo falado, mencione o cupom em algum momento. Se for foto, coloca discreto no canto inferior. Nos comentários fixados também funciona muito bem.</div>
+      <div class="dica"><span>💡</span>O cupom precisa aparecer em algum lugar, sempre.</div>
+    </div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#EDE9FE">✍️</div><div class="ct">A legenda</div></div><div class="ctxt">Escreva do jeito que você fala. Pode ser uma frase, pode ser um texto com sentimentos, pode ser uma história. O que importa é que seja verdadeiro e que o cupom apareça.</div><div class="script-box">"Sempre me incomodei com a região dos olhos. Foi o primeiro lugar que eu vi o tempo chegando. Comecei a usar o Sérum da Le Moritz há 4 semanas e já vejo diferença real. Pra quem quiser experimentar, meu cupom é [SEUCUPOM] — 10% OFF 💜"</div><button class="copy-btn" onclick="copiar(this,'Sempre me incomodei com a região dos olhos. Foi o primeiro lugar que eu vi o tempo chegando. Comecei a usar o Sérum da Le Moritz há 4 semanas e já vejo diferença real. Pra quem quiser experimentar, meu cupom é [SEUCUPOM] — 10% OFF 💜')">📋 Copiar exemplo</button><div class="dica"><span>💡</span>Quanto mais verdadeira a legenda, mais as pessoas se identificam.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">📸</div><div class="ct">Postando no Instagram</div></div>
+      <div class="step"><div class="snum sn-ig">1</div><div class="stxt"><h3>Toque no "+" e escolha Story ou Reels</h3></div></div>
+      <div class="step"><div class="snum sn-ig">2</div><div class="stxt"><h3>Escolha a foto ou grave o vídeo</h3></div></div>
+      <div class="step"><div class="snum sn-ig">3</div><div class="stxt"><h3>Coloque o cupom e marque @lemoritz_oficial</h3></div></div>
+      <div class="step"><div class="snum sn-ig">4</div><div class="stxt"><h3>Publique!</h3><div class="tela"><span>Seu story</span><span class="tbadge tb-verde">✓</span></div></div></div>
+    </div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#E3F2FD">📘</div><div class="ct">Postando no Facebook</div></div>
+      <div class="step"><div class="snum sn-fb">1</div><div class="stxt"><h3>Toque em "O que você está pensando?"</h3></div></div>
+      <div class="step"><div class="snum sn-fb">2</div><div class="stxt"><h3>Adicione uma foto e escreva sua legenda</h3></div></div>
+      <div class="step"><div class="snum sn-fb">3</div><div class="stxt"><h3>Cupom no texto e publique</h3><div class="tela"><span>Publicar</span><span class="tbadge tb-verde">✓</span></div></div></div>
+    </div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#F4F2FA">🎵</div><div class="ct">Postando no TikTok</div></div>
+      <div class="step"><div class="snum sn-tt">1</div><div class="stxt"><h3>Toque no "+" e grave ou escolha um vídeo</h3></div></div>
+      <div class="step"><div class="snum sn-tt">2</div><div class="stxt"><h3>15 a 30 segundos já basta</h3></div></div>
+      <div class="step"><div class="snum sn-tt">3</div><div class="stxt"><h3>Cupom na legenda e publique</h3><div class="tela"><span>Postar</span><span class="tbadge tb-verde">✓</span></div></div></div>
+      <div class="dica" style="margin-top:10px"><span>💡</span>Fixe um comentário com seu cupom logo depois de publicar.</div>
+    </div>
+  </div>
+  <div id="sub-conteudo" class="subpage">
+    <div class="back-btn" onclick="hideSub('conteudo')">‹ Voltar para ideias</div>
+    <div class="subheader gold"><div class="subheader-icon">💡</div><div class="subheader-titulo">Ideias de conteúdo</div><div class="subheader-desc">Não sabe o que postar? Escolhe uma ideia e faz hoje.</div></div>
+    <div class="seclabel">Ideias rápidas</div>
+    <div class="ideia-item"><span class="ideia-icon">🪞</span><div class="ideia-body"><h3>Selfie no espelho</h3><p>Antes de sair, produto na mão ou aplicado. Real e rápido.</p></div></div>
+    <div class="ideia-item"><span class="ideia-icon">🚗</span><div class="ideia-body"><h3>Foto no carro</h3><p>Luz natural, produto na mão. Um dos ângulos que mais funciona.</p></div></div>
+    <div class="ideia-item"><span class="ideia-icon">☀️</span><div class="ideia-body"><h3>Rotina da manhã</h3><p>Mostre os produtos que você usa antes de sair. Story simples.</p></div></div>
+    <div class="ideia-item"><span class="ideia-icon">💄</span><div class="ideia-body"><h3>Maquiagem do dia</h3><p>Mostre como ficou a make usando os sticks. Resultado real.</p></div></div>
+    <div class="ideia-item"><span class="ideia-icon">📦</span><div class="ideia-body"><h3>Unboxing do pedido</h3><p>Quando chegar, filme abrindo. 15 segundos já é suficiente.</p></div></div>
+    <div class="ideia-item"><span class="ideia-icon">🌅</span><div class="ideia-body"><h3>Antes e depois</h3><p>Diferença na pele depois de alguns dias de uso.</p></div></div>
+    <div class="ideia-item"><span class="ideia-icon">👜</span><div class="ideia-body"><h3>Produto na bolsa</h3><p>Antes de sair, mostre o que você leva. Natural e cotidiano.</p></div></div>
+    <div class="ideia-item"><span class="ideia-icon">✨</span><div class="ideia-body"><h3>Pele com glow</h3><p>Depois do iluminador aplicado. Mostra o resultado na pele madura.</p></div></div>
+    <div class="ideia-item"><span class="ideia-icon">🌙</span><div class="ideia-body"><h3>Rotina da noite</h3><p>Aplicando o retinol antes de dormir. Autêntico e educativo.</p></div></div>
+    <div class="ideia-item"><span class="ideia-icon">💬</span><div class="ideia-body"><h3>O que mudou na minha pele</h3><p>Conta de verdade o que você sentiu depois de começar a usar.</p></div></div>
+    <div class="divider"></div>
+    <div class="seclabel">Assista e se inspire</div>
+    <div class="video-intro">Vídeos oficiais da Le Moritz para você ver como usar cada produto e se inspirar para o seu conteúdo.</div>
+    <a href="https://www.instagram.com/p/DYsNHQaBau_/" target="_blank" class="video-card"><div class="video-thumb vt-ig"><div class="video-emoji">🌸</div><div class="video-play"><span>▶</span></div><div class="video-plat">Instagram</div></div><div class="video-body"><div class="video-titulo">Os 6 Sticks · para que serve cada um</div><div class="video-sub">Conheça cada stick e como usar</div><div class="video-tag vt-ig2">▶ Ver no Instagram</div></div></a>
+    <a href="https://www.instagram.com/p/DYprC9LRZSq/" target="_blank" class="video-card"><div class="video-thumb vt-ig"><div class="video-emoji">🟤</div><div class="video-play"><span>▶</span></div><div class="video-plat">Instagram</div></div><div class="video-body"><div class="video-titulo">Make que levanta com Rosa Mauve e Marrom Café</div><div class="video-sub">Técnica com os novos sticks</div><div class="video-tag vt-ig2">▶ Ver no Instagram</div></div></a>
+    <a href="https://www.youtube.com/watch?v=KzZtTXkqDbE" target="_blank" class="video-card"><div class="video-thumb vt-rosa"><div class="video-emoji">💄</div><div class="video-play"><span>▶</span></div><div class="video-plat">YouTube</div></div><div class="video-body"><div class="video-titulo">Make para iniciantes em poucos passos</div><div class="video-sub">Passo a passo completo e simples</div><div class="video-tag vt-yt">▶ Assistir no YouTube</div></div></a>
+    <a href="https://www.youtube.com/shorts/4lTHLB4oQmY" target="_blank" class="video-card"><div class="video-thumb vt-roxo"><div class="video-emoji">👁️</div><div class="video-play"><span>▶</span></div><div class="video-plat">YouTube Short</div></div><div class="video-body"><div class="video-titulo">Como usar o Sérum Revitalizador de Olhos</div><div class="video-sub">Aplicação e dicas de uso</div><div class="video-tag vt-yt">▶ Assistir no YouTube</div></div></a>
+    <a href="https://www.youtube.com/shorts/JzybqmkFOTM" target="_blank" class="video-card"><div class="video-thumb vt-roxo"><div class="video-emoji">🧴</div><div class="video-play"><span>▶</span></div><div class="video-plat">YouTube Short</div></div><div class="video-body"><div class="video-titulo">Como usar o Stick Hidratante FPS 50</div><div class="video-sub">Aplicação e resultado na pele</div><div class="video-tag vt-yt">▶ Assistir no YouTube</div></div></a>
+    <a href="https://www.youtube.com/shorts/wT2jWPZ60wY" target="_blank" class="video-card"><div class="video-thumb vt-roxo"><div class="video-emoji">⚡</div><div class="video-play"><span>▶</span></div><div class="video-plat">YouTube Short</div></div><div class="video-body"><div class="video-titulo">Como usar o Sérum Lift Instantâneo</div><div class="video-sub">Efeito lifting em tempo real</div><div class="video-tag vt-yt">▶ Assistir no YouTube</div></div></a>
+    <a href="https://www.youtube.com/shorts/yUs_bGvn1gE" target="_blank" class="video-card"><div class="video-thumb vt-roxo"><div class="video-emoji">🌸</div><div class="video-play"><span>▶</span></div><div class="video-plat">YouTube Short</div></div><div class="video-body"><div class="video-titulo">Trio Stick Rosé, Hidra e Terracota</div><div class="video-sub">Maquiagem completa em segundos</div><div class="video-tag vt-yt">▶ Assistir no YouTube</div></div></a>
+    <a href="https://www.youtube.com/shorts/0gX89g3HsN8" target="_blank" class="video-card"><div class="video-thumb vt-roxo"><div class="video-emoji">👁</div><div class="video-play"><span>▶</span></div><div class="video-plat">YouTube Short</div></div><div class="video-body"><div class="video-titulo">Máscara de Cílios Regenerativa Pro-Age</div><div class="video-sub">Como aplicar para olhos marcantes</div><div class="video-tag vt-yt">▶ Assistir no YouTube</div></div></a>
+    <a href="https://www.youtube.com/shorts/4lTHLB4oQmY" target="_blank" class="video-card"><div class="video-thumb vt-roxo"><div class="video-emoji">🌙</div><div class="video-play"><span>▶</span></div><div class="video-plat">YouTube Short</div></div><div class="video-body"><div class="video-titulo">Como usar o Stick Retinol Noturno</div><div class="video-sub">Rotina de noite para pele madura</div><div class="video-tag vt-yt">▶ Assistir no YouTube</div></div></a>
+  </div>
+  <div id="sub-abordar" class="subpage">
+    <div class="back-btn" onclick="hideSub('abordar')">‹ Voltar para ideias</div>
+    <div class="subheader" style="background:#FEE2E2"><div class="subheader-icon">💬</div><div class="subheader-titulo">Como abordar</div><div class="subheader-desc">A melhor venda começa numa conversa natural.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">😊</div><div class="ct">Quando elogiarem sua pele</div></div><div class="ctxt">Essa é a porta de entrada mais fácil. Quando alguém elogiar, responde naturalmente e oferece o cupom.</div><div class="script-box">"Obrigada! Tô usando uns produtos da Le Moritz, faz diferença mesmo. Se quiser experimentar, tenho cupom de 10% OFF — é só me pedir que te mando o link."</div><button class="copy-btn" onclick="copiar(this,'Obrigada! Tô usando uns produtos da Le Moritz, faz diferença mesmo. Se quiser experimentar, tenho cupom de 10% OFF — é só me pedir que te mando o link.')">📋 Copiar essa frase</button></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">👯</div><div class="ct">Para uma amiga específica</div></div><div class="script-box">"Oi [nome]! Lembrei de você. Tô usando uns produtos da Le Moritz e tô amando. Tenho cupom de 10% OFF se quiser experimentar, é só me pedir 💜"</div><button class="copy-btn" onclick="copiar(this,'Oi [nome]! Lembrei de você. Tô usando uns produtos da Le Moritz e tô amando. Tenho cupom de 10% OFF se quiser experimentar, é só me pedir 💜')">📋 Copiar essa frase</button></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">👥</div><div class="ct">Para um grupo de amigas</div></div><div class="script-box">"Meninas, descobri uma marca incrível para pele madura e fiquei com vontade de indicar pra vocês. É a Le Moritz. Tenho cupom de desconto se alguém quiser, é só me chamar no privado."</div><button class="copy-btn" onclick="copiar(this,'Meninas, descobri uma marca incrível para pele madura e fiquei com vontade de indicar pra vocês. É a Le Moritz. Tenho cupom de desconto se alguém quiser, é só me chamar no privado.')">📋 Copiar essa frase</button></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">📱</div><div class="ct">Para o status ou story</div></div><div class="script-box">"Quem me perguntar o que eu uso na pele é Le Moritz. Tenho cupom de 10% OFF pra quem quiser. Me chama!"</div><button class="copy-btn" onclick="copiar(this,'Quem me perguntar o que eu uso na pele é Le Moritz. Tenho cupom de 10% OFF pra quem quiser. Me chama!')">📋 Copiar essa frase</button><div class="dica"><span>💡</span>Não precisa parecer que está vendendo. Conta naturalmente, como faria com qualquer produto que você amou.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">💬</div><div class="ct">Na prática · exemplos reais</div></div>
+      <div class="bubbles">
+        <div class="local">📍 No trabalho</div>
+        <div class="brow"><div class="av">👩</div><div class="bubble">"Você tá com a pele linda! O que você tá usando?"</div></div>
+        <div class="brow right"><div class="bubble right">"É da Le Moritz! Tenho cupom de 10% OFF, te mando o link 💜"</div><div class="av av2">👩</div></div>
+        <div style="height:6px"></div>
+        <div class="local">📍 No shopping</div>
+        <div class="brow"><div class="av">👩</div><div class="bubble">"Esse batom é lindo! Onde comprou?"</div></div>
+        <div class="brow right"><div class="bubble right">"É um stick da Le Moritz! Te passo o cupom de 10%."</div><div class="av av2">👩</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="main-ideias">
+    <div class="grid2">
+      <div class="mural-card-link mc1" onclick="showSub('onde')"><div class="mc-icon">📍</div><div class="mc-titulo">Onde vender</div><div class="mc-sub">WhatsApp, pessoalmente e redes</div><div class="mc-ler">Ver ideias →</div></div>
+      <div class="mural-card-link mc2" onclick="showSub('como')"><div class="mc-icon">📸</div><div class="mc-titulo">Como postar</div><div class="mc-sub">Ângulo, cupom, legenda</div><div class="mc-ler">Ver ideias →</div></div>
+      <div class="mural-card-link mc3" onclick="showSub('conteudo')"><div class="mc-icon">💡</div><div class="mc-titulo">Ideias de conteúdo</div><div class="mc-sub">Selfie, carro, unboxing</div><div class="mc-ler">Ver ideias →</div></div>
+      <div class="mural-card-link mc4" onclick="showSub('abordar')"><div class="mc-icon">💬</div><div class="mc-titulo">Como abordar</div><div class="mc-sub">Elogio, indicação, amigas</div><div class="mc-ler">Ver ideias →</div></div>
+    </div>
+    <div style="background:#EDE9FE;border-radius:10px;padding:12px;font-size:13px;color:#5B21B6;margin-top:4px;line-height:1.6">Cada pequena ação conta. Escolhe o que parecer mais fácil e começa por aí.</div>
+  </div>
 </div>
+
+<!-- ═══ CASES ═══ -->
+<div class="page" id="page-cases">
+  <div class="card" style="margin-bottom:14px">
+    <div style="font-size:24px;color:#DDD6FE;margin-bottom:4px">"</div>
+    <div class="ctxt" style="margin:0">Essas mulheres não tinham experiência com vendas. Não eram influencers. Começaram com uma mensagem, um story, uma indicação. E os resultados vieram. Você está no mesmo caminho.</div>
+    <div style="font-size:12px;color:#C9A84C;margin-top:8px;font-weight:500">— Le Moritz, para cada Cliente Embaixadora</div>
+  </div>
+  <div class="seclabel">Destaque do mês · Maio 2026</div>
+  <div class="case-dest">
+    <div class="case-tag">⭐ Maio 2026</div>
+    <div class="case-nome">Cláudia</div>
+    <div class="case-sub">67 pedidos gerados · CLAUDIA10</div>
+    <div class="case-stats">
+      <div class="cstat"><div class="cstat-v">R$ 1.786</div><div class="cstat-l">Comissão em maio</div></div>
+      <div class="cstat"><div class="cstat-v">67</div><div class="cstat-l">Pedidos gerados</div></div>
+    </div>
+    <div class="case-txt">"Comecei mandando mensagem para amigas e postando stories simples. Não sabia nada de vendas quando entrei."</div>
+  </div>
+  <div class="seclabel">Outras que já estão vendendo</div>
+  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Thaís</div><div class="cm-sub">23 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 580</div><div class="cm-l">em comissão</div></div></div>
+  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Lucia</div><div class="cm-sub">9 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 223</div><div class="cm-l">em comissão</div></div></div>
+  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Tônia</div><div class="cm-sub">1 pedido · maio</div></div><div class="cm-val"><div class="cm-com">R$ 75</div><div class="cm-l">em comissão</div></div></div>
+  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Amanda</div><div class="cm-sub">3 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 85</div><div class="cm-l">em comissão</div></div></div>
+  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Anna Lucia</div><div class="cm-sub">3 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 62</div><div class="cm-l">em comissão</div></div></div>
+  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Valéria</div><div class="cm-sub">2 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 47</div><div class="cm-l">em comissão</div></div></div>
+  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Eliza</div><div class="cm-sub">3 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 42</div><div class="cm-l">em comissão</div></div></div>
+  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Carla</div><div class="cm-sub">1 pedido · maio</div></div><div class="cm-val"><div class="cm-com">R$ 25</div><div class="cm-l">em comissão</div></div></div>
+  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Rozangela</div><div class="cm-sub">1 pedido · maio</div></div><div class="cm-val"><div class="cm-com">R$ 24</div><div class="cm-l">em comissão</div></div></div>
+  <div style="text-align:center;background:#EDE9FE;border-radius:10px;padding:12px;font-size:13px;color:#5B21B6;margin-top:4px">A sua história pode estar aqui no próximo mês 💜</div>
+</div>
+
+<!-- ═══ CIÊNCIA & PELE ═══ -->
+<div class="page" id="page-ciencia">
+  <div style="background:#1B4332;border-radius:14px;padding:18px;text-align:center;margin-bottom:14px">
+    <div style="font-size:22px;margin-bottom:8px">🩺</div>
+    <div style="color:#fff;font-size:16px;font-weight:500;margin-bottom:4px">Dermatologista Indica</div>
+    <div style="color:#6EE7B7;font-size:12px">Ciência e beleza que respeita a pele madura</div>
+  </div>
+  <div class="card" style="margin-bottom:14px"><div class="ctxt" style="margin:0">Quando uma dermatologista indica um produto, você pode compartilhar com muito mais segurança. Aqui estão nossas parceiras oficiais e tudo sobre os ativos e rotinas dos produtos.</div></div>
+  <div class="seclabel verde">Parceira oficial</div>
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:14px">
+    <div class="derma-topo"><div class="derma-av">👩‍⚕️</div><div><div class="derma-nome">Dra. Marcela Travassos</div><div class="derma-cargo">Dermatologista · Campo Grande, MS</div><div class="derma-badge">✦ Parceira Le Moritz</div></div></div>
+    <div style="padding:13px"><div class="ctxt" style="margin-bottom:12px">Especialista em pele madura e parceira oficial da Le Moritz. Indica os produtos baseada na sua experiência clínica com pacientes 40+.</div>
+    <a href="https://www.instagram.com/p/DXGI6rlDM4N/" target="_blank" style="display:block;background:#1B4332;color:#fff;text-align:center;border-radius:9px;padding:10px;font-size:13px;font-weight:500;text-decoration:none;margin-bottom:8px">Ver indicação no Instagram ↗</a>
+    <a href="https://www.instagram.com/marcelatravassos_dermato/" target="_blank" style="display:block;background:#F0FDF4;color:#166534;border:0.5px solid #BBF7D0;text-align:center;border-radius:9px;padding:10px;font-size:13px;font-weight:500;text-decoration:none">Ver perfil da Dra. Marcela ↗</a>
+    </div>
+  </div>
+  <div class="seclabel verde">Ativos · o que fazem pela sua pele</div>
+  <div class="ativo"><div class="ativo-i">🌿</div><div><div class="ativo-nome">Retinol</div><div class="ativo-desc">Estimula colágeno e renova a pele. Reduz linhas finas com uso contínuo.</div><div class="ativo-tag">Stick Retinol Noturno</div></div></div>
+  <div class="ativo"><div class="ativo-i">💧</div><div><div class="ativo-nome">Ácido Hialurônico</div><div class="ativo-desc">Hidratação profunda e efeito preenchedor nas linhas de expressão.</div><div class="ativo-tag">Tônico 8 em 1 · Sérum de Olhos</div></div></div>
+  <div class="ativo"><div class="ativo-i">✨</div><div><div class="ativo-nome">Colágeno Vegetal</div><div class="ativo-desc">Melhora a firmeza e combate a flacidez da pele madura.</div><div class="ativo-tag">Creme Antirrugas</div></div></div>
+  <div class="ativo"><div class="ativo-i">☀️</div><div><div class="ativo-nome">FPS 50</div><div class="ativo-desc">Protege do sol e previne envelhecimento. O mais importante da rotina de manhã.</div><div class="ativo-tag">Stick Hidratante FPS 50</div></div></div>
+  <div class="ativo"><div class="ativo-i">💎</div><div><div class="ativo-nome">Peptídeos Firmadores</div><div class="ativo-desc">Efeito lifting progressivo com uso regular, sem procedimentos invasivos.</div><div class="ativo-tag">Sérum Redutor de Linhas</div></div></div>
+  <div class="divider"></div>
+  <div class="seclabel verde">Sua rotina Le Moritz</div>
+  <div class="card">
+    <div class="card-h"><div class="ci" style="background:#FEF3C7">☀️</div><div><div class="ct">Manhã · 4 passos simples</div></div></div>
+    <div class="step"><div class="snum sn-gold">1</div><div class="stxt"><h3>Mousse de Limpeza Revitalizante</h3></div></div>
+    <div class="step"><div class="snum sn-gold">2</div><div class="stxt"><h3>Tônico Essência Hidratante 8 em 1</h3></div></div>
+    <div class="step"><div class="snum sn-gold">3</div><div class="stxt"><h3>Stick Hidratante FPS 50</h3></div></div>
+    <div class="step"><div class="snum sn-gold">4</div><div class="stxt"><h3>Maquiagem (opcional)</h3></div></div>
+    <div class="dica-gold" style="margin-top:10px"><span>💡</span>O FPS é o passo mais importante. Nunca pule.</div>
+  </div>
+  <div class="card">
+    <div class="card-h"><div class="ci" style="background:#EDE9FE">🌙</div><div><div class="ct">Noite · duas opções</div><div class="cs">Escolha a que combina com você</div></div></div>
+    <div class="alt-card"><div class="alt-titulo">Opção 1 · Foco em rejuvenescimento</div><div class="alt-step"><div class="dot"></div>Mousse + Tônico + Retinol + Creme para os olhos</div></div>
+    <div class="alt-card"><div class="alt-titulo">Opção 2 · Foco em hidratação e firmeza</div><div class="alt-step"><div class="dot"></div>Mousse + Tônico + Creme Antirrugas + Creme para os olhos</div></div>
+    <div class="dica" style="margin-top:10px"><span>💡</span>Retinol age à noite. Use FPS no dia seguinte sempre.</div>
+  </div>
+  <div class="card">
+    <div class="card-h"><div class="ci" style="background:#EDE9FE">⚡</div><div><div class="ct">Sérum Redutor de Linhas · como usar</div></div></div>
+    <div class="alt-card"><div class="alt-titulo">Com maquiagem</div><div class="alt-step"><div class="dot"></div>Espere a make secar uns 10 minutos</div><div class="alt-step"><div class="dot"></div>Aplique por cima com pequenas batidinhas</div><div class="alt-step"><div class="dot"></div>Quantidade do tamanho de um grão de arroz ou menos</div></div>
+    <div class="alt-card"><div class="alt-titulo">Sem maquiagem</div><div class="alt-step"><div class="dot"></div>Use com a pele limpa</div><div class="alt-step"><div class="dot"></div>Pequenas batidinhas nas linhas de expressão</div><div class="alt-step"><div class="dot"></div>Quantidade mínima — grão de arroz ou menor</div></div>
+  </div>
+  <div class="card">
+    <div class="card-h"><div class="ci" style="background:#FEE2E2">💄</div><div><div class="ct">Make completa</div><div class="cs">Com vitaminas, pode usar sempre que quiser</div></div></div>
+    <div class="step"><div class="snum sn-pink">1</div><div class="stxt"><h3>Stick Hidratante FPS 50</h3><p>Base + proteção. Primeiro passo da make.</p></div></div>
+    <div class="step"><div class="snum sn-pink">2</div><div class="stxt"><h3>Stick Blush</h3><p>Terracota, Coral ou Rosa Mauve nas maçãs do rosto.</p></div></div>
+    <div class="step"><div class="snum sn-pink">3</div><div class="stxt"><h3>Stick Iluminador</h3><p>Maçãs, arco do cupido e canto dos olhos. Rosê ou Dourado.</p></div></div>
+    <div class="step"><div class="snum sn-pink">4</div><div class="stxt"><h3>Stick Marrom Café (opcional)</h3><p>Contorno nas têmporas, nariz e maxilar.</p></div></div>
+    <div class="step"><div class="snum sn-pink">5</div><div class="stxt"><h3>Máscara de Cílios Pro-Age</h3><p>Finaliza o olhar.</p></div></div>
+    <div class="dica-gold" style="margin-top:10px"><span>💡</span>Use o Pincel 9 em 1 para esfumar tudo. Acabamento muito mais natural.</div>
+  </div>
+  <div style="background:#F8F6FF;border-radius:12px;border:0.5px dashed #DDD6FE;padding:16px;text-align:center;margin-top:4px">
+    <p style="font-size:13px;color:#aaa">🩺 Mais dermatologistas parceiras em breve.</p>
+  </div>
+</div>
+
+<div class="rodape"><a href="https://lemoritz.com.br" target="_blank">lemoritz.com.br</a> &nbsp;·&nbsp; @lemoritz_oficial</div>
 
 <script>
-const embaixadoras = [
+// ═══ DADOS EDITÁVEIS ═══
+const EMBAIXADORAS = [
   { exibir: "@valeria.valrodrigues", cupom: "VALERIA10", pedidos: 0, vendido: 0 },
   { exibir: "@ponteselianee", cupom: "ELIANE10", pedidos: 0, vendido: 0 },
   { exibir: "@bruartpsi", cupom: "BRUNAINSPIRA", pedidos: 0, vendido: 0 },
@@ -152,43 +557,116 @@ const embaixadoras = [
   { exibir: "@cirleide_pessoa", cupom: "PESSOA26", pedidos: 0, vendido: 0 },
 ];
 
-function fmt(v) {
-  return "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-}
+const PRODUTOS = {
+  skincare: [
+    { nome: "Stick Hidratante FPS 50", desc: "Hidratação + proteção solar", emoji: "🧴", uso: ["Aplique pela manhã na pele limpa","Espalhe com os dedos em movimentos suaves","Reaplique ao longo do dia para manter a proteção"] },
+    { nome: "Stick Rejuvenescedor Noturno (Retinol)", desc: "Uso noturno — trata enquanto você dorme", emoji: "🌙", uso: ["Use à noite após limpeza do rosto","Aplique nas áreas com linhas de expressão","Não exponha ao sol após aplicação"] },
+    { nome: "Mousse de Limpeza Revitalizante", desc: "Limpa sem ressecar", emoji: "🫧", uso: ["Aplique na pele úmida com movimentos circulares","Enxágue com água morna","Use de manhã e à noite"] },
+    { nome: "Tônico Essência Hidratante 8 em 1", desc: "Hidrata, prepara e trata em uma só etapa", emoji: "💦", uso: ["Aplique no rosto limpo com algodão ou mãos","Use de manhã e à noite antes do sérum","Pode ser usado antes de qualquer outro produto"] },
+    { nome: "Sérum Revitalizador de Olhos", desc: "Firma e desinchaça a região dos olhos", emoji: "👁️", uso: ["Aplique pequena quantidade na região dos olhos","Use o aplicador em movimentos delicados","Use de manhã e à noite"] },
+    { nome: "Sérum Redutor Instantâneo de Linhas", desc: "Efeito lifting instantâneo", emoji: "⚡", uso: ["Com make: espere 10 min após aplicar a maquiagem","Aplique por cima com batidinhas suaves","Quantidade do tamanho de um grão de arroz"] },
+    { nome: "Creme Antirrugas Multicamadas", desc: "Firmeza e hidratação profunda", emoji: "✨", uso: ["Aplique à noite após o tônico","Massageie suavemente em movimentos ascendentes","Use como último passo da rotina noturna"] },
+  ],
+  make: [
+    { nome: "Máscara de Cílios Regenerativa Pro-Age", desc: "Volumiza sem pesar — trata os cílios", emoji: "👁", uso: ["Aplique da raiz às pontas dos cílios","Use movimentos em zigzag para maior volume","Uma ou duas demãos são suficientes"] },
+    { nome: "Stick Multifuncional Rosa Mauve", desc: "Blush, sombra e batom", emoji: "🌸", uso: ["Aplique nas maçãs do rosto sorrindo levemente","Esfume com os dedos ou o Pincel 9 em 1","Pode usar na sombra e nos lábios também"] },
+    { nome: "Stick Multifuncional Marrom Café", desc: "Contorno, blush e bronzer", emoji: "🟤", uso: ["Use nas têmporas e abaixo das maçãs para contorno","Aplique na lateral do nariz para afinar levemente","Esfume sempre para acabamento natural"] },
+    { nome: "Stick Iluminador Rosé", desc: "Glow natural e suave", emoji: "✨", uso: ["Aplique nas maçãs do rosto para glow natural","Um toque no arco do cupido ilumina o sorriso","No canto interno dos olhos abre o olhar"] },
+    { nome: "Stick Iluminador Dourado", desc: "Glow intenso e luminoso", emoji: "⭐", uso: ["Perfeito para noite ou ocasiões especiais","Aplique nas maçãs e canto dos olhos","Ótimo para peles morenas"] },
+    { nome: "Stick Blush Terracota", desc: "Blush e bronzer natural", emoji: "🧡", uso: ["Aplique nas maçãs do rosto sorrindo","Esfume em direção às têmporas","Ótimo para dar cor natural e bronzeado"] },
+  ],
+  acessorios: [
+    { nome: "Pincel Multifuncional 9 em 1", desc: "Para aplicar e esfumar todos os sticks", emoji: "🖌️", uso: ["Use para esfumar qualquer stick após aplicação","9 funções diferentes em um único pincel","Higienize semanalmente com água e sabão neutro"] },
+  ],
+  kits: [
+    { nome: "Kit Rotina de Hidratação", desc: "Rotina completa de skincare", emoji: "🎁", uso: ["Kit completo para uma rotina de hidratação diária","Inclui os principais produtos de skincare","Ótima opção para presentear"] },
+    { nome: "Kit Pele Glow + Olhos Marcantes", desc: "Make + skincare completo", emoji: "🎁", uso: ["Combina make e skincare","Perfeito para quem quer começar uma rotina completa","Inclui os produtos mais vendidos da marca"] },
+    { nome: "Kit Lifting e Firmeza para Olhos", desc: "Foco na região dos olhos", emoji: "🎁", uso: ["Específico para cuidar da região dos olhos","Combate olheiras, bolsas e linhas finas","Rotina completa em um único kit"] },
+    { nome: "Kits promocionais de skincare e maquiagem", desc: "Confira as opções disponíveis no site", emoji: "🎁", uso: ["Kits com até 66% de desconto","Opções variadas de skincare e maquiagem","Acesse o site para ver todas as opções disponíveis"] },
+  ]
+};
 
-const sorted = [...embaixadoras].sort((a, b) => b.vendido - a.vendido);
-const maxV = sorted.find(e => e.vendido > 0)?.vendido || 1;
+
+// ═══ RANKING ═══
+function fmt(v){ return "R$ "+v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2}); }
+const sorted = [...EMBAIXADORAS].sort((a,b)=>b.vendido-a.vendido);
 const lista = document.getElementById("lista-ranking");
-
-sorted.forEach((e, i) => {
-  const pos = i + 1;
-  const z = e.vendido === 0;
-  const com = e.vendido * 0.1;
-  const pct = z ? 0 : (e.vendido / maxV * 100);
-
-  let posClass = "pos-n";
-  let rowClass = "ranking-row";
-  if (!z) {
-    if (pos === 1) { posClass = "pos-1"; rowClass += " top1"; }
-    else if (pos === 2) { posClass = "pos-2"; rowClass += " top2"; }
-    else if (pos === 3) { posClass = "pos-3"; rowClass += " top3"; }
-  }
-  if (z) rowClass += " zerado";
-
-  const row = document.createElement("div");
-  row.className = rowClass;
-  row.innerHTML = `
-    <div class="pos ${posClass}">${pos}</div>
-    <div class="nome-wrap">
-      <div class="nome${pos <= 3 && !z ? ' destaque' : ''}">${e.exibir}</div>
-      <div class="cupom">${e.cupom}</div>
-      ${!z ? `<div class="barra"><div class="barra-fill" style="width:${pct}%"></div></div>` : ""}
-    </div>
-    <div class="valor ${z ? 'zero' : ''}">${z ? "—" : e.pedidos}</div>
-    <div class="valor comissao ${z ? 'zero' : ''}">${z ? "—" : fmt(com)}</div>
-  `;
+sorted.forEach((e,i)=>{
+  const pos=i+1, z=e.vendido===0, com=e.vendido*0.1;
+  const row=document.createElement("div");
+  row.className="rrow"+(z?" zerado":"");
+  row.innerHTML=`<div class="rpos">${pos}</div><div><div class="rnome">${e.exibir}</div><div class="rcup">${e.cupom}</div></div><div class="${z?'rzero':'rcom'}">${z?"—":fmt(com)}</div>`;
   lista.appendChild(row);
 });
+
+// ═══ PRODUTOS ═══
+function renderProdutos(listaId, arr){
+  const el = document.getElementById(listaId);
+  arr.forEach((p,i)=>{
+    const div=document.createElement("div");
+    div.className="prod";
+    div.innerHTML=`<div class="prod-img">${p.emoji}</div><div class="prod-body"><div class="prod-nome">${p.nome}</div><div class="prod-desc">${p.desc}</div><button class="prod-btn" onclick="toggleUso('${listaId}${i}')">▾ Como usar</button></div>`;
+    el.appendChild(div);
+    const uso=document.createElement("div");
+    uso.className="prod-uso";
+    uso.id=`${listaId}${i}`;
+    uso.innerHTML=p.uso.map((s,j)=>`<div class="uso-step"><div class="uso-num">${j+1}</div><div class="uso-txt">${s}</div></div>`).join('')+`<button class="prod-btn" style="margin-top:8px" onclick="toggleUso('${listaId}${i}')">▴ Fechar</button>`;
+    el.appendChild(uso);
+  });
+}
+renderProdutos('lista-produtos-skincare', PRODUTOS.skincare);
+renderProdutos('lista-produtos-make', PRODUTOS.make);
+renderProdutos('lista-produtos-acessorios', PRODUTOS.acessorios);
+renderProdutos('lista-produtos-kits', PRODUTOS.kits);
+
+// ═══ NAVEGAÇÃO ═══
+function showPage(id, el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  if(el) el.classList.add('active');
+  else { document.querySelectorAll('.nav-item').forEach(n=>{ if(n.getAttribute('onclick') && n.getAttribute('onclick').includes("'"+id+"'")) n.classList.add('active'); }); }
+  document.querySelectorAll('.subpage').forEach(s=>s.classList.remove('active'));
+  const mainEl = document.getElementById('main-'+id);
+  if(mainEl) mainEl.style.display='block';
+  window.scrollTo(0,0);
+}
+
+function showSub(id){
+  const pageIdeias = document.getElementById('page-ideias');
+  const mainInicio = document.getElementById('main-inicio');
+  const mainIdeias = document.getElementById('main-ideias');
+  if(mainInicio) mainInicio.style.display='none';
+  if(mainIdeias) mainIdeias.style.display='none';
+  document.querySelectorAll('.subpage').forEach(s=>s.classList.remove('active'));
+  document.getElementById('sub-'+id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function hideSub(id){
+  document.getElementById('sub-'+id).classList.remove('active');
+  const mainInicio = document.getElementById('main-inicio');
+  const mainIdeias = document.getElementById('main-ideias');
+  if(mainInicio && document.getElementById('page-inicio').classList.contains('active')) mainInicio.style.display='block';
+  if(mainIdeias && document.getElementById('page-ideias').classList.contains('active')) mainIdeias.style.display='block';
+  window.scrollTo(0,0);
+}
+
+function toggleUso(id){
+  const el=document.getElementById(id);
+  if(el) el.classList.toggle('open');
+}
+
+function copiar(btn, texto){
+  navigator.clipboard.writeText(texto).then(()=>{
+    const orig=btn.textContent;
+    btn.textContent='✅ Copiado!';
+    setTimeout(()=>btn.textContent=orig,2000);
+  }).catch(()=>{
+    btn.textContent='✅ Copiado!';
+    setTimeout(()=>btn.textContent=orig,2000);
+  });
+}
 </script>
 </body>
 </html>
