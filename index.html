@@ -670,33 +670,20 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
     </div>
   </div>
 
-  <!-- FORMULÁRIO FORMSPREE -->
+  <!-- FORMULÁRIO GOOGLE FORMS -->
   <div class="form-desafio">
     <div class="form-titulo">Enviar postagem</div>
-    <div class="form-sub">Cada envio deve ser de um dia diferente. Máximo 3 envios por participante.</div>
-    <form id="form-desafio" onsubmit="enviarForm(event)">
-      <div class="campo">
-        <label for="arroba">Seu @ do Instagram</label>
-        <input class="campo-inner" type="text" id="arroba" name="arroba" placeholder="@seunome" required>
-      </div>
-      <div class="campo">
-        <label for="cpf">CPF cadastrado</label>
-        <input class="campo-inner" type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
-      </div>
-      <input type="hidden" name="dia_enviado" id="dia-hidden" value="">
-      <input type="hidden" name="_subject" value="📩 Nova participação — Desafio WhatsApp Le Moritz">
-      <div class="campo">
-        <label>Print da postagem no WhatsApp</label>
-      </div>
-      <div class="upload-area" onclick="document.getElementById('file-input').click()">
-        <div class="upload-i">📤</div>
-        <span id="file-label">Toque para enviar o print</span>
-        <small>1 print por envio · dias diferentes</small>
-      </div>
-      <input type="file" id="file-input" name="print_postagem" accept="image/*" style="display:none" onchange="onFile(this)" required>
-      <button type="submit" class="btn-env" id="btn-enviar">📩 Enviar este dia</button>
-      <div class="msg-feedback" id="msg-feedback"></div>
-    </form>
+    <div class="form-sub">Toque no botão abaixo para abrir o formulário. Preencha seu @, CPF e envie o print da postagem. Cada envio deve ser de um dia diferente.</div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSceNt_G6NTS9ClJ0xuRkrWpFE9Si7xnzLu0igONFSAW6Nu1pw/viewform" target="_blank" class="btn-env" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px">
+      📩 Abrir formulário de envio
+    </a>
+    <div style="margin-top:12px;background:#F0FDF4;border-radius:10px;padding:12px 14px;font-size:13px;color:#166534;line-height:1.6">
+      ✅ Após enviar o formulário, volte aqui e marque o dia como enviado.
+    </div>
+    <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+      <button class="btn-env" style="background:#F4F2FA;color:#3B1F6E;border:1.5px solid #D4A0A0;font-size:14px;padding:13px" onclick="marcarDia()">✓ Marquei — registrar meu dia</button>
+    </div>
+    <div class="msg-feedback" id="msg-feedback"></div>
   </div>
 
   <div class="res-aviso">
@@ -923,34 +910,14 @@ function togglePremio(){
   tap.innerHTML=isOpen?'▾ <span class="arr">toque para saber mais</span>':'▴ <span class="arr">fechar</span>';
 }
 
-function onFile(input){
-  if(input.files&&input.files[0]){
-    document.getElementById('file-label').textContent='✓ '+input.files[0].name;
-  }
-}
-
-async function enviarForm(e){
-  e.preventDefault();
+function marcarDia(){
   const diaEnviar = !estado.d1?1:!estado.d2?2:!estado.d3?3:0;
-  if(diaEnviar===0){ showMsg('erro','Você já enviou as 3 postagens!'); return; }
-  const btn=document.getElementById('btn-enviar');
-  btn.disabled=true; btn.textContent='Enviando...';
-  const form=document.getElementById('form-desafio');
-  const data=new FormData(form);
-  try {
-    const res=await fetch('https://formspree.io/f/mqejveyz',{method:'POST',body:data,headers:{Accept:'application/json'}});
-    if(res.ok){
-      if(diaEnviar===1) estado.d1=true;
-      else if(diaEnviar===2) estado.d2=true;
-      else estado.d3=true;
-      atualizarProgresso();
-      showMsg('ok','Dia '+diaEnviar+' registrado! Print enviado para a equipe ⭐');
-      document.getElementById('file-input').value='';
-      document.getElementById('file-label').textContent='Toque para enviar o print';
-      form.reset();
-    } else { showMsg('erro','Erro ao enviar. Tente novamente.'); }
-  } catch(err){ showMsg('erro','Sem conexão. Verifique a internet e tente novamente.'); }
-  btn.disabled=false; btn.textContent='📩 Enviar este dia';
+  if(diaEnviar===0){ showMsg('erro','Você já registrou as 3 postagens!'); return; }
+  if(diaEnviar===1) estado.d1=true;
+  else if(diaEnviar===2) estado.d2=true;
+  else estado.d3=true;
+  atualizarProgresso();
+  showMsg('ok','Dia '+diaEnviar+' registrado! Não esqueça de enviar o formulário com o print.');
 }
 
 function showMsg(tipo,txt){
