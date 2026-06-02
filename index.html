@@ -4,331 +4,305 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portal Le Moritz · Cliente Embaixadora</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'DM Sans', sans-serif; background: #F4F2FA; color: #1a1a1a; min-height: 100vh; font-size: 15px; }
-.header { background: #3B1F6E; padding: 22px 20px 18px; text-align: center; }
-.header-badge { display: inline-block; background: rgba(212,160,160,0.2); color: #D4A0A0; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.06em; margin-bottom: 10px; border: 0.5px solid rgba(212,160,160,0.3); }
-.header-logo { width: 40px; height: 40px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
-.header-logo span { color: #D4A0A0; font-size: 14px; font-weight: 500; font-family: 'Cormorant Garamond', serif; }
-.header h1 { color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 4px; }
-.header p { color: #C4B0F0; font-size: 14px; }
+body { font-family: 'Montserrat', sans-serif; background: #F4F2FA; color: #1a1a1a; min-height: 100vh; font-size: 15px; }
+
+/* ── HEADER ── */
+.header { background: #3B1F6E; padding: 22px 20px 16px; text-align: center; }
+.header-logo-main { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #fff; letter-spacing: 5px; }
+.header-logo-line { width: 140px; height: 0.5px; background: rgba(255,255,255,0.25); margin: 5px auto; }
+.header-logo-sub { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 3px; margin-bottom: 12px; }
+.header-badge { display: inline-block; background: rgba(212,160,160,0.2); color: #D4A0A0; font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 20px; letter-spacing: 0.04em; margin-bottom: 8px; border: 0.5px solid rgba(212,160,160,0.3); }
+.header h1 { color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.header p { color: #C4B0F0; font-size: 13px; font-weight: 600; }
+
+/* ── NAV ── */
 .nav { background: #2E1759; display: flex; overflow-x: auto; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 100; }
 .nav::-webkit-scrollbar { display: none; }
-.nav-item { padding: 13px 15px; font-size: 13px; font-weight: 500; color: #B09EDA; white-space: nowrap; border-bottom: 2px solid transparent; cursor: pointer; transition: color 0.2s; }
+.nav-item { padding: 14px 16px; font-size: 13px; font-weight: 700; color: #B09EDA; white-space: nowrap; border-bottom: 2px solid transparent; cursor: pointer; transition: color 0.2s; font-family: 'Montserrat', sans-serif; }
 .nav-item.active { color: #fff; border-bottom-color: #D4A0A0; }
+
+/* ── PAGES ── */
 .page { display: none; padding: 18px; max-width: 600px; margin: 0 auto; animation: fadeUp 0.3s ease; }
 .page.active { display: block; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 .subpage { display: none; }
 .subpage.active { display: block; }
+
+/* ── CARDS ── */
 .card { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 16px; margin-bottom: 12px; }
 .card-h { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.ci { width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-.ct { font-size: 15px; font-weight: 500; font-family: 'Cormorant Garamond', serif; }
-.cs { font-size: 12px; color: #999; }
-.ctxt { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px; }
-.dica { background: #EDE9FE; border-radius: 8px; padding: 10px 12px; font-size: 13px; color: #5B21B6; display: flex; gap: 7px; line-height: 1.6; margin-top: 8px; }
-.dica-gold { background: #FFFBEB; border-radius: 8px; padding: 10px 12px; font-size: 13px; color: #92620A; display: flex; gap: 7px; line-height: 1.6; margin-top: 8px; }
-.seclabel { font-size: 12px; font-weight: 500; color: #7C3AED; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
+.ci { width: 44px; height: 44px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.ct { font-size: 16px; font-weight: 700; font-family: 'Cormorant Garamond', serif; }
+.cs { font-size: 12px; color: #999; font-weight: 600; }
+.ctxt { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px; font-weight: 600; }
+.dica { background: #EDE9FE; border-radius: 8px; padding: 10px 12px; font-size: 13px; color: #5B21B6; display: flex; gap: 7px; line-height: 1.6; margin-top: 8px; font-weight: 600; }
+.dica-gold { background: #FFFBEB; border-radius: 8px; padding: 10px 12px; font-size: 13px; color: #92620A; display: flex; gap: 7px; line-height: 1.6; margin-top: 8px; font-weight: 600; }
+.seclabel { font-size: 12px; font-weight: 700; color: #7C3AED; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
 .seclabel.verde { color: #166534; }
 .divider { height: 0.5px; background: #E5E0F8; margin: 12px 0; }
-.tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+.tag { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
 .tag-roxo { background: rgba(212,160,160,0.15); color: #D4A0A0; border: 0.5px solid rgba(212,160,160,0.3); }
-.welcome { background: #fff; border-radius: 14px; border: 0.5px solid #DDD6FE; padding: 18px; margin-bottom: 18px; }
-.welcome h2 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 8px; }
-.welcome p { font-size: 14px; color: #777; line-height: 1.7; }
-.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+
+/* ── WELCOME ── */
+.welcome { background: #fff; border-radius: 14px; border: 0.5px solid #DDD6FE; padding: 18px; margin-bottom: 16px; }
+.welcome h2 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+.welcome p { font-size: 14px; color: #777; line-height: 1.7; font-weight: 600; }
+
+/* ── BANNER DESAFIO ATIVO (Início) ── */
+.desafio-ativo-banner { background: linear-gradient(135deg, #1A0A44, #3B1F6E); border-radius: 14px; padding: 18px; margin-bottom: 16px; position: relative; overflow: hidden; }
+.desafio-ativo-banner::before { content: ''; position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; border-radius: 50%; background: rgba(212,160,160,0.12); }
+.dab-tag { display: inline-block; background: rgba(212,160,160,0.18); border: 0.5px solid rgba(212,160,160,0.5); color: #D4A0A0; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.8px; }
+.dab-titulo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
+.dab-premio { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.8); margin-bottom: 12px; }
+.dab-premio span { color: #D4A0A0; }
+.dab-btn { display: block; background: #D4A0A0; color: #fff; text-align: center; border-radius: 10px; padding: 13px; font-size: 14px; font-weight: 700; cursor: pointer; }
+
+/* ── GRID ── */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
 .gc { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 16px; text-align: center; cursor: pointer; transition: border-color 0.2s; }
 .gc:hover { border-color: #D4A0A0; }
 .gc-i { font-size: 26px; margin-bottom: 10px; }
-.gc-t { font-size: 14px; font-weight: 500; font-family: 'Cormorant Garamond', serif; }
-.gc-s { font-size: 12px; color: #aaa; margin-top: 4px; }
-.back-btn { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #7C3AED; cursor: pointer; margin-bottom: 18px; font-weight: 500; }
+.gc-t { font-size: 15px; font-weight: 700; font-family: 'Cormorant Garamond', serif; }
+.gc-s { font-size: 12px; color: #aaa; margin-top: 4px; font-weight: 600; }
+
+/* ── BACK BTN ── */
+.back-btn { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #7C3AED; cursor: pointer; margin-bottom: 18px; font-weight: 700; }
 .back-btn.verde { color: #166534; }
+
+/* ── SUBHEADERS ── */
 .subheader { border-radius: 12px; padding: 18px; margin-bottom: 18px; }
 .subheader.roxo { background: #EDE9FE; }
 .subheader.verde { background: #DCFCE7; }
 .subheader.gold { background: #FEF3C7; }
 .subheader.rosa { background: #FEE2E2; }
 .subheader-icon { font-size: 30px; margin-bottom: 10px; }
-.subheader-titulo { font-size: 20px; font-weight: 600; font-family: 'Cormorant Garamond', serif; margin-bottom: 6px; }
-.subheader-desc { font-size: 14px; color: #555; line-height: 1.6; }
+.subheader-titulo { font-size: 20px; font-weight: 700; font-family: 'Cormorant Garamond', serif; margin-bottom: 6px; }
+.subheader-desc { font-size: 14px; color: #555; line-height: 1.6; font-weight: 600; }
+
+/* ── STEPS ── */
 .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
-.snum { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #fff; flex-shrink: 0; margin-top: 2px; }
-.sn-gold { background: #C9A84C; }
-.sn-ig { background: #E11D48; }
-.sn-fb { background: #1877F2; }
-.sn-tt { background: #1a1a1a; }
-.sn-wa { background: #128C7E; }
-.sn-roxo { background: #3B1F6E; }
-.sn-pink { background: #D4537E; }
-.stxt h3 { font-size: 14px; font-weight: 500; margin-bottom: 3px; font-family: 'Cormorant Garamond', serif; }
-.stxt p { font-size: 13px; color: #666; line-height: 1.5; }
+.snum { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; margin-top: 2px; }
+.sn-gold { background: #C9A84C; } .sn-ig { background: #E11D48; } .sn-fb { background: #1877F2; }
+.sn-tt { background: #1a1a1a; } .sn-wa { background: #128C7E; } .sn-roxo { background: #3B1F6E; } .sn-pink { background: #D4537E; }
+.stxt h3 { font-size: 14px; font-weight: 700; margin-bottom: 3px; font-family: 'Cormorant Garamond', serif; }
+.stxt p { font-size: 13px; color: #666; line-height: 1.5; font-weight: 600; }
 .tela { background: #F8F6FF; border-radius: 7px; padding: 7px 10px; margin-top: 6px; display: flex; align-items: center; justify-content: space-between; }
-.tela span { font-size: 12px; color: #666; }
-.tbadge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
-.tb-roxo { background: #EDE9FE; color: #5B21B6; }
-.tb-verde { background: #DCFCE7; color: #166534; }
+.tela span { font-size: 12px; color: #666; font-weight: 600; }
+.tbadge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+.tb-roxo { background: #EDE9FE; color: #5B21B6; } .tb-verde { background: #DCFCE7; color: #166534; }
+
+/* ── MURAL CARDS ── */
 .mural-card-link { border-radius: 12px; padding: 16px; cursor: pointer; margin-bottom: 0; }
 .mc1 { background: #EDE9FE; } .mc2 { background: #DCFCE7; } .mc3 { background: #FEF3C7; } .mc4 { background: #FEE2E2; }
 .mc-icon { font-size: 24px; margin-bottom: 10px; }
-.mc-titulo { font-size: 14px; font-weight: 600; font-family: 'Cormorant Garamond', serif; color: #1a1a1a; margin-bottom: 4px; }
-.mc-sub { font-size: 12px; color: #555; line-height: 1.4; }
-.mc-ler { font-size: 12px; color: #7C3AED; font-weight: 500; margin-top: 10px; }
-.script-box { background: #F8F6FF; border-radius: 10px; border: 0.5px solid #DDD6FE; padding: 14px; font-size: 14px; color: #444; line-height: 1.7; font-style: italic; margin-bottom: 12px; }
-.copy-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #7C3AED; font-weight: 500; background: none; border: none; cursor: pointer; margin-bottom: 12px; }
+.mc-titulo { font-size: 15px; font-weight: 700; font-family: 'Cormorant Garamond', serif; color: #1a1a1a; margin-bottom: 4px; }
+.mc-sub { font-size: 12px; color: #555; line-height: 1.4; font-weight: 600; }
+.mc-ler { font-size: 12px; color: #7C3AED; font-weight: 700; margin-top: 10px; }
+
+/* ── SCRIPTS ── */
+.script-box { background: #F8F6FF; border-radius: 10px; border: 0.5px solid #DDD6FE; padding: 14px; font-size: 14px; color: #444; line-height: 1.7; font-style: italic; margin-bottom: 12px; font-weight: 600; }
+.copy-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #7C3AED; font-weight: 700; background: none; border: none; cursor: pointer; margin-bottom: 12px; font-family: 'Montserrat', sans-serif; }
+
+/* ── ACCORDION ── */
 .acc { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; margin-bottom: 12px; overflow: hidden; }
 .acc-header { padding: 16px; display: flex; align-items: center; gap: 14px; cursor: pointer; }
 .acc-icon { width: 44px; height: 44px; border-radius: 11px; background: #EDE9FE; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-.acc-titulo { font-size: 15px; font-weight: 500; font-family: 'Cormorant Garamond', serif; }
-.acc-sub { font-size: 12px; color: #aaa; }
+.acc-titulo { font-size: 16px; font-weight: 700; font-family: 'Cormorant Garamond', serif; }
+.acc-sub { font-size: 12px; color: #aaa; font-weight: 600; }
 .acc-arrow { color: #D4A0A0; margin-left: auto; font-size: 20px; transition: transform 0.2s; }
 .acc.open .acc-arrow { transform: rotate(90deg); }
 .acc-content { display: none; padding: 0 16px 16px; border-top: 0.5px solid #F0EDF8; }
 .acc.open .acc-content { display: block; }
+
+/* ── PRODUTOS ── */
 .prod { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; display: flex; align-items: center; margin-bottom: 10px; overflow: hidden; }
 .prod-img { width: 70px; height: 70px; background: #FAF8FF; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
 .prod-body { flex: 1; padding: 12px 14px; }
-.prod-nome { font-size: 14px; font-weight: 500; font-family: 'Cormorant Garamond', serif; margin-bottom: 3px; }
-.prod-desc { font-size: 12px; color: #999; margin-bottom: 8px; }
-.prod-btn { background: #1a1a1a; color: #fff; border: none; border-radius: 7px; padding: 6px 12px; font-size: 12px; font-weight: 500; cursor: pointer; }
+.prod-nome { font-size: 15px; font-weight: 700; font-family: 'Cormorant Garamond', serif; margin-bottom: 3px; }
+.prod-desc { font-size: 12px; color: #999; margin-bottom: 8px; font-weight: 600; }
+.prod-btn { background: #1a1a1a; color: #fff; border: none; border-radius: 7px; padding: 7px 14px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'Montserrat', sans-serif; }
 .prod-uso { display: none; background: #F8F6FF; border-top: 0.5px solid #E5E0F8; padding: 14px; }
 .prod-uso.open { display: block; }
 .uso-step { display: flex; gap: 10px; margin-bottom: 10px; }
-.uso-num { width: 22px; height: 22px; background: #3B1F6E; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
-.uso-txt { font-size: 13px; color: #555; line-height: 1.6; }
-.site-btn { display: block; background: #3B1F6E; color: #fff; text-align: center; border-radius: 10px; padding: 14px; font-size: 14px; font-weight: 500; text-decoration: none; margin: 10px 0; }
+.uso-num { width: 24px; height: 24px; background: #3B1F6E; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.uso-txt { font-size: 13px; color: #555; line-height: 1.6; font-weight: 600; }
+.site-btn { display: block; background: #3B1F6E; color: #fff; text-align: center; border-radius: 10px; padding: 14px; font-size: 14px; font-weight: 700; text-decoration: none; margin: 10px 0; }
+
+/* ── RANKING/VENDAS ── */
 .ranking { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; overflow: hidden; }
-.rh { display: grid; grid-template-columns: 36px 1fr 100px; padding: 11px 16px; background: #3B1F6E; gap: 4px; }
-.rh span { font-size: 11px; color: #D4C8F5; text-transform: uppercase; font-weight: 500; }
+.rh { display: grid; grid-template-columns: 36px 1fr 100px; padding: 12px 16px; background: #3B1F6E; gap: 4px; }
+.rh span { font-size: 11px; color: #D4C8F5; text-transform: uppercase; font-weight: 700; }
 .rh span:last-child { text-align: right; }
-.rrow { display: grid; grid-template-columns: 36px 1fr 100px; padding: 13px 16px; border-bottom: 0.5px solid #F0EDF8; align-items: center; gap: 4px; }
+.rrow { display: grid; grid-template-columns: 36px 1fr 100px; padding: 14px 16px; border-bottom: 0.5px solid #F0EDF8; align-items: center; gap: 4px; }
 .rrow:last-child { border-bottom: none; }
 .rrow.zerado { opacity: 0.4; }
-.rpos { width: 26px; height: 26px; border-radius: 50%; background: #F0EDF8; color: #999; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
-.rnome { font-size: 13px; font-weight: 500; font-family: 'Cormorant Garamond', serif; }
-.rcup { font-size: 11px; color: #bbb; }
-.rcom { font-size: 13px; font-weight: 500; text-align: right; color: #2d8a5e; font-family: 'Cormorant Garamond', serif; }
-.rzero { color: #ddd; text-align: right; font-size: 13px; }
-.case-dest { background: linear-gradient(135deg, #3B1F6E, #6B3FA0); border-radius: 14px; padding: 18px; margin-bottom: 12px; }
-.case-tag { display: inline-block; background: #D4A0A0; color: #fff; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 10px; margin-bottom: 12px; }
-.case-nome { color: #fff; font-size: 18px; font-weight: 600; font-family: 'Cormorant Garamond', serif; margin-bottom: 4px; }
-.case-sub { color: #C4B0F0; font-size: 12px; margin-bottom: 14px; }
-.case-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
-.cstat { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; text-align: center; }
-.cstat-v { font-size: 20px; font-weight: 500; color: #D4A0A0; font-family: 'Cormorant Garamond', serif; }
-.cstat-l { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 3px; }
-.case-txt { font-size: 13px; color: #C4B0F0; line-height: 1.7; font-style: italic; border-left: 2px solid rgba(212,160,160,0.4); padding-left: 12px; }
-.case-mini { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 14px 16px; margin-bottom: 10px; display: flex; align-items: center; gap: 14px; }
-.cm-av { width: 42px; height: 42px; border-radius: 50%; background: #EDE9FE; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-.cm-nome { font-size: 15px; font-weight: 500; font-family: 'Cormorant Garamond', serif; }
-.cm-sub { font-size: 12px; color: #999; }
-.cm-val { text-align: right; margin-left: auto; }
-.cm-com { font-size: 16px; font-weight: 500; color: #2d8a5e; font-family: 'Cormorant Garamond', serif; }
-.cm-l { font-size: 11px; color: #bbb; }
+.rpos { width: 28px; height: 28px; border-radius: 50%; background: #F0EDF8; color: #999; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+.rnome { font-size: 14px; font-weight: 700; font-family: 'Cormorant Garamond', serif; }
+.rcup { font-size: 12px; color: #bbb; font-weight: 600; }
+.rcom { font-size: 14px; font-weight: 700; text-align: right; color: #2d8a5e; font-family: 'Cormorant Garamond', serif; }
+.rzero { color: #ddd; text-align: right; font-size: 13px; font-weight: 600; }
+
+/* ── RANKING (aba) ── */
+.rank-dest { background: linear-gradient(135deg, #3B1F6E, #6B3FA0); border-radius: 14px; padding: 18px; margin-bottom: 12px; }
+.rank-tag { display: inline-block; background: #D4A0A0; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; margin-bottom: 12px; }
+.rank-nome { color: #fff; font-size: 20px; font-weight: 700; font-family: 'Cormorant Garamond', serif; margin-bottom: 4px; }
+.rank-sub { color: #C4B0F0; font-size: 12px; margin-bottom: 14px; font-weight: 600; }
+.rank-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.rstat { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; text-align: center; }
+.rstat-v { font-size: 22px; font-weight: 700; color: #D4A0A0; font-family: 'Cormorant Garamond', serif; }
+.rstat-l { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 3px; font-weight: 600; }
+.rank-txt { font-size: 13px; color: #C4B0F0; line-height: 1.7; font-style: italic; border-left: 2px solid rgba(212,160,160,0.4); padding-left: 12px; font-weight: 600; }
+.rank-mini { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 14px 16px; margin-bottom: 10px; display: flex; align-items: center; gap: 14px; }
+.rm-av { width: 44px; height: 44px; border-radius: 50%; background: #EDE9FE; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.rm-nome { font-size: 16px; font-weight: 700; font-family: 'Cormorant Garamond', serif; }
+.rm-sub { font-size: 12px; color: #999; font-weight: 600; }
+.rm-val { text-align: right; margin-left: auto; }
+.rm-com { font-size: 18px; font-weight: 700; color: #2d8a5e; font-family: 'Cormorant Garamond', serif; }
+.rm-l { font-size: 11px; color: #bbb; font-weight: 600; }
+
+/* ── CIÊNCIA ── */
 .derma-topo { background: #F0FDF4; padding: 16px; display: flex; align-items: center; gap: 14px; border-bottom: 0.5px solid #D1FAE5; border-radius: 12px 12px 0 0; }
-.derma-av { width: 52px; height: 52px; border-radius: 50%; background: #1B4332; display: flex; align-items: center; justify-content: center; font-size: 24px; border: 2px solid #6EE7B7; flex-shrink: 0; }
-.derma-nome { font-size: 16px; font-weight: 600; font-family: 'Cormorant Garamond', serif; margin-bottom: 3px; }
-.derma-cargo { font-size: 12px; color: #999; margin-bottom: 6px; }
-.derma-badge { display: inline-block; background: #DCFCE7; color: #166534; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 10px; }
+.derma-av { width: 54px; height: 54px; border-radius: 50%; background: #1B4332; display: flex; align-items: center; justify-content: center; font-size: 26px; border: 2px solid #6EE7B7; flex-shrink: 0; }
+.derma-nome { font-size: 17px; font-weight: 700; font-family: 'Cormorant Garamond', serif; margin-bottom: 3px; }
+.derma-cargo { font-size: 12px; color: #999; margin-bottom: 6px; font-weight: 600; }
+.derma-badge { display: inline-block; background: #DCFCE7; color: #166534; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; }
 .ativo { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 14px; margin-bottom: 10px; display: flex; gap: 14px; }
-.ativo-i { width: 42px; height: 42px; border-radius: 10px; background: #F0FDF4; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-.ativo-nome { font-size: 14px; font-weight: 500; font-family: 'Cormorant Garamond', serif; margin-bottom: 4px; }
-.ativo-desc { font-size: 13px; color: #666; line-height: 1.6; }
-.ativo-tag { display: inline-block; background: #F0FDF4; color: #166534; font-size: 11px; padding: 2px 8px; border-radius: 8px; margin-top: 5px; }
+.ativo-i { width: 44px; height: 44px; border-radius: 10px; background: #F0FDF4; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.ativo-nome { font-size: 15px; font-weight: 700; font-family: 'Cormorant Garamond', serif; margin-bottom: 4px; }
+.ativo-desc { font-size: 13px; color: #666; line-height: 1.6; font-weight: 600; }
+.ativo-tag { display: inline-block; background: #F0FDF4; color: #166534; font-size: 11px; padding: 2px 8px; border-radius: 8px; margin-top: 5px; font-weight: 700; }
 .alt-card { background: #F8F6FF; border-radius: 9px; padding: 12px 14px; margin-bottom: 8px; }
-.alt-titulo { font-size: 13px; font-weight: 500; color: #3B1F6E; font-family: 'Cormorant Garamond', serif; margin-bottom: 6px; }
-.alt-step { display: flex; gap: 8px; align-items: center; font-size: 13px; color: #555; margin-bottom: 5px; }
+.alt-titulo { font-size: 14px; font-weight: 700; color: #3B1F6E; font-family: 'Cormorant Garamond', serif; margin-bottom: 6px; }
+.alt-step { display: flex; gap: 8px; align-items: center; font-size: 13px; color: #555; margin-bottom: 5px; font-weight: 600; }
 .dot { width: 5px; height: 5px; border-radius: 50%; background: #7C3AED; flex-shrink: 0; }
 .ideia-item { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 14px; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start; }
 .ideia-icon { font-size: 22px; flex-shrink: 0; }
-.ideia-body h3 { font-size: 14px; font-weight: 500; font-family: 'Cormorant Garamond', serif; margin-bottom: 4px; }
-.ideia-body p { font-size: 13px; color: #666; line-height: 1.5; }
+.ideia-body h3 { font-size: 15px; font-weight: 700; font-family: 'Cormorant Garamond', serif; margin-bottom: 4px; }
+.ideia-body p { font-size: 13px; color: #666; line-height: 1.5; font-weight: 600; }
 .angulo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
 .angulo-item { background: #F8F6FF; border-radius: 9px; padding: 12px; text-align: center; }
 .angulo-icon { font-size: 22px; margin-bottom: 6px; }
-.angulo-titulo { font-size: 13px; font-weight: 500; font-family: 'Cormorant Garamond', serif; margin-bottom: 3px; }
-.angulo-desc { font-size: 12px; color: #666; line-height: 1.4; }
-.cupom-compare { display: flex; gap: 12px; margin-bottom: 12px; }
-.cc { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px; }
-.cc-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 10px; display: inline-block; }
-.cc-ok { background: #DCFCE7; color: #166534; } .cc-no { background: #FEE2E2; color: #991B1B; }
-.phone-mini { width: 100%; height: 100px; background: #2E1759; border-radius: 10px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.pm-emoji { font-size: 28px; }
-.pm-ok { position: absolute; bottom: 8px; left: 8px; right: 8px; background: rgba(255,255,255,0.15); border-radius: 6px; padding: 5px 9px; border: 0.5px solid rgba(255,255,255,0.25); }
-.pm-ok .cl { font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase; }
-.pm-ok .cv { font-size: 13px; color: #fff; font-weight: 500; }
-.pm-no { position: absolute; bottom: 20px; background: #FFD700; border-radius: 4px; padding: 5px 9px; }
-.pm-no span { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+.angulo-titulo { font-size: 13px; font-weight: 700; font-family: 'Cormorant Garamond', serif; margin-bottom: 3px; }
+.angulo-desc { font-size: 12px; color: #666; line-height: 1.4; font-weight: 600; }
 .bubbles { display: flex; flex-direction: column; gap: 10px; }
-.local { display: inline-block; background: #F4F2FA; border-radius: 6px; padding: 3px 9px; font-size: 11px; color: #666; margin-bottom: 5px; }
+.local { display: inline-block; background: #F4F2FA; border-radius: 6px; padding: 3px 9px; font-size: 11px; color: #666; margin-bottom: 5px; font-weight: 600; }
 .brow { display: flex; gap: 8px; align-items: flex-end; }
 .brow.right { justify-content: flex-end; }
-.av { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; background: #EDE9FE; flex-shrink: 0; }
+.av { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; background: #EDE9FE; flex-shrink: 0; }
 .av2 { background: #FEE2E2; }
-.bubble { background: #F4F2FA; border-radius: 10px 10px 10px 2px; padding: 9px 12px; font-size: 13px; color: #1a1a1a; line-height: 1.5; max-width: 200px; }
+.bubble { background: #F4F2FA; border-radius: 10px 10px 10px 2px; padding: 10px 12px; font-size: 13px; color: #1a1a1a; line-height: 1.5; max-width: 200px; font-weight: 600; }
 .bubble.right { background: #EDE9FE; border-radius: 10px 10px 2px 10px; }
 .video-card { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; overflow: hidden; margin-bottom: 10px; cursor: pointer; text-decoration: none; display: block; }
 .video-thumb { height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; position: relative; }
 .vt-roxo { background: linear-gradient(135deg, #3B1F6E, #6B3FA0); }
 .vt-rosa { background: linear-gradient(135deg, #D4537E, #9B2335); }
 .vt-ig { background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040); }
-.vt-verde { background: linear-gradient(135deg, #1B4332, #2D6A4F); }
 .video-play { width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(255,255,255,0.4); }
 .video-play span { font-size: 20px; margin-left: 3px; }
-.video-plat { position: absolute; top: 9px; right: 11px; background: rgba(0,0,0,0.4); color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+.video-plat { position: absolute; top: 9px; right: 11px; background: rgba(0,0,0,0.4); color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 6px; font-weight: 700; }
 .video-emoji { position: absolute; top: 11px; left: 13px; font-size: 22px; }
 .video-body { padding: 12px 16px; }
-.video-titulo { font-size: 14px; font-weight: 500; font-family: 'Cormorant Garamond', serif; color: #1a1a1a; margin-bottom: 4px; }
-.video-sub { font-size: 12px; color: #999; }
-.video-tag { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 9px; border-radius: 10px; margin-top: 6px; }
+.video-titulo { font-size: 15px; font-weight: 700; font-family: 'Cormorant Garamond', serif; color: #1a1a1a; margin-bottom: 4px; }
+.video-sub { font-size: 12px; color: #999; font-weight: 600; }
+.video-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 10px; margin-top: 6px; }
 .vt-yt { background: #FEE2E2; color: #991B1B; }
 .vt-ig2 { background: #FDF4FF; color: #833AB4; }
-.video-intro { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 14px; margin-bottom: 12px; font-size: 14px; color: #555; line-height: 1.6; }
+.video-intro { background: #fff; border-radius: 12px; border: 0.5px solid #E5E0F8; padding: 14px; margin-bottom: 12px; font-size: 14px; color: #555; line-height: 1.6; font-weight: 600; }
 
-/* ═══ DESAFIO ═══ */
+/* ── DESAFIOS ── */
 .desafio-banner { background: linear-gradient(160deg,#1A0A44,#3B1F6E 60%,#6B3FA0); padding: 26px 20px 22px; position: relative; overflow: hidden; }
 .desafio-banner::before { content:''; position:absolute; top:-30px; right:-30px; width:110px; height:110px; border-radius:50%; background:rgba(212,160,160,0.1); }
-.desafio-banner::after { content:''; position:absolute; bottom:-20px; left:-20px; width:80px; height:80px; border-radius:50%; background:rgba(212,160,160,0.06); }
-.desafio-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(212,160,160,0.18); border: 0.5px solid rgba(212,160,160,0.5); color: #D4A0A0; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; }
-.desafio-titulo { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #fff; font-weight: 600; line-height: 1.2; margin-bottom: 8px; }
+.desafio-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(212,160,160,0.18); border: 0.5px solid rgba(212,160,160,0.5); color: #D4A0A0; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.desafio-titulo { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #fff; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
 .desafio-titulo span { color: #D4A0A0; }
-.desafio-sub { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.6; }
+.desafio-sub { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.6; font-weight: 600; }
 .prazo-row { display: flex; gap: 12px; padding: 16px 18px 0; }
 .prazo-pill { flex: 1; background: #fff; border-radius: 14px; border: 0.5px solid #E5E0F8; padding: 14px; display: flex; align-items: center; gap: 12px; }
 .prazo-ic { width: 40px; height: 40px; border-radius: 12px; background: #EDE9FE; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-.prazo-t { font-size: 12px; color: #999; }
-.prazo-v { font-size: 16px; font-weight: 700; color: #3B1F6E; font-family: 'Cormorant Garamond', serif; }
-.prog-card { margin: 16px 18px 0; background: #fff; border-radius: 16px; border: 0.5px solid #E5E0F8; padding: 20px; }
-.prog-lbl { font-size: 12px; font-weight: 500; color: #7C3AED; text-transform: uppercase; letter-spacing: 0.6px; text-align: center; margin-bottom: 18px; }
-.estrelas { display: flex; justify-content: center; gap: 20px; margin-bottom: 18px; }
-.ew { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.est { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; transition: all 0.3s; }
-.est.on { background: linear-gradient(135deg,#D4A0A0,#E8C0C0); box-shadow: 0 4px 16px rgba(212,160,160,0.35); }
-.est.off { background: #F4F2FA; border: 2px dashed rgba(59,31,110,0.15); }
-.est.off::after { content:'☆'; font-size:26px; color:#C4BAD8; }
-.est-dia { font-size: 12px; font-weight: 600; color: #3B1F6E; font-family: 'Cormorant Garamond', serif; }
-.est-st { font-size: 11px; color: #999; }
-.est-st.ok { color: #2d8a5e; font-weight: 600; }
-.barra-wrap { margin-top: 4px; }
-.barra-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 7px; }
-.barra-row span { color: #999; } .barra-row strong { color: #3B1F6E; font-family: 'Cormorant Garamond', serif; }
-.barra { height: 10px; background: #EDE9FE; border-radius: 10px; overflow: hidden; }
-.barra-fill { height: 100%; border-radius: 10px; background: linear-gradient(90deg,#D4A0A0,#E8C0C0); transition: width 0.6s ease; }
-.dias-sechead { padding: 18px 18px 10px; font-size: 13px; font-weight: 600; color: #3B1F6E; text-transform: uppercase; letter-spacing: 0.6px; font-family: 'Cormorant Garamond', serif; }
-.dias-list { padding: 0 18px; display: flex; flex-direction: column; gap: 10px; }
-.dia-c { background: #fff; border-radius: 14px; border: 1.5px solid #E5E0F8; padding: 16px; display: flex; align-items: center; gap: 14px; }
-.dia-c.done { border-color: rgba(46,125,82,0.3); background: rgba(46,125,82,0.03); }
-.dia-c.active { border-color: rgba(212,160,160,0.5); }
-.dia-n { width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; flex-shrink: 0; font-family: 'Cormorant Garamond', serif; }
-.dia-n.done { background: #2d8a5e; color: #fff; }
-.dia-n.active { background: #3B1F6E; color: #fff; }
-.dia-n.lock { background: #F4F2FA; color: #C4BAD8; }
-.dia-nome { font-size: 15px; font-weight: 600; color: #3B1F6E; font-family: 'Cormorant Garamond', serif; }
-.dia-desc { font-size: 12px; color: #999; margin-top: 2px; }
-.dia-badge { font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-left: auto; flex-shrink: 0; }
-.dia-badge.done { background: rgba(46,125,82,0.1); color: #2d8a5e; }
-.dia-badge.active { background: rgba(212,160,160,0.15); color: #D4A0A0; }
-.dia-badge.lock { background: #F4F2FA; color: #C4BAD8; }
+.prazo-t { font-size: 12px; color: #999; font-weight: 700; }
+.prazo-v { font-size: 16px; font-weight: 700; color: #3B1F6E; font-family: 'Montserrat', sans-serif; }
 
-/* PRÊMIO ACCORDION */
-.premio-wrap { margin: 16px 18px 0; }
-.premio-c { background: #3B1F6E; border-radius: 16px; padding: 18px; display: flex; gap: 14px; align-items: center; cursor: pointer; position: relative; overflow: hidden; transition: border-radius 0.2s; }
-.premio-c.open { border-radius: 16px 16px 0 0; }
-.premio-c::after { content:''; position:absolute; top:-15px; right:-15px; width:80px; height:80px; border-radius:50%; background:rgba(212,160,160,0.1); }
-.premio-ic { width: 52px; height: 52px; border-radius: 14px; background: rgba(212,160,160,0.15); border: 1px solid rgba(212,160,160,0.3); display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; }
-.premio-lbl { font-size: 11px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
-.premio-nome { font-size: 17px; font-weight: 600; color: #fff; font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
-.premio-preco { font-size: 12px; color: #D4A0A0; margin-top: 3px; }
-.premio-tap { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 6px; display: flex; align-items: center; gap: 4px; }
-.premio-tap .arr { transition: transform 0.2s; display: inline-block; }
-.premio-tap.open .arr { transform: rotate(90deg); }
-.pdots { display: flex; align-items: center; gap: 5px; margin-top: 6px; }
-.pdot { width: 9px; height: 9px; border-radius: 50%; }
-.pdot.on { background: #D4A0A0; } .pdot.off { background: rgba(255,255,255,0.2); }
-.pdots span { font-size: 11px; color: rgba(255,255,255,0.5); margin-left: 3px; }
-.premio-body { display: none; background: #F0FDF4; border-radius: 0 0 16px 16px; border: 0.5px solid #BBF7D0; border-top: none; padding: 18px; }
-.premio-body.open { display: block; }
-.tonico-tag { display: inline-block; background: rgba(110,231,183,0.2); border: 0.5px solid rgba(110,231,183,0.4); color: #166534; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-bottom: 10px; letter-spacing: 0.7px; text-transform: uppercase; }
-.sobre-t { font-size: 15px; font-weight: 600; color: #1B4332; font-family: 'Cormorant Garamond', serif; margin-bottom: 8px; }
-.sobre-p { font-size: 13px; color: #374151; line-height: 1.7; margin-bottom: 14px; }
-.ativo-dest { background: linear-gradient(135deg,#1B4332,#0D3B26); border-radius: 12px; padding: 14px; margin-bottom: 14px; }
-.ad-tag { display: inline-block; background: rgba(110,231,183,0.15); border: 0.5px solid rgba(110,231,183,0.3); color: #6EE7B7; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-bottom: 7px; text-transform: uppercase; }
-.ad-nome { font-size: 15px; font-weight: 600; color: #fff; font-family: 'Cormorant Garamond', serif; margin-bottom: 2px; }
-.ad-cient { font-size: 10px; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 8px; }
-.ad-desc { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.7; }
-.benef-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
-.ben { background: #fff; border-radius: 10px; border: 0.5px solid #D1FAE5; padding: 10px 12px; }
-.ben-num { width: 22px; height: 22px; border-radius: 50%; background: #1B4332; color: #fff; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 5px; }
-.ben-t { font-size: 12px; font-weight: 600; color: #1B4332; font-family: 'Cormorant Garamond', serif; margin-bottom: 2px; }
-.ben-d { font-size: 11px; color: #555; line-height: 1.4; }
-.ver-site-btn { display: block; background: #1B4332; color: #fff; text-align: center; border-radius: 10px; padding: 12px; font-size: 13px; font-weight: 500; text-decoration: none; }
+/* PRÊMIOS */
+.premio-sec { padding: 16px 18px 0; }
+.premio-sec-titulo { font-size: 12px; font-weight: 700; color: #7C3AED; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px; }
+.premios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.premio-card { background: #3B1F6E; border-radius: 12px; padding: 16px; text-align: center; position: relative; overflow: hidden; }
+.premio-card::after { content:''; position:absolute; bottom:-10px; right:-10px; width:50px; height:50px; border-radius:50%; background:rgba(212,160,160,0.1); }
+.premio-emoji { font-size: 28px; margin-bottom: 8px; }
+.premio-nome { font-size: 13px; font-weight: 700; color: #fff; font-family: 'Montserrat', sans-serif; line-height: 1.3; }
+.premio-ptag { display: inline-block; background: rgba(212,160,160,0.2); color: #D4A0A0; font-size: 10px; padding: 2px 8px; border-radius: 8px; margin-top: 6px; font-weight: 700; }
+
+/* REGRAS */
+.regras-card { margin: 16px 18px 0; background: #fff; border-radius: 14px; border: 0.5px solid #E5E0F8; padding: 18px; }
+.regras-titulo { font-size: 18px; font-weight: 700; color: #3B1F6E; font-family: 'Cormorant Garamond', serif; margin-bottom: 14px; }
+.regra { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+.regra:last-child { margin-bottom: 0; }
+.regra-num { width: 28px; height: 28px; border-radius: 50%; background: #3B1F6E; color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.regra-txt { font-size: 14px; font-weight: 600; color: #1a1a1a; line-height: 1.6; }
+.regra-txt strong { color: #3B1F6E; font-weight: 700; }
+
+.aviso-desafio { margin: 14px 18px 0; background: rgba(212,160,160,0.1); border: 0.5px solid rgba(212,160,160,0.35); border-radius: 12px; padding: 14px 16px; }
+.aviso-desafio p { font-size: 14px; font-weight: 700; color: #6B3A3A; line-height: 1.6; }
+
+.btn-participar { margin: 16px 18px 0; display: block; background: #3B1F6E; color: #fff; text-align: center; border-radius: 12px; padding: 16px; font-size: 16px; font-weight: 700; cursor: pointer; }
 
 /* FORM */
 .form-desafio { margin: 16px 18px 0; background: #fff; border-radius: 16px; border: 0.5px solid #E5E0F8; padding: 20px; }
-.form-titulo { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #3B1F6E; margin-bottom: 5px; }
-.form-sub { font-size: 13px; color: #999; margin-bottom: 18px; line-height: 1.6; }
-.campo { margin-bottom: 14px; }
-.campo label { display: block; font-size: 14px; font-weight: 600; color: #3B1F6E; margin-bottom: 7px; font-family: 'Cormorant Garamond', serif; }
-.campo-inner { display: flex; align-items: center; background: #F4F2FA; border: 1.5px solid rgba(59,31,110,0.12); border-radius: 10px; padding: 13px 14px; font-size: 15px; width: 100%; font-family: 'DM Sans', sans-serif; color: #1a1a1a; outline: none; }
-.campo-inner:focus { border-color: #D4A0A0; }
-input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
-.upload-area { background: #F4F2FA; border: 2px dashed rgba(59,31,110,0.18); border-radius: 12px; padding: 22px; text-align: center; cursor: pointer; margin-bottom: 16px; }
-.upload-area:hover { border-color: #D4A0A0; }
-.upload-i { font-size: 32px; margin-bottom: 8px; }
-.upload-area span { font-size: 15px; color: #3B1F6E; font-weight: 600; font-family: 'Cormorant Garamond', serif; display: block; margin-bottom: 4px; }
-.upload-area small { font-size: 12px; color: #999; }
-.btn-env { width: 100%; background: #3B1F6E; color: #fff; border: none; border-radius: 12px; padding: 17px; font-size: 16px; font-weight: 600; font-family: 'Cormorant Garamond', serif; cursor: pointer; transition: background 0.2s; }
-.btn-env:hover { background: #5C3A9E; }
-.btn-env:disabled { background: #aaa; cursor: not-allowed; }
-.msg-feedback { margin-top: 12px; padding: 12px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; display: none; text-align: center; }
+.form-titulo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #3B1F6E; font-weight: 700; margin-bottom: 5px; }
+.form-sub { font-size: 13px; color: #999; margin-bottom: 18px; line-height: 1.6; font-weight: 600; }
+.msg-feedback { margin-top: 12px; padding: 12px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; display: none; text-align: center; }
 .msg-feedback.ok { background: rgba(46,125,82,0.1); color: #2d8a5e; display: block; }
 .msg-feedback.erro { background: rgba(180,50,50,0.1); color: #8B1A1A; display: block; }
-.res-aviso { margin: 16px 18px 24px; background: rgba(212,160,160,0.08); border: 0.5px solid rgba(212,160,160,0.3); border-radius: 14px; padding: 16px; }
-.res-aviso p { font-size: 14px; color: #6B3A3A; line-height: 1.6; }
 
-/* MODAL */
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(27,16,50,0.75); z-index: 200; backdrop-filter: blur(4px); align-items: flex-end; justify-content: center; }
-.modal-overlay.open { display: flex; }
-.modal-sheet { background: #fff; border-radius: 24px 24px 0 0; padding: 28px 24px 48px; width: 100%; max-width: 600px; animation: slideUp 0.3s ease; text-align: center; }
-@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-.modal-handle { width: 40px; height: 4px; background: #E5E0F8; border-radius: 2px; margin: 0 auto 24px; }
-.modal-sheet h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #3B1F6E; margin-bottom: 12px; }
-.modal-sheet p { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 22px; }
-.modal-close { width: 100%; padding: 16px; background: #3B1F6E; color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.res-aviso { margin: 14px 18px 24px; background: rgba(212,160,160,0.08); border: 0.5px solid rgba(212,160,160,0.3); border-radius: 14px; padding: 16px; }
+.res-aviso p { font-size: 14px; color: #6B3A3A; line-height: 1.6; font-weight: 700; }
 
-.rodape { text-align: center; padding: 30px 20px; font-size: 13px; color: #bbb; }
-.rodape a { color: #7C3AED; text-decoration: none; }
+.rodape { text-align: center; padding: 30px 20px; font-size: 13px; color: #bbb; font-weight: 600; }
+.rodape a { color: #7C3AED; text-decoration: none; font-weight: 700; }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <div class="header">
-  <div class="header-logo"><span>LM</span></div>
+  <div class="header-logo-main">LE MORITZ</div>
+  <div class="header-logo-line"></div>
+  <div class="header-logo-sub">SCIENCE & BEAUTY</div>
   <div class="header-badge">✦ Acesso Exclusivo · Cliente Embaixadora</div>
   <h1>Portal Le Moritz</h1>
   <p>Um guia prático para você divulgar, vender e acompanhar seus resultados.</p>
 </div>
 
+<!-- NAV -->
 <div class="nav">
   <div class="nav-item active" onclick="showPage('inicio',this)">Início</div>
+  <div class="nav-item" onclick="showPage('desafios',this)">Desafios</div>
   <div class="nav-item" onclick="showPage('vendas',this)">Vendas</div>
   <div class="nav-item" onclick="showPage('produtos',this)">Produtos</div>
   <div class="nav-item" onclick="showPage('ideias',this)">Ideias</div>
-  <div class="nav-item" onclick="showPage('cases',this)">Cases</div>
   <div class="nav-item" onclick="showPage('ciencia',this)">Ciência & Pele</div>
-  <div class="nav-item" onclick="showPage('desafios',this)">Desafios</div>
+  <div class="nav-item" onclick="showPage('ranking',this)">Ranking</div>
 </div>
 
 <!-- ═══ INÍCIO ═══ -->
 <div class="page active" id="page-inicio">
   <div class="welcome">
     <div class="tag tag-roxo">Bem-vinda</div>
-    <h2>Oi, Cliente Embaixadora! 💜</h2>
+    <h2>Oi, Cliente Embaixadora!</h2>
     <p>Um guia prático para você divulgar, vender e acompanhar seus resultados.</p>
   </div>
+
+  <!-- BANNER DESAFIO ATIVO -->
+  <div class="desafio-ativo-banner">
+    <div class="dab-tag">💝 Desafio ativo agora</div>
+    <div class="dab-titulo">Desafio Dia dos Namorados</div>
+    <div class="dab-premio">Prêmio: <span>Necessaire + Pincel 9 em 1 Le Moritz</span></div>
+    <div class="dab-btn" onclick="showPage('desafios',document.querySelectorAll('.nav-item')[1])">Clique para participar →</div>
+  </div>
+
   <div class="seclabel">Aprenda a vender com seu cupom</div>
   <div id="sub-redes" class="subpage">
     <div class="back-btn" onclick="hideSub('redes')">‹ Voltar</div>
@@ -338,7 +312,7 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
       <div class="step"><div class="snum sn-ig">2</div><div class="stxt"><h3>Escolha a foto ou grave o vídeo</h3><p>Selfie com o produto, produto na mão. Simples assim.</p></div></div>
       <div class="step"><div class="snum sn-ig">3</div><div class="stxt"><h3>Marque @lemoritz_oficial</h3><div class="tela"><span>@lemoritz_oficial</span><span class="tbadge tb-roxo">marcar</span></div></div></div>
       <div class="step"><div class="snum sn-ig">4</div><div class="stxt"><h3>Publique!</h3><div class="tela"><span>Seu story</span><span class="tbadge tb-verde">publicar ✓</span></div></div></div>
-      <div class="dica" style="margin-top:10px"><span>💡</span>Se esqueceu o cupom, coloca nos comentários ou menciona no próximo story.</div>
+      <div class="dica"><span>💡</span>Se esqueceu o cupom, coloca nos comentários ou menciona no próximo story.</div>
     </div>
     <div class="card"><div class="card-h"><div class="ci" style="background:#E3F2FD">📘</div><div><div class="ct">No Facebook</div><div class="cs">Publicação simples</div></div></div>
       <div class="step"><div class="snum sn-fb">1</div><div class="stxt"><h3>Toque em "O que você está pensando?"</h3></div></div>
@@ -349,7 +323,7 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
       <div class="step"><div class="snum sn-tt">1</div><div class="stxt"><h3>Toque no "+" e grave ou escolha um vídeo</h3></div></div>
       <div class="step"><div class="snum sn-tt">2</div><div class="stxt"><h3>15 a 30 segundos já basta</h3></div></div>
       <div class="step"><div class="snum sn-tt">3</div><div class="stxt"><h3>Cupom na legenda e publique</h3><div class="tela"><span>Postar</span><span class="tbadge tb-verde">✓</span></div></div></div>
-      <div class="dica" style="margin-top:10px"><span>💡</span>Fixe um comentário com seu cupom logo depois de publicar.</div>
+      <div class="dica"><span>💡</span>Fixe um comentário com seu cupom logo depois de publicar.</div>
     </div>
   </div>
   <div id="sub-amigas" class="subpage">
@@ -360,18 +334,18 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
       <div class="step"><div class="snum sn-wa">2</div><div class="stxt"><h3>Câmera para foto/vídeo, lápis para texto</h3></div></div>
       <div class="step"><div class="snum sn-wa">3</div><div class="stxt"><h3>Escolha a foto e adicione o cupom</h3></div></div>
       <div class="step"><div class="snum sn-wa">4</div><div class="stxt"><h3>Publique — 24h visível para todos</h3><div class="tela"><span>Enviar para todos</span><span class="tbadge tb-verde">✓</span></div></div></div>
-      <div class="dica" style="margin-top:10px"><span>💡</span>Todo mundo que tem seu número vai ver. É uma forma de divulgar sem precisar chamar ninguém.</div>
+      <div class="dica"><span>💡</span>Todo mundo que tem seu número vai ver.</div>
     </div>
     <div class="card"><div class="card-h"><div class="ci" style="background:#EDE9FE">👯</div><div><div class="ct">Vendendo pessoalmente</div><div class="cs">No trabalho, shopping, vizinha</div></div></div>
       <div class="bubbles">
-        <div class="local">📍 No trabalho ou estudo</div>
+        <div class="local">📍 No trabalho</div>
         <div class="brow"><div class="av">👩</div><div class="bubble">"Você tá com a pele linda! O que você tá usando?"</div></div>
-        <div class="brow right"><div class="bubble right">"É da Le Moritz! Tenho cupom de 10% OFF, te mando o link 💜"</div><div class="av av2">👩</div></div>
+        <div class="brow right"><div class="bubble right">"É da Le Moritz! Tenho cupom de 10% OFF, te mando o link"</div><div class="av av2">👩</div></div>
         <div style="height:8px"></div>
         <div class="local">📍 WhatsApp para vizinha</div>
         <div class="brow"><div class="av av2">👩</div><div class="bubble">"Oi! Lembrei de você. Tenho cupom de 10% na Le Moritz, quer o link?"</div></div>
       </div>
-      <div class="dica" style="margin-top:10px"><span>💡</span>Não precisa parecer que está vendendo. Conta naturalmente, como faria com qualquer produto que você amou.</div>
+      <div class="dica"><span>💡</span>Não precisa parecer que está vendendo. Conta naturalmente.</div>
     </div>
   </div>
   <div id="main-inicio">
@@ -387,10 +361,54 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
       <div class="gc" onclick="showPage('vendas',null)"><div class="gc-i">📊</div><div class="gc-t">Minhas vendas</div><div class="gc-s">Ver ranking</div></div>
       <div class="gc" onclick="showPage('produtos',null)"><div class="gc-i">💄</div><div class="gc-t">Produtos</div><div class="gc-s">Como usar</div></div>
       <div class="gc" onclick="showPage('ideias',null)"><div class="gc-i">💡</div><div class="gc-t">Ideias</div><div class="gc-s">Inspirações</div></div>
-      <div class="gc" onclick="showPage('cases',null)"><div class="gc-i">🏆</div><div class="gc-t">Cases reais</div><div class="gc-s">Histórias</div></div>
+      <div class="gc" onclick="showPage('ranking',null)"><div class="gc-i">🏆</div><div class="gc-t">Ranking</div><div class="gc-s">Resultados</div></div>
     </div>
-    <div style="background:#EDE9FE;border-radius:10px;padding:14px;font-size:14px;color:#5B21B6;line-height:1.6">Você não precisa começar perfeito. Só precisa começar.</div>
+    <div style="background:#EDE9FE;border-radius:10px;padding:14px;font-size:14px;color:#5B21B6;line-height:1.6;font-weight:700">Você não precisa começar perfeito. Só precisa começar.</div>
   </div>
+</div>
+
+<!-- ═══ DESAFIOS ═══ -->
+<div class="page" id="page-desafios">
+  <div class="desafio-banner">
+    <div class="desafio-tag">💝 Desafio ativo</div>
+    <div class="desafio-titulo">Desafio <span>Dia dos Namorados</span></div>
+    <div class="desafio-sub">Venda, poste e ganhe um kit especial Le Moritz.</div>
+  </div>
+  <div class="prazo-row">
+    <div class="prazo-pill"><div class="prazo-ic">📅</div><div><div class="prazo-t">Período</div><div class="prazo-v">2 a 14 de junho</div></div></div>
+    <div class="prazo-pill"><div class="prazo-ic">🎁</div><div><div class="prazo-t">Resultado</div><div class="prazo-v">Dia 15 de junho</div></div></div>
+  </div>
+  <div class="premio-sec">
+    <div class="premio-sec-titulo">Prêmio para quem completar</div>
+    <div class="premios-grid">
+      <div class="premio-card"><div class="premio-emoji">👜</div><div class="premio-nome">Necessaire Le Moritz</div><div class="premio-ptag">Confirmado</div></div>
+      <div class="premio-card"><div class="premio-emoji">🖌️</div><div class="premio-nome">Pincel Multifuncional 9 em 1</div><div class="premio-ptag">Confirmado</div></div>
+    </div>
+  </div>
+  <div class="regras-card">
+    <div class="regras-titulo">Para participar e ganhar</div>
+    <div class="regra"><div class="regra-num">1</div><div class="regra-txt">Ter <strong>vendido pelo menos 1 cupom</strong> entre os dias 2 e 14 de junho</div></div>
+    <div class="regra"><div class="regra-num">2</div><div class="regra-txt">Postar <strong>pelo menos 2x na semana 1</strong> (dias 2 a 7)</div></div>
+    <div class="regra"><div class="regra-num">3</div><div class="regra-txt">Postar <strong>pelo menos 2x na semana 2</strong> (dias 8 a 14)</div></div>
+    <div class="regra"><div class="regra-num">4</div><div class="regra-txt"><strong>Total de 4 posts</strong> entre 2 e 14 de junho, envie os prints pelo formulário abaixo</div></div>
+    <div class="regra"><div class="regra-num">5</div><div class="regra-txt">A postagem precisa ser <strong>criada por você</strong>. Pode ser uma selfie com o produto, uma foto dos seus produtos em casa, você aplicando, mostrando o resultado na pele. Imagens do site ou do perfil da Le Moritz não contam.</div></div>
+  </div>
+  <div class="aviso-desafio"><p>As duas condições precisam ser cumpridas: venda + posts. Quem cumprir as duas entra para o sorteio.</p></div>
+  <div class="form-desafio">
+    <div class="form-titulo">Enviar minha postagem</div>
+    <div class="form-sub">Toque no botão abaixo, preencha seu @, CPF e envie o print. Cada envio deve ser de um dia diferente.</div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSceNt_G6NTS9ClJ0xuRkrWpFE9Si7xnzLu0igONFSAW6Nu1pw/viewform" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#3B1F6E;color:#fff;border-radius:12px;padding:17px;font-size:16px;font-weight:700;text-decoration:none;font-family:'Montserrat',sans-serif">
+      📩 Abrir formulário de envio
+    </a>
+    <div style="margin-top:12px;background:#F0FDF4;border-radius:10px;padding:12px 14px;font-size:14px;color:#166534;line-height:1.6;font-weight:700">
+      ✅ Após enviar o formulário, clique abaixo para registrar seu dia.
+    </div>
+    <div style="margin-top:10px">
+      <button style="width:100%;background:#F4F2FA;color:#3B1F6E;border:1.5px solid #D4A0A0;border-radius:12px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif" onclick="marcarDia()">✓ Enviei — registrar meu dia</button>
+    </div>
+    <div class="msg-feedback" id="msg-feedback"></div>
+  </div>
+  <div class="res-aviso"><p>📅 Resultado anunciado no dia 15 de junho pela equipe Le Moritz.</p></div>
 </div>
 
 <!-- ═══ VENDAS ═══ -->
@@ -402,7 +420,7 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
     <div class="rh"><span>#</span><span>Cliente Embaixadora</span><span>Comissão</span></div>
     <div id="lista-ranking"></div>
   </div>
-  <div style="text-align:center;padding:18px;font-size:14px;color:#aaa">O ranking começa em <strong style="color:#7C3AED">2 de junho</strong>. Cada venda com seu cupom aparece aqui 💜</div>
+  <div style="text-align:center;padding:18px;font-size:14px;color:#aaa;font-weight:600">O ranking começa em <strong style="color:#7C3AED">2 de junho</strong>. Cada venda com seu cupom aparece aqui.</div>
 </div>
 
 <!-- ═══ PRODUTOS ═══ -->
@@ -429,9 +447,9 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
     <div class="subheader roxo"><div class="subheader-icon">📍</div><div class="subheader-titulo">Onde vender</div></div>
     <div class="card"><div class="card-h"><div class="ci" style="background:#DCFCE7">💬</div><div class="ct">WhatsApp direto</div></div><div class="ctxt">Uma mensagem para uma amiga que você sabe que vai gostar. Quando surgir a oportunidade, você manda em segundos.</div><div class="dica"><span>💡</span>Que tal mandar hoje para uma amiga que você sabe que vai adorar?</div></div>
     <div class="card"><div class="card-h"><div class="ci" style="background:#DCFCE7">📱</div><div class="ct">Status do WhatsApp</div></div><div class="ctxt">Uma foto simples com o produto aparece para todos os seus contatos sem você precisar mandar mensagem para ninguém.</div><div class="dica"><span>💡</span>Todo mundo que tem seu número vai ver.</div></div>
-    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">📸</div><div class="ct">Instagram stories</div></div><div class="ctxt">Uma foto antes de sair, o produto aparecendo, cupom na legenda. Fica 24 horas no ar e chega para quem te segue.</div><div class="dica"><span>💡</span>Se esqueceu o cupom, coloca nos comentários ou menciona no próximo story.</div></div>
-    <div class="card"><div class="card-h"><div class="ci" style="background:#E3F2FD">📘</div><div class="ct">Facebook</div></div><div class="ctxt">Uma publicação simples no seu perfil ou num grupo de amigas. Conta que está usando, mostra o produto e deixa o seu cupom.</div></div>
-    <div class="card"><div class="card-h"><div class="ci" style="background:#EDE9FE">👯</div><div class="ct">Pessoalmente</div></div><div class="ctxt">Quando alguém perguntar o que você usa ou elogiar sua pele, você já tem o que contar.</div><div class="dica"><span>💡</span>Deixa o link da loja salvo no celular para quando precisar.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">📸</div><div class="ct">Instagram stories</div></div><div class="ctxt">Uma foto antes de sair, o produto aparecendo, cupom na legenda. Fica 24 horas no ar e chega para quem te segue.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#E3F2FD">📘</div><div class="ct">Facebook</div></div><div class="ctxt">Uma publicação simples no seu perfil ou num grupo de amigas. Conta que está usando e deixa o seu cupom.</div></div>
+    <div class="card"><div class="card-h"><div class="ci" style="background:#EDE9FE">👯</div><div class="ct">Pessoalmente</div></div><div class="ctxt">Quando alguém elogiar sua pele ou perguntar o que você usa, é sua deixa perfeita.</div><div class="dica"><span>💡</span>Deixa o link da loja salvo no celular para quando precisar.</div></div>
   </div>
   <div id="sub-como" class="subpage">
     <div class="back-btn" onclick="hideSub('como')">‹ Voltar para ideias</div>
@@ -445,20 +463,15 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
       </div>
       <div class="dica"><span>💡</span>A luz natural é a melhor. Janela aberta ou no carro já resolve.</div>
     </div>
-    <div class="card"><div class="card-h"><div class="ci" style="background:#FEF3C7">🏷️</div><div class="ct">Como colocar o cupom</div></div>
-      <div class="ctxt">Se for vídeo falado, mencione o cupom em algum momento. Se for foto, coloca discreto na legenda ou nos comentários fixados.</div>
-      <div class="dica"><span>💡</span>O cupom precisa aparecer em algum lugar, sempre.</div>
-    </div>
     <div class="card"><div class="card-h"><div class="ci" style="background:#EDE9FE">✍️</div><div class="ct">A legenda</div></div>
       <div class="ctxt">Escreva do jeito que você fala. O que importa é que seja verdadeiro e que o cupom apareça.</div>
-      <div class="script-box">"Sempre me incomodei com a região dos olhos. Comecei a usar o Sérum da Le Moritz há 4 semanas e já vejo diferença real. Pra quem quiser experimentar, meu cupom é [SEUCUPOM] — 10% OFF 💜"</div>
-      <button class="copy-btn" onclick="copiar(this,'Sempre me incomodei com a região dos olhos. Comecei a usar o Sérum da Le Moritz há 4 semanas e já vejo diferença real. Pra quem quiser experimentar, meu cupom é [SEUCUPOM] — 10% OFF 💜')">📋 Copiar exemplo</button>
+      <div class="script-box">"Sempre me incomodei com a região dos olhos. Comecei a usar o Sérum da Le Moritz há 4 semanas e já vejo diferença real. Pra quem quiser experimentar, meu cupom é [SEUCUPOM] — 10% OFF"</div>
+      <button class="copy-btn" onclick="copiar(this,'Sempre me incomodei com a região dos olhos. Comecei a usar o Sérum da Le Moritz há 4 semanas e já vejo diferença real. Pra quem quiser experimentar, meu cupom é [SEUCUPOM] — 10% OFF')">📋 Copiar exemplo</button>
     </div>
   </div>
   <div id="sub-conteudo" class="subpage">
     <div class="back-btn" onclick="hideSub('conteudo')">‹ Voltar para ideias</div>
     <div class="subheader gold"><div class="subheader-icon">💡</div><div class="subheader-titulo">Ideias de conteúdo</div><div class="subheader-desc">Não sabe o que postar? Escolhe uma ideia e faz hoje.</div></div>
-    <div class="seclabel">Ideias rápidas</div>
     <div class="ideia-item"><span class="ideia-icon">🪞</span><div class="ideia-body"><h3>Selfie no espelho</h3><p>Antes de sair, produto na mão ou aplicado. Real e rápido.</p></div></div>
     <div class="ideia-item"><span class="ideia-icon">🚗</span><div class="ideia-body"><h3>Foto no carro</h3><p>Luz natural, produto na mão. Um dos ângulos que mais funciona.</p></div></div>
     <div class="ideia-item"><span class="ideia-icon">☀️</span><div class="ideia-body"><h3>Rotina da manhã</h3><p>Mostre os produtos que você usa antes de sair. Story simples.</p></div></div>
@@ -487,12 +500,12 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
       <button class="copy-btn" onclick="copiar(this,'Obrigada! Tô usando uns produtos da Le Moritz, faz diferença mesmo. Se quiser experimentar, tenho cupom de 10% OFF — é só me pedir que te mando o link.')">📋 Copiar essa frase</button>
     </div>
     <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">👯</div><div class="ct">Para uma amiga específica</div></div>
-      <div class="script-box">"Oi [nome]! Lembrei de você. Tô usando uns produtos da Le Moritz e tô amando. Tenho cupom de 10% OFF se quiser experimentar, é só me pedir 💜"</div>
-      <button class="copy-btn" onclick="copiar(this,'Oi [nome]! Lembrei de você. Tô usando uns produtos da Le Moritz e tô amando. Tenho cupom de 10% OFF se quiser experimentar, é só me pedir 💜')">📋 Copiar essa frase</button>
+      <div class="script-box">"Oi [nome]! Lembrei de você. Tô usando uns produtos da Le Moritz e tô amando. Tenho cupom de 10% OFF se quiser experimentar, é só me pedir"</div>
+      <button class="copy-btn" onclick="copiar(this,'Oi [nome]! Lembrei de você. Tô usando uns produtos da Le Moritz e tô amando. Tenho cupom de 10% OFF se quiser experimentar, é só me pedir')">📋 Copiar essa frase</button>
     </div>
     <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">👥</div><div class="ct">Para um grupo de amigas</div></div>
-      <div class="script-box">"Meninas, descobri uma marca incrível para pele madura e fiquei com vontade de indicar pra vocês. É a Le Moritz. Tenho cupom de desconto se alguém quiser, é só me chamar no privado."</div>
-      <button class="copy-btn" onclick="copiar(this,'Meninas, descobri uma marca incrível para pele madura e fiquei com vontade de indicar pra vocês. É a Le Moritz. Tenho cupom de desconto se alguém quiser, é só me chamar no privado.')">📋 Copiar essa frase</button>
+      <div class="script-box">"Meninas, descobri uma marca incrível para pele madura. É a Le Moritz. Tenho cupom de desconto se alguém quiser, é só me chamar no privado."</div>
+      <button class="copy-btn" onclick="copiar(this,'Meninas, descobri uma marca incrível para pele madura. É a Le Moritz. Tenho cupom de desconto se alguém quiser, é só me chamar no privado.')">📋 Copiar essa frase</button>
     </div>
     <div class="card"><div class="card-h"><div class="ci" style="background:#FEE2E2">📱</div><div class="ct">Para o status ou story</div></div>
       <div class="script-box">"Quem me perguntar o que eu uso na pele é Le Moritz. Tenho cupom de 10% OFF pra quem quiser. Me chama!"</div>
@@ -506,55 +519,24 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
       <div class="mural-card-link mc3" onclick="showSub('conteudo')"><div class="mc-icon">💡</div><div class="mc-titulo">Ideias de conteúdo</div><div class="mc-sub">Selfie, carro, unboxing</div><div class="mc-ler">Ver ideias →</div></div>
       <div class="mural-card-link mc4" onclick="showSub('abordar')"><div class="mc-icon">💬</div><div class="mc-titulo">Como abordar</div><div class="mc-sub">Elogio, indicação, amigas</div><div class="mc-ler">Ver ideias →</div></div>
     </div>
-    <div style="background:#EDE9FE;border-radius:10px;padding:14px;font-size:14px;color:#5B21B6;margin-top:4px;line-height:1.6">Você não precisa começar perfeito. Só precisa começar.</div>
+    <div style="background:#EDE9FE;border-radius:10px;padding:14px;font-size:14px;color:#5B21B6;line-height:1.6;font-weight:700">Você não precisa começar perfeito. Só precisa começar.</div>
   </div>
-</div>
-
-<!-- ═══ CASES ═══ -->
-<div class="page" id="page-cases">
-  <div class="card" style="margin-bottom:16px">
-    <div style="font-size:26px;color:#DDD6FE;margin-bottom:6px">"</div>
-    <div class="ctxt" style="margin:0">Essas mulheres não tinham experiência com vendas. Não eram influencers. Começaram com uma mensagem, um story, uma indicação. E os resultados vieram. Você está no mesmo caminho.</div>
-    <div style="font-size:13px;color:#D4A0A0;margin-top:10px;font-weight:500">— Le Moritz, para cada Cliente Embaixadora</div>
-  </div>
-  <div class="seclabel">Destaque do mês · Maio 2026</div>
-  <div class="case-dest">
-    <div class="case-tag">⭐ Maio 2026</div>
-    <div class="case-nome">Cláudia</div>
-    <div class="case-sub">67 pedidos gerados · CLAUDIA10</div>
-    <div class="case-stats">
-      <div class="cstat"><div class="cstat-v">R$ 1.786</div><div class="cstat-l">Comissão em maio</div></div>
-      <div class="cstat"><div class="cstat-v">67</div><div class="cstat-l">Pedidos gerados</div></div>
-    </div>
-    <div class="case-txt">"Comecei mandando mensagem para amigas e postando stories simples. Não sabia nada de vendas quando entrei."</div>
-  </div>
-  <div class="seclabel">Outras que já estão vendendo</div>
-  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Thaís</div><div class="cm-sub">23 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 580</div><div class="cm-l">em comissão</div></div></div>
-  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Lucia</div><div class="cm-sub">9 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 223</div><div class="cm-l">em comissão</div></div></div>
-  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Tônia</div><div class="cm-sub">1 pedido · maio</div></div><div class="cm-val"><div class="cm-com">R$ 75</div><div class="cm-l">em comissão</div></div></div>
-  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Amanda</div><div class="cm-sub">3 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 85</div><div class="cm-l">em comissão</div></div></div>
-  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Anna Lucia</div><div class="cm-sub">3 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 62</div><div class="cm-l">em comissão</div></div></div>
-  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Valéria</div><div class="cm-sub">2 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 47</div><div class="cm-l">em comissão</div></div></div>
-  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Eliza</div><div class="cm-sub">3 pedidos · maio</div></div><div class="cm-val"><div class="cm-com">R$ 42</div><div class="cm-l">em comissão</div></div></div>
-  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Carla</div><div class="cm-sub">1 pedido · maio</div></div><div class="cm-val"><div class="cm-com">R$ 25</div><div class="cm-l">em comissão</div></div></div>
-  <div class="case-mini"><div class="cm-av">👩</div><div><div class="cm-nome">Rozangela</div><div class="cm-sub">1 pedido · maio</div></div><div class="cm-val"><div class="cm-com">R$ 24</div><div class="cm-l">em comissão</div></div></div>
-  <div style="text-align:center;background:#EDE9FE;border-radius:10px;padding:14px;font-size:14px;color:#5B21B6;margin-top:4px">A sua história pode estar aqui no próximo mês 💜</div>
 </div>
 
 <!-- ═══ CIÊNCIA & PELE ═══ -->
 <div class="page" id="page-ciencia">
   <div style="background:#1B4332;border-radius:14px;padding:20px;text-align:center;margin-bottom:16px">
     <div style="font-size:24px;margin-bottom:10px">🩺</div>
-    <div style="color:#fff;font-size:18px;font-weight:600;font-family:'Cormorant Garamond',serif;margin-bottom:5px">Dermatologista Indica</div>
-    <div style="color:#6EE7B7;font-size:13px">Ciência e beleza que respeita a pele madura</div>
+    <div style="color:#fff;font-size:20px;font-weight:700;font-family:'Cormorant Garamond',serif;margin-bottom:5px">Dermatologista Indica</div>
+    <div style="color:#6EE7B7;font-size:13px;font-weight:700">Ciência e beleza que respeita a pele madura</div>
   </div>
   <div class="card" style="margin-bottom:16px"><div class="ctxt" style="margin:0">Quando uma dermatologista indica um produto, você pode compartilhar com muito mais segurança. Aqui estão nossas parceiras oficiais e tudo sobre os ativos e rotinas dos produtos.</div></div>
   <div class="seclabel verde">Parceira oficial</div>
   <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px">
     <div class="derma-topo"><div class="derma-av">👩‍⚕️</div><div><div class="derma-nome">Dra. Marcela Travassos</div><div class="derma-cargo">Dermatologista · Campo Grande, MS</div><div class="derma-badge">✦ Parceira Le Moritz</div></div></div>
     <div style="padding:16px"><div class="ctxt" style="margin-bottom:14px">Especialista em pele madura e parceira oficial da Le Moritz. Indica os produtos baseada na sua experiência clínica com pacientes 40+.</div>
-    <a href="https://www.instagram.com/p/DXGI6rlDM4N/" target="_blank" style="display:block;background:#1B4332;color:#fff;text-align:center;border-radius:9px;padding:12px;font-size:14px;font-weight:500;text-decoration:none;margin-bottom:10px">Ver indicação no Instagram ↗</a>
-    <a href="https://www.instagram.com/marcelatravassos_dermato/" target="_blank" style="display:block;background:#F0FDF4;color:#166534;border:0.5px solid #BBF7D0;text-align:center;border-radius:9px;padding:12px;font-size:14px;font-weight:500;text-decoration:none">Ver perfil da Dra. Marcela ↗</a>
+    <a href="https://www.instagram.com/p/DXGI6rlDM4N/" target="_blank" style="display:block;background:#1B4332;color:#fff;text-align:center;border-radius:9px;padding:12px;font-size:14px;font-weight:700;text-decoration:none;margin-bottom:10px;font-family:'Montserrat',sans-serif">Ver indicação no Instagram ↗</a>
+    <a href="https://www.instagram.com/marcelatravassos_dermato/" target="_blank" style="display:block;background:#F0FDF4;color:#166534;border:0.5px solid #BBF7D0;text-align:center;border-radius:9px;padding:12px;font-size:14px;font-weight:700;text-decoration:none;font-family:'Montserrat',sans-serif">Ver perfil da Dra. Marcela ↗</a>
     </div>
   </div>
   <div class="seclabel verde">Ativos · o que fazem pela sua pele</div>
@@ -588,121 +570,45 @@ input.campo-inner, textarea.campo-inner { -webkit-appearance: none; }
     <div class="card-h"><div class="ci" style="background:#FEE2E2">💄</div><div><div class="ct">Make completa</div><div class="cs">Com vitaminas, pode usar sempre que quiser</div></div></div>
     <div class="step"><div class="snum sn-pink">1</div><div class="stxt"><h3>Stick Hidratante FPS 50</h3><p>Base + proteção. Primeiro passo da make.</p></div></div>
     <div class="step"><div class="snum sn-pink">2</div><div class="stxt"><h3>Stick Blush</h3><p>Terracota, Coral ou Rosa Mauve nas maçãs do rosto.</p></div></div>
-    <div class="step"><div class="snum sn-pink">3</div><div class="stxt"><h3>Stick Iluminador</h3><p>Maçãs, arco do cupido e canto dos olhos. Rosê ou Dourado.</p></div></div>
+    <div class="step"><div class="snum sn-pink">3</div><div class="stxt"><h3>Stick Iluminador</h3><p>Maçãs, arco do cupido e canto dos olhos.</p></div></div>
     <div class="step"><div class="snum sn-pink">4</div><div class="stxt"><h3>Stick Marrom Café (opcional)</h3><p>Contorno nas têmporas, nariz e maxilar.</p></div></div>
     <div class="step"><div class="snum sn-pink">5</div><div class="stxt"><h3>Máscara de Cílios Pro-Age</h3><p>Finaliza o olhar.</p></div></div>
     <div class="dica-gold" style="margin-top:10px"><span>💡</span>Use o Pincel 9 em 1 para esfumar tudo. Acabamento muito mais natural.</div>
   </div>
 </div>
 
-<!-- ═══ DESAFIOS ═══ -->
-<div class="page" id="page-desafios">
-  <div class="desafio-banner">
-    <div class="desafio-tag">🏆 Desafio Ativo</div>
-    <div class="desafio-titulo">Desafio <span>WhatsApp</span></div>
-    <div class="desafio-sub">Poste 3x em dias diferentes no WhatsApp e ganhe um Tônico Essência 8 em 1 Le Moritz.</div>
+<!-- ═══ RANKING ═══ -->
+<div class="page" id="page-ranking">
+  <div class="card" style="margin-bottom:16px">
+    <div style="font-size:24px;color:#DDD6FE;margin-bottom:6px">"</div>
+    <div class="ctxt" style="margin:0">Essas mulheres não tinham experiência com vendas. Não eram influencers. Começaram com uma mensagem, um story, uma indicação. E os resultados vieram.</div>
+    <div style="font-size:13px;color:#D4A0A0;margin-top:10px;font-weight:700">— Le Moritz, para cada Cliente Embaixadora</div>
   </div>
-
-  <div class="prazo-row">
-    <div class="prazo-pill"><div class="prazo-ic">📅</div><div><div class="prazo-t">Período</div><div class="prazo-v">2 a 8 de junho</div></div></div>
-    <div class="prazo-pill"><div class="prazo-ic">🎁</div><div><div class="prazo-t">Resultado</div><div class="prazo-v">Dia 10 de junho</div></div></div>
-  </div>
-
-  <div class="prog-card">
-    <div class="prog-lbl">Seu progresso</div>
-    <div class="estrelas" id="estrelas-wrap">
-      <div class="ew"><div class="est off" id="est1"></div><div class="est-dia">Dia 1</div><div class="est-st" id="est1-st">Pendente</div></div>
-      <div class="ew"><div class="est off" id="est2"></div><div class="est-dia">Dia 2</div><div class="est-st" id="est2-st">Pendente</div></div>
-      <div class="ew"><div class="est off" id="est3"></div><div class="est-dia">Dia 3</div><div class="est-st" id="est3-st">Pendente</div></div>
+  <div class="seclabel">Destaque do mês · Maio 2026</div>
+  <div class="rank-dest">
+    <div class="rank-tag">⭐ Maio 2026</div>
+    <div class="rank-nome">Cláudia</div>
+    <div class="rank-sub">67 pedidos gerados · CLAUDIA10</div>
+    <div class="rank-stats">
+      <div class="rstat"><div class="rstat-v">R$ 1.786</div><div class="rstat-l">Comissão em maio</div></div>
+      <div class="rstat"><div class="rstat-v">67</div><div class="rstat-l">Pedidos gerados</div></div>
     </div>
-    <div class="barra-wrap">
-      <div class="barra-row"><span>Progresso</span><strong id="prog-txt">0 de 3 dias</strong></div>
-      <div class="barra"><div class="barra-fill" id="barra-fill" style="width:0%"></div></div>
-    </div>
+    <div class="rank-txt">"Comecei mandando mensagem para amigas e postando stories simples. Não sabia nada de vendas quando entrei."</div>
   </div>
-
-  <div class="dias-sechead">Os 3 dias do desafio</div>
-  <div class="dias-list">
-    <div class="dia-c" id="dia1-card"><div class="dia-n lock" id="dia1-n">1</div><div class="dia-info"><div class="dia-nome">Postagem 1</div><div class="dia-desc">Qualquer dia entre 2 e 8 de junho</div></div><div class="dia-badge lock" id="dia1-badge">Pendente</div></div>
-    <div class="dia-c" id="dia2-card"><div class="dia-n lock" id="dia2-n">2</div><div class="dia-info"><div class="dia-nome">Postagem 2</div><div class="dia-desc">Em um dia diferente da postagem 1</div></div><div class="dia-badge lock" id="dia2-badge">Pendente</div></div>
-    <div class="dia-c" id="dia3-card"><div class="dia-n lock" id="dia3-n">3</div><div class="dia-info"><div class="dia-nome">Postagem 3</div><div class="dia-desc">Em um dia diferente das anteriores</div></div><div class="dia-badge lock" id="dia3-badge">Pendente</div></div>
-  </div>
-
-  <!-- PRÊMIO ACCORDION -->
-  <div class="premio-wrap">
-    <div class="premio-c" id="premio-header" onclick="togglePremio()">
-      <div class="premio-ic">💧</div>
-      <div style="flex:1">
-        <div class="premio-lbl">Prêmio do desafio</div>
-        <div class="premio-nome">Tônico Essência 8 em 1</div>
-        <div class="premio-preco">Le Moritz · R$ 127,00</div>
-        <div class="pdots" id="pdots-wrap">
-          <div class="pdot off" id="pd1"></div>
-          <div class="pdot off" id="pd2"></div>
-          <div class="pdot off" id="pd3"></div>
-          <span id="pd-txt">Complete 3 dias para ganhar</span>
-        </div>
-        <div class="premio-tap" id="premio-tap">▾ <span class="arr">toque para saber mais</span></div>
-      </div>
-    </div>
-    <div class="premio-body" id="premio-body">
-      <div class="tonico-tag">✦ Produto Le Moritz</div>
-      <div class="sobre-t">Tônico Essência Hidratante 8 em 1</div>
-      <div class="sobre-p">Desenvolvido para a pele madura, une limpeza inteligente e tratamento em um único passo. Sua fórmula respeita o pH da pele, removendo resíduos sem comprometer a barreira cutânea — enquanto hidrata, acalma e prepara para os próximos cuidados. O resultado é uma pele mais confortável, equilibrada e luminosa.</div>
-      <div class="ativo-dest">
-        <div class="ad-tag">✦ Ativo premium</div>
-        <div class="ad-nome">Tripeptídeo de Cobre-1</div>
-        <div class="ad-cient">Copper Tripeptide-1 (GHK-Cu)</div>
-        <div class="ad-desc">Um dos ativos mais estudados no rejuvenescimento da pele madura. Estimula colágeno e elastina, melhora a firmeza e repara danos causados pelo tempo — com resultados visíveis e comprovados pela ciência.</div>
-      </div>
-      <div class="seclabel verde" style="margin-top:14px">Os 8 benefícios</div>
-      <div class="benef-grid">
-        <div class="ben"><div class="ben-num">1</div><div class="ben-t">Hidrata</div><div class="ben-d">Ácido hialurônico e glicerina</div></div>
-        <div class="ben"><div class="ben-num">2</div><div class="ben-t">Acalma</div><div class="ben-d">Aloe vera e pantenol</div></div>
-        <div class="ben"><div class="ben-num">3</div><div class="ben-t">Equilibra pH</div><div class="ben-d">Restaura após a limpeza</div></div>
-        <div class="ben"><div class="ben-num">4</div><div class="ben-t">Remove impurezas</div><div class="ben-d">Elimina resíduos superficiais</div></div>
-        <div class="ben"><div class="ben-num">5</div><div class="ben-t">Demaquila</div><div class="ben-d">Sem agredir a pele</div></div>
-        <div class="ben"><div class="ben-num">6</div><div class="ben-t">Refresca</div><div class="ben-d">Sensação imediata de frescor</div></div>
-        <div class="ben"><div class="ben-num">7</div><div class="ben-t">Ilumina</div><div class="ben-d">Niacinamida e extrato de maçã</div></div>
-        <div class="ben"><div class="ben-num">8</div><div class="ben-t">Colágeno</div><div class="ben-d">Tripeptídeo de cobre-1</div></div>
-      </div>
-      <a href="https://lemoritz.com.br" target="_blank" class="ver-site-btn">Ver produto completo em lemoritz.com.br ↗</a>
-    </div>
-  </div>
-
-  <!-- FORMULÁRIO GOOGLE FORMS -->
-  <div class="form-desafio">
-    <div class="form-titulo">Enviar postagem</div>
-    <div class="form-sub">Toque no botão abaixo para abrir o formulário. Preencha seu @, CPF e envie o print da postagem. Cada envio deve ser de um dia diferente.</div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSceNt_G6NTS9ClJ0xuRkrWpFE9Si7xnzLu0igONFSAW6Nu1pw/viewform" target="_blank" class="btn-env" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px">
-      📩 Abrir formulário de envio
-    </a>
-    <div style="margin-top:12px;background:#F0FDF4;border-radius:10px;padding:12px 14px;font-size:13px;color:#166534;line-height:1.6">
-      ✅ Após enviar o formulário, volte aqui e marque o dia como enviado.
-    </div>
-    <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
-      <button class="btn-env" style="background:#F4F2FA;color:#3B1F6E;border:1.5px solid #D4A0A0;font-size:14px;padding:13px" onclick="marcarDia()">✓ Marquei — registrar meu dia</button>
-    </div>
-    <div class="msg-feedback" id="msg-feedback"></div>
-  </div>
-
-  <div class="res-aviso">
-    <p>📅 <strong>Resultado no dia 10 de junho.</strong> Quem completar as 3 postagens em dias diferentes será anunciada pela equipe Le Moritz. 💜</p>
-  </div>
+  <div class="seclabel">Outras que venderam em maio</div>
+  <div class="rank-mini"><div class="rm-av">👩</div><div><div class="rm-nome">Thaís</div><div class="rm-sub">23 pedidos · maio</div></div><div class="rm-val"><div class="rm-com">R$ 580</div><div class="rm-l">em comissão</div></div></div>
+  <div class="rank-mini"><div class="rm-av">👩</div><div><div class="rm-nome">Lucia</div><div class="rm-sub">9 pedidos · maio</div></div><div class="rm-val"><div class="rm-com">R$ 223</div><div class="rm-l">em comissão</div></div></div>
+  <div class="rank-mini"><div class="rm-av">👩</div><div><div class="rm-nome">Tônia</div><div class="rm-sub">1 pedido · maio</div></div><div class="rm-val"><div class="rm-com">R$ 75</div><div class="rm-l">em comissão</div></div></div>
+  <div class="rank-mini"><div class="rm-av">👩</div><div><div class="rm-nome">Amanda</div><div class="rm-sub">3 pedidos · maio</div></div><div class="rm-val"><div class="rm-com">R$ 85</div><div class="rm-l">em comissão</div></div></div>
+  <div class="rank-mini"><div class="rm-av">👩</div><div><div class="rm-nome">Anna Lucia</div><div class="rm-sub">3 pedidos · maio</div></div><div class="rm-val"><div class="rm-com">R$ 62</div><div class="rm-l">em comissão</div></div></div>
+  <div class="rank-mini"><div class="rm-av">👩</div><div><div class="rm-nome">Valéria</div><div class="rm-sub">2 pedidos · maio</div></div><div class="rm-val"><div class="rm-com">R$ 47</div><div class="rm-l">em comissão</div></div></div>
+  <div class="rank-mini"><div class="rm-av">👩</div><div><div class="rm-nome">Eliza</div><div class="rm-sub">3 pedidos · maio</div></div><div class="rm-val"><div class="rm-com">R$ 42</div><div class="rm-l">em comissão</div></div></div>
+  <div class="rank-mini"><div class="rm-av">👩</div><div><div class="rm-nome">Carla</div><div class="rm-sub">1 pedido · maio</div></div><div class="rm-val"><div class="rm-com">R$ 25</div><div class="rm-l">em comissão</div></div></div>
+  <div class="rank-mini"><div class="rm-av">👩</div><div><div class="rm-nome">Rozangela</div><div class="rm-sub">1 pedido · maio</div></div><div class="rm-val"><div class="rm-com">R$ 24</div><div class="rm-l">em comissão</div></div></div>
+  <div style="text-align:center;background:#EDE9FE;border-radius:10px;padding:14px;font-size:14px;color:#5B21B6;margin-top:4px;font-weight:700">A sua história pode estar aqui no próximo mês</div>
 </div>
 
 <div class="rodape"><a href="https://lemoritz.com.br" target="_blank">lemoritz.com.br</a> &nbsp;·&nbsp; @lemoritz_oficial</div>
-
-<!-- MODAL PARABÉNS -->
-<div class="modal-overlay" id="modal-parabens">
-  <div class="modal-sheet">
-    <div class="modal-handle"></div>
-    <div style="font-size:56px;margin-bottom:14px">🎉</div>
-    <h3>Você completou o desafio!</h3>
-    <p>Parabéns! As suas 3 postagens em dias diferentes foram registradas. O resultado sai no dia 10 de junho. Boa sorte! 💜</p>
-    <button class="modal-close" onclick="document.getElementById('modal-parabens').classList.remove('open')">Fechar</button>
-  </div>
-</div>
 
 <script>
 // ═══ DADOS EDITÁVEIS ═══
@@ -854,80 +760,26 @@ function copiar(btn, texto){
 }
 
 // ═══ DESAFIO ═══
-let estado = { d1:false, d2:false, d3:false };
-
-function atualizarProgresso(){
-  const dias = [estado.d1, estado.d2, estado.d3];
-  const count = dias.filter(Boolean).length;
-  dias.forEach((d,i)=>{
-    const n=i+1;
-    const est=document.getElementById('est'+n);
-    const st=document.getElementById('est'+n+'-st');
-    const card=document.getElementById('dia'+n+'-card');
-    const num=document.getElementById('dia'+n+'-n');
-    const badge=document.getElementById('dia'+n+'-badge');
-    const pd=document.getElementById('pd'+n);
-    if(d){
-      est.className='est on'; est.textContent='⭐';
-      st.textContent='Enviado!'; st.className='est-st ok';
-      card.className='dia-c done';
-      num.className='dia-num done';
-      badge.className='dia-badge done'; badge.textContent='✓ Feito';
-      if(pd) pd.className='pdot on';
-    } else {
-      est.className='est off'; est.textContent='';
-      st.textContent='Pendente'; st.className='est-st';
-      const isNext = count === i;
-      card.className='dia-c'+(isNext?' active':'');
-      num.className='dia-n'+(isNext?' active':' lock');
-      badge.className='dia-badge'+(isNext?' active':' lock');
-      badge.textContent=isNext?'Enviar agora':'Pendente';
-      if(pd) pd.className='pdot off';
-    }
-  });
-  document.getElementById('prog-txt').textContent=count+' de 3 dias';
-  document.getElementById('barra-fill').style.width=(count/3*100)+'%';
-  const pdTxt=document.getElementById('pd-txt');
-  if(count===3){
-    pdTxt.textContent='Desbloqueado! 🎉';
-    document.getElementById('modal-parabens').classList.add('open');
-  } else {
-    const f=3-count;
-    pdTxt.textContent='Falta'+(f>1?'m':'')+' '+f+' postagem'+(f>1?'s':'')+' para ganhar';
-  }
-  // define qual dia vai enviar
-  const diaEnviar = !estado.d1?1:!estado.d2?2:!estado.d3?3:0;
-  document.getElementById('dia-hidden').value='Dia '+diaEnviar+' de 3';
-}
-
-function togglePremio(){
-  const body=document.getElementById('premio-body');
-  const header=document.getElementById('premio-header');
-  const tap=document.getElementById('premio-tap');
-  const isOpen=body.classList.contains('open');
-  body.classList.toggle('open');
-  header.classList.toggle('open');
-  tap.innerHTML=isOpen?'▾ <span class="arr">toque para saber mais</span>':'▴ <span class="arr">fechar</span>';
-}
+let estado = { d1:false, d2:false, d3:false, d4:false };
 
 function marcarDia(){
-  const diaEnviar = !estado.d1?1:!estado.d2?2:!estado.d3?3:0;
-  if(diaEnviar===0){ showMsg('erro','Você já registrou as 3 postagens!'); return; }
+  const diaEnviar = !estado.d1?1:!estado.d2?2:!estado.d3?3:!estado.d4?4:0;
+  if(diaEnviar===0){ showMsg('erro','Você já registrou as 4 postagens!'); return; }
   if(diaEnviar===1) estado.d1=true;
   else if(diaEnviar===2) estado.d2=true;
-  else estado.d3=true;
-  atualizarProgresso();
-  showMsg('ok','Dia '+diaEnviar+' registrado! Não esqueça de enviar o formulário com o print.');
+  else if(diaEnviar===3) estado.d3=true;
+  else estado.d4=true;
+  const count=[estado.d1,estado.d2,estado.d3,estado.d4].filter(Boolean).length;
+  showMsg('ok','Postagem '+diaEnviar+' registrada! '+count+' de 4 concluídas.');
+  if(count===4){ setTimeout(()=>showMsg('ok','Parabéns! Você completou o desafio! O resultado sai no dia 15 de junho.'),2000); }
 }
 
 function showMsg(tipo,txt){
   const el=document.getElementById('msg-feedback');
   el.className='msg-feedback '+tipo;
   el.textContent=txt;
-  setTimeout(()=>el.className='msg-feedback',5000);
+  setTimeout(()=>el.className='msg-feedback',6000);
 }
-
-atualizarProgresso();
 </script>
 </body>
 </html>
