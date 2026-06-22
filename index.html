@@ -6,226 +6,209 @@
 <title>Portal Le Moritz · Embaixadora</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; }
-.header { background: #fff; padding: 22px 20px 16px; text-align: center; border-bottom: 3px double #1A1A1A; }
-.header-eyebrow { font-size: 10px; font-weight: 800; color: #1A1A1A; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 8px; }
-.header-logo { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 700; color: #1A1A1A; letter-spacing: 3px; line-height: 1; }
-.header-sub { font-size: 10px; font-weight: 700; color: #D4A0A0; margin-top: 8px; letter-spacing: 3px; text-transform: uppercase; }
-.nav { background: #1A1A1A; display: flex; overflow-x: auto; position: sticky; top: 0; z-index: 100; scrollbar-width: none; }
-.nav::-webkit-scrollbar { display: none; }
-.nav-item { padding: 14px 16px; font-size: 10px; font-weight: 700; color: #777; white-space: nowrap; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; border-bottom: 2px solid transparent; }
-.nav-item.active { color: #D4A0A0; border-bottom-color: #D4A0A0; }
-.page { display: none; padding: 24px 20px; max-width: 600px; margin: 0 auto; animation: fadeUp .3s ease; }
-.page.active { display: block; }
-@keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-.headline { text-align: center; padding-bottom: 20px; border-bottom: 1px solid #EAEAEA; margin-bottom: 24px; }
-.headline-t { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: #1A1A1A; }
-.headline-s { font-size: 13px; font-weight: 600; color: #999; margin-top: 6px; }
-.col-t { font-size: 10px; font-weight: 800; color: #1A1A1A; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-.col-p { font-size: 14px; font-weight: 600; color: #555; line-height: 1.8; margin-bottom: 14px; }
-.div-line { border-top: 1px solid #1A1A1A; margin: 22px 0; }
-.div-thin { border-top: 1px solid #EAEAEA; margin: 16px 0; }
-.tag-fill { display: inline-block; background: #1A1A1A; color: #D4A0A0; font-size: 9px; font-weight: 800; padding: 4px 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
-.btn { display: flex; align-items: center; justify-content: space-between; border: 1.5px solid #1A1A1A; color: #1A1A1A; padding: 14px 18px; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; cursor: pointer; text-decoration: none; }
-.btn-rosa { border-color: #D4A0A0; color: #D4A0A0; }
-.cat-label { font-size: 10px; font-weight: 800; color: #D4A0A0; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-
-/* INÍCIO */
-.bv-t { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #1A1A1A; margin-bottom: 8px; line-height: 1.2; }
-.bv-p { font-size: 13px; font-weight: 600; color: #777; line-height: 1.8; }
-.desafio-enc { border: 1.5px solid #1A1A1A; padding: 20px; text-align: center; }
-.enc-tag { display: inline-block; background: #1A1A1A; color: #fff; font-size: 9px; font-weight: 800; padding: 4px 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-.enc-titulo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: #1A1A1A; margin-bottom: 14px; }
-.enc-btn { display: flex; align-items: center; justify-content: center; gap: 8px; border: 1.5px solid #D4A0A0; color: #D4A0A0; padding: 12px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; }
-.copy-intro { font-size: 10px; font-weight: 800; color: #999; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
-.copy-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #EAEAEA; }
-.copy-item:first-of-type { border-top: 1px solid #EAEAEA; }
-.copy-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #EAEAEA; flex-shrink: 0; line-height: 1; width: 28px; }
-.copy-titulo { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; color: #1A1A1A; margin-bottom: 3px; }
-.copy-desc { font-size: 12px; font-weight: 600; color: #999; line-height: 1.5; }
-.rodape-frase { text-align: center; padding-top: 22px; border-top: 1px solid #EAEAEA; margin-top: 22px; font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: #999; font-style: italic; line-height: 1.6; }
-
-/* CUPOM */
-.passo-row { display: flex; align-items: baseline; gap: 12px; padding: 12px 0; border-bottom: 1px solid #EAEAEA; }
-.passo-row:first-of-type { border-top: 1px solid #EAEAEA; }
-.passo-num { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: #D4A0A0; flex-shrink: 0; width: 20px; }
-.passo-txt { font-size: 14px; font-weight: 600; color: #333; line-height: 1.6; }
-.passo-txt strong { color: #1A1A1A; font-weight: 800; }
-.link-loja { border: 1.5px solid #EAEAEA; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-.ll-label { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-.ll-url { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: #1A1A1A; }
-.podio-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #EAEAEA; }
-.podio-row:first-of-type { border-top: 1px solid #EAEAEA; }
-.podio-left { display: flex; align-items: baseline; gap: 12px; }
-.podio-pos { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #D4A0A0; width: 22px; }
-.podio-nome { font-size: 15px; font-weight: 700; color: #1A1A1A; }
-.podio-cupom { font-size: 12px; color: #999; font-weight: 600; }
-.podio-val { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: #1A1A1A; }
-.podio-update { font-size: 11px; font-weight: 700; color: #999; letter-spacing: 1px; text-transform: uppercase; margin-top: 12px; }
-.podio-update span { color: #D4A0A0; }
-.timeline { display: flex; align-items: center; margin: 16px 0; }
-.tl-item { flex: 1; text-align: center; }
-.tl-circle { width: 44px; height: 44px; border-radius: 50%; background: #1A1A1A; color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; }
-.tl-circle.rosa { background: #D4A0A0; }
-.tl-label { font-size: 11px; font-weight: 700; color: #1A1A1A; text-transform: uppercase; }
-.tl-sub { font-size: 11px; font-weight: 600; color: #999; margin-top: 3px; }
-.tl-line { flex: 1; height: 1px; background: #1A1A1A; margin-top: -22px; }
-.faq-row { padding: 14px 0; border-bottom: 1px solid #EAEAEA; }
-.faq-row:first-of-type { border-top: 1px solid #EAEAEA; }
-.faq-q { font-size: 14px; font-weight: 800; color: #1A1A1A; margin-bottom: 4px; }
-.faq-a { font-size: 13px; font-weight: 600; color: #777; line-height: 1.6; }
-
-/* DESAFIOS */
-.proximo-box { border: 1.5px solid #1A1A1A; padding: 20px; text-align: center; margin-bottom: 20px; }
-.prox-eyebrow { font-size: 10px; font-weight: 800; color: #999; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
-.prox-t { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #1A1A1A; margin-bottom: 6px; }
-.prox-p { font-size: 13px; font-weight: 600; color: #999; line-height: 1.7; }
-.criterio-row { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #EAEAEA; }
-.criterio-row:first-of-type { border-top: 1px solid #EAEAEA; }
-.check { width: 26px; height: 26px; border-radius: 50%; background: #1A1A1A; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.check-icon { color: #D4A0A0; font-size: 13px; font-weight: 800; }
-.criterio-txt { font-size: 14px; font-weight: 600; color: #1A1A1A; line-height: 1.6; }
-.premio-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
-.p-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A0A0; flex-shrink: 0; margin-top: 5px; }
-.p-txt { font-size: 14px; font-weight: 700; color: #1A1A1A; }
-.destaque { border: 1.5px solid #1A1A1A; padding: 20px; text-align: center; margin-bottom: 24px; }
-.destaque-tag { display: inline-block; background: #1A1A1A; color: #D4A0A0; font-size: 9px; font-weight: 800; padding: 4px 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
-.destaque-nome { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; color: #1A1A1A; margin-bottom: 4px; }
-.destaque-cupom { font-size: 13px; font-weight: 700; color: #999; letter-spacing: 1px; margin-bottom: 14px; }
-.destaque-vendas { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 700; color: #D4A0A0; line-height: 1; }
-.destaque-vendas-l { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
-.g-row { display: flex; align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid #EAEAEA; }
-.g-row:first-of-type { border-top: 1px solid #EAEAEA; }
-.g-left { display: flex; align-items: baseline; gap: 12px; }
-.g-pos { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: #D4A0A0; width: 22px; }
-.g-cupom { font-size: 14px; font-weight: 700; color: #1A1A1A; }
-.g-val { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: #1A1A1A; }
-.g-val-l { font-size: 10px; font-weight: 600; color: #999; }
-
-/* COMO VENDER */
-.indice { background: #F5F5F5; padding: 16px; margin-bottom: 20px; }
-.indice-label { font-size: 9px; font-weight: 800; color: #999; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
-.indice-item { display: flex; gap: 10px; margin-bottom: 9px; }
-.indice-item:last-child { margin-bottom: 0; }
-.indice-num { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 700; color: #D4A0A0; flex-shrink: 0; width: 18px; }
-.indice-titulo { font-size: 13px; font-weight: 700; color: #1A1A1A; }
-.indice-desc { font-size: 11px; font-weight: 600; color: #999; }
-.onde-item { padding: 16px 0; border-bottom: 1px solid #EAEAEA; }
-.onde-item:first-of-type { border-top: 1px solid #EAEAEA; }
-.onde-plat { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.onde-ic { width: 30px; height: 30px; border-radius: 50%; background: #1A1A1A; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
-.onde-nome { font-size: 15px; font-weight: 800; color: #1A1A1A; }
-.onde-desc { font-size: 13px; font-weight: 600; color: #777; line-height: 1.7; padding-left: 40px; }
-.frete-row { padding: 13px 0; border-bottom: 1px solid #EAEAEA; }
-.frete-row:first-of-type { border-top: 1px solid #EAEAEA; }
-.frete-label { font-size: 14px; font-weight: 800; color: #1A1A1A; margin-bottom: 4px; }
-.frete-val { font-size: 13px; font-weight: 600; color: #777; }
-.indicar-row { padding: 14px 0; border-bottom: 1px solid #EAEAEA; }
-.indicar-row:first-of-type { border-top: 1px solid #EAEAEA; }
-.indicar-q { font-size: 15px; font-weight: 800; color: #1A1A1A; margin-bottom: 6px; }
-.indicar-a { font-size: 13px; font-weight: 600; color: #777; line-height: 1.7; }
-.indicar-a strong { color: #1A1A1A; }
-.em-breve { border: 1.5px solid #EAEAEA; padding: 18px; text-align: center; }
-.eb-eyebrow { font-size: 10px; font-weight: 800; color: #999; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
-.eb-t { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: #1A1A1A; }
-
-/* MENSAGENS - ACORDEÃO */
-.msg-acordeao { border-bottom: 1px solid #EAEAEA; }
-.msg-acordeao:first-of-type { border-top: 1px solid #EAEAEA; }
-.msg-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; cursor: pointer; }
-.msg-nome { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: #1A1A1A; }
-.msg-arr { font-size: 18px; color: #D4A0A0; transition: transform .2s; }
-.msg-arr.open { transform: rotate(90deg); }
-.msg-body { display: none; padding-bottom: 14px; }
-.msg-body.open { display: block; }
-.copy-it { padding: 10px 0; border-bottom: 1px solid #F5F5F5; }
-.copy-it:last-of-type { border: none; }
-.copy-num-s { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 700; color: #D4A0A0; margin-bottom: 4px; }
-.copy-txt-s { font-size: 13px; font-weight: 600; color: #555; line-height: 1.7; font-style: italic; margin-bottom: 8px; }
-.copy-btn-s { display: inline-flex; align-items: center; gap: 5px; border: 1px solid #D4A0A0; color: #D4A0A0; padding: 5px 12px; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; background: none; }
-.nota-p { font-size: 11px; font-weight: 600; color: #999; font-style: italic; margin-top: 4px; margin-bottom: 10px; }
-.envie { background: #F5F5F5; border-left: 3px solid #D4A0A0; padding: 12px 14px; margin-top: 10px; }
-.envie-label { font-size: 9px; font-weight: 800; color: #D4A0A0; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
-.envie-txt { font-size: 12px; font-weight: 600; color: #555; line-height: 1.7; font-style: italic; margin-bottom: 8px; }
-.envie-btn { display: inline-flex; align-items: center; gap: 5px; border: 1px solid #1A1A1A; color: #1A1A1A; padding: 5px 12px; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; background: none; }
-
-/* CONTEÚDO */
-.ideia-cat { font-size: 10px; font-weight: 800; color: #D4A0A0; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
-.ideia-num-big { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 700; color: #EAEAEA; line-height: .8; margin-bottom: 2px; }
-.ideia-titulo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #1A1A1A; margin-bottom: 6px; }
-.ideia-gancho { font-size: 14px; font-weight: 600; color: #777; line-height: 1.7; margin-bottom: 12px; font-style: italic; }
-.como-label { font-size: 10px; font-weight: 800; color: #1A1A1A; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
-.como-item { font-size: 13px; font-weight: 600; color: #333; line-height: 1.7; padding-left: 14px; border-left: 2px solid #EAEAEA; margin-bottom: 6px; }
-.ref-btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #1A1A1A; color: #1A1A1A; padding: 8px 14px; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 10px; text-decoration: none; }
-.angulo-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
-.angulo-ph { width: 72px; height: 84px; border-radius: 4px; background: #F5F5F5; display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; border: 1px solid #EAEAEA; }
-.angulo-t { font-size: 14px; font-weight: 800; color: #1A1A1A; margin-bottom: 5px; }
-.angulo-p { font-size: 12px; font-weight: 600; color: #777; line-height: 1.5; }
-.legenda-box { border: 1.5px solid #1A1A1A; padding: 18px; }
-.legenda-t { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: #1A1A1A; margin-bottom: 10px; }
-.legenda-p { font-size: 14px; font-weight: 600; color: #555; line-height: 1.8; margin-bottom: 12px; }
-.legenda-ex { font-size: 14px; font-weight: 700; color: #D4A0A0; font-style: italic; padding-left: 14px; border-left: 2px solid #D4A0A0; margin-bottom: 8px; }
-
-/* SKINCARE */
-.rotina-label { display: inline-block; background: #1A1A1A; color: #D4A0A0; font-size: 9px; font-weight: 800; padding: 4px 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
-.noite-tipo { font-size: 10px; font-weight: 800; color: #1A1A1A; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-.mousse-box { border: 1.5px solid #1A1A1A; padding: 18px; }
-.mousse-t { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: #1A1A1A; margin-bottom: 8px; }
-.mousse-p { font-size: 14px; font-weight: 600; color: #555; line-height: 1.7; margin-bottom: 14px; }
-.badge-item { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-.badge-item:last-child { margin-bottom: 0; }
-.badge { font-size: 11px; font-weight: 800; padding: 5px 14px; border: 1.5px solid #1A1A1A; color: #1A1A1A; white-space: nowrap; }
-.badge-desc { font-size: 13px; font-weight: 600; color: #555; }
-.lift-t { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #1A1A1A; margin-bottom: 10px; }
-.lift-item { display: flex; align-items: baseline; gap: 10px; padding: 10px 0; border-bottom: 1px solid #EAEAEA; }
-.lift-item:first-of-type { border-top: 1px solid #EAEAEA; }
-.lift-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A0A0; flex-shrink: 0; margin-top: 6px; }
-.lift-txt { font-size: 14px; font-weight: 600; color: #333; line-height: 1.6; }
-.lift-txt strong { color: #1A1A1A; font-weight: 800; }
-.derma-tag { display: inline-block; background: #1A1A1A; color: #D4A0A0; font-size: 9px; font-weight: 800; padding: 4px 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
-.derma-nome { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #1A1A1A; margin-bottom: 4px; }
-.derma-cargo { font-size: 13px; font-weight: 600; color: #999; margin-bottom: 14px; }
-.video-card { display: flex; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid #EAEAEA; text-decoration: none; }
-.video-card:first-of-type { border-top: 1px solid #EAEAEA; }
-.video-thumb { width: 64px; height: 64px; border-radius: 4px; background: #1A1A1A; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.video-thumb.breve { background: #F5F5F5; border: 1.5px dashed #EAEAEA; }
-.play { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.4); }
-.play span { color: #fff; font-size: 12px; margin-left: 3px; }
-.video-nome { font-size: 14px; font-weight: 800; color: #1A1A1A; margin-bottom: 4px; }
-.video-plat { font-size: 11px; font-weight: 600; color: #D4A0A0; }
-.video-breve { font-size: 11px; font-weight: 600; color: #CCC; }
-.video-arr { font-size: 20px; color: #D4A0A0; margin-left: auto; }
-.video-arr.breve { color: #EAEAEA; }
-
-/* MAQUIAGEM */
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #1A1A1A; margin-bottom: 24px; }
-.grid-cell { background: #fff; padding: 14px 12px; text-align: center; }
-.grid-img { width: 100%; height: 90px; object-fit: cover; margin-bottom: 8px; }
-.grid-nome { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 700; color: #1A1A1A; }
-.grid-tipo { font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: .5px; margin-top: 3px; }
-.guia-wrap { position: relative; cursor: pointer; margin-bottom: 12px; }
-.guia-img { width: 100%; border-radius: 4px; display: block; filter: blur(1.5px); }
-.guia-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: rgba(0,0,0,0.38); border-radius: 4px; }
-.guia-overlay-t { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: #fff; }
-.guia-overlay-btn { background: #fff; color: #1A1A1A; font-size: 11px; font-weight: 800; padding: 7px 18px; letter-spacing: 1px; text-transform: uppercase; }
-.guia-dica { font-size: 13px; font-weight: 700; color: #D4A0A0; font-style: italic; }
-.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 999; align-items: center; justify-content: center; }
-.modal.open { display: flex; }
-.modal img { max-width: 96vw; max-height: 96vh; object-fit: contain; }
-.modal-close { position: absolute; top: 16px; right: 20px; color: #fff; font-size: 32px; cursor: pointer; background: none; border: none; font-family: 'Montserrat', sans-serif; font-weight: 700; }
-.mascara-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
-.mascara-img { width: 90px; height: 100px; object-fit: cover; border: 1px solid #EAEAEA; border-radius: 4px; flex-shrink: 0; }
-.mascara-t { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: #1A1A1A; margin-bottom: 8px; }
-.mascara-p { font-size: 13px; font-weight: 600; color: #555; line-height: 1.7; }
-.ben-row { display: flex; align-items: baseline; gap: 10px; padding: 10px 0; border-bottom: 1px solid #EAEAEA; }
-.ben-row:first-of-type { border-top: 1px solid #EAEAEA; }
-.b-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A0A0; flex-shrink: 0; margin-top: 6px; }
-.b-txt { font-size: 13px; font-weight: 600; color: #333; line-height: 1.6; }
-.b-txt strong { color: #1A1A1A; font-weight: 800; }
-
-.footer { text-align: center; padding: 30px 20px; font-size: 13px; color: #bbb; font-weight: 600; border-top: 1px solid #EAEAEA; }
-.footer a { color: #1A1A1A; text-decoration: none; font-weight: 700; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',sans-serif;background:#fff;color:#1a1a1a}
+.header{background:#fff;padding:22px 20px 16px;text-align:center;border-bottom:3px double #1A1A1A}
+.header-eyebrow{font-size:10px;font-weight:800;color:#1A1A1A;letter-spacing:4px;text-transform:uppercase;margin-bottom:8px}
+.header-logo{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:#1A1A1A;letter-spacing:3px;line-height:1}
+.header-sub{font-size:10px;font-weight:700;color:#D4A0A0;margin-top:8px;letter-spacing:3px;text-transform:uppercase}
+.nav{background:#1A1A1A;display:flex;overflow-x:auto;position:sticky;top:0;z-index:100;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav-item{padding:14px 16px;font-size:10px;font-weight:700;color:#777;white-space:nowrap;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent}
+.nav-item.active{color:#D4A0A0;border-bottom-color:#D4A0A0}
+.page{display:none;padding:24px 20px;max-width:600px;margin:0 auto;animation:fadeUp .3s ease}
+.page.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.headline{text-align:center;padding-bottom:20px;border-bottom:1px solid #EAEAEA;margin-bottom:24px}
+.headline-t{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#1A1A1A}
+.headline-s{font-size:13px;font-weight:600;color:#999;margin-top:6px}
+.col-t{font-size:10px;font-weight:800;color:#1A1A1A;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.col-p{font-size:14px;font-weight:600;color:#555;line-height:1.8;margin-bottom:14px}
+.div-line{border-top:1px solid #1A1A1A;margin:22px 0}
+.div-thin{border-top:1px solid #EAEAEA;margin:16px 0}
+.tag-fill{display:inline-block;background:#1A1A1A;color:#D4A0A0;font-size:9px;font-weight:800;padding:4px 14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.btn{display:flex;align-items:center;justify-content:space-between;border:1.5px solid #1A1A1A;color:#1A1A1A;padding:14px 18px;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;cursor:pointer;text-decoration:none}
+.btn-rosa{border-color:#D4A0A0;color:#D4A0A0}
+.cat-label{font-size:10px;font-weight:800;color:#D4A0A0;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.bv-t{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#1A1A1A;margin-bottom:8px;line-height:1.2}
+.bv-p{font-size:13px;font-weight:600;color:#777;line-height:1.8}
+.desafio-enc{border:1.5px solid #1A1A1A;padding:20px;text-align:center}
+.enc-tag{display:inline-block;background:#1A1A1A;color:#fff;font-size:9px;font-weight:800;padding:4px 14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.enc-titulo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#1A1A1A;margin-bottom:14px}
+.enc-btn{display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid #D4A0A0;color:#D4A0A0;padding:12px;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer}
+.copy-intro{font-size:10px;font-weight:800;color:#999;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.copy-item{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #EAEAEA}
+.copy-item:first-of-type{border-top:1px solid #EAEAEA}
+.copy-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#EAEAEA;flex-shrink:0;line-height:1;width:28px}
+.copy-titulo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:3px}
+.copy-desc{font-size:12px;font-weight:600;color:#999;line-height:1.5}
+.rodape-frase{text-align:center;padding-top:22px;border-top:1px solid #EAEAEA;margin-top:22px;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#999;font-style:italic;line-height:1.6}
+.passo-row{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid #EAEAEA}
+.passo-row:first-of-type{border-top:1px solid #EAEAEA}
+.passo-num{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#D4A0A0;flex-shrink:0;width:20px}
+.passo-txt{font-size:14px;font-weight:600;color:#333;line-height:1.6}
+.passo-txt strong{color:#1A1A1A;font-weight:800}
+.link-loja{border:1.5px solid #EAEAEA;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.ll-label{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ll-url{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#1A1A1A}
+.podio-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #EAEAEA}
+.podio-row:first-of-type{border-top:1px solid #EAEAEA}
+.podio-left{display:flex;align-items:baseline;gap:12px}
+.podio-pos{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#D4A0A0;width:22px}
+.podio-nome{font-size:15px;font-weight:700;color:#1A1A1A}
+.podio-cupom{font-size:12px;color:#999;font-weight:600}
+.podio-val{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#1A1A1A}
+.podio-update{font-size:11px;font-weight:700;color:#999;letter-spacing:1px;text-transform:uppercase;margin-top:12px}
+.podio-update span{color:#D4A0A0}
+.timeline{display:flex;align-items:center;margin:16px 0}
+.tl-item{flex:1;text-align:center}
+.tl-circle{width:44px;height:44px;border-radius:50%;background:#1A1A1A;color:#fff;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
+.tl-circle.rosa{background:#D4A0A0}
+.tl-label{font-size:11px;font-weight:700;color:#1A1A1A;text-transform:uppercase}
+.tl-sub{font-size:11px;font-weight:600;color:#999;margin-top:3px}
+.tl-line{flex:1;height:1px;background:#1A1A1A;margin-top:-22px}
+.faq-row{padding:14px 0;border-bottom:1px solid #EAEAEA}
+.faq-row:first-of-type{border-top:1px solid #EAEAEA}
+.faq-q{font-size:14px;font-weight:800;color:#1A1A1A;margin-bottom:4px}
+.faq-a{font-size:13px;font-weight:600;color:#777;line-height:1.6}
+.proximo-box{border:1.5px solid #1A1A1A;padding:20px;text-align:center;margin-bottom:20px}
+.prox-eyebrow{font-size:10px;font-weight:800;color:#999;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
+.prox-t{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#1A1A1A;margin-bottom:6px}
+.prox-p{font-size:13px;font-weight:600;color:#999;line-height:1.7}
+.criterio-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #EAEAEA}
+.criterio-row:first-of-type{border-top:1px solid #EAEAEA}
+.check{width:26px;height:26px;border-radius:50%;background:#1A1A1A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.check-icon{color:#D4A0A0;font-size:13px;font-weight:800}
+.criterio-txt{font-size:14px;font-weight:600;color:#1A1A1A;line-height:1.6}
+.premio-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.p-dot{width:6px;height:6px;border-radius:50%;background:#D4A0A0;flex-shrink:0;margin-top:5px}
+.p-txt{font-size:14px;font-weight:700;color:#1A1A1A}
+.destaque{border:1.5px solid #1A1A1A;padding:20px;text-align:center;margin-bottom:24px}
+.destaque-tag{display:inline-block;background:#1A1A1A;color:#D4A0A0;font-size:9px;font-weight:800;padding:4px 14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.destaque-nome{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#1A1A1A;margin-bottom:4px}
+.destaque-cupom{font-size:13px;font-weight:700;color:#999;letter-spacing:1px;margin-bottom:14px}
+.destaque-vendas{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:#D4A0A0;line-height:1}
+.destaque-vendas-l{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.g-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid #EAEAEA}
+.g-row:first-of-type{border-top:1px solid #EAEAEA}
+.g-left{display:flex;align-items:baseline;gap:12px}
+.g-pos{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#D4A0A0;width:22px}
+.g-cupom{font-size:14px;font-weight:700;color:#1A1A1A}
+.g-val{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#1A1A1A}
+.g-val-l{font-size:10px;font-weight:600;color:#999}
+.indice{background:#F5F5F5;padding:16px;margin-bottom:20px}
+.indice-label{font-size:9px;font-weight:800;color:#999;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.indice-item{display:flex;gap:10px;margin-bottom:9px}
+.indice-item:last-child{margin-bottom:0}
+.indice-num{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:#D4A0A0;flex-shrink:0;width:18px}
+.indice-titulo{font-size:13px;font-weight:700;color:#1A1A1A}
+.indice-desc{font-size:11px;font-weight:600;color:#999}
+.onde-item{padding:16px 0;border-bottom:1px solid #EAEAEA}
+.onde-item:first-of-type{border-top:1px solid #EAEAEA}
+.onde-plat{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.onde-ic{width:30px;height:30px;border-radius:50%;background:#1A1A1A;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.onde-nome{font-size:15px;font-weight:800;color:#1A1A1A}
+.onde-desc{font-size:13px;font-weight:600;color:#777;line-height:1.7;padding-left:40px}
+.frete-row{padding:13px 0;border-bottom:1px solid #EAEAEA}
+.frete-row:first-of-type{border-top:1px solid #EAEAEA}
+.frete-label{font-size:14px;font-weight:800;color:#1A1A1A;margin-bottom:4px}
+.frete-val{font-size:13px;font-weight:600;color:#777}
+.indicar-row{padding:14px 0;border-bottom:1px solid #EAEAEA}
+.indicar-row:first-of-type{border-top:1px solid #EAEAEA}
+.indicar-q{font-size:15px;font-weight:800;color:#1A1A1A;margin-bottom:6px}
+.indicar-a{font-size:13px;font-weight:600;color:#777;line-height:1.7}
+.indicar-a strong{color:#1A1A1A}
+.em-breve{border:1.5px solid #EAEAEA;padding:18px;text-align:center}
+.eb-eyebrow{font-size:10px;font-weight:800;color:#999;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
+.eb-t{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#1A1A1A}
+.msg-acordeao{border-bottom:1px solid #EAEAEA}
+.msg-acordeao:first-of-type{border-top:1px solid #EAEAEA}
+.msg-header{display:flex;align-items:center;justify-content:space-between;padding:14px 0;cursor:pointer}
+.msg-nome{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#1A1A1A}
+.msg-arr{font-size:18px;color:#D4A0A0;transition:transform .2s}
+.msg-arr.open{transform:rotate(90deg)}
+.msg-body{display:none;padding-bottom:14px}
+.msg-body.open{display:block}
+.copy-it{padding:10px 0;border-bottom:1px solid #F5F5F5}
+.copy-it:last-of-type{border:none}
+.copy-num-s{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:#D4A0A0;margin-bottom:4px}
+.copy-txt-s{font-size:13px;font-weight:600;color:#555;line-height:1.7;font-style:italic;margin-bottom:8px}
+.copy-btn-s{display:inline-flex;align-items:center;gap:5px;border:1px solid #D4A0A0;color:#D4A0A0;padding:5px 12px;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;cursor:pointer;background:none}
+.nota-p{font-size:11px;font-weight:600;color:#999;font-style:italic;margin-top:4px;margin-bottom:10px}
+.envie{background:#F5F5F5;border-left:3px solid #D4A0A0;padding:12px 14px;margin-top:10px}
+.envie-label{font-size:9px;font-weight:800;color:#D4A0A0;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+.envie-txt{font-size:12px;font-weight:600;color:#555;line-height:1.7;font-style:italic;margin-bottom:8px}
+.envie-btn{display:inline-flex;align-items:center;gap:5px;border:1px solid #1A1A1A;color:#1A1A1A;padding:5px 12px;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;cursor:pointer;background:none}
+.ideia-cat{font-size:10px;font-weight:800;color:#D4A0A0;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.ideia-num-big{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:#EAEAEA;line-height:.8;margin-bottom:2px}
+.ideia-titulo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#1A1A1A;margin-bottom:6px}
+.ideia-gancho{font-size:14px;font-weight:600;color:#777;line-height:1.7;margin-bottom:12px;font-style:italic}
+.como-label{font-size:10px;font-weight:800;color:#1A1A1A;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.como-item{font-size:13px;font-weight:600;color:#333;line-height:1.7;padding-left:14px;border-left:2px solid #EAEAEA;margin-bottom:6px}
+.ref-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid #1A1A1A;color:#1A1A1A;padding:8px 14px;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-top:10px;text-decoration:none}
+.angulo-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.angulo-ph{width:72px;height:84px;border-radius:4px;background:#F5F5F5;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;border:1px solid #EAEAEA}
+.angulo-t{font-size:14px;font-weight:800;color:#1A1A1A;margin-bottom:5px}
+.angulo-p{font-size:12px;font-weight:600;color:#777;line-height:1.5}
+.legenda-box{border:1.5px solid #1A1A1A;padding:18px}
+.legenda-t{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#1A1A1A;margin-bottom:10px}
+.legenda-p{font-size:14px;font-weight:600;color:#555;line-height:1.8;margin-bottom:12px}
+.legenda-ex{font-size:14px;font-weight:700;color:#D4A0A0;font-style:italic;padding-left:14px;border-left:2px solid #D4A0A0;margin-bottom:8px}
+.rotina-label{display:inline-block;background:#1A1A1A;color:#D4A0A0;font-size:9px;font-weight:800;padding:4px 14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.noite-tipo{font-size:10px;font-weight:800;color:#1A1A1A;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.mousse-box{border:1.5px solid #1A1A1A;padding:18px}
+.mousse-t{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#1A1A1A;margin-bottom:8px}
+.mousse-p{font-size:14px;font-weight:600;color:#555;line-height:1.7;margin-bottom:14px}
+.badge-item{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.badge-item:last-child{margin-bottom:0}
+.badge{font-size:11px;font-weight:800;padding:5px 14px;border:1.5px solid #1A1A1A;color:#1A1A1A;white-space:nowrap}
+.badge-desc{font-size:13px;font-weight:600;color:#555}
+.lift-t{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#1A1A1A;margin-bottom:10px}
+.lift-item{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #EAEAEA}
+.lift-item:first-of-type{border-top:1px solid #EAEAEA}
+.lift-dot{width:6px;height:6px;border-radius:50%;background:#D4A0A0;flex-shrink:0;margin-top:6px}
+.lift-txt{font-size:14px;font-weight:600;color:#333;line-height:1.6}
+.lift-txt strong{color:#1A1A1A;font-weight:800}
+.derma-tag{display:inline-block;background:#1A1A1A;color:#D4A0A0;font-size:9px;font-weight:800;padding:4px 14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.derma-nome{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#1A1A1A;margin-bottom:4px}
+.derma-cargo{font-size:13px;font-weight:600;color:#999;margin-bottom:14px}
+.video-card{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid #EAEAEA;text-decoration:none}
+.video-card:first-of-type{border-top:1px solid #EAEAEA}
+.video-thumb{width:64px;height:64px;border-radius:4px;background:#1A1A1A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.video-thumb.breve{background:#F5F5F5;border:1.5px dashed #EAEAEA}
+.play{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.4)}
+.play span{color:#fff;font-size:12px;margin-left:3px}
+.video-nome{font-size:14px;font-weight:800;color:#1A1A1A;margin-bottom:4px}
+.video-plat{font-size:11px;font-weight:600;color:#D4A0A0}
+.video-breve{font-size:11px;font-weight:600;color:#CCC}
+.video-arr{font-size:20px;color:#D4A0A0;margin-left:auto}
+.video-arr.breve{color:#EAEAEA}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1A1A1A;margin-bottom:24px}
+.grid-cell{background:#fff;padding:14px 12px;text-align:center}
+.grid-img{width:100%;height:90px;object-fit:cover;margin-bottom:8px}
+.grid-nome{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:#1A1A1A}
+.grid-tipo{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
+.guia-wrap{position:relative;cursor:pointer;margin-bottom:12px}
+.guia-img{width:100%;border-radius:4px;display:block;filter:blur(1.5px)}
+.guia-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(0,0,0,0.38);border-radius:4px}
+.guia-overlay-t{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#fff}
+.guia-overlay-btn{background:#fff;color:#1A1A1A;font-size:11px;font-weight:800;padding:7px 18px;letter-spacing:1px;text-transform:uppercase}
+.guia-dica{font-size:13px;font-weight:700;color:#D4A0A0;font-style:italic}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:999;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.modal img{max-width:96vw;max-height:96vh;object-fit:contain}
+.modal-close{position:absolute;top:16px;right:20px;color:#fff;font-size:32px;cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;font-weight:700}
+.mascara-row{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
+.mascara-img{width:90px;height:100px;object-fit:cover;border:1px solid #EAEAEA;border-radius:4px;flex-shrink:0}
+.mascara-t{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#1A1A1A;margin-bottom:8px}
+.mascara-p{font-size:13px;font-weight:600;color:#555;line-height:1.7}
+.ben-row{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #EAEAEA}
+.ben-row:first-of-type{border-top:1px solid #EAEAEA}
+.b-dot{width:6px;height:6px;border-radius:50%;background:#D4A0A0;flex-shrink:0;margin-top:6px}
+.b-txt{font-size:13px;font-weight:600;color:#333;line-height:1.6}
+.b-txt strong{color:#1A1A1A;font-weight:800}
+.footer{text-align:center;padding:30px 20px;font-size:13px;color:#bbb;font-weight:600;border-top:1px solid #EAEAEA}
+.footer a{color:#1A1A1A;text-decoration:none;font-weight:700}
 </style>
 </head>
 <body>
@@ -251,7 +234,6 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; 
   <div class="nav-item" onclick="showPage('make',this)">Maquiagem</div>
 </div>
 
-<!-- ═══ INÍCIO ═══ -->
 <div class="page active" id="page-inicio">
   <div style="margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #EAEAEA">
     <div class="bv-t">Bem-vinda ao seu espaço.</div>
@@ -272,7 +254,6 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; 
   <div class="rodape-frase">Você não precisa ser influencer.<br>Só precisa ser você.</div>
 </div>
 
-<!-- ═══ MEU CUPOM ═══ -->
 <div class="page" id="page-cupom">
   <div class="headline"><div class="headline-t">Meu Cupom</div><div class="headline-s">Acompanhe suas vendas aqui</div></div>
   <div class="col-t">Como funciona</div>
@@ -307,7 +288,6 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; 
   <div class="faq-row"><div class="faq-q">Onde compartilho meu cupom?</div><div class="faq-a">Em qualquer lugar. WhatsApp, Instagram, pessoalmente. Toda compra feita com ele conta.</div></div>
 </div>
 
-<!-- ═══ DESAFIOS ═══ -->
 <div class="page" id="page-desafios">
   <div class="headline"><div class="headline-t">Desafios</div></div>
   <div class="proximo-box"><div class="prox-eyebrow">Em breve</div><div class="prox-t">Novo desafio chegando</div><div class="prox-p">Fique de olho aqui e no grupo. Em breve teremos novidades!</div></div>
@@ -344,7 +324,6 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; 
   <div class="g-row"><div class="g-left"><div class="g-pos">13</div><div class="g-cupom">VIKA</div></div><div><div class="g-val">1</div><div class="g-val-l">venda</div></div></div>
 </div>
 
-<!-- ═══ COMO VENDER ═══ -->
 <div class="page" id="page-vender">
   <div class="headline"><div class="headline-t">Como Vender</div><div class="headline-s">Tudo que você precisa para começar agora</div></div>
   <div class="indice">
@@ -355,57 +334,35 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; 
     <div class="indice-item"><div class="indice-num">04</div><div><div class="indice-titulo">O que indicar</div><div class="indice-desc">Produto certo para cada cliente</div></div></div>
     <div class="indice-item"><div class="indice-num">05</div><div><div class="indice-titulo">Suporte Le Moritz</div><div class="indice-desc">Fale com a nossa equipe</div></div></div>
   </div>
-
   <div class="col-t">01 · Onde vender</div>
   <div class="onde-item"><div class="onde-plat"><div class="onde-ic">💬</div><div class="onde-nome">WhatsApp</div></div><div class="onde-desc">Poste nos seus Status! Todas as suas amigas estão ali e vão ver sem você precisar mandar mensagem para ninguém.</div></div>
   <div class="onde-item"><div class="onde-plat"><div class="onde-ic">🎵</div><div class="onde-nome">TikTok</div></div><div class="onde-desc">Publique nos seus vídeos e na sua página. Você pode até adicionar o produto da marca no seu carrinho do TikTok Shop.</div></div>
   <div class="onde-item"><div class="onde-plat"><div class="onde-ic">📸</div><div class="onde-nome">Instagram</div></div><div class="onde-desc">Poste nos Stories e no Feed marcando a Le Moritz. Você cresce nas redes e ainda vende com o seu cupom.</div></div>
   <div class="onde-item"><div class="onde-plat"><div class="onde-ic">📘</div><div class="onde-nome">Facebook</div></div><div class="onde-desc">Publique no seu perfil ou em grupos de amigas. Ótimo para alcançar quem não usa Instagram.</div></div>
   <div class="onde-item"><div class="onde-plat"><div class="onde-ic">🤝</div><div class="onde-nome">Pessoalmente</div></div><div class="onde-desc">Elogiaram sua pele? Essa é sua deixa! Fale sobre a Le Moritz e ofereça o desconto do seu cupom.</div></div>
-
   <div class="div-line"></div>
   <div class="col-t">02 · Mensagens prontas</div>
   <div class="cat-label">Macros gerais</div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Apresentando a marca</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Descobri uma marca incrível feita para pele madura, única no Brasil nesse segmento. Chama Le Moritz. Eu tenho desconto lá se quiser dar uma olhada!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Descobri uma marca incrível feita para pele madura, única no Brasil nesse segmento. Chama Le Moritz. Eu tenho desconto lá se quiser dar uma olhada!')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Quando elogiarem sua pele</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Eu tenho desconto nessa loja se quiser experimentar!"</div><button class="copy-btn-s" onclick="copiar(this,'Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Eu tenho desconto nessa loja se quiser experimentar!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Que bom que gostou! Tô cuidando da pele com a Le Moritz. Tem produtos incríveis para pele madura. Eu tenho desconto lá se quiser conhecer!"</div><button class="copy-btn-s" onclick="copiar(this,'Que bom que gostou! Tô cuidando da pele com a Le Moritz. Tem produtos incríveis para pele madura. Eu tenho desconto lá se quiser conhecer!')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Quando elogiarem sua make</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Obrigada! É o Stick da Le Moritz, uma make feita para pele madura. Leve, linda e ainda hidrata. Eu tenho desconto nessa loja se quiser!"</div><button class="copy-btn-s" onclick="copiar(this,'Obrigada! É o Stick da Le Moritz, uma make feita para pele madura. Leve, linda e ainda hidrata. Eu tenho desconto nessa loja se quiser!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Que bom! Uso os sticks da Le Moritz. Make que trata a pele enquanto usa. Eu tenho desconto lá se quiser experimentar!"</div><button class="copy-btn-s" onclick="copiar(this,'Que bom! Uso os sticks da Le Moritz. Make que trata a pele enquanto usa. Eu tenho desconto lá se quiser experimentar!')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Para grupo de amigas</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Meninas, quem quiser conhecer uma linha de skincare e make feita para pele madura, eu tenho desconto nessa loja. Me chama no privado!"</div><button class="copy-btn-s" onclick="copiar(this,'Meninas, quem quiser conhecer uma linha de skincare e make feita para pele madura, eu tenho desconto nessa loja. Me chama no privado!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Estou usando a Le Moritz e amando. Linha feita para pele madura de verdade. Tenho desconto para quem quiser experimentar. Me fala!"</div><button class="copy-btn-s" onclick="copiar(this,'Estou usando a Le Moritz e amando. Linha feita para pele madura de verdade. Tenho desconto para quem quiser experimentar. Me fala!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Quando perguntarem o preço</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Com o meu desconto já fica mais acessível! E o frete é grátis acima de R$100. Vale muito a pena pela qualidade!"</div><button class="copy-btn-s" onclick="copiar(this,'Com o meu desconto já fica mais acessível! E o frete é grátis acima de R$100. Vale muito a pena pela qualidade!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Entendo! Mas com o meu cupom você já garante 10% OFF. E a qualidade é diferente de tudo que já usei para pele madura."</div><button class="copy-btn-s" onclick="copiar(this,'Entendo! Mas com o meu cupom você já garante 10% OFF. E a qualidade é diferente de tudo que já usei para pele madura.')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Quando disser que vai pensar</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre que precisar!"</div><button class="copy-btn-s" onclick="copiar(this,'Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre que precisar!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Sem problema! Mando o link para você guardar. Quando decidir é só usar meu cupom que o desconto já aparece no carrinho!"</div><button class="copy-btn-s" onclick="copiar(this,'Sem problema! Mando o link para você guardar. Quando decidir é só usar meu cupom que o desconto já aparece no carrinho!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Para reativar quem sumiu</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Lembrei de você. Ainda tem interesse nos produtos da Le Moritz? Eu tenho desconto nessa loja se quiser aproveitar!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Lembrei de você. Ainda tem interesse nos produtos da Le Moritz? Eu tenho desconto nessa loja se quiser aproveitar!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Passando para saber se você chegou a conhecer a Le Moritz. Eu tenho desconto lá se ainda quiser!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Passando para saber se você chegou a conhecer a Le Moritz. Eu tenho desconto lá se ainda quiser!')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Acompanhamento pós venda</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala, posso te ajudar!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala, posso te ajudar!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Chegou tudo certinho? Fico feliz que você experimentou. Me conta o que está achando!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Chegou tudo certinho? Fico feliz que você experimentou. Me conta o que está achando!')">Copiar ↗</button></div></div></div>
-
   <div class="div-thin"></div>
   <div class="cat-label">Por produto</div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Stick Blush com cor</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Uso um [STICK X] da Le Moritz e amei. É uma marca feita para pele madura. Eu tenho desconto nessa loja. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Uso um [STICK X] da Le Moritz e amei. É uma marca feita para pele madura. Eu tenho desconto nessa loja. Quer o link?')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Você falou que queria renovar a make. Tenho usado o [STICK X] da Le Moritz e tô obcecada. Eu tenho desconto lá!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você falou que queria renovar a make. Tenho usado o [STICK X] da Le Moritz e tô obcecada. Eu tenho desconto lá!')">Copiar ↗</button></div><div class="nota-p">Pode falar do Stick Terracota, Coral ou Mauve</div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Stick Iluminador</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Você ama um glow natural? Uso o [ILUMINADOR X] da Le Moritz e a pele fica incrível. Eu tenho desconto nessa loja!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você ama um glow natural? Uso o [ILUMINADOR X] da Le Moritz e a pele fica incrível. Eu tenho desconto nessa loja!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Lembrei de você porque sei que você gosta de pele iluminada. Tenho desconto no [ILUMINADOR X] da Le Moritz. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Lembrei de você porque sei que você gosta de pele iluminada. Tenho desconto no [ILUMINADOR X] da Le Moritz. Quer o link?')">Copiar ↗</button></div><div class="nota-p">Pode falar do Iluminador Rosê ou Dourado</div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Máscara de Cílios Regenerativa</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Lembrei de você porque você ama um olhar marcante. Tenho desconto em uma máscara da Le Moritz feita para cílios mais finos. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Lembrei de você porque você ama um olhar marcante. Tenho desconto em uma máscara da Le Moritz feita para cílios mais finos. Quer o link?')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Você falou que seus cílios estavam fracos. A Le Moritz tem uma máscara regenerativa que além de volume dá tratamento. Eu tenho desconto lá!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você falou que seus cílios estavam fracos. A Le Moritz tem uma máscara regenerativa que além de volume dá tratamento. Eu tenho desconto lá!')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Sérum Revitalizador de Olhos</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Você comentou que estava procurando algo para a região dos olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você comentou que estava procurando algo para a região dos olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Pensei em você porque sei que você não gosta das marquinhas ao redor dos olhos. A Le Moritz tem um sérum específico. Eu tenho desconto. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Pensei em você porque sei que você não gosta das marquinhas ao redor dos olhos. A Le Moritz tem um sérum específico. Eu tenho desconto. Quer o link?')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Sérum Lift Instantâneo</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum da Le Moritz dá resultado na hora. Eu tenho desconto nessa loja. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum da Le Moritz dá resultado na hora. Eu tenho desconto nessa loja. Quer o link?')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Lembrei de você. Esse sérum da Le Moritz reduz as linhas instantaneamente. Feito para pele madura. Eu tenho desconto lá!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Lembrei de você. Esse sérum da Le Moritz reduz as linhas instantaneamente. Feito para pele madura. Eu tenho desconto lá!')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Creme Antirrugas Multicamadas</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Você falou que sua pele anda ressecada. Pele seca tende a marcar mais as rugas. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você falou que sua pele anda ressecada. Pele seca tende a marcar mais as rugas. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Você mencionou que a pele estava sem vida. Esse creme da Le Moritz hidrata em camadas e a pele volta a ter aspecto saudável. Quer que eu te mande o link com desconto?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você mencionou que a pele estava sem vida. Esse creme da Le Moritz hidrata em camadas e a pele volta a ter aspecto saudável. Quer que eu te mande o link com desconto?')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Tônico Essência 8 em 1</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Você falou que sua pele estava sem viço. Esse tônico da Le Moritz devolve a luminosidade que a pele madura perde com o tempo. Eu tenho desconto lá. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você falou que sua pele estava sem viço. Esse tônico da Le Moritz devolve a luminosidade que a pele madura perde com o tempo. Eu tenho desconto lá. Quer o link?')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Esse tônico da Le Moritz faz 8 funções em um só produto. Hidrata, firma e ilumina. Eu tenho desconto nessa loja. Quer conhecer?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Esse tônico da Le Moritz faz 8 funções em um só produto. Hidrata, firma e ilumina. Eu tenho desconto nessa loja. Quer conhecer?')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Mousse de Limpeza Revitalizante</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Lembrei quando você falou de sabonetes faciais. Encontrei um mousse da Le Moritz que hidrata enquanto limpa. A pele sai macia. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Lembrei quando você falou de sabonetes faciais. Encontrei um mousse da Le Moritz que hidrata enquanto limpa. A pele sai macia. Quer o link?')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Sabe aquela sensação de pele apertada depois de lavar o rosto? Com esse mousse da Le Moritz não acontece. Eu tenho desconto lá!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Sabe aquela sensação de pele apertada depois de lavar o rosto? Com esse mousse da Le Moritz não acontece. Eu tenho desconto lá!')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Stick Hidratante FPS 50</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Você falou que queria um protetor que não pesasse. Uso o stick FPS 50 da Le Moritz e é prático demais. Eu tenho desconto lá. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você falou que queria um protetor que não pesasse. Uso o stick FPS 50 da Le Moritz e é prático demais. Eu tenho desconto lá. Quer o link?')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Esquecia de passar protetor todo dia. Esse stick da Le Moritz mudou isso. Fácil, rápido e feito para pele madura. Eu tenho desconto nessa loja!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Esquecia de passar protetor todo dia. Esse stick da Le Moritz mudou isso. Fácil, rápido e feito para pele madura. Eu tenho desconto nessa loja!')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="msg-acordeao"><div class="msg-header" onclick="toggleMsg(this)"><div class="msg-nome">Stick Retinol Noturno</div><div class="msg-arr">›</div></div><div class="msg-body"><div class="copy-it"><div class="copy-num-s">01</div><div class="copy-txt-s">"Oi [nome]! Você falou que queria algo para usar à noite. Uso esse stick da Le Moritz antes de dormir e a pele fica incrível de manhã. Eu tenho desconto lá. Quer o link?"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Você falou que queria algo para usar à noite. Uso esse stick da Le Moritz antes de dormir e a pele fica incrível de manhã. Eu tenho desconto lá. Quer o link?')">Copiar ↗</button></div><div class="copy-it"><div class="copy-num-s">02</div><div class="copy-txt-s">"Oi [nome]! Esse stick com retinol da Le Moritz trabalha enquanto você dorme. A pele rejuvenesce de verdade. Eu tenho desconto nessa loja!"</div><button class="copy-btn-s" onclick="copiar(this,'Oi [nome]! Esse stick com retinol da Le Moritz trabalha enquanto você dorme. A pele rejuvenesce de verdade. Eu tenho desconto nessa loja!')">Copiar ↗</button></div><div class="envie"><div class="envie-label">Envie também</div><div class="envie-txt">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!"</div><button class="envie-btn" onclick="copiar(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho antes de finalizar que o desconto já aparece!')">Copiar ↗</button></div></div></div>
-
   <div class="div-line"></div>
   <div class="col-t">03 · Frete e prazos</div>
   <div class="frete-row"><div class="frete-label">Frete grátis</div><div class="frete-val">Para todo o Brasil acima de R$100</div></div>
@@ -414,13 +371,11 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; 
   <div class="frete-row"><div class="frete-label">Transportadora</div><div class="frete-val">Mandaê</div></div>
   <a href="https://rastreae.com.br/busca" target="_blank" class="btn" style="margin-top:14px;text-decoration:none"><span>Rastrear pedido</span><span>↗</span></a>
   <a href="https://wa.me/16364319911" target="_blank" class="btn btn-rosa" style="text-decoration:none"><span>Suporte WhatsApp · 9h às 17h</span><span>↗</span></a>
-
   <div class="div-line"></div>
   <div class="col-t">04 · O que indicar</div>
   <div class="indicar-row"><div class="indicar-q">Região dos olhos</div><div class="indicar-a"><strong>Sérum Revitalizador de Olhos</strong> para tratar a área. <strong>Sérum Lift Instantâneo</strong> para reduzir linhas de expressão.</div></div>
   <div class="indicar-row"><div class="indicar-q">Pele sem hidratação</div><div class="indicar-a"><strong>Creme Multicamadas + Retinol + Tônico 8 em 1 + Stick FPS 50</strong></div></div>
   <div class="indicar-row"><div class="indicar-q">Pele sem viço e olhos cansados</div><div class="indicar-a">Linha completa: <strong>Mousse, Tônico, Sérum de Olhos, Creme, Retinol e FPS 50</strong></div></div>
-
   <div class="div-line"></div>
   <div class="col-t">05 · Suporte Le Moritz</div>
   <div class="col-p">Dúvidas sobre pedidos, entregas ou produtos? Nossa equipe atende de segunda a sexta, das 9h às 17h.</div>
@@ -429,7 +384,6 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; 
   <div class="em-breve"><div class="eb-eyebrow">Em breve</div><div class="eb-t">Mais dicas de vendas</div></div>
 </div>
 
-<!-- ═══ CONTEÚDO ═══ -->
 <div class="page" id="page-conteudo">
   <div class="headline"><div class="headline-t">Ideias de Conteúdo</div><div class="headline-s">Inspiração para postar hoje</div></div>
   <div class="ideia-cat">Ideia 1 · Skincare · Sérum de Olhos</div>
@@ -454,4 +408,142 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; 
   <div class="angulo-row"><div class="angulo-ph">📖</div><div><div class="angulo-t">Modo história</div><div class="angulo-p">Olhe para a câmera e conte sua experiência. Natural e autêntico é o que mais engaja.</div></div></div>
   <div class="angulo-row"><div class="angulo-ph">🎥</div><div><div class="angulo-t">Apresentando o produto</div><div class="angulo-p">Segure os produtos na frente do rosto e fale sobre eles olhando para a câmera.</div></div></div>
   <div class="angulo-row"><div class="angulo-ph">✨</div><div><div class="angulo-t">Aplicando na pele</div><div class="angulo-p">Câmera bem próxima. Aplique o produto e mostre o resultado na hora.</div></div></div>
-  <div class="angulo-row"><div class="angulo-ph">🖐️</div><div><div cl
+  <div class="angulo-row"><div class="angulo-ph">🖐️</div><div><div class="angulo-t">Dois produtos</div><div class="angulo-p">Um em cada mão. Apoie o celular antes para o vídeo ficar estável e bem enquadrado. Filme de frente, na altura do rosto.</div></div></div>
+  <div class="div-line"></div>
+  <div class="legenda-box">
+    <div class="legenda-t">Dica de legenda</div>
+    <div class="legenda-p">Não sabe o que escrever? Comece sempre pelo problema que o produto resolve.</div>
+    <div class="legenda-ex">"Cansada de..."</div>
+    <div class="legenda-ex" style="margin-bottom:0">"Descobri que..."</div>
+  </div>
+</div>
+
+<div class="page" id="page-skincare">
+  <div class="headline"><div class="headline-t">Skincare</div><div class="headline-s">Cuidados para a pele madura</div></div>
+  <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1A1A1A;margin-bottom:10px;line-height:1.2">Por que a pele madura precisa de cuidados específicos?</div>
+  <div class="col-p">A partir dos 45 anos, o colágeno diminui, a hidratação escapa mais fácil e a pele fica mais sensível. A Le Moritz foi criada exatamente para essa fase.</div>
+  <div class="div-line"></div>
+  <div class="rotina-label">Criamos uma sugestão de rotina pra você</div>
+  <div class="col-t">Rotina de manhã</div>
+  <div class="passo-row"><div class="passo-num">1</div><div class="passo-txt">Mousse de Limpeza</div></div>
+  <div class="passo-row"><div class="passo-num">2</div><div class="passo-txt">Tônico Essência 8 em 1</div></div>
+  <div class="passo-row"><div class="passo-num">3</div><div class="passo-txt">Creme Antirrugas Multicamadas</div></div>
+  <div class="passo-row"><div class="passo-num">4</div><div class="passo-txt">Stick Hidratante FPS 50</div></div>
+  <div class="passo-row"><div class="passo-num">5</div><div class="passo-txt">Protetor solar de sua preferência</div></div>
+  <div class="div-line"></div>
+  <div class="col-t">Rotina de noite</div>
+  <div class="col-p">Escolha a rotina que combina com o seu tipo de pele.</div>
+  <div class="noite-tipo">Pele sensível</div>
+  <div class="passo-row"><div class="passo-num">1</div><div class="passo-txt">Mousse de Limpeza</div></div>
+  <div class="passo-row"><div class="passo-num">2</div><div class="passo-txt">Sérum Revitalizador de Olhos</div></div>
+  <div class="passo-row"><div class="passo-num">3</div><div class="passo-txt">Tônico Essência 8 em 1</div></div>
+  <div class="passo-row"><div class="passo-num">4</div><div class="passo-txt">Stick Retinol Noturno</div></div>
+  <div class="div-thin"></div>
+  <div class="noite-tipo">Pele normal</div>
+  <div class="passo-row"><div class="passo-num">1</div><div class="passo-txt">Tônico Essência 8 em 1</div></div>
+  <div class="passo-row"><div class="passo-num">2</div><div class="passo-txt">Creme Antirrugas Multicamadas</div></div>
+  <div class="passo-row"><div class="passo-num">3</div><div class="passo-txt">Sérum Revitalizador de Olhos</div></div>
+  <div class="passo-row"><div class="passo-num">4</div><div class="passo-txt">Stick Retinol Noturno</div></div>
+  <div class="div-line"></div>
+  <div class="col-t">Maquiagem</div>
+  <div class="col-p">Use nossos Sticks quando quiser. Todos têm vitaminas e ativos que hidratam e tratam enquanto você se maquia, perfeitos para peles maduras.</div>
+  <div class="div-line"></div>
+  <div class="col-t">Vídeos · veja como usar</div>
+  <a href="https://www.youtube.com/shorts/wT2jWPZ60wY" target="_blank" class="video-card"><div class="video-thumb"><div class="play"><span>▶</span></div></div><div style="flex:1"><div class="video-nome">Sérum Lift Instantâneo</div><div class="video-plat">YouTube Short</div></div><div class="video-arr">›</div></a>
+  <a href="https://www.youtube.com/shorts/4lTHLB4oQmY" target="_blank" class="video-card"><div class="video-thumb"><div class="play"><span>▶</span></div></div><div style="flex:1"><div class="video-nome">Sérum Revitalizador de Olhos</div><div class="video-plat">YouTube Short</div></div><div class="video-arr">›</div></a>
+  <a href="https://www.youtube.com/shorts/JzybqmkFOTM" target="_blank" class="video-card"><div class="video-thumb"><div class="play"><span>▶</span></div></div><div style="flex:1"><div class="video-nome">Stick Hidratante FPS 50</div><div class="video-plat">YouTube Short</div></div><div class="video-arr">›</div></a>
+  <div class="video-card"><div class="video-thumb breve"><div class="play"><span style="color:#CCC">⏳</span></div></div><div style="flex:1"><div class="video-nome">Mousse de Limpeza</div><div class="video-breve">Vídeo em breve</div></div><div class="video-arr breve">›</div></div>
+  <div class="video-card"><div class="video-thumb breve"><div class="play"><span style="color:#CCC">⏳</span></div></div><div style="flex:1"><div class="video-nome">Tônico Essência 8 em 1</div><div class="video-breve">Vídeo em breve</div></div><div class="video-arr breve">›</div></div>
+  <div class="video-card"><div class="video-thumb breve"><div class="play"><span style="color:#CCC">⏳</span></div></div><div style="flex:1"><div class="video-nome">Creme Antirrugas Multicamadas</div><div class="video-breve">Vídeo em breve</div></div><div class="video-arr breve">›</div></div>
+  <div class="video-card"><div class="video-thumb breve"><div class="play"><span style="color:#CCC">⏳</span></div></div><div style="flex:1"><div class="video-nome">Retinol Noturno</div><div class="video-breve">Vídeo em breve</div></div><div class="video-arr breve">›</div></div>
+  <div class="div-line"></div>
+  <div class="mousse-box">
+    <div class="mousse-t">Mousse de Limpeza</div>
+    <div class="mousse-p">A escovinha potencializa a limpeza. Use de acordo com o tipo da sua pele:</div>
+    <div class="badge-item"><div class="badge">Pele sensível</div><div class="badge-desc">2x por semana</div></div>
+    <div class="badge-item"><div class="badge">Pele normal</div><div class="badge-desc">3 a 4x por semana</div></div>
+    <div class="badge-item"><div class="badge">Outros dias</div><div class="badge-desc">Aplique com a mão limpa</div></div>
+  </div>
+  <div class="div-line"></div>
+  <div class="lift-t">Como usar o Sérum Lift com maquiagem?</div>
+  <div class="lift-item"><div class="lift-dot"></div><div class="lift-txt">Aplique no rosto limpo e seco, <strong>metade de um grão de arroz</strong>, com batidinhas suaves</div></div>
+  <div class="lift-item"><div class="lift-dot"></div><div class="lift-txt">Prefere usar após a make? Aplique por cima com batidinhas bem leves e <strong>quantidade menor</strong></div></div>
+  <div class="lift-item"><div class="lift-dot"></div><div class="lift-txt">Antes ou depois funciona. Experimenta e descobre o que sua pele ama mais</div></div>
+  <div class="div-line"></div>
+  <div class="derma-tag">Parceira oficial</div>
+  <div class="derma-nome">Dra. Marcela Travassos</div>
+  <div class="derma-cargo">Dermatologista · Campo Grande, MS</div>
+  <div class="col-p">Parceira 100% oficial da Le Moritz. Indica os produtos com base na experiência clínica com pacientes 40+.</div>
+  <a href="https://www.instagram.com/p/DXGI6rlDM4N/" target="_blank" class="btn" style="text-decoration:none"><span>Ver indicação no Instagram</span><span>↗</span></a>
+  <a href="https://www.instagram.com/marcelatravassos_dermato/" target="_blank" class="btn btn-rosa" style="text-decoration:none"><span>Ver perfil da Dra. Marcela</span><span>↗</span></a>
+</div>
+
+<div class="page" id="page-make">
+  <div class="headline"><div class="headline-t">Maquiagem</div><div class="headline-s">Como usar os Sticks Le Moritz</div></div>
+  <div class="col-t">Stick Blush</div>
+  <div class="grid">
+    <div class="grid-cell"><img class="grid-img" src="imagens/rosa_mauve.jpg" alt="Rosa Mauve"><div class="grid-nome">Rosa Mauve</div><div class="grid-tipo">Blush</div></div>
+    <div class="grid-cell"><img class="grid-img" src="imagens/terracota.jpg" alt="Terracota"><div class="grid-nome">Terracota</div><div class="grid-tipo">Blush</div></div>
+    <div class="grid-cell"><img class="grid-img" src="imagens/coral.jpg" alt="Coral"><div class="grid-nome">Coral</div><div class="grid-tipo">Blush</div></div>
+    <div class="grid-cell"><img class="grid-img" src="imagens/marrom_cafe.jpg" alt="Marrom Café"><div class="grid-nome">Marrom Café</div><div class="grid-tipo">Contorno</div></div>
+  </div>
+  <div class="col-t">Stick Iluminador</div>
+  <div class="grid" style="margin-bottom:24px">
+    <div class="grid-cell"><img class="grid-img" src="imagens/rose.jpg" alt="Rosê"><div class="grid-nome">Rosê</div><div class="grid-tipo">Iluminador</div></div>
+    <div class="grid-cell"><img class="grid-img" src="imagens/dourado.jpg" alt="Dourado"><div class="grid-nome">Dourado</div><div class="grid-tipo">Iluminador</div></div>
+  </div>
+  <div class="col-t">Onde aplicar cada um</div>
+  <div class="passo-row"><div class="passo-num">1</div><div><div class="passo-txt">Contorno · Marrom Café</div><div style="font-size:13px;font-weight:600;color:#999;margin-top:3px">Testa, laterais do rosto e abaixo das maçãs</div></div></div>
+  <div class="passo-row"><div class="passo-num">2</div><div><div class="passo-txt">Blush · Rosa Mauve, Terracota ou Coral</div><div style="font-size:13px;font-weight:600;color:#999;margin-top:3px">Nas maçãs do rosto, esfume em direção às têmporas</div></div></div>
+  <div class="passo-row"><div class="passo-num">3</div><div><div class="passo-txt">Iluminador · Rosê ou Dourado</div><div style="font-size:13px;font-weight:600;color:#999;margin-top:3px">Nariz, queixo, arco do cupido e parte alta das maçãs</div></div></div>
+  <div class="passo-row"><div class="passo-num">4</div><div><div class="passo-txt">Esfume tudo com o Pincel 9 em 1</div></div></div>
+  <div class="div-line"></div>
+  <div class="col-t">Guia de contorno</div>
+  <div class="guia-wrap" onclick="document.getElementById('modal-guia').classList.add('open')">
+    <img class="guia-img" src="imagens/guia_contorno.jpg" alt="Guia de contorno">
+    <div class="guia-overlay"><div class="guia-overlay-t">Guia completo</div><div class="guia-overlay-btn">Toque para ver</div></div>
+  </div>
+  <div class="guia-dica">Menos é mais. Comece com pouco e construa a intensidade.</div>
+  <div class="div-line"></div>
+  <div class="col-t">Máscara de Cílios Regenerativa Pro-Age</div>
+  <div class="mascara-row">
+    <img class="mascara-img" src="imagens/mascara.jpg" alt="Máscara de Cílios">
+    <div><div class="mascara-t">Por que funciona para 45+</div><div class="mascara-p">Desenvolvida para cílios mais finos e curtos, comuns após os 45 anos.</div></div>
+  </div>
+  <div class="ben-row"><div class="b-dot"></div><div class="b-txt"><strong>Aplicador especial</strong> que alcança até os menores cílios, destacando cada fio</div></div>
+  <div class="ben-row"><div class="b-dot"></div><div class="b-txt"><strong>Lift e comprimento instantâneos</strong> sem ressecar nem quebrar</div></div>
+  <div class="ben-row"><div class="b-dot"></div><div class="b-txt"><strong>Tratamento contínuo</strong> que nutre e fortalece os fios com uso regular</div></div>
+  <div class="div-line"></div>
+  <div class="col-t">Vídeos · veja como usar</div>
+  <a href="https://www.instagram.com/p/DYsNHQaBau_/" target="_blank" class="video-card"><div class="video-thumb"><div class="play"><span>▶</span></div></div><div style="flex:1"><div class="video-nome">Os 6 Sticks · para que serve cada um</div><div class="video-plat">Instagram</div></div><div class="video-arr">›</div></a>
+  <a href="https://www.instagram.com/p/DYprC9LRZSq/" target="_blank" class="video-card"><div class="video-thumb"><div class="play"><span>▶</span></div></div><div style="flex:1"><div class="video-nome">Make com Rosa Mauve e Marrom Café</div><div class="video-plat">Instagram</div></div><div class="video-arr">›</div></a>
+  <a href="https://www.youtube.com/shorts/yUs_bGvn1gE" target="_blank" class="video-card"><div class="video-thumb"><div class="play"><span>▶</span></div></div><div style="flex:1"><div class="video-nome">Trio Sticks · make em segundos</div><div class="video-plat">YouTube Short</div></div><div class="video-arr">›</div></a>
+  <a href="https://www.youtube.com/shorts/0gX89g3HsN8" target="_blank" class="video-card"><div class="video-thumb"><div class="play"><span>▶</span></div></div><div style="flex:1"><div class="video-nome">Máscara de Cílios Pro-Age</div><div class="video-plat">YouTube Short</div></div><div class="video-arr">›</div></a>
+</div>
+
+<div class="footer"><a href="https://lemoritz.com.br" target="_blank">lemoritz.com.br</a> &nbsp;·&nbsp; <a href="https://instagram.com/lemoritz_oficial" target="_blank">@lemoritz_oficial</a></div>
+
+<script>
+function showPage(id,el){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});
+  document.getElementById('page-'+id).classList.add('active');
+  if(el)el.classList.add('active');
+  window.scrollTo(0,0);
+}
+function toggleMsg(header){
+  var body=header.nextElementSibling;
+  var arr=header.querySelector('.msg-arr');
+  body.classList.toggle('open');
+  arr.classList.toggle('open');
+}
+function copiar(btn,texto){
+  navigator.clipboard.writeText(texto).then(function(){
+    var original=btn.textContent;
+    btn.textContent='Copiado!';
+    setTimeout(function(){btn.textContent=original},2000);
+  });
+}
+</script>
+</body>
+</html>
