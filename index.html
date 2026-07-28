@@ -7,329 +7,335 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--wine:#7a2e3d;--wine-dark:#5c2230;--sand:#faf5f0;--sand-deep:#f3e7de;--ink:#2b2420;--ink-soft:#6b6058;--line:#e8ddd2;--white:#ffffff;--rosa:#D4A0A0}
+:root{--w:#7a2e3d;--wd:#5c2230;--s:#faf5f0;--sd:#f3e7de;--ink:#2b2420;--is:#6b6058;--ln:#e8ddd2;--wh:#ffffff;--rosa:#D4A0A0}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Work Sans",sans-serif;background:var(--sand);color:var(--ink);min-height:100vh}
-.desktop-header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;display:none}
-.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 32px}
-.logo{display:flex;flex-direction:column;line-height:1.05;cursor:pointer}
-.logo small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
-.logo strong{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--wine)}
-nav.menu{display:flex;align-items:center;gap:6px}
-.nav-item-d{position:relative}
-.nav-btn-d{display:flex;align-items:center;gap:6px;background:none;border:none;font-family:"Work Sans",sans-serif;font-size:15px;font-weight:500;color:var(--ink);padding:10px 14px;border-radius:8px;cursor:pointer;transition:background .15s,color .15s}
-.nav-btn-d:hover,.nav-btn-d.active{background:var(--sand-deep);color:var(--wine)}
-.caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .18s}
-.nav-item-d.open .caret{transform:rotate(225deg) translateY(2px)}
-.cta-pill{background:var(--wine);color:var(--white);border:none;font-family:"Work Sans",sans-serif;font-weight:600;font-size:14px;padding:11px 22px;border-radius:999px;cursor:pointer;transition:background .15s;display:flex;align-items:center;gap:8px}
-.cta-pill:hover{background:var(--wine-dark)}
-.panel{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);width:560px;background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px rgba(43,36,32,.14);padding:22px;display:none;grid-template-columns:1fr 1fr;gap:20px;z-index:200}
-.nav-item-d.open .panel{display:grid}
-.panel-col h4{font-family:"Fraunces",serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:8px;padding-left:2px}
-.panel-link{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;border-radius:12px;text-decoration:none;color:var(--ink);transition:background .15s;cursor:pointer}
-.panel-link:hover{background:var(--sand-deep)}
-.panel-icon{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--sand-deep);display:flex;align-items:center;justify-content:center;color:var(--wine);transition:background .15s,color .15s}
-.panel-link:hover .panel-icon{background:var(--wine);color:var(--white)}
-.panel-text strong{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
-.panel-text span{font-size:12px;color:var(--ink-soft);line-height:1.35}
-.cats-row{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:40px}
-.cat-link{display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer;color:var(--ink);width:82px;text-decoration:none}
-.cat-ring{width:68px;height:68px;border-radius:50%;border:1.5px solid var(--wine);display:flex;align-items:center;justify-content:center;color:var(--wine);background:var(--white);transition:background .15s,color .15s}
-.cat-link:hover .cat-ring{background:var(--wine);color:var(--white)}
-.cat-link span{font-size:12px;font-weight:500;text-align:center;line-height:1.25}
-.banner-wine{background:var(--wine);color:var(--white);border-radius:18px;padding:28px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
-.banner-wine h2{font-family:"Fraunces",serif;font-size:24px;font-weight:600;margin-bottom:6px}
-.banner-wine p{font-size:14px;opacity:.85;max-width:400px;line-height:1.6}
-.banner-btn-w{background:var(--white);color:var(--wine);border:none;font-weight:600;font-size:14px;padding:11px 22px;border-radius:999px;cursor:pointer;white-space:nowrap;font-family:"Work Sans",sans-serif}
-.desktop-main{max-width:1180px;margin:0 auto;padding:40px 32px 80px}
-.d-section{display:none}
-.d-section.active{display:block}
-.d-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.d-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px}
+body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
+
+/* ===== DESKTOP ===== */
+.dsk{display:none}
+.dsk-hdr{background:var(--wh);border-bottom:1px solid var(--ln);position:sticky;top:0;z-index:100}
+.dsk-hdr-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;padding:0 40px;height:64px;gap:0}
+.d-logo{display:flex;flex-direction:column;line-height:1.1;margin-right:48px;cursor:pointer;flex-shrink:0}
+.d-logo-s{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--is);font-weight:500}
+.d-logo-b{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--w)}
+.d-nav{display:flex;align-items:center;gap:0;flex:1}
+.d-nl{padding:0 16px;height:64px;display:flex;align-items:center;font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s}
+.d-nl:hover{color:var(--w)}
+.d-nl.act{color:var(--w);border-bottom-color:var(--w);font-weight:600}
+.d-main{max-width:1200px;margin:0 auto;padding:0 40px 80px}
+.d-hero{background:var(--w);padding:56px 40px}
+.d-hero-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.d-hero-badge{display:inline-block;background:rgba(255,255,255,.18);color:#fff;font-size:11px;font-weight:700;padding:4px 16px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.d-hero-title{font-family:"Fraunces",serif;font-size:42px;font-weight:600;color:#fff;line-height:1.15;margin-bottom:12px}
+.d-hero-sub{font-size:15px;color:rgba(255,255,255,.82);line-height:1.7;margin-bottom:24px;max-width:460px}
+.d-hero-btn{display:inline-block;background:#fff;color:var(--w);font-size:14px;font-weight:700;padding:13px 28px;border-radius:999px;cursor:pointer;border:none;font-family:"Work Sans",sans-serif;transition:opacity .15s}
+.d-hero-btn:hover{opacity:.9}
+.d-hero-stats{display:flex;gap:20px;flex-shrink:0}
+.d-stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:24px 32px;text-align:center}
+.d-stat-n{font-family:"Fraunces",serif;font-size:36px;font-weight:600;color:#fff}
+.d-stat-l{font-size:12px;color:rgba(255,255,255,.75);margin-top:6px;font-weight:500}
+.d-section{display:none;padding-top:48px}
+.d-section.act{display:block}
+.d-sec-title{font-family:"Fraunces",serif;font-size:28px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.d-sec-sub{font-size:15px;color:var(--is);margin-bottom:32px}
+.d-grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.d-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.d-grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:48px}
+.d-card{background:var(--wh);border:1px solid var(--ln);border-radius:16px;padding:26px}
 .d-card h3{font-family:"Fraunces",serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:14px}
-.d-title{font-family:"Fraunces",serif;font-size:28px;font-weight:600;color:var(--ink);margin-bottom:6px}
-.d-sub{font-size:15px;color:var(--ink-soft);margin-bottom:32px}
-.d-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
-.d-body{font-size:14px;color:var(--ink-soft);line-height:1.8;margin-bottom:14px}
-.d-btn{display:inline-flex;align-items:center;gap:8px;background:var(--wine);color:var(--white);border:none;font-family:"Work Sans",sans-serif;font-weight:600;font-size:14px;padding:12px 22px;border-radius:999px;cursor:pointer;text-decoration:none;transition:background .15s}
-.d-btn:hover{background:var(--wine-dark)}
-.d-btn-out{display:inline-flex;align-items:center;gap:8px;background:none;color:var(--wine);border:1.5px solid var(--wine);font-family:"Work Sans",sans-serif;font-weight:600;font-size:14px;padding:11px 22px;border-radius:999px;cursor:pointer;text-decoration:none;transition:all .15s}
-.d-btn-out:hover{background:var(--wine);color:var(--white)}
-.d-hr{border:none;border-top:1px solid var(--line);margin:28px 0}
-.d-tag{display:inline-block;background:var(--wine);color:var(--white);font-size:11px;font-weight:700;padding:4px 16px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
-.d-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)}
-.d-row:first-of-type{border-top:1px solid var(--line)}
-.d-winner{border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:12px}
-.d-winner h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
-.d-wrow{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--sand-deep)}
-.d-wrow:last-child{border:none}
-.d-wrow span:first-child{font-size:14px;font-weight:700;color:var(--ink)}
-.d-wrow span:last-child{font-size:13px;color:var(--ink-soft)}
-.d-ac{border-bottom:1px solid var(--line)}
-.d-ac:first-of-type{border-top:1px solid var(--line)}
-.d-ach{display:flex;align-items:center;justify-content:space-between;padding:15px 0;cursor:pointer}
-.d-ach:hover .d-act{color:var(--wine)}
+.d-hr{border:none;border-top:1px solid var(--ln);margin:36px 0}
+.d-tag{display:inline-block;background:var(--w);color:#fff;font-size:11px;font-weight:700;padding:4px 16px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.d-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--is);margin-bottom:8px}
+.d-body{font-size:14px;color:var(--is);line-height:1.8;margin-bottom:14px}
+.d-btn{display:inline-flex;align-items:center;gap:8px;background:var(--w);color:#fff;border:none;font-family:"Work Sans",sans-serif;font-weight:600;font-size:14px;padding:12px 24px;border-radius:999px;cursor:pointer;text-decoration:none;transition:background .15s}
+.d-btn:hover{background:var(--wd)}
+.d-btn-out{display:inline-flex;align-items:center;gap:8px;background:none;color:var(--w);border:1.5px solid var(--w);font-family:"Work Sans",sans-serif;font-weight:600;font-size:14px;padding:11px 24px;border-radius:999px;cursor:pointer;text-decoration:none;transition:all .15s}
+.d-btn-out:hover{background:var(--w);color:#fff}
+.d-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--ln)}
+.d-row:first-of-type{border-top:1px solid var(--ln)}
+.d-ac{border-bottom:1px solid var(--ln)}
+.d-ac:first-of-type{border-top:1px solid var(--ln)}
+.d-ach{display:flex;align-items:center;justify-content:space-between;padding:16px 0;cursor:pointer}
 .d-act{font-family:"Fraunces",serif;font-size:18px;font-weight:600;color:var(--ink);transition:color .15s}
+.d-ach:hover .d-act{color:var(--w)}
 .d-acarr{font-size:18px;color:var(--rosa);transition:transform .2s}
 .d-acarr.open{transform:rotate(90deg)}
-.d-acb{display:none;padding-bottom:14px}
+.d-acb{display:none;padding-bottom:16px}
 .d-acb.open{display:block}
-.d-cit{padding:11px 0;border-bottom:1px solid var(--sand-deep)}
+.d-cit{padding:12px 0;border-bottom:1px solid var(--sd)}
 .d-cit:last-of-type{border:none}
-.d-ctxt{font-size:14px;color:var(--ink-soft);line-height:1.7;font-style:italic;margin-bottom:8px}
-.d-cbtn{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--wine);color:var(--wine);padding:5px 14px;font-size:11px;font-weight:700;border-radius:999px;cursor:pointer;background:none;font-family:"Work Sans",sans-serif;transition:all .15s}
-.d-cbtn:hover{background:var(--wine);color:var(--white)}
-.d-envie{background:var(--sand-deep);border-left:3px solid var(--wine);padding:12px 16px;margin-top:10px;border-radius:0 8px 8px 0}
-.d-el{font-size:10px;font-weight:800;color:var(--wine);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
-.d-et{font-size:13px;color:var(--ink-soft);line-height:1.7;font-style:italic;margin-bottom:8px}
-.d-obj{border-left:3px solid var(--wine);padding:11px 15px;background:var(--sand-deep);margin-bottom:8px;border-radius:0 8px 8px 0}
+.d-ctxt{font-size:14px;color:var(--is);line-height:1.7;font-style:italic;margin-bottom:8px}
+.d-cbtn{display:inline-flex;align-items:center;gap:5px;border:1.5px solid var(--w);color:var(--w);padding:6px 16px;font-size:11px;font-weight:700;border-radius:999px;cursor:pointer;background:none;font-family:"Work Sans",sans-serif;transition:all .15s}
+.d-cbtn:hover{background:var(--w);color:#fff}
+.d-envie{background:var(--sd);border-left:3px solid var(--w);padding:12px 16px;margin-top:10px;border-radius:0 10px 10px 0}
+.d-el{font-size:10px;font-weight:800;color:var(--w);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+.d-et{font-size:13px;color:var(--is);line-height:1.7;font-style:italic;margin-bottom:8px}
+.d-obj{border-left:3px solid var(--w);padding:12px 16px;background:var(--sd);margin-bottom:8px;border-radius:0 10px 10px 0}
 .d-oq{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.d-or{font-size:13px;color:var(--ink-soft);line-height:1.6;font-style:italic}
-.d-li{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
-.d-li:first-of-type{border-top:1px solid var(--line)}
-.d-ldot{width:6px;height:6px;border-radius:50%;background:var(--wine);flex-shrink:0;margin-top:5px}
-.d-ltxt{font-size:14px;color:var(--ink-soft);line-height:1.6}
+.d-or{font-size:13px;color:var(--is);line-height:1.6;font-style:italic}
+.d-li{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid var(--ln)}
+.d-li:first-of-type{border-top:1px solid var(--ln)}
+.d-ldot{width:6px;height:6px;border-radius:50%;background:var(--w);flex-shrink:0;margin-top:5px}
+.d-ltxt{font-size:14px;color:var(--is);line-height:1.6}
 .d-ltxt strong{color:var(--ink);font-weight:700}
-.d-rc{border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:14px}
-.d-rc h4{font-family:"Fraunces",serif;font-size:18px;font-weight:600;color:var(--ink);margin-bottom:6px}
-.d-rq{font-size:14px;color:var(--ink-soft);font-style:italic;line-height:1.6;margin-bottom:16px}
-.d-rl{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--wine);margin-bottom:6px}
-.d-rs{font-size:14px;color:var(--ink-soft);margin-bottom:14px;line-height:1.7}
-.d-rd{background:var(--sand-deep);border-left:3px solid var(--wine);padding:10px 14px;font-size:13px;color:var(--ink-soft);line-height:1.7;font-style:italic;border-radius:0 8px 8px 0}
-.d-bc{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;align-items:center;gap:16px;margin-bottom:10px}
-.d-bi{width:46px;height:46px;background:var(--sand-deep);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--wine);flex-shrink:0;font-size:20px}
-.d-bt{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px}
-.d-bp{font-size:13px;color:var(--ink-soft);line-height:1.5}
-.d-pas{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
-.d-pas:first-of-type{border-top:1px solid var(--line)}
-.d-pn{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--wine);flex-shrink:0;width:22px}
-.d-pt{font-size:15px;color:var(--ink);line-height:1.6}
-.d-pod{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)}
-.d-pod:first-of-type{border-top:1px solid var(--line)}
+.d-pod{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--ln)}
+.d-pod:first-of-type{border-top:1px solid var(--ln)}
 .d-podl{display:flex;align-items:baseline;gap:12px}
-.d-podp{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--wine);width:22px}
+.d-podp{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--w);width:22px}
 .d-podn{font-size:15px;font-weight:700;color:var(--ink)}
-.d-podc{font-size:12px;color:var(--ink-soft)}
+.d-podc{font-size:12px;color:var(--is)}
 .d-podv{font-family:"Fraunces",serif;font-size:20px;font-weight:600;color:var(--ink)}
 .d-tl{display:flex;align-items:center;margin:18px 0}
 .d-tli{flex:1;text-align:center}
-.d-tlc{width:50px;height:50px;border-radius:50%;background:var(--wine);color:var(--white);font-family:"Fraunces",serif;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
+.d-tlc{width:50px;height:50px;border-radius:50%;background:var(--w);color:#fff;font-family:"Fraunces",serif;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
 .d-tll{font-size:11px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:1px}
-.d-tls{font-size:11px;color:var(--ink-soft);margin-top:3px}
-.d-tln{flex:1;height:1px;background:var(--wine);margin-top:-23px}
-.d-faq{padding:14px 0;border-bottom:1px solid var(--line)}
-.d-faq:first-of-type{border-top:1px solid var(--line)}
-.d-faqq{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.d-faqa{font-size:14px;color:var(--ink-soft);line-height:1.6}
-.d-ind{padding:14px 0;border-bottom:1px solid var(--line)}
-.d-ind:first-of-type{border-top:1px solid var(--line)}
+.d-tls{font-size:11px;color:var(--is);margin-top:3px}
+.d-tln{flex:1;height:1px;background:var(--w);margin-top:-24px}
+.d-faq{padding:14px 0;border-bottom:1px solid var(--ln)}
+.d-faq:first-of-type{border-top:1px solid var(--ln)}
+.d-faqq{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.d-faqa{font-size:14px;color:var(--is);line-height:1.6}
+.d-wcard{background:var(--wh);border:1px solid var(--ln);border-radius:14px;padding:20px;margin-bottom:12px}
+.d-wcard h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:12px}
+.d-wrow{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--sd)}
+.d-wrow:last-child{border:none}
+.d-wrow span:first-child{font-size:14px;font-weight:700;color:var(--ink)}
+.d-wrow span:last-child{font-size:13px;color:var(--is)}
+.d-ind{padding:14px 0;border-bottom:1px solid var(--ln)}
+.d-ind:first-of-type{border-top:1px solid var(--ln)}
 .d-indq{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px}
-.d-inda{font-size:14px;color:var(--ink-soft);line-height:1.7}
+.d-inda{font-size:14px;color:var(--is);line-height:1.7}
 .d-inda strong{color:var(--ink);font-weight:700}
-@keyframes piscar{0%,100%{background:var(--wine);color:#fff}50%{background:#fff;color:var(--wine);outline:2px solid var(--wine)}}
-.badge-ativo{display:inline-block;background:var(--wine);color:#fff;font-size:11px;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;animation:piscar 1.5s infinite}
-.mobile-header{background:var(--white);padding:20px 20px 14px;text-align:center;border-bottom:2px solid var(--line);display:block}
-.m-ey{font-size:10px;font-weight:700;color:var(--ink-soft);letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
-.m-logo{font-family:"Fraunces",serif;font-size:38px;font-weight:600;color:var(--wine);letter-spacing:2px;line-height:1}
-.m-sub{font-size:10px;font-weight:600;color:var(--rosa);margin-top:6px;letter-spacing:2.5px;text-transform:uppercase}
-.mobile-nav{background:var(--ink);display:flex;overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:100}
-.mobile-nav::-webkit-scrollbar{display:none}
-.m-nav-item{padding:13px 16px;font-size:10px;font-weight:700;color:#777;white-space:nowrap;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent}
-.m-nav-item.active{color:var(--rosa);border-bottom-color:var(--rosa)}
-.mobile-page{display:none;padding:24px 20px;max-width:600px;margin:0 auto;animation:fadeUp .3s ease}
-.mobile-page.active{display:block}
-@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.m-hl{text-align:center;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:22px}
-.m-hlt{font-family:"Fraunces",serif;font-size:28px;font-weight:600;color:var(--ink)}
-.m-hls{font-size:13px;color:var(--ink-soft);margin-top:5px}
-.m-lbl{font-size:10px;font-weight:800;color:var(--ink);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-.m-body{font-size:14px;color:var(--ink-soft);line-height:1.8;margin-bottom:14px}
-.m-hr{border:none;border-top:1px solid var(--ink);margin:20px 0}
-.m-thin{border:none;border-top:1px solid var(--line);margin:14px 0}
-.m-tag{display:inline-block;background:var(--ink);color:var(--rosa);font-size:9px;font-weight:800;padding:4px 14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.m-btn{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--ink);color:var(--ink);padding:13px 18px;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;cursor:pointer;text-decoration:none;font-family:"Work Sans",sans-serif;border-radius:4px}
-.m-btn-w{border-color:var(--wine);color:var(--wine)}
-.m-pas{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
-.m-pas:first-of-type{border-top:1px solid var(--line)}
-.m-pasn{font-family:"Fraunces",serif;font-size:20px;font-weight:600;color:var(--rosa);flex-shrink:0;width:20px}
+.d-rc{background:var(--wh);border:1px solid var(--ln);border-radius:14px;padding:22px;margin-bottom:14px}
+.d-rc h4{font-family:"Fraunces",serif;font-size:18px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.d-rq{font-size:14px;color:var(--is);font-style:italic;line-height:1.6;margin-bottom:16px}
+.d-rl{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--w);margin-bottom:6px}
+.d-rs{font-size:14px;color:var(--is);margin-bottom:14px;line-height:1.7}
+.d-rd{background:var(--sd);border-left:3px solid var(--w);padding:10px 14px;font-size:13px;color:var(--is);line-height:1.7;font-style:italic;border-radius:0 10px 10px 0}
+.d-bc{background:var(--wh);border:1px solid var(--ln);border-radius:14px;padding:18px;display:flex;align-items:center;gap:16px;margin-bottom:10px}
+.d-bi{width:46px;height:46px;background:var(--sd);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.d-bt{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.d-bp{font-size:13px;color:var(--is);line-height:1.5}
+.d-prod-card{background:var(--wh);border:1px solid var(--ln);border-radius:16px;overflow:hidden}
+.d-prod-img{background:var(--sd);height:180px;display:flex;align-items:center;justify-content:center}
+.d-prod-body{padding:20px}
+.d-prod-tag{display:inline-block;background:var(--sd);color:var(--w);font-size:11px;font-weight:700;padding:3px 12px;border-radius:999px;margin-bottom:10px;letter-spacing:.5px}
+.d-prod-name{font-family:"Fraunces",serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.d-prod-desc{font-size:13px;color:var(--is);line-height:1.6;margin-bottom:12px}
+.d-prod-link{font-size:13px;font-weight:700;color:var(--w);cursor:pointer}
+.d-color-swatch{display:flex;gap:6px;margin-bottom:10px}
+.d-swatch{width:18px;height:52px;border-radius:4px}
+.d-sec-banner{background:var(--w);border-radius:18px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:36px}
+.d-sec-banner h2{font-family:"Fraunces",serif;font-size:26px;font-weight:600;color:#fff;margin-bottom:6px}
+.d-sec-banner p{font-size:14px;color:rgba(255,255,255,.85);max-width:420px;line-height:1.6}
+@keyframes piscar{0%,100%{background:var(--w);color:#fff}50%{background:#fff;color:var(--w);outline:2px solid var(--w)}}
+.badge-ativo{display:inline-block;background:var(--w);color:#fff;font-size:11px;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;animation:piscar 1.5s infinite}
+.d-hint{background:var(--sd);border-left:3px solid var(--w);padding:12px 16px;border-radius:0 10px 10px 0;margin-top:14px}
+.d-hint p{font-size:13px;color:var(--is);line-height:1.7}
+.d-hint a{color:var(--w);font-weight:700;cursor:pointer}
+.d-footer{text-align:center;padding:32px 0;border-top:1px solid var(--ln);margin-top:48px;font-family:"Fraunces",serif;font-size:16px;color:var(--is);font-style:italic}
+.d-footer a{color:var(--w);text-decoration:none;font-weight:600}
+
+/* ===== MOBILE ===== */
+.mbl{display:block}
+.m-hdr{background:var(--wh);border-bottom:1px solid var(--ln);padding:12px 18px 10px;position:sticky;top:0;z-index:100}
+.m-logo-s{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--is);font-weight:500}
+.m-logo{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--w)}
+.m-page{display:none;padding:16px 18px 90px;background:var(--s);min-height:calc(100vh - 58px);animation:fadeUp .25s ease}
+.m-page.act{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.m-bnav{background:var(--wh);border-top:1px solid var(--ln);display:flex;position:fixed;bottom:0;left:0;right:0;z-index:200;padding:5px 0 8px}
+.m-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:3px 0}
+.m-tab-i{color:#bbb;display:flex;align-items:center;justify-content:center;height:24px;transition:color .15s}
+.m-tab-l{font-size:9.5px;font-weight:500;color:#bbb;font-family:"Work Sans",sans-serif;transition:color .15s}
+.m-tab.act .m-tab-i{color:var(--w)}
+.m-tab.act .m-tab-l{color:var(--w);font-weight:700}
+.m-banner{background:var(--w);color:#fff;border-radius:18px;padding:20px;margin-bottom:16px}
+.m-badge{display:inline-block;background:rgba(255,255,255,.2);font-size:10px;font-weight:700;padding:3px 12px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.m-banner-t{font-family:"Fraunces",serif;font-size:20px;font-weight:600;line-height:1.2;margin-bottom:8px}
+.m-banner-p{font-size:13px;opacity:.85;line-height:1.6;margin-bottom:14px}
+.m-banner-btn{display:block;background:#fff;color:var(--w);border:none;font-size:13px;font-weight:700;padding:11px;border-radius:999px;width:100%;font-family:"Work Sans",sans-serif;cursor:pointer;text-align:center}
+.m-hl{padding-bottom:16px;border-bottom:1px solid var(--ln);margin-bottom:20px}
+.m-hlt{font-family:"Fraunces",serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.m-hls{font-size:13px;color:var(--is)}
+.m-lbl{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:10px}
+.m-body{font-size:14px;color:var(--is);line-height:1.8;margin-bottom:14px}
+.m-hr{border:none;border-top:1px solid var(--ln);margin:22px 0}
+.m-thin{border:none;border-top:1px solid var(--ln);margin:12px 0}
+.m-tag{display:inline-block;background:var(--w);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.m-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--w);color:#fff;border:none;padding:13px 22px;font-size:14px;font-weight:600;border-radius:999px;cursor:pointer;text-decoration:none;font-family:"Work Sans",sans-serif;margin-bottom:10px;width:100%;transition:background .15s}
+.m-btn:hover{background:var(--wd)}
+.m-btn-out{display:flex;align-items:center;justify-content:center;gap:8px;background:none;color:var(--w);border:1.5px solid var(--w);padding:12px 22px;font-size:14px;font-weight:600;border-radius:999px;cursor:pointer;text-decoration:none;font-family:"Work Sans",sans-serif;margin-bottom:10px;width:100%;transition:all .15s}
+.m-btn-out:hover{background:var(--w);color:#fff}
+.m-pas{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--ln)}
+.m-pas:first-of-type{border-top:1px solid var(--ln)}
+.m-pasn{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--w);flex-shrink:0;width:22px}
 .m-past{font-size:14px;color:var(--ink);line-height:1.6}
 .m-past strong{font-weight:700}
-.m-pod{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)}
-.m-pod:first-of-type{border-top:1px solid var(--line)}
+.m-pod{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--ln)}
+.m-pod:first-of-type{border-top:1px solid var(--ln)}
 .m-podl{display:flex;align-items:baseline;gap:12px}
-.m-podp{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--rosa);width:22px}
-.m-podn{font-size:14px;font-weight:700;color:var(--ink)}
-.m-podc{font-size:11px;color:var(--ink-soft)}
+.m-podp{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--w);width:22px}
+.m-podn{font-size:15px;font-weight:700;color:var(--ink)}
+.m-podc{font-size:12px;color:var(--is)}
 .m-podv{font-family:"Fraunces",serif;font-size:20px;font-weight:600;color:var(--ink)}
 .m-tl{display:flex;align-items:center;margin:16px 0}
 .m-tli{flex:1;text-align:center}
-.m-tlc{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font-family:"Fraunces",serif;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
-.m-tlc.w{background:var(--wine)}
+.m-tlc{width:44px;height:44px;border-radius:50%;background:var(--w);color:#fff;font-family:"Fraunces",serif;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
+.m-tlc.r{background:var(--sd);color:var(--w)}
 .m-tll{font-size:11px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.5px}
-.m-tls{font-size:11px;color:var(--ink-soft);margin-top:2px}
-.m-tln{flex:1;height:1px;background:var(--ink);margin-top:-22px}
-.m-faq{padding:12px 0;border-bottom:1px solid var(--line)}
-.m-faq:first-of-type{border-top:1px solid var(--line)}
-.m-faqq{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
-.m-faqa{font-size:13px;color:var(--ink-soft);line-height:1.6}
-.m-wcard{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:10px}
-.m-wcard h4{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
-.m-wrow{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--sand-deep)}
+.m-tls{font-size:11px;color:var(--is);margin-top:2px}
+.m-tln{flex:1;height:1px;background:var(--w);margin-top:-22px}
+.m-faq{padding:12px 0;border-bottom:1px solid var(--ln)}
+.m-faq:first-of-type{border-top:1px solid var(--ln)}
+.m-faqq{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.m-faqa{font-size:13px;color:var(--is);line-height:1.6}
+.m-wcard{background:var(--wh);border:1px solid var(--ln);border-radius:14px;padding:18px;margin-bottom:12px}
+.m-wcard h4{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:10px}
+.m-wrow{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--sd)}
 .m-wrow:last-child{border:none}
 .m-wrow span:first-child{font-size:13px;font-weight:700;color:var(--ink)}
-.m-wrow span:last-child{font-size:12px;color:var(--ink-soft)}
-.m-ac{border-bottom:1px solid var(--line)}
-.m-ac:first-of-type{border-top:1px solid var(--line)}
-.m-ach{display:flex;align-items:center;justify-content:space-between;padding:13px 0;cursor:pointer}
+.m-wrow span:last-child{font-size:12px;color:var(--is)}
+.m-ac{border-bottom:1px solid var(--ln)}
+.m-ac:first-of-type{border-top:1px solid var(--ln)}
+.m-ach{display:flex;align-items:center;justify-content:space-between;padding:14px 0;cursor:pointer}
 .m-act{font-family:"Fraunces",serif;font-size:17px;font-weight:600;color:var(--ink)}
 .m-acarr{font-size:18px;color:var(--rosa);transition:transform .2s}
 .m-acarr.open{transform:rotate(90deg)}
-.m-acb{display:none;padding-bottom:13px}
+.m-acb{display:none;padding-bottom:14px}
 .m-acb.open{display:block}
-.m-cit{padding:10px 0;border-bottom:1px solid var(--sand-deep)}
+.m-cit{padding:10px 0;border-bottom:1px solid var(--sd)}
 .m-cit:last-of-type{border:none}
-.m-ctxt{font-size:13px;color:var(--ink-soft);line-height:1.7;font-style:italic;margin-bottom:7px}
-.m-cbtn{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--wine);color:var(--wine);padding:4px 12px;font-size:10px;font-weight:700;border-radius:999px;cursor:pointer;background:none;font-family:"Work Sans",sans-serif}
-.m-envie{background:var(--sand-deep);border-left:3px solid var(--wine);padding:10px 12px;margin-top:8px;border-radius:0 6px 6px 0}
-.m-el{font-size:9px;font-weight:800;color:var(--wine);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
-.m-et{font-size:12px;color:var(--ink-soft);line-height:1.7;font-style:italic;margin-bottom:6px}
-.m-obj{border-left:3px solid var(--wine);padding:8px 12px;background:var(--sand-deep);margin-bottom:6px;border-radius:0 6px 6px 0}
-.m-oq{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px}
-.m-or{font-size:12px;color:var(--ink-soft);line-height:1.6;font-style:italic}
-.m-li{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
-.m-li:first-of-type{border-top:1px solid var(--line)}
-.m-ldot{width:5px;height:5px;border-radius:50%;background:var(--wine);flex-shrink:0;margin-top:6px}
-.m-ltxt{font-size:13px;color:var(--ink-soft);line-height:1.6}
+.m-ctxt{font-size:13px;color:var(--is);line-height:1.7;font-style:italic;margin-bottom:8px}
+.m-cbtn{display:inline-flex;align-items:center;gap:5px;border:1.5px solid var(--w);color:var(--w);padding:6px 14px;font-size:11px;font-weight:700;border-radius:999px;cursor:pointer;background:none;font-family:"Work Sans",sans-serif;transition:all .15s}
+.m-envie{background:var(--sd);border-left:3px solid var(--w);padding:10px 12px;margin-top:8px;border-radius:0 8px 8px 0}
+.m-el{font-size:10px;font-weight:800;color:var(--w);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+.m-et{font-size:13px;color:var(--is);line-height:1.7;font-style:italic;margin-bottom:8px}
+.m-obj{border-left:3px solid var(--w);padding:10px 14px;background:var(--sd);margin-bottom:8px;border-radius:0 10px 10px 0}
+.m-oq{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.m-or{font-size:12px;color:var(--is);line-height:1.6;font-style:italic}
+.m-li{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--ln)}
+.m-li:first-of-type{border-top:1px solid var(--ln)}
+.m-ldot{width:6px;height:6px;border-radius:50%;background:var(--w);flex-shrink:0;margin-top:5px}
+.m-ltxt{font-size:13px;color:var(--is);line-height:1.6}
 .m-ltxt strong{color:var(--ink);font-weight:700}
-.m-rcard{border:1.5px solid var(--ink);padding:18px;margin-bottom:12px;border-radius:4px}
-.m-rcard h4{font-family:"Fraunces",serif;font-size:19px;font-weight:600;color:var(--ink);margin-bottom:5px}
-.m-rq{font-size:13px;color:var(--ink-soft);font-style:italic;line-height:1.6;margin-bottom:13px}
-.m-rl{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);margin-bottom:5px}
-.m-rs{font-size:13px;color:var(--ink-soft);margin-bottom:11px;line-height:1.7}
-.m-rd{background:var(--sand-deep);border-left:3px solid var(--wine);padding:9px 12px;font-size:12px;color:var(--ink-soft);line-height:1.7;font-style:italic}
-.m-ind{padding:12px 0;border-bottom:1px solid var(--line)}
-.m-ind:first-of-type{border-top:1px solid var(--line)}
+.m-rc{background:var(--wh);border:1px solid var(--ln);border-radius:14px;padding:18px;margin-bottom:14px}
+.m-rc h4{font-family:"Fraunces",serif;font-size:18px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.m-rq{font-size:13px;color:var(--is);font-style:italic;line-height:1.6;margin-bottom:13px}
+.m-rl{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--w);margin-bottom:5px}
+.m-rs{font-size:13px;color:var(--is);margin-bottom:11px;line-height:1.7}
+.m-rd{background:var(--sd);border-left:3px solid var(--w);padding:9px 12px;font-size:12px;color:var(--is);line-height:1.7;font-style:italic;border-radius:0 8px 8px 0}
+.m-ind{padding:13px 0;border-bottom:1px solid var(--ln)}
+.m-ind:first-of-type{border-top:1px solid var(--ln)}
 .m-indq{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.m-inda{font-size:13px;color:var(--ink-soft);line-height:1.7}
+.m-inda{font-size:13px;color:var(--is);line-height:1.7}
 .m-inda strong{color:var(--ink);font-weight:700}
-.m-be{display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid var(--line)}
-.m-be:first-of-type{border-top:1px solid var(--line)}
-.m-bei{width:38px;height:38px;background:var(--sand-deep);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--wine);flex-shrink:0;font-size:17px}
+.m-be{display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid var(--ln)}
+.m-be:first-of-type{border-top:1px solid var(--ln)}
+.m-bei{width:40px;height:40px;background:var(--sd);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .m-bet{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:2px}
-.m-bep{font-size:12px;color:var(--ink-soft);line-height:1.4}
-.nota-p{font-size:11px;color:var(--ink-soft);font-style:italic;margin-top:4px;margin-bottom:8px}
-.m-fr{padding:11px 0;border-bottom:1px solid var(--line)}
-.m-fr:first-of-type{border-top:1px solid var(--line)}
+.m-bep{font-size:12px;color:var(--is);line-height:1.4}
+.m-fr{padding:12px 0;border-bottom:1px solid var(--ln)}
+.m-fr:first-of-type{border-top:1px solid var(--ln)}
 .m-frl{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
-.m-frv{font-size:13px;color:var(--ink-soft)}
-.m-idx{background:var(--sand-deep);padding:14px;margin-bottom:18px;border-radius:10px}
-.m-idxl{font-size:9px;font-weight:800;color:var(--ink-soft);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
-.m-idxi{display:flex;gap:10px;margin-bottom:8px}
-.m-idxi:last-child{margin-bottom:0}
-.m-idxn{font-family:"Fraunces",serif;font-size:15px;font-weight:600;color:var(--wine);flex-shrink:0;width:18px}
-.m-idxt{font-size:13px;font-weight:700;color:var(--ink)}
-.m-idxd{font-size:11px;color:var(--ink-soft)}
-.m-rodape{text-align:center;padding-top:20px;border-top:1px solid var(--line);margin-top:20px;font-family:"Fraunces",serif;font-size:15px;color:var(--ink-soft);font-style:italic;line-height:1.6}
-.m-clbl{font-size:10px;font-weight:800;color:var(--wine);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-.ll-box{border:1.5px solid var(--line);border-radius:10px;padding:13px 17px;margin-bottom:8px}
-.ll-l{font-size:11px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.m-frv{font-size:13px;color:var(--is)}
+.m-clbl{font-size:11px;font-weight:700;color:var(--w);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.m-hint{background:var(--sd);border-left:3px solid var(--w);padding:11px 13px;border-radius:0 8px 8px 0;margin-top:12px}
+.m-hint p{font-size:12px;color:var(--is);line-height:1.7}
+.m-hint a{color:var(--w);font-weight:700;cursor:pointer}
+.m-prod-top{border-radius:14px;padding:16px;margin-bottom:14px}
+.m-prod-top.wine{background:var(--w);color:#fff}
+.m-prod-top.sand{background:var(--sd);border:1px solid var(--ln)}
+.m-prod-top-s{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;opacity:.8;margin-bottom:4px}
+.m-prod-top.sand .m-prod-top-s{color:var(--w);opacity:1}
+.m-prod-top-t{font-family:"Fraunces",serif;font-size:20px;font-weight:600;margin-bottom:4px}
+.m-prod-top.sand .m-prod-top-t{color:var(--ink)}
+.m-prod-top-p{font-size:12px;opacity:.85}
+.m-prod-top.sand .m-prod-top-p{color:var(--is);opacity:1}
+.m-make-card{background:var(--wh);border:1px solid var(--ln);border-radius:12px;padding:14px;margin-bottom:10px}
+.m-make-card-tag{display:inline-block;background:var(--sd);color:var(--w);font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.m-make-card-name{font-family:"Fraunces",serif;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.m-make-card-desc{font-size:12px;color:var(--is);line-height:1.5;margin-bottom:8px}
+.m-swatches{display:flex;gap:6px;margin-bottom:8px}
+.m-sw{width:16px;height:44px;border-radius:4px}
+.ll-box{background:var(--wh);border:1px solid var(--ln);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+.ll-l{font-size:11px;font-weight:700;color:var(--is);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
 .ll-u{font-family:"Fraunces",serif;font-size:18px;font-weight:600;color:var(--ink)}
-.footer{text-align:center;padding:28px 20px;font-size:13px;color:var(--ink-soft);border-top:1px solid var(--line)}
-.footer a{color:var(--wine);text-decoration:none;font-weight:600}
-.m-desbox{border:1.5px solid var(--ink);padding:20px;text-align:center;border-radius:4px;margin-bottom:16px}
-@media(min-width:900px){.desktop-header{display:block}.mobile-header,.mobile-nav,.mobile-page,.footer{display:none!important}.desktop-main{display:block}.d-footer{display:block}}
-@media(max-width:899px){.desktop-header,.desktop-main{display:none!important}.mobile-header,.mobile-nav{display:block}.mobile-page.active{display:block}.footer{display:block}}
+.m-rodape{text-align:center;padding-top:22px;border-top:1px solid var(--ln);margin-top:22px;font-family:"Fraunces",serif;font-size:15px;color:var(--is);font-style:italic;line-height:1.6}
+.nota-p{font-size:11px;color:var(--is);font-style:italic;margin-top:4px;margin-bottom:8px}
+.d-footer-bar{text-align:center;padding:28px 40px;border-top:1px solid var(--ln);margin-top:48px;font-size:13px;color:var(--is)}
+.d-footer-bar a{color:var(--w);text-decoration:none;font-weight:600}
+@media(min-width:900px){.dsk{display:block}.mbl,.m-bnav{display:none!important}}
+@media(max-width:899px){.dsk{display:none!important}.mbl{display:block}.m-bnav{display:flex}}
 </style>
 </head>
 <body>
-<!-- DESKTOP HEADER -->
-<header class="desktop-header">
-<div class="nav-inner">
-<div class="logo" onclick="dShow('inicio')"><small>Portal · Representante</small><strong>Le Moritz</strong></div>
-<nav class="menu">
-<div class="nav-item-d"><button class="nav-btn-d active" id="d-bi" onclick="dShow('inicio')">Início</button></div>
-<div class="nav-item-d"><button class="nav-btn-d" id="d-bv" onclick="dShow('vendas')">Minhas Vendas</button></div>
-<div class="nav-item-d"><button class="nav-btn-d" id="d-bd" onclick="dShow('desafios')">Desafios</button></div>
-<div class="nav-item-d" id="d-mat-item">
-<button class="nav-btn-d" id="d-bm">Materiais <span class="caret"></span></button>
-<div class="panel">
-<div class="panel-col"><h4>Como abordar</h4>
-<div class="panel-link" onclick="dShow('materiais');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/></svg></span><span class="panel-text"><strong>Venda pessoalmente</strong><span>Quando elogiarem sua pele ou make</span></span></div>
-<div class="panel-link" onclick="dShow('materiais');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="panel-text"><strong>Venda no WhatsApp</strong><span>Frases prontas no privado e no grupo</span></span></div>
-</div>
-<div class="panel-col"><h4>Ferramentas</h4>
-<div class="panel-link" onclick="dShow('materiais');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="panel-text"><strong>Frases prontas</strong><span>Por situação e por produto</span></span></div>
-<div class="panel-link" onclick="dShow('materiais');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 16v.01M12 8a2.2 2.2 0 0 1 2.2 2.2c0 1.6-2.2 1.9-2.2 3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="panel-text"><strong>Objeções respondidas</strong><span>Quando a cliente resiste</span></span></div>
-</div>
-</div>
-</div>
-<div class="nav-item-d" id="d-pro-item">
-<button class="nav-btn-d" id="d-bp">Conheça os Produtos <span class="caret"></span></button>
-<div class="panel">
-<div class="panel-col"><h4>Skincare</h4>
-<div class="panel-link" onclick="dShow('produtos');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="panel-text"><strong>Mousse · Tônico · Séruns · Creme</strong><span>Ativos, benefícios e como usar</span></span></div>
-<div class="panel-link" onclick="dShow('produtos');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="panel-text"><strong>Rotinas por tipo de pele</strong><span>Seca · Sensível · Mista · Manchas</span></span></div>
-</div>
-<div class="panel-col"><h4>Maquiagem</h4>
-<div class="panel-link" onclick="dShow('produtos');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="panel-text"><strong>Sticks de cor</strong><span>Blush · Iluminador · Contorno</span></span></div>
-<div class="panel-link" onclick="dShow('produtos');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 20h6M12 3a6 6 0 0 0-3.5 10.9c.5.35.8.95.8 1.6v.5h5.4v-.5c0-.65.3-1.25.8-1.6A6 6 0 0 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="panel-text"><strong>Máscara de Cílios Pro-Age</strong><span>Volume, comprimento e tratamento</span></span></div>
-</div>
-</div>
-</div>
+<!-- DESKTOP -->
+<div class="dsk">
+<header class="dsk-hdr">
+<div class="dsk-hdr-inner">
+<div class="d-logo" onclick="dShow('inicio')"><span class="d-logo-s">Portal · Representante</span><strong class="d-logo-b">Le Moritz</strong></div>
+<nav class="d-nav">
+<div class="d-nl act" id="d-n-inicio" onclick="dShow('inicio')">Início</div>
+<div class="d-nl" id="d-n-vendas" onclick="dShow('vendas')">Minhas Vendas</div>
+<div class="d-nl" id="d-n-desafios" onclick="dShow('desafios')">Desafios</div>
+<div class="d-nl" id="d-n-mensagens" onclick="dShow('mensagens')">Mensagem Pronta</div>
+<div class="d-nl" id="d-n-skincare" onclick="dShow('skincare')">Skincare</div>
+<div class="d-nl" id="d-n-make" onclick="dShow('make')">Maquiagem</div>
 </nav>
-<button class="cta-pill" onclick="dShow('vendas')">Minhas Vendas <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </div>
 </header>
 
-<div class="desktop-main">
-<!-- D INICIO -->
-<div class="d-section active" id="d-inicio">
-<div class="cats-row">
-<div class="cat-link" onclick="dShow('vendas')"><span class="cat-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM6 15h4M14 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Minhas Vendas</span></div>
-<div class="cat-link" onclick="dShow('desafios')"><span class="cat-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span>Desafios</span></div>
-<div class="cat-link" onclick="dShow('materiais')"><span class="cat-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span>Materiais</span></div>
-<div class="cat-link" onclick="dShow('produtos')"><span class="cat-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span>Conheça os Produtos</span></div>
-</div>
-<div class="banner-wine">
-<div><div class="badge-ativo">Desafio ativo agora</div><h2>Semana 4 · 21 a 27 de julho</h2><p>Venda 2 cupons essa semana e ganhe R$50 em voucher no site Le Moritz.</p></div>
-<button class="banner-btn-w" onclick="dShow('desafios')">Ver o desafio</button>
-</div>
-<div class="d-grid-2">
+<!-- HERO (only on inicio) -->
+<div id="d-hero" class="d-hero">
+<div class="d-hero-inner">
 <div>
-<div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:8px">Oi, Representante!</div>
-<div class="d-body">Aqui você encontra tudo que precisa para vender com confiança.</div>
-<div class="d-label" style="margin-top:20px;margin-bottom:14px">O que você encontra aqui</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;gap:12px"><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--wine);width:22px;flex-shrink:0">01</div><div><div style="font-size:14px;font-weight:700;color:var(--ink)">Minhas Vendas</div><div style="font-size:13px;color:var(--ink-soft)">Cupom, comissão e quando recebe</div></div></div>
-<div style="display:flex;gap:12px"><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--wine);width:22px;flex-shrink:0">02</div><div><div style="font-size:14px;font-weight:700;color:var(--ink)">Desafios</div><div style="font-size:13px;color:var(--ink-soft)">Meta da semana e histórico de prêmios</div></div></div>
-<div style="display:flex;gap:12px"><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--wine);width:22px;flex-shrink:0">03</div><div><div style="font-size:14px;font-weight:700;color:var(--ink)">Materiais</div><div style="font-size:13px;color:var(--ink-soft)">Frases, objeções e abordagem</div></div></div>
-<div style="display:flex;gap:12px"><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--wine);width:22px;flex-shrink:0">04</div><div><div style="font-size:14px;font-weight:700;color:var(--ink)">Conheça os Produtos</div><div style="font-size:13px;color:var(--ink-soft)">Ativos, benefícios e rotinas por tipo de pele</div></div></div>
+<div class="d-hero-badge">Semana 4 encerrada · Resultado disponível</div>
+<div class="d-hero-title">Oi, Representante<br>Le Moritz!</div>
+<div class="d-hero-sub">Tudo que você precisa para vender com confiança está aqui. Cupom, mensagens prontas, guia de produtos e muito mais.</div>
+<button class="d-hero-btn" onclick="dShow('desafios')">Ver o desafio da semana →</button>
+</div>
+<div class="d-hero-stats">
+<div class="d-stat"><div class="d-stat-n">10%</div><div class="d-stat-l">Comissão por venda</div></div>
+<div class="d-stat"><div class="d-stat-n">10%</div><div class="d-stat-l">Desconto clientes</div></div>
+<div class="d-stat"><div class="d-stat-n">R$50</div><div class="d-stat-l">Prêmio do desafio</div></div>
 </div>
 </div>
-<div>
-<div class="d-label" style="margin-bottom:14px">Por que ser Representante Le Moritz?</div>
-<div class="d-bc"><div class="d-bi">💰</div><div><div class="d-bt">10% de comissão por venda</div><div class="d-bp">Você recebe no dia 10 do mês seguinte, sem burocracia</div></div></div>
-<div class="d-bc"><div class="d-bi">🎁</div><div><div class="d-bt">10% de desconto para suas clientes</div><div class="d-bp">Seu cupom exclusivo torna a oferta irresistível</div></div></div>
-<div class="d-bc"><div class="d-bi">✅</div><div><div class="d-bt">Sem estoque, sem investimento</div><div class="d-bp">Você só compartilha o link. A Le Moritz cuida do resto</div></div></div>
-<div class="d-bc"><div class="d-bi">⏰</div><div><div class="d-bt">Você vende no seu tempo</div><div class="d-bp">No privado, pessoalmente, quando e como quiser</div></div></div>
-<div class="d-bc"><div class="d-bi">💜</div><div><div class="d-bt">Produto que você usa e acredita</div><div class="d-bp">A venda mais fácil parte da sua própria experiência</div></div></div>
-</div>
-</div>
-<div style="text-align:center;padding:28px 0;border-top:1px solid var(--line);margin-top:32px;font-family:'Fraunces',serif;font-size:17px;color:var(--ink-soft);font-style:italic">Você não precisa ser influencer. Só precisa ser você.</div>
 </div>
 
-<!-- D VENDAS -->
+<div class="d-main">
+
+<!-- D: INICIO -->
+<div class="d-section act" id="d-inicio">
+<div class="d-grid5">
+<div class="d-bc"><div class="d-bi">💰</div><div><div class="d-bt">10% de comissão</div><div class="d-bp">Recebe dia 10 do mês seguinte</div></div></div>
+<div class="d-bc"><div class="d-bi">🎁</div><div><div class="d-bt">Cupom exclusivo</div><div class="d-bp">10% de desconto para suas clientes</div></div></div>
+<div class="d-bc"><div class="d-bi">✅</div><div><div class="d-bt">Sem estoque</div><div class="d-bp">Você só compartilha o link</div></div></div>
+<div class="d-bc"><div class="d-bi">⏰</div><div><div class="d-bt">No seu tempo</div><div class="d-bp">Vende quando e como quiser</div></div></div>
+<div class="d-bc"><div class="d-bi">💜</div><div><div class="d-bt">Produto que você ama</div><div class="d-bp">A venda parte da sua experiência</div></div></div>
+</div>
+<div class="d-grid3" style="margin-bottom:0">
+<div class="d-card" style="cursor:pointer" onclick="dShow('mensagens')"><div style="font-family:'Fraunces',serif;font-size:13px;font-weight:600;color:var(--w);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Mensagem Pronta</div><div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px">Como abordar e vender</div><div style="font-size:13px;color:var(--is);line-height:1.6">Frases por situação, por produto, objeções e o que indicar.</div><div style="margin-top:14px;color:var(--w);font-size:13px;font-weight:700">Acessar →</div></div>
+<div class="d-card" style="cursor:pointer" onclick="dShow('skincare')"><div style="font-family:'Fraunces',serif;font-size:13px;font-weight:600;color:var(--w);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Skincare</div><div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px">Guia completo dos produtos</div><div style="font-size:13px;color:var(--is);line-height:1.6">Ativos, benefícios, como usar e rotinas por tipo de pele.</div><div style="margin-top:14px;color:var(--w);font-size:13px;font-weight:700">Acessar →</div></div>
+<div class="d-card" style="cursor:pointer" onclick="dShow('make')"><div style="font-family:'Fraunces',serif;font-size:13px;font-weight:600;color:var(--w);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Maquiagem</div><div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px">Sticks e dicas de make</div><div style="font-size:13px;color:var(--is);line-height:1.6">Blush, iluminador, contorno e máscara — como aplicar em pele madura.</div><div style="margin-top:14px;color:var(--w);font-size:13px;font-weight:700">Acessar →</div></div>
+</div>
+<div style="text-align:center;padding:32px 0;border-top:1px solid var(--ln);margin-top:48px;font-family:'Fraunces',serif;font-size:17px;color:var(--is);font-style:italic">Você não precisa ser influencer. Só precisa ser você.</div>
+</div>
+
+<!-- D: VENDAS -->
 <div class="d-section" id="d-vendas">
-<div class="d-title">Minhas Vendas</div><div class="d-sub">Acompanhe suas vendas e comissões</div>
-<div class="d-grid-2">
+<div class="d-sec-title">Minhas Vendas</div><div class="d-sec-sub">Acompanhe suas vendas e comissões</div>
+<div class="d-grid2">
 <div>
 <div class="d-card">
 <h3>Como acessar seu cupom</h3>
-<div class="d-pas"><div class="d-pn">1</div><div class="d-pt">Clique no botão abaixo</div></div>
-<div class="d-pas"><div class="d-pn">2</div><div class="d-pt">Digite o <strong>nome do seu cupom</strong></div></div>
-<div class="d-pas"><div class="d-pn">3</div><div class="d-pt">Escolha o <strong>período</strong> que deseja ver</div></div>
-<div style="margin-top:18px"><a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="d-btn">Acessar meu cupom →</a></div>
-<hr class="d-hr" style="margin:18px 0">
+<div class="d-pas" style="display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--ln)"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--w);flex-shrink:0;width:22px">1</div><div style="font-size:14px;color:var(--ink)">Clique no botão abaixo</div></div>
+<div class="d-pas" style="display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--ln)"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--w);flex-shrink:0;width:22px">2</div><div style="font-size:14px;color:var(--ink)">Digite o <strong>nome do seu cupom</strong></div></div>
+<div class="d-pas" style="display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--ln)"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--w);flex-shrink:0;width:22px">3</div><div style="font-size:14px;color:var(--ink)">Escolha o <strong>período</strong> que deseja ver</div></div>
+<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+<a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="d-btn">Acessar meu cupom →</a>
+</div>
+<div class="d-hr" style="margin:18px 0"></div>
 <div class="d-label">Link da loja</div>
 <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:12px">lemoritz.com.br</div>
 <button class="d-btn-out" onclick="navigator.clipboard.writeText('https://lemoritz.com.br').then(()=>alert('Copiado!'))">Copiar link ↗</button>
@@ -342,8 +348,8 @@ nav.menu{display:flex;align-items:center;gap:6px}
 <div class="d-tli"><div class="d-tlc" style="background:var(--rosa)">10</div><div class="d-tll">Você recebe</div><div class="d-tls">dia 10 de agosto</div></div>
 </div>
 <div class="d-body">Pagamento pela Unfair Advantage. 10% do valor total das vendas do mês.</div>
-<hr class="d-hr" style="margin:16px 0">
-<div class="d-faq"><div class="d-faqq">Quanto vou receber?</div><div class="d-faqa">10% das vendas. Ex: R$500 = R$50 para você.</div></div>
+<div class="d-hr" style="margin:14px 0"></div>
+<div class="d-faq"><div class="d-faqq">Quanto vou receber?</div><div class="d-faqa">10% das vendas. Ex: R$500 em vendas = R$50 para você.</div></div>
 <div class="d-faq"><div class="d-faqq">Meu cupom tem prazo?</div><div class="d-faqa">Não. É vitalício no programa.</div></div>
 <div class="d-faq"><div class="d-faqq">Posso usar meu próprio cupom?</div><div class="d-faqa">Sim! Nas suas próprias compras também.</div></div>
 <div class="d-faq"><div class="d-faqq">Onde compartilho?</div><div class="d-faqa">Em qualquer lugar. Toda compra com ele conta.</div></div>
@@ -352,55 +358,82 @@ nav.menu{display:flex;align-items:center;gap:6px}
 <div>
 <div class="d-card">
 <h3>Top 3 da semana</h3>
-<div class="d-pod"><div class="d-podl"><div class="d-podp">1</div><div><div class="d-podn">Cláudia</div><div class="d-podc">CLAUDIA10</div></div></div><div class="d-podv">4</div></div>
-<div class="d-pod"><div class="d-podl"><div class="d-podp">2</div><div><div class="d-podn">Lucia Helena</div><div class="d-podc">LUCIA10</div></div></div><div class="d-podv">2</div></div>
-<div class="d-pod"><div class="d-podl"><div class="d-podp">3</div><div><div class="d-podn">Vika</div><div class="d-podc">VIKA</div></div></div><div class="d-podv">2</div></div>
-<div style="font-size:12px;color:var(--ink-soft);letter-spacing:1px;text-transform:uppercase;margin-top:12px">Semana 2 · <span style="color:var(--wine)">07 a 13 de julho</span></div>
+<div class="d-pod"><div class="d-podl"><div class="d-podp">1</div><div><div class="d-podn">Lucia Helena</div><div class="d-podc">LUCIA10</div></div></div><div class="d-podv">10</div></div>
+<div class="d-pod"><div class="d-podl"><div class="d-podp">2</div><div><div class="d-podn">Vika</div><div class="d-podc">VIKA</div></div></div><div class="d-podv">7</div></div>
+<div class="d-pod"><div class="d-podl"><div class="d-podp">3</div><div><div class="d-podn">Malu</div><div class="d-podc">MALU10</div></div></div><div class="d-podv">2</div></div>
+<div style="font-size:12px;color:var(--is);letter-spacing:1px;text-transform:uppercase;margin-top:12px">Semana 4 · <span style="color:var(--w)">21 a 27 de julho</span></div>
+</div>
+<div class="d-card" style="margin-top:20px">
+<h3>Frete e prazos</h3>
+<div class="d-row"><div style="font-size:14px;font-weight:700;color:var(--ink)">Frete grátis</div><div style="font-size:14px;color:var(--is)">Acima de R$100 para todo o Brasil</div></div>
+<div class="d-row"><div style="font-size:14px;font-weight:700;color:var(--ink)">Prazo de entrega</div><div style="font-size:14px;color:var(--is)">4 a 15 dias úteis</div></div>
+<div class="d-row"><div style="font-size:14px;font-weight:700;color:var(--ink)">Transportadora</div><div style="font-size:14px;color:var(--is)">Mandaê</div></div>
+<div style="margin-top:16px;display:flex;gap:10px">
+<a href="https://wa.me/16364319911" target="_blank" class="d-btn" style="font-size:13px;padding:9px 18px">Suporte WhatsApp ↗</a>
+<a href="https://rastreae.com.br/busca" target="_blank" class="d-btn-out" style="font-size:13px;padding:8px 18px">Rastrear pedido ↗</a>
+</div>
 </div>
 </div>
 </div>
 </div>
 
-<!-- D DESAFIOS -->
+<!-- D: DESAFIOS -->
 <div class="d-section" id="d-desafios">
-<div class="d-title">Desafios</div><div class="d-sub">Meta semanal com prêmio em voucher</div>
-<div class="d-grid-2">
+<div class="d-sec-title">Desafios</div><div class="d-sec-sub">Meta semanal com prêmio em voucher</div>
+<div class="d-grid2">
 <div class="d-card">
-<div class="badge-ativo">Desafio ativo</div>
-<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px">Semana 4 · 21 — 27/jul</div>
-<div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:16px;line-height:1.2">Venda 2 cupons essa semana</div>
-<div class="d-row"><div style="font-size:14px;font-weight:700;color:var(--ink)">Prêmio</div><div style="font-size:14px;color:var(--ink-soft)">R$50 em voucher no site</div></div>
-<div class="d-row"><div style="font-size:14px;font-weight:700;color:var(--ink)">Resultado</div><div style="font-size:14px;color:var(--ink-soft)">27 de julho</div></div>
-<div style="margin-top:18px"><a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="d-btn">Conferir minhas vendas →</a></div>
+<div style="display:inline-block;background:var(--sd);color:var(--is);font-size:11px;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px">Encerrado</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:8px">Semana 4 · 21 — 27/jul</div>
+<div style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:16px;line-height:1.2">Venda 2 cupons essa semana</div>
+<div class="d-row"><div style="font-size:14px;font-weight:700">Prêmio</div><div style="font-size:14px;color:var(--is)">R$50 em voucher no site</div></div>
+<div class="d-row"><div style="font-size:14px;font-weight:700">Meta batida por</div><div style="font-size:14px;color:var(--w);font-weight:700">LUCIA10 · VIKA · MALU10</div></div>
+<div style="margin-top:18px"><a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="d-btn">Ver minhas vendas →</a></div>
 </div>
 <div class="d-card">
 <h3>Histórico de vouchers</h3>
-<div style="font-size:12px;color:var(--ink-soft);margin-bottom:16px">Atualizado toda segunda-feira</div>
-<div class="d-winner"><h4>Semana 3 · 14 — 20/jul · R$50 · ENCERRADO</h4>
+<div style="font-size:12px;color:var(--is);margin-bottom:16px">Atualizado toda segunda-feira</div>
+<div class="d-wcard"><h4>Semana 4 · 21 — 27/jul · R$50 · ENCERRADO</h4>
+<div class="d-wrow"><span>LUCIA10</span><span>10 cupons 🏆</span></div>
+<div class="d-wrow"><span>VIKA</span><span>7 cupons 🏆</span></div>
+<div class="d-wrow"><span>MALU10</span><span>2 cupons 🏆</span></div>
+<div class="d-wrow"><span>HELO10</span><span>1 cupom</span></div>
+</div>
+<div class="d-wcard"><h4>Semana 3 · 14 — 20/jul · R$50 · ENCERRADO</h4>
 <div class="d-wrow"><span>LUCIA10</span><span>5 cupons</span></div><div class="d-wrow"><span>MALU10</span><span>2 cupons</span></div><div class="d-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="d-wrow"><span>ANNALU10</span><span>2 cupons</span></div><div class="d-wrow"><span>ROSICLEIDE</span><span>2 cupons</span></div></div>
-<div class="d-winner"><h4>Semana 2 · 07 — 13/jul · R$50 · ENCERRADO</h4>
+<div class="d-wcard"><h4>Semana 2 · 07 — 13/jul · R$50 · ENCERRADO</h4>
 <div class="d-wrow"><span>CLAUDIA10</span><span>4 cupons</span></div><div class="d-wrow"><span>LUCIA10</span><span>2 cupons</span></div><div class="d-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="d-wrow"><span>THAIS10</span><span>2 cupons</span></div><div class="d-wrow"><span>ANNALU10</span><span>2 cupons</span></div></div>
-<div class="d-row"><div style="font-size:14px;color:var(--ink)">Desafio da Copa · 29/jun — 06/jul</div><div style="font-size:13px;font-weight:700;color:var(--ink-soft)">R$50 · ENCERRADO</div></div>
-<div class="d-row"><div style="font-size:14px;color:var(--ink-soft)">Em breve · 28/jul — 03/ago</div><div style="color:var(--line)">—</div></div>
+<div class="d-row"><div style="font-size:14px;color:var(--ink)">Desafio da Copa · 29/jun — 06/jul</div><div style="font-size:13px;font-weight:700;color:var(--is)">R$50 · ENCERRADO</div></div>
+<div class="d-row"><div style="font-size:14px;color:var(--is)">Em breve · 28/jul — 03/ago</div><div style="color:var(--ln)">—</div></div>
 </div>
 </div>
 </div>
-<!-- D MATERIAIS -->
-<div class="d-section" id="d-materiais">
-<div class="d-title">Materiais</div><div class="d-sub">Tudo que você precisa para vender com confiança</div>
-<div class="d-grid-2" style="margin-bottom:28px">
+<!-- D: MENSAGENS -->
+<div class="d-section" id="d-mensagens">
+<div class="d-sec-banner"><div><h2>Mensagem Pronta</h2><p>Copie, adapte e mande. Tudo que você precisa para abordar, apresentar e fechar a venda.</p></div></div>
+<div class="d-grid2">
 <div>
-<div class="d-card">
-<h3>Como abordar</h3>
-<div class="d-label" style="margin-bottom:10px">Pessoalmente</div>
-<div style="background:var(--sand-deep);padding:14px;border-radius:10px;margin-bottom:14px;font-size:14px;color:var(--ink-soft);line-height:1.7;font-style:italic">"Quando elogiarem sua pele ou make, essa é sua deixa. Fale da Le Moritz — feita para pele madura. Tenho desconto se quiser experimentar!"</div>
-<div class="d-label" style="margin-bottom:10px">No privado do WhatsApp</div>
-<div style="background:var(--sand-deep);padding:14px;border-radius:10px;margin-bottom:14px;font-size:14px;color:var(--ink-soft);line-height:1.7;font-style:italic">"Comece pelo contexto da pessoa. Se ela falou de pele seca, use isso. A abordagem mais natural parte de algo real."</div>
-<div class="d-label" style="margin-bottom:10px">No grupo de amigas</div>
-<div style="background:var(--sand-deep);padding:14px;border-radius:10px;font-size:14px;color:var(--ink-soft);line-height:1.7;font-style:italic">"Meninas, estou usando uma marca incrível para pele madura. Tenho desconto para quem quiser conhecer!"</div>
+<div class="d-sec-title" style="font-size:20px;margin-bottom:16px">Como abordar</div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">No privado do WhatsApp</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-body">Comece pelo contexto da pessoa. Se ela falou de pele seca, use isso. A abordagem mais natural parte de algo real.</div><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Lembrei de você porque você comentou que estava procurando algo para a região dos olhos..."</div></div></div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Pessoalmente</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-body">Quando elogiarem sua pele ou make, essa é a sua deixa.</div><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Uso os produtos da Le Moritz, feitos para pele madura. Tenho desconto se quiser experimentar!"</div></div></div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">No grupo de amigas</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-body">Sem pressão, sem parecer propaganda.</div><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Meninas, estou usando uma marca incrível para pele madura. Tenho desconto para quem quiser conhecer!"</div></div></div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Fale da sua experiência</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-body">Você já está vendendo um produto que você usa, que você gosta, que você acredita. Use isso.</div><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w);margin-bottom:8px">"Uso todo dia e olha como minha pele está. Esse é o Sérum de Olhos, uso antes de dormir..."</div><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Eu procurava algo feito para a nossa pele, não adaptado. Foi quando conheci a Le Moritz..."</div></div></div>
+<div class="d-hr"></div>
+<div class="d-sec-title" style="font-size:20px;margin-bottom:16px">O que indicar</div>
+<div class="d-ind"><div class="d-indq">Região dos olhos</div><div class="d-inda"><strong>Sérum Revitalizador de Olhos</strong> para tratar. Para resultado na hora, indique também o <strong>Sérum Lift Instantâneo</strong> — não fazer expressão por 90 segundos após aplicar.</div></div>
+<div class="d-ind"><div class="d-indq">Pele sem hidratação</div><div class="d-inda"><strong>Creme Multicamadas + Rejuvenescedor Noturno + Tônico 8 em 1 + Hidratante FPS 50</strong></div></div>
+<div class="d-ind"><div class="d-indq">Pele sem viço e olhos cansados</div><div class="d-inda">Linha completa: <strong>Mousse, Tônico, Sérum de Olhos, Creme Multicamadas, Rejuvenescedor Noturno e Hidratante FPS 50</strong></div></div>
 </div>
-<div class="d-card" style="margin-top:20px">
-<h3>Objeções respondidas</h3>
+<div>
+<div class="d-sec-title" style="font-size:20px;margin-bottom:10px">Mensagens por situação</div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Apresentando a marca</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!')">Copiar ↗</button></div><div class="d-envie"><div class="d-el">Envie também</div><div class="d-et">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!"</div><button class="d-cbtn" onclick="cp(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!')">Copiar ↗</button></div></div></div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Quando elogiarem sua pele</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Tenho desconto nessa loja se quiser experimentar!"</div><button class="d-cbtn" onclick="cp(this,'Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Tenho desconto nessa loja se quiser experimentar!')">Copiar ↗</button></div></div></div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Quando disser que vai pensar</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre!"</div><button class="d-cbtn" onclick="cp(this,'Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre!')">Copiar ↗</button></div></div></div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Pós venda</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!')">Copiar ↗</button></div></div></div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Sérum Revitalizador de Olhos</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!')">Copiar ↗</button></div></div></div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Creme Antirrugas Multicamadas</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?')">Copiar ↗</button></div></div></div>
+<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Stick Blush</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Eu tenho desconto nessa loja. Quer o link?"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Eu tenho desconto nessa loja. Quer o link?')">Copiar ↗</button></div><div class="nota-p">Pode falar do Rosa Mauve, Terracota ou Coral</div></div></div>
+<div class="d-hr"></div>
+<div class="d-sec-title" style="font-size:20px;margin-bottom:16px">Objeções respondidas</div>
 <div class="d-obj"><div class="d-oq">"Tá caro..."</div><div class="d-or">"Com meu cupom já fica 10% mais barato! Frete grátis acima de R$100. Vale muito pela qualidade."</div></div>
 <div class="d-obj"><div class="d-oq">"Não conheço essa marca..."</div><div class="d-or">"É a única no Brasil feita exclusivamente para pele madura. Dermatologicamente testada."</div></div>
 <div class="d-obj"><div class="d-oq">"Vou pensar..."</div><div class="d-or">"Claro! Fica com o link e meu cupom. O desconto é válido sempre."</div></div>
@@ -408,297 +441,383 @@ nav.menu{display:flex;align-items:center;gap:6px}
 <div class="d-obj" style="margin-bottom:0"><div class="d-oq">"Não sei se funciona pra mim..."</div><div class="d-or">"Tem garantia de 90 dias. Se não gostar, devolve. Sem risco!"</div></div>
 </div>
 </div>
-<div>
-<div class="d-card">
-<h3>O que indicar</h3>
-<div class="d-ind"><div class="d-indq">Região dos olhos</div><div class="d-inda"><strong>Sérum Revitalizador de Olhos</strong> para tratar a área. Para resultado na hora, indique também o <strong>Sérum Lift Instantâneo</strong> — não fazer expressão por 90 segundos após aplicar.</div></div>
-<div class="d-ind"><div class="d-indq">Pele sem hidratação</div><div class="d-inda"><strong>Creme Multicamadas + Rejuvenescedor Noturno + Tônico 8 em 1 + Hidratante FPS 50</strong></div></div>
-<div class="d-ind"><div class="d-indq">Pele sem viço e olhos cansados</div><div class="d-inda">Linha completa: <strong>Mousse, Tônico, Sérum de Olhos, Creme Multicamadas, Rejuvenescedor Noturno e Hidratante FPS 50</strong></div></div>
-<div style="background:var(--sand-deep);border-left:3px solid var(--wine);padding:12px 16px;margin-top:14px;border-radius:0 8px 8px 0">
-<div style="font-size:13px;color:var(--ink-soft);line-height:1.7">Quer saber mais sobre os ativos e benefícios de cada produto?</div>
-<div onclick="dShow('produtos')" style="color:var(--wine);font-size:13px;font-weight:700;margin-top:6px;cursor:pointer">Ver Conheça os Produtos →</div>
 </div>
+
+<!-- D: SKINCARE -->
+<div class="d-section" id="d-skincare">
+<div class="d-sec-banner"><div><h2>Skincare Le Moritz</h2><p>Produtos desenvolvidos para pele madura (45+). Ativos, benefícios e como usar cada um.</p></div></div>
+<div class="d-grid2" style="margin-bottom:24px">
+<div class="d-prod-card"><div class="d-prod-img"><svg width="40" height="60" viewBox="0 0 40 60" fill="none"><rect x="10" y="5" width="20" height="50" rx="6" stroke="#D4A0A0" stroke-width="1.5"/><rect x="14" y="2" width="12" height="6" rx="3" fill="#D4A0A0"/></svg></div><div class="d-prod-body"><div class="d-prod-tag">Limpeza</div><div class="d-prod-name">Mousse de Limpeza Revitalizante</div><div class="d-prod-desc">Limpa e hidrata ao mesmo tempo. Pele macia, sem sensação de aperto. Pode usar na área dos olhos.</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Glicerina</strong> — retém água, evita ressecamento</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Niacinamida</strong> — uniformiza o tom</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Tripeptídeo de Cobre-1</strong> — estimula colágeno</div></div><div class="d-label" style="margin-top:12px;margin-bottom:4px">Como usar</div><div style="font-size:13px;color:var(--is);line-height:1.6">Pele úmida, massageie suavemente. Enxágue. Manhã e noite.</div></div></div>
+<div class="d-prod-card"><div class="d-prod-img"><svg width="40" height="60" viewBox="0 0 40 60" fill="none"><rect x="10" y="5" width="20" height="50" rx="6" stroke="#D4A0A0" stroke-width="1.5"/><rect x="14" y="2" width="12" height="6" rx="3" fill="#D4A0A0"/></svg></div><div class="d-prod-body"><div class="d-prod-tag">Tônico</div><div class="d-prod-name">Tônico Essência Hidratante 8 em 1</div><div class="d-prod-desc">8 funções em um só produto. Prepara a pele para absorver melhor tudo que vem depois.</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Ácido Hialurônico</strong> — hidratação profunda</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Propanediol</strong> — aumenta penetração dos ativos</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Aloe Vera</strong> — acalma e reduz vermelhidão</div></div><div class="d-label" style="margin-top:12px;margin-bottom:4px">Como usar</div><div style="font-size:13px;color:var(--is);line-height:1.6">Após o mousse, pressione nas mãos ou algodão. Não enxágue.</div></div></div>
 </div>
-<div class="d-card" style="margin-top:20px">
-<h3>Frete e prazos</h3>
-<div class="d-row"><div style="font-size:14px;font-weight:700;color:var(--ink)">Frete grátis</div><div style="font-size:14px;color:var(--ink-soft)">Acima de R$100 para todo o Brasil</div></div>
-<div class="d-row"><div style="font-size:14px;font-weight:700;color:var(--ink)">Prazo de entrega</div><div style="font-size:14px;color:var(--ink-soft)">4 a 15 dias úteis</div></div>
-<div class="d-row"><div style="font-size:14px;font-weight:700;color:var(--ink)">Transportadora</div><div style="font-size:14px;color:var(--ink-soft)">Mandaê</div></div>
-<div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-<a href="https://rastreae.com.br/busca" target="_blank" class="d-btn-out" style="font-size:13px;padding:9px 16px">Rastrear pedido ↗</a>
-<a href="https://wa.me/16364319911" target="_blank" class="d-btn" style="font-size:13px;padding:9px 16px">Suporte WhatsApp ↗</a>
+<div class="d-grid2" style="margin-bottom:24px">
+<div class="d-prod-card"><div class="d-prod-img"><svg width="30" height="60" viewBox="0 0 30 60" fill="none"><ellipse cx="15" cy="10" rx="10" ry="8" stroke="#D4A0A0" stroke-width="1.5"/><rect x="12" y="18" width="6" height="35" rx="3" fill="#D4A0A0"/></svg></div><div class="d-prod-body"><div class="d-prod-tag">Tratamento olhos</div><div class="d-prod-name">Sérum Revitalizador de Olhos</div><div class="d-prod-desc">Para bolsinhas, olheiras e linhas finas ao redor dos olhos. Aplicador roll-on.</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Ecoffa (Extrato de Café)</strong> — reduz olheiras na hora</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Nano Retinol</strong> — penetra 20x mais fundo, sem irritar</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Nano BTX</strong> — efeito botox-like nas linhas</div></div><div class="d-label" style="margin-top:12px;margin-bottom:4px">Como usar</div><div style="font-size:13px;color:var(--is);line-height:1.6">Roll-on de dentro para fora. 2x ao dia como primeira camada.</div></div></div>
+<div class="d-prod-card"><div class="d-prod-img"><svg width="40" height="60" viewBox="0 0 40 60" fill="none"><rect x="10" y="5" width="20" height="50" rx="6" stroke="#D4A0A0" stroke-width="1.5"/></svg></div><div class="d-prod-body"><div class="d-prod-tag">Lifting</div><div class="d-prod-name">Sérum Lift Instantâneo</div><div class="d-prod-desc">Efeito lifting visível em 3 minutos. Resultado por até 8 horas.</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Silicato de Sódio</strong> — cria película tensora imediata</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Argireline</strong> — botox sem agulha, inibe contrações</div></div><div class="d-label" style="margin-top:12px;margin-bottom:4px">Como usar</div><div style="font-size:13px;color:var(--is);line-height:1.6">Batidinhas suaves. Rosto imóvel por 90 segundos. Evite água por cima.</div></div></div>
 </div>
+<div class="d-grid2" style="margin-bottom:24px">
+<div class="d-prod-card"><div class="d-prod-img"><svg width="40" height="60" viewBox="0 0 40 60" fill="none"><rect x="8" y="5" width="24" height="50" rx="8" stroke="#D4A0A0" stroke-width="1.5"/></svg></div><div class="d-prod-body"><div class="d-prod-tag">Anti-rugas</div><div class="d-prod-name">Creme Antirrugas Multicamadas</div><div class="d-prod-desc">Hidratação profunda em camadas. Para pele ressecada que marca mais as rugas.</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Epidermosil</strong> — hialurônico bio-vetorizado, penetra fundo</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>WK Pep Erasin (veneno de cobra)</strong> — botox em creme</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Plantcol</strong> — estimula colágeno e elastina</div></div><div class="d-label" style="margin-top:12px;margin-bottom:4px">Como usar</div><div style="font-size:13px;color:var(--is);line-height:1.6">2x ao dia, rosto pescoço e colo de baixo para cima. Resultados em 28 dias.</div></div></div>
+<div class="d-prod-card"><div class="d-prod-img"><svg width="40" height="60" viewBox="0 0 40 60" fill="none"><rect x="12" y="8" width="16" height="44" rx="5" stroke="#D4A0A0" stroke-width="1.5"/><rect x="15" y="5" width="10" height="6" rx="2" fill="#D4A0A0"/></svg></div><div class="d-prod-body"><div class="d-prod-tag">Proteção solar</div><div class="d-prod-name">Stick Hidratante FPS 50</div><div class="d-prod-desc">Proteção solar e hidratação em stick. Protege de UVA, UVB e luz azul de telas.</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Tinosorb S</strong> — filtro fotostável de última geração</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Dióxido de Titânio</strong> — filtro físico adicional</div></div><div class="d-label" style="margin-top:12px;margin-bottom:4px">Como usar</div><div style="font-size:13px;color:var(--is);line-height:1.6">Após o creme, antes da make. Reaaplique ao longo do dia. Use todos os dias.</div></div></div>
 </div>
+<div class="d-grid2" style="margin-bottom:24px">
+<div class="d-prod-card"><div class="d-prod-img"><svg width="40" height="60" viewBox="0 0 40 60" fill="none"><rect x="12" y="8" width="16" height="44" rx="5" stroke="#D4A0A0" stroke-width="1.5"/><rect x="15" y="5" width="10" height="6" rx="2" fill="#D4A0A0"/></svg></div><div class="d-prod-body"><div class="d-prod-tag">Noturno</div><div class="d-prod-name">Stick Retinol Noturno</div><div class="d-prod-desc">Trabalha enquanto você dorme. Renova, firma e rejuvenesce com uso contínuo.</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Nano Retinol</strong> — penetra fundo, estimula renovação</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Retinol Like</strong> — alternativa suave, potencializa</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Manteiga de Karité</strong> — nutrição intensa noturna</div></div><div class="d-label" style="margin-top:12px;margin-bottom:4px">Como usar</div><div style="font-size:13px;color:var(--is);line-height:1.6">Exclusivamente à noite. Use protetor solar obrigatoriamente no dia seguinte.</div></div></div>
+<div></div>
 </div>
-</div>
-<hr class="d-hr">
-<div class="d-label" style="margin-bottom:16px">Frases prontas por situação</div>
-<div class="d-grid-2">
-<div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Apresentando a marca</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!')">Copiar ↗</button></div><div class="d-envie"><div class="d-el">Envie também</div><div class="d-et">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!"</div><button class="d-cbtn" onclick="cp(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Quando elogiarem sua pele</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Eu tenho desconto nessa loja se quiser experimentar!"</div><button class="d-cbtn" onclick="cp(this,'Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Eu tenho desconto nessa loja se quiser experimentar!')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Para grupo de amigas</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Meninas, quem quiser conhecer uma linha de skincare e make feita para pele madura, eu tenho desconto nessa loja. Me chama no privado!"</div><button class="d-cbtn" onclick="cp(this,'Meninas, quem quiser conhecer uma linha de skincare e make feita para pele madura, eu tenho desconto nessa loja. Me chama no privado!')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Quando disser que vai pensar</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre!"</div><button class="d-cbtn" onclick="cp(this,'Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre!')">Copiar ↗</button></div></div></div>
-</div>
-<div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Sérum Revitalizador de Olhos</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!')">Copiar ↗</button></div><div class="d-envie"><div class="d-el">Envie também</div><div class="d-et">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]."</div><button class="d-cbtn" onclick="cp(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM].')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Creme Antirrugas Multicamadas</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Sérum Lift Instantâneo</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum da Le Moritz dá resultado na hora. Eu tenho desconto nessa loja. Quer o link?"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum da Le Moritz dá resultado na hora. Eu tenho desconto nessa loja. Quer o link?')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Pós venda</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!')">Copiar ↗</button></div></div></div>
-</div>
-</div>
-</div>
-<!-- D PRODUTOS -->
-<div class="d-section" id="d-produtos">
-<div class="d-title">Conheça os Produtos</div><div class="d-sub">Ativos, benefícios e como usar cada um</div>
-<div class="d-tag">Skincare</div>
-<div class="d-grid-2">
-<div>
-<div class="d-card" style="margin-bottom:16px"><h3>Mousse de Limpeza Revitalizante</h3><div class="d-body">Limpa e hidrata ao mesmo tempo. A pele sai macia, sem sensação de aperto.</div><div class="d-label" style="margin-bottom:8px">Ativos e o que fazem</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Glicerina</strong> — retém água na superfície, evitando ressecamento durante a limpeza</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>D-Pantenol (B5)</strong> — acalma, repara e fortalece a barreira cutânea</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Ácido Hialurônico</strong> — hidrata enquanto limpa, sem deixar pele apertada</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Niacinamida</strong> — uniformiza o tom e fortalece a barreira protetora</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Tripeptídeo de Cobre-1</strong> — estimula colágeno desde o primeiro passo da rotina</div></div><div class="d-label" style="margin-top:12px;margin-bottom:6px">Como usar</div><div style="font-size:14px;color:var(--ink-soft);line-height:1.7">Com a pele levemente úmida, massageie suavemente. Pode usar na área dos olhos. Enxágue. Manhã e noite.</div></div>
-<div class="d-card" style="margin-bottom:16px"><h3>Sérum Revitalizador de Olhos</h3><div class="d-body">Para bolsinhas, olheiras e linhas finas ao redor dos olhos.</div><div class="d-label" style="margin-bottom:8px">Ativos e o que fazem</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Ecoffa (Extrato de Café)</strong> — ativa a microcirculação, reduz olheiras e desincha na hora</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Nano Retinol</strong> — penetra 20x mais fundo, estimula colágeno e renova sem irritar</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Epidermosil</strong> — hialurônico bio-vetorizado que restaura a densidade da pele dos olhos</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Nano BTX</strong> — efeito "botox-like" que suaviza linhas de expressão</div></div><div class="d-label" style="margin-top:12px;margin-bottom:6px">Como usar</div><div style="font-size:14px;color:var(--ink-soft);line-height:1.7">Roll-on de dentro para fora ao redor dos olhos. 2x ao dia como primeira camada do skincare.</div></div>
-<div class="d-card" style="margin-bottom:16px"><h3>Creme Antirrugas Multicamadas</h3><div class="d-body">Hidratação profunda em camadas. Para pele ressecada que marca mais as rugas.</div><div class="d-label" style="margin-bottom:8px">Ativos e o que fazem</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Epidermosil</strong> — hialurônico bio-vetorizado que penetra fundo, preenche rugas e hidrata por dentro</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>WK Pep Erasin (veneno de cobra cosmético)</strong> — botox em creme que inibe contrações</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Plantcol (Acácia Senegal)</strong> — estimula colágeno e elastina, devolvendo firmeza</div></div><div class="d-label" style="margin-top:12px;margin-bottom:6px">Como usar</div><div style="font-size:14px;color:var(--ink-soft);line-height:1.7">2x ao dia no rosto, pescoço e colo, de baixo para cima. Resultados visíveis em 28 dias.</div></div>
-<div class="d-card"><h3>Stick Retinol Noturno</h3><div class="d-body">Trabalha enquanto você dorme. Renova, firma e rejuvenesce com uso contínuo.</div><div class="d-label" style="margin-bottom:8px">Ativos e o que fazem</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Nano Retinol</strong> — penetra mais fundo sem irritar, estimula renovação celular e colágeno</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Retinol Like</strong> — alternativa mais suave que potencializa os resultados</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Manteiga de Karité</strong> — nutrição intensa e proteção da barreira durante a noite</div></div><div class="d-label" style="margin-top:12px;margin-bottom:6px">Como usar</div><div style="font-size:14px;color:var(--ink-soft);line-height:1.7">Exclusivamente à noite. Use protetor solar obrigatoriamente no dia seguinte. Resultados em 28 dias.</div></div>
-</div>
-<div>
-<div class="d-card" style="margin-bottom:16px"><h3>Tônico Essência Hidratante 8 em 1</h3><div class="d-body">8 funções em um só produto. Prepara a pele para absorver melhor tudo que vem depois.</div><div class="d-label" style="margin-bottom:8px">Ativos e o que fazem</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Glicerina</strong> — mantém hidratação e prepara para os próximos produtos</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Propanediol</strong> — umectante vegetal que aumenta a penetração dos ativos</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Ácido Hialurônico</strong> — hidratação profunda e preenchimento imediato de linhas finas</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Aloe Vera</strong> — refresca, acalma e reduz vermelhidão</div></div><div class="d-label" style="margin-top:12px;margin-bottom:6px">Como usar</div><div style="font-size:14px;color:var(--ink-soft);line-height:1.7">Após o mousse, pressione com algodão ou mãos. Não enxágue. É essa etapa que prepara tudo.</div></div>
-<div class="d-card" style="margin-bottom:16px"><h3>Sérum Lift Instantâneo</h3><div class="d-body">Efeito lifting visível em 3 minutos. Resultado por até 8 horas.</div><div class="d-label" style="margin-bottom:8px">Ativos e o que fazem</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Silicato de Sódio</strong> — cria película tensora que promove lifting imediato</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Silicato de Mg e Al</strong> — potencializa e prolonga o efeito por até 8 horas</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Argireline</strong> — inibe contrações musculares. Botox sem agulha</div></div><div class="d-label" style="margin-top:12px;margin-bottom:6px">Como usar</div><div style="font-size:14px;color:var(--ink-soft);line-height:1.7">Batidinhas suaves. Mantenha o rosto imóvel por 90 segundos. Evite produtos à base de água por cima.</div></div>
-<div class="d-card"><h3>Stick Hidratante FPS 50</h3><div class="d-body">Proteção solar e hidratação em stick. Protege também de luzes artificiais e telas.</div><div class="d-label" style="margin-bottom:8px">Ativos e o que fazem</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Tinosorb S</strong> — filtro fotostável de última geração contra UVA, UVB e luz azul de telas</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Dióxido de Titânio</strong> — filtro físico adicional, ideal para peles sensíveis</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Ácido Hialurônico</strong> — hidratação com toque seco, sem oleosidade</div></div><div class="d-label" style="margin-top:12px;margin-bottom:6px">Como usar</div><div style="font-size:14px;color:var(--ink-soft);line-height:1.7">Após o creme, antes da make. Reaaplique ao longo do dia. Use todos os dias, mesmo em ambientes fechados.</div></div>
-</div>
-</div>
-<hr class="d-hr">
-<div class="d-tag">Maquiagem</div>
-<div class="d-grid-2">
-<div class="d-card">
-<h3>Sticks de Maquiagem</h3>
-<div class="d-body">Blush, Iluminador e Contorno. Todos hidratam enquanto maquia.</div>
-<div class="d-label" style="margin-bottom:10px">Cores disponíveis</div>
-<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
-<span style="background:var(--sand-deep);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink)">Blush Rosa Mauve</span>
-<span style="background:var(--sand-deep);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink)">Blush Terracota</span>
-<span style="background:var(--sand-deep);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink)">Blush Coral</span>
-<span style="background:var(--sand-deep);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink)">Iluminador Rosê</span>
-<span style="background:var(--sand-deep);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink)">Iluminador Dourado</span>
-<span style="background:var(--sand-deep);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink)">Contorno Marrom Café</span>
-</div>
-<div class="d-label" style="margin-bottom:10px">Ativos em todos os sticks</div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Óleo de Farelo de Arroz</strong> — hidrata sem obstruir poros e protege contra radicais livres</div></div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Manteiga de Karité</strong> — nutrição profunda e elasticidade</div></div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Óleo de Rosa Mosqueta</strong> — regeneração celular para peles maduras com manchas</div></div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Cera de Girassol</strong> — não derrete e não marca linhas de expressão</div></div>
-<div class="d-label" style="margin-top:14px;margin-bottom:10px">Como usar cada um</div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Contorno (Marrom Café)</strong> — testa, laterais do rosto e abaixo das maçãs</div></div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Blush (Rosa Mauve, Terracota ou Coral)</strong> — maçãs esfumando em direção às têmporas</div></div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Iluminador (Rosê ou Dourado)</strong> — nariz, queixo, arco do cupido e parte alta das maçãs</div></div>
-</div>
-<div class="d-card">
-<h3>Máscara de Cílios Regenerativa Pro-Age</h3>
-<div class="d-body">Para cílios mais finos e curtos, comuns após os 45 anos. Volume, comprimento e tratamento.</div>
-<div class="d-label" style="margin-bottom:8px">Ativos e o que fazem</div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Raiz de Scutellaria</strong> — antioxidante que protege os folículos contra o envelhecimento</div></div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Biotina (Vitamina B7)</strong> — fortalece, reduz queda e estimula crescimento de cílios mais densos</div></div>
-<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Pantenol (Vitamina B5)</strong> — hidrata e aumenta a flexibilidade dos cílios, evitando quebra</div></div>
-<div class="d-label" style="margin-top:14px;margin-bottom:6px">Como usar</div>
-<div style="font-size:14px;color:var(--ink-soft);line-height:1.7">Da raiz em zigue-zague para separar e volumizar. Remove com água e sabonete suave, sem removedor específico.</div>
-</div>
-</div>
-<hr class="d-hr">
-<div class="d-tag">Sugestão de rotina por tipo de pele</div>
-<div class="d-grid-2" style="margin-top:16px">
+<div class="d-hr"></div>
+<div class="d-sec-title" style="font-size:22px;margin-bottom:6px">Sugestão de rotina por tipo de pele</div>
+<div class="d-sec-sub" style="margin-bottom:24px">Encontre o seu perfil e veja a rotina completa</div>
+<div class="d-grid2">
 <div>
 <div class="d-rc"><h4>Pele Seca ou Ressecada</h4><div class="d-rq">"A pele seca perde água mais rápido e marca mais as rugas. Essa rotina foca em repor hidratação em camadas."</div><div class="d-rl">Manhã</div><div class="d-rs">Mousse · Tônico · Creme Multicamadas · Hidratante FPS 50 · Protetor solar de preferência</div><div class="d-rl">Noite</div><div class="d-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Rejuvenescedor Noturno</div><div class="d-rd">Essas camadas de hidratação vão devolver o viço que foi se perdendo com o tempo.</div></div>
 <div class="d-rc"><h4>Pele Mista</h4><div class="d-rq">"Oleosa no centro, seca nas bordas. A rotina equilibra sem pesar e sem ressecar."</div><div class="d-rl">Manhã</div><div class="d-rs">Mousse · Tônico · Hidratante FPS 50 · Protetor solar de preferência</div><div class="d-rl">Noite</div><div class="d-rs">Mousse · Tônico · Sérum de Olhos · Rejuvenescedor Noturno</div><div class="d-rd">Evite cremes muito pesados na zona T e foque a hidratação nas bochechas e pescoço.</div></div>
 </div>
 <div>
 <div class="d-rc"><h4>Pele Sensível</h4><div class="d-rq">"Pele sensível reage fácil. O foco aqui é acalmar, fortalecer a barreira e usar o retinol de forma segura."</div><div class="d-rl">Manhã</div><div class="d-rs">Mousse · Tônico · Hidratante FPS 50 · Protetor solar de preferência</div><div class="d-rl">Noite</div><div class="d-rs">Mousse · Tônico · Sérum de Olhos · Rejuvenescedor Noturno</div><div class="d-rd">Use o Mousse com a mão limpa na maioria dos dias e a escovinha no máximo 1x por semana.</div></div>
-<div class="d-rc"><h4>Pele com Manchas ou Sem Viço</h4><div class="d-rq">"A pele madura perde luminosidade com o tempo. Essa rotina foca em uniformizar o tom e devolver o brilho natural."</div><div class="d-rl">Manhã</div><div class="d-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Hidratante FPS 50 · Protetor solar de preferência</div><div class="d-rl">Noite</div><div class="d-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Rejuvenescedor Noturno</div><div class="d-rd">Manchas aparecem quando a melanina fica desregulada pela exposição solar. Hidratação e proteção diária são os dois pilares.</div></div>
+<div class="d-rc"><h4>Pele com Manchas ou Sem Viço</h4><div class="d-rq">"A pele madura perde luminosidade com o tempo. Essa rotina foca em uniformizar o tom e devolver o brilho natural."</div><div class="d-rl">Manhã</div><div class="d-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Hidratante FPS 50 · Protetor solar</div><div class="d-rl">Noite</div><div class="d-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Rejuvenescedor Noturno</div><div class="d-rd">Manchas aparecem quando a melanina fica desregulada pela exposição solar. Hidratação e proteção diária são os dois pilares.</div></div>
 </div>
 </div>
 </div>
 
-<div style="text-align:center;padding:28px 0;border-top:1px solid var(--line);margin-top:40px;font-size:13px;color:var(--ink-soft)"><a href="https://lemoritz.com.br" target="_blank" style="color:var(--wine);text-decoration:none;font-weight:600">lemoritz.com.br</a> &nbsp;·&nbsp; <a href="https://instagram.com/lemoritz_oficial" target="_blank" style="color:var(--wine);text-decoration:none;font-weight:600">@lemoritz_oficial</a></div>
+<!-- D: MAKE -->
+<div class="d-section" id="d-make">
+<div class="d-sec-banner"><div><h2>Maquiagem Le Moritz</h2><p>Sticks que hidratam enquanto maquia. Desenvolvidos para pele madura — não ressecam, não acentuam linhas, não exigem habilidade.</p></div></div>
+
+<div class="d-grid2" style="margin-bottom:24px">
+<div class="d-prod-card">
+<div class="d-prod-img"><div style="display:flex;gap:10px"><div style="width:22px;height:80px;background:#c9726b;border-radius:5px"></div><div style="width:22px;height:80px;background:#c4895a;border-radius:5px"></div><div style="width:22px;height:80px;background:#d4887a;border-radius:5px"></div></div></div>
+<div class="d-prod-body">
+<div class="d-prod-tag">Blush</div>
+<div class="d-prod-name">Stick Blush</div>
+<div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap"><span style="background:var(--sd);padding:3px 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Rosa Mauve</span><span style="background:var(--sd);padding:3px 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Terracota</span><span style="background:var(--sd);padding:3px 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Coral</span></div>
+<div class="d-prod-desc">Esfuma com o dedo. Hidrata enquanto maquia. Ideal para pele madura — não seca, não acentua linhas.</div>
+<div class="d-label" style="margin-bottom:8px">Ativos</div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Óleo de Farelo de Arroz</strong> — hidrata sem obstruir poros</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Manteiga de Karité</strong> — nutrição profunda e elasticidade</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Óleo de Rosa Mosqueta</strong> — regeneração celular, ótimo para manchas</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Cera de Girassol</strong> — não derrete e não marca linhas de expressão</div></div>
+<div class="d-label" style="margin-top:12px;margin-bottom:4px">Como aplicar</div>
+<div style="font-size:13px;color:var(--is);line-height:1.7;margin-bottom:10px">Aplique nas maçãs do rosto e esfume com o dedo em movimentos subindo em direção às têmporas. Comece com pouco e construa a cor.</div>
+<div class="d-rd">💡 Para pele madura, blush mais alto levanta o rosto visualmente. Evite aplicar só nas bochechas — fica pesado.</div>
+</div>
+</div>
+<div class="d-prod-card">
+<div class="d-prod-img"><div style="display:flex;gap:10px"><div style="width:22px;height:80px;background:#e8c88a;border-radius:5px"></div><div style="width:22px;height:80px;background:#e0b8b0;border-radius:5px"></div></div></div>
+<div class="d-prod-body">
+<div class="d-prod-tag">Iluminador</div>
+<div class="d-prod-name">Stick Iluminador</div>
+<div style="display:flex;gap:6px;margin-bottom:12px"><span style="background:var(--sd);padding:3px 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Rosê</span><span style="background:var(--sd);padding:3px 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Dourado</span></div>
+<div class="d-prod-desc">Glow natural e saudável. Não é glitter — é o viço que a pele madura perde e recupera com o produto certo.</div>
+<div class="d-label" style="margin-bottom:8px">Ativos</div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Seda de Arroz</strong> — suaviza a textura e dá acabamento aveludado</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Vitamina E</strong> — proteção antioxidante e nutrição</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Manteiga de Karité</strong> — hidratação e luminosidade natural</div></div>
+<div class="d-label" style="margin-top:12px;margin-bottom:4px">Como aplicar</div>
+<div style="font-size:13px;color:var(--is);line-height:1.7;margin-bottom:10px">Aplique no nariz, queixo, arco do cupido e parte superior das maçãs. Esfume com o dedo ou deixe natural.</div>
+<div class="d-rd">💡 Rosê para tons mais claros, Dourado para médios e escuros. Muitas amam misturar os dois!</div>
+</div>
+</div>
+</div>
+
+<div class="d-grid2" style="margin-bottom:24px">
+<div class="d-prod-card">
+<div class="d-prod-img"><div style="display:flex;gap:10px"><div style="width:22px;height:80px;background:#4a3028;border-radius:5px"></div></div></div>
+<div class="d-prod-body">
+<div class="d-prod-tag">Contorno</div>
+<div class="d-prod-name">Stick Contorno Marrom Café</div>
+<div class="d-prod-desc">Define o rosto de forma natural e discreta. Para pele madura, o contorno leve reposiciona visualmente as linhas do rosto sem parecer pesado.</div>
+<div class="d-label" style="margin-bottom:8px">Ativos</div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Óleo de Farelo de Arroz</strong> — hidrata e desliza suave na pele</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Cera de Girassol</strong> — fixa sem pesar, não acentua linhas</div></div>
+<div class="d-label" style="margin-top:12px;margin-bottom:4px">Como aplicar</div>
+<div style="font-size:13px;color:var(--is);line-height:1.7;margin-bottom:10px">Aplique na testa (ao longo da linha do cabelo), nas laterais do rosto e abaixo das maçãs. Esfume muito bem.</div>
+<div class="d-rd">💡 Menos é mais. Aplique pouco, esfume muito. O contorno deve ser sentido, não visto.</div>
+</div>
+</div>
+<div class="d-prod-card">
+<div class="d-prod-body" style="padding-top:24px">
+<div class="d-prod-tag">Máscara</div>
+<div class="d-prod-name">Máscara de Cílios Regenerativa Pro-Age</div>
+<div class="d-prod-desc">Para cílios mais finos e curtos, comuns após os 45 anos. Volume, comprimento e tratamento em uma aplicação.</div>
+<div class="d-label" style="margin-bottom:8px">Ativos</div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Biotina (B7)</strong> — fortalece, reduz queda e estimula crescimento</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Pantenol (B5)</strong> — hidrata e aumenta flexibilidade dos cílios</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Raiz de Scutellaria</strong> — protege os folículos contra o envelhecimento</div></div>
+<div class="d-label" style="margin-top:12px;margin-bottom:4px">Como aplicar</div>
+<div style="font-size:13px;color:var(--is);line-height:1.7;margin-bottom:10px">Aplique partindo da raiz em movimentos de zigue-zague. O aplicador alcança até os cílios menores. Remove com água e sabonete.</div>
+<div class="d-rd">💡 Para abrir o olhar em pele madura: aplique bem na raiz dos superiores e só a ponta nos inferiores. Isso levanta o olhar sem pesar.</div>
+</div>
+</div>
+</div>
+
+<div class="d-hr"></div>
+<div class="d-grid2">
+<div class="d-rc">
+<h4>Make completa em 3 produtos</h4>
+<div class="d-rq">"A make mais rápida e elegante para o dia a dia. Três sticks, cinco minutos, resultado incrível."</div>
+<div class="d-rl">Passo a passo</div>
+<div class="d-li" style="border-top:1px solid var(--ln)"><div class="d-ldot"></div><div class="d-ltxt"><strong>Contorno Marrom Café</strong> — testa, laterais e abaixo das maçãs. Esfuma bem com o dedo.</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Blush Rosa Mauve, Terracota ou Coral</strong> — nas maçãs subindo em direção às têmporas.</div></div>
+<div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Iluminador Rosê ou Dourado</strong> — nariz, queixo e parte alta das maçãs.</div></div>
+<div class="d-rd" style="margin-top:12px">Para finalizar: Máscara de Cílios na raiz. Resultado em 5 minutos: pele com viço, rosto definido, olhar marcante.</div>
+</div>
+<div class="d-card">
+<div class="d-label" style="margin-bottom:14px">Dicas gerais para pele madura</div>
+<div class="d-faq"><div class="d-faqq">Preparação é tudo</div><div class="d-faqa">Antes da make, use o Tônico e o Sérum Lift. A pele hidratada e tensionada absorve melhor e dura mais.</div></div>
+<div class="d-faq"><div class="d-faqq">Menos produto, mais esfumado</div><div class="d-faqa">Pele madura absorve cor de forma diferente. Comece com pouco e construa — é mais fácil adicionar do que tirar.</div></div>
+<div class="d-faq"><div class="d-faqq">O dedo é o melhor pincel</div><div class="d-faqa">O calor do dedo integra o produto com a pele. Para os sticks Le Moritz, o resultado fica mais natural do que com pincel.</div></div>
+<div class="d-faq"><div class="d-faqq">Iluminador é rejuvenescedor</div><div class="d-faqa">Nas partes certas, o iluminador devolve o viço que a pele madura perde. Não é exagero — é estratégia.</div></div>
+</div>
+</div>
+</div>
+
+<div class="d-footer-bar"><a href="https://lemoritz.com.br" target="_blank">lemoritz.com.br</a> &nbsp;·&nbsp; <a href="https://instagram.com/lemoritz_oficial" target="_blank">@lemoritz_oficial</a></div>
+</div>
 </div>
 <!-- MOBILE -->
-<div class="mobile-header"><div class="m-ey">Portal · Representante Le Moritz</div><div class="m-logo">LE MORITZ</div><div class="m-sub">Science & Beauty</div></div>
-<div class="mobile-nav">
-<div class="m-nav-item active" onclick="mShow('inicio',this)">Início</div>
-<div class="m-nav-item" onclick="mShow('vendas',this)">Minhas Vendas</div>
-<div class="m-nav-item" onclick="mShow('desafios',this)">Desafios</div>
-<div class="m-nav-item" onclick="mShow('materiais',this)">Materiais</div>
-<div class="m-nav-item" onclick="mShow('produtos',this)">Conheça os Produtos</div>
-</div>
+<div class="mbl">
+<div class="m-hdr"><div class="m-logo-s">Portal · Representante</div><div class="m-logo">Le Moritz</div></div>
 
-<!-- M INICIO -->
-<div class="mobile-page active" id="m-inicio">
-<div style="margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)"><div style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:6px">Oi, Representante!</div><div class="m-body" style="margin-bottom:0">Aqui você encontra tudo que precisa para vender com confiança.</div></div>
-<div class="m-desbox">
-<div class="badge-ativo">Desafio ativo agora</div>
-<div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:12px;line-height:1.2">Semana 4 · 21 a 27 de julho</div>
-<div class="m-body" style="margin-bottom:14px">Venda 2 cupons essa semana e ganhe R$50 em voucher no site.</div>
-<div onclick="mShow('desafios',document.querySelectorAll('.m-nav-item')[2])" style="display:flex;align-items:center;justify-content:center;border:1.5px solid var(--wine);color:var(--wine);padding:12px;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:4px">Saber mais sobre o desafio →</div>
+<!-- M: INICIO -->
+<div class="m-page act" id="m-inicio">
+<div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--ln)"><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:5px">Oi, Representante!</div><div class="m-body" style="margin-bottom:0">Tudo que você precisa para vender com confiança.</div></div>
+<div class="m-banner">
+<div class="m-badge">Desafio encerrado · Semana 4</div>
+<div class="m-banner-t">Resultado disponível!</div>
+<div class="m-banner-p">Confira quem bateu a meta e o histórico completo.</div>
+<button class="m-banner-btn" onclick="mShow('desafios',2)">Ver resultado →</button>
 </div>
-<hr class="m-hr">
 <div class="m-lbl" style="margin-bottom:12px">Por que ser Representante?</div>
-<div class="m-be"><div class="m-bei">💰</div><div><div class="m-bet">10% de comissão por venda</div><div class="m-bep">Recebe no dia 10 do mês seguinte, sem burocracia</div></div></div>
-<div class="m-be"><div class="m-bei">🎁</div><div><div class="m-bet">10% de desconto para suas clientes</div><div class="m-bep">Seu cupom exclusivo torna a oferta irresistível</div></div></div>
-<div class="m-be"><div class="m-bei">✅</div><div><div class="m-bet">Sem estoque, sem investimento</div><div class="m-bep">Você só compartilha o link</div></div></div>
-<div class="m-be"><div class="m-bei">⏰</div><div><div class="m-bet">Você vende no seu tempo</div><div class="m-bep">No privado, pessoalmente, como quiser</div></div></div>
-<div class="m-be"><div class="m-bei">💜</div><div><div class="m-bet">Produto que você usa e acredita</div><div class="m-bep">A venda mais fácil parte da sua experiência</div></div></div>
-<hr class="m-hr">
-<div class="m-idx"><div class="m-idxl">O que você encontra aqui</div>
-<div class="m-idxi"><div class="m-idxn">01</div><div><div class="m-idxt">Minhas Vendas</div><div class="m-idxd">Cupom, comissão e quando recebe</div></div></div>
-<div class="m-idxi"><div class="m-idxn">02</div><div><div class="m-idxt">Desafios</div><div class="m-idxd">Meta da semana e histórico de prêmios</div></div></div>
-<div class="m-idxi"><div class="m-idxn">03</div><div><div class="m-idxt">Materiais</div><div class="m-idxd">Frases, objeções e abordagem</div></div></div>
-<div class="m-idxi"><div class="m-idxn">04</div><div><div class="m-idxt">Conheça os Produtos</div><div class="m-idxd">Ativos, benefícios e rotinas</div></div></div>
-</div>
+<div class="m-be"><div class="m-bei">💰</div><div><div class="m-bet">10% de comissão por venda</div><div class="m-bep">Recebe dia 10 do mês seguinte</div></div></div>
+<div class="m-be"><div class="m-bei">🎁</div><div><div class="m-bet">Cupom exclusivo</div><div class="m-bep">10% de desconto para suas clientes</div></div></div>
+<div class="m-be"><div class="m-bei">✅</div><div><div class="m-bet">Sem estoque, sem risco</div><div class="m-bep">Você só compartilha o link</div></div></div>
+<div class="m-be"><div class="m-bei">⏰</div><div><div class="m-bet">No seu tempo</div><div class="m-bep">Vende quando e como quiser</div></div></div>
+<div class="m-be"><div class="m-bei">💜</div><div><div class="m-bet">Produto que você ama</div><div class="m-bep">A venda parte da sua experiência</div></div></div>
 <div class="m-rodape">Você não precisa ser influencer.<br>Só precisa ser você.</div>
 </div>
 
-<!-- M VENDAS -->
-<div class="mobile-page" id="m-vendas">
+<!-- M: VENDAS -->
+<div class="m-page" id="m-vendas">
 <div class="m-hl"><div class="m-hlt">Minhas Vendas</div><div class="m-hls">Acompanhe suas vendas aqui</div></div>
-<div class="m-lbl">Como acessar</div><div class="m-body">Digite seu cupom e escolha o período para ver quantas vendas você gerou.</div>
+<div class="m-lbl">Como acessar</div>
+<div class="m-body">Digite seu cupom e escolha o período para ver quantas vendas você gerou.</div>
 <div class="m-pas"><div class="m-pasn">1</div><div class="m-past">Clique no botão abaixo</div></div>
 <div class="m-pas"><div class="m-pasn">2</div><div class="m-past">Digite o <strong>nome do seu cupom</strong></div></div>
-<div class="m-pas"><div class="m-pasn">3</div><div class="m-past">Escolha o <strong>período</strong> que deseja ver</div></div>
-<a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="m-btn" style="margin-top:14px;text-decoration:none"><span>Acessar meu cupom</span><span>→</span></a>
+<div class="m-pas"><div class="m-pasn">3</div><div class="m-past">Escolha o <strong>período</strong></div></div>
+<a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="m-btn" style="margin-top:14px">Acessar meu cupom →</a>
 <hr class="m-hr">
 <div class="m-lbl">Link da loja</div>
 <div class="ll-box"><div class="ll-l">Site oficial</div><div class="ll-u">lemoritz.com.br</div></div>
-<button class="m-btn m-btn-w" onclick="navigator.clipboard.writeText('https://lemoritz.com.br').then(()=>alert('Copiado!'))"><span>Copiar link da loja</span><span>↗</span></button>
+<button class="m-btn-out" onclick="navigator.clipboard.writeText('https://lemoritz.com.br').then(()=>alert('Copiado!'))">Copiar link da loja ↗</button>
 <hr class="m-hr">
 <div class="m-tag">Top 3 da semana</div>
-<div class="m-pod"><div class="m-podl"><div class="m-podp">1</div><div><div class="m-podn">Cláudia</div><div class="m-podc">CLAUDIA10</div></div></div><div class="m-podv">4</div></div>
-<div class="m-pod"><div class="m-podl"><div class="m-podp">2</div><div><div class="m-podn">Lucia Helena</div><div class="m-podc">LUCIA10</div></div></div><div class="m-podv">2</div></div>
-<div class="m-pod"><div class="m-podl"><div class="m-podp">3</div><div><div class="m-podn">Vika</div><div class="m-podc">VIKA</div></div></div><div class="m-podv">2</div></div>
-<div style="font-size:11px;color:var(--ink-soft);letter-spacing:1px;text-transform:uppercase;margin-top:10px">Semana 2 · <span style="color:var(--wine)">07 a 13 de julho</span></div>
+<div class="m-pod"><div class="m-podl"><div class="m-podp">1</div><div><div class="m-podn">Lucia Helena</div><div class="m-podc">LUCIA10</div></div></div><div class="m-podv">10</div></div>
+<div class="m-pod"><div class="m-podl"><div class="m-podp">2</div><div><div class="m-podn">Vika</div><div class="m-podc">VIKA</div></div></div><div class="m-podv">7</div></div>
+<div class="m-pod"><div class="m-podl"><div class="m-podp">3</div><div><div class="m-podn">Malu</div><div class="m-podc">MALU10</div></div></div><div class="m-podv">2</div></div>
+<div style="font-size:11px;color:var(--is);letter-spacing:1px;text-transform:uppercase;margin-top:10px">Semana 4 · <span style="color:var(--w)">21 a 27 de julho</span></div>
 <hr class="m-hr">
 <div class="m-lbl">Quando vou receber</div>
-<div class="m-tl"><div class="m-tli"><div class="m-tlc">Jul</div><div class="m-tll">Você vende</div><div class="m-tls">mês atual</div></div><div class="m-tln"></div><div class="m-tli"><div class="m-tlc w">10</div><div class="m-tll">Você recebe</div><div class="m-tls">dia 10 de agosto</div></div></div>
-<div class="m-body">Pagamento pela Unfair Advantage. Você recebe 10% do valor total das vendas do mês.</div>
+<div class="m-tl"><div class="m-tli"><div class="m-tlc">Jul</div><div class="m-tll">Você vende</div><div class="m-tls">mês atual</div></div><div class="m-tln"></div><div class="m-tli"><div class="m-tlc r">10</div><div class="m-tll">Você recebe</div><div class="m-tls">dia 10 de agosto</div></div></div>
+<div class="m-body">Pagamento pela Unfair Advantage. 10% do valor das vendas do mês.</div>
 <hr class="m-hr">
 <div class="m-lbl" style="margin-bottom:8px">Dúvidas frequentes</div>
 <div class="m-faq"><div class="m-faqq">Quanto vou receber?</div><div class="m-faqa">10% das vendas. Ex: R$500 = R$50 para você.</div></div>
 <div class="m-faq"><div class="m-faqq">Meu cupom tem prazo?</div><div class="m-faqa">Não. É vitalício no programa.</div></div>
 <div class="m-faq"><div class="m-faqq">Posso usar meu próprio cupom?</div><div class="m-faqa">Sim! Nas suas próprias compras também.</div></div>
 <div class="m-faq"><div class="m-faqq">Onde compartilho?</div><div class="m-faqa">Em qualquer lugar. Toda compra com ele conta.</div></div>
+<hr class="m-hr">
+<div class="m-lbl" style="margin-bottom:8px">Frete e prazos</div>
+<div class="m-fr"><div class="m-frl">Frete grátis</div><div class="m-frv">Acima de R$100 para todo o Brasil</div></div>
+<div class="m-fr"><div class="m-frl">Prazo de entrega</div><div class="m-frv">4 a 15 dias úteis</div></div>
+<a href="https://wa.me/16364319911" target="_blank" class="m-btn" style="margin-top:14px">Suporte WhatsApp ↗</a>
 </div>
 
-<!-- M DESAFIOS -->
-<div class="mobile-page" id="m-desafios">
+<!-- M: DESAFIOS -->
+<div class="m-page" id="m-desafios">
 <div class="m-hl"><div class="m-hlt">Desafios</div></div>
-<div style="font-size:10px;font-weight:800;color:var(--wine);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">Desafio ativo</div>
-<div style="border:1.5px solid var(--ink);padding:20px;margin-bottom:12px;border-radius:4px">
-<div class="m-tag" style="margin-bottom:6px">Semana 4 · 21 — 27/jul</div>
-<div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.2">Venda 2 cupons essa semana</div>
-<div class="m-fr" style="border-top:1px solid var(--line)"><div class="m-frl">Prêmio</div><div class="m-frv">R$50 em voucher no site</div></div>
-<a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="m-btn" style="margin-top:14px;text-decoration:none"><span>Conferir minhas vendas →</span><span>↗</span></a>
+<div style="font-size:10px;font-weight:800;color:var(--is);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">Desafio encerrado</div>
+<div style="border:1.5px solid var(--ln);padding:20px;margin-bottom:12px;border-radius:12px;background:var(--wh)">
+<div style="display:inline-block;background:var(--sd);color:var(--is);font-size:10px;font-weight:700;padding:3px 12px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">ENCERRADO</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:6px">Semana 4 · 21 — 27/jul</div>
+<div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.2">Venda 2 cupons essa semana</div>
+<div class="m-fr" style="border-top:1px solid var(--ln)"><div class="m-frl">Prêmio</div><div class="m-frv">R$50 em voucher no site</div></div>
+<div class="m-fr"><div class="m-frl">Meta batida por</div><div style="font-size:13px;font-weight:700;color:var(--w)">LUCIA10 · VIKA · MALU10</div></div>
+<a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="m-btn" style="margin-top:14px">Ver minhas vendas →</a>
 </div>
-<div style="border:1px solid var(--line);padding:14px 16px;margin-bottom:20px;border-radius:4px"><div style="font-size:9px;font-weight:800;color:var(--ink-soft);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px">Resultado</div><div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px">27 de julho</div><div style="font-size:13px;color:var(--ink-soft)">Divulgado aqui e no grupo no encerramento.</div></div>
 <hr class="m-hr">
 <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:4px">Histórico de vouchers</div>
-<div style="font-size:11px;font-weight:700;color:var(--ink-soft);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px">Atualizado toda segunda-feira</div>
+<div style="font-size:11px;font-weight:700;color:var(--is);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px">Atualizado toda segunda-feira</div>
+<div class="m-wcard"><h4>Semana 4 · 21 — 27/jul · R$50 · ENCERRADO</h4>
+<div class="m-wrow"><span>LUCIA10</span><span>10 cupons 🏆</span></div>
+<div class="m-wrow"><span>VIKA</span><span>7 cupons 🏆</span></div>
+<div class="m-wrow"><span>MALU10</span><span>2 cupons 🏆</span></div>
+<div class="m-wrow"><span>HELO10</span><span>1 cupom</span></div>
+</div>
 <div class="m-wcard"><h4>Semana 3 · 14 — 20/jul · R$50 · ENCERRADO</h4><div class="m-wrow"><span>LUCIA10</span><span>5 cupons</span></div><div class="m-wrow"><span>MALU10</span><span>2 cupons</span></div><div class="m-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="m-wrow"><span>ANNALU10</span><span>2 cupons</span></div><div class="m-wrow"><span>ROSICLEIDE</span><span>2 cupons</span></div></div>
 <div class="m-wcard"><h4>Semana 2 · 07 — 13/jul · R$50 · ENCERRADO</h4><div class="m-wrow"><span>CLAUDIA10</span><span>4 cupons</span></div><div class="m-wrow"><span>LUCIA10</span><span>2 cupons</span></div><div class="m-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="m-wrow"><span>THAIS10</span><span>2 cupons</span></div><div class="m-wrow"><span>ANNALU10</span><span>2 cupons</span></div></div>
-<div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div style="font-size:13px;color:var(--ink)">Desafio da Copa · 29/jun — 06/jul</div><div style="font-size:12px;font-weight:700;color:var(--ink-soft)">R$50 · ENCERRADO</div></div>
-<div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)"><div style="font-size:13px;color:var(--ink-soft)">Em breve · 28/jul — 03/ago</div><div style="color:var(--line)">—</div></div>
+<div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)"><div style="font-size:13px;color:var(--ink)">Copa · 29/jun — 06/jul</div><div style="font-size:12px;font-weight:700;color:var(--is)">R$50 · ENCERRADO</div></div>
+<div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--ln)"><div style="font-size:13px;color:var(--is)">Em breve · 28/jul — 03/ago</div><div style="color:var(--ln)">—</div></div>
 </div>
-<!-- M MATERIAIS -->
-<div class="mobile-page" id="m-materiais">
-<div class="m-hl"><div class="m-hlt">Materiais</div><div class="m-hls">Tudo que você precisa para vender</div></div>
-<div class="m-idx" style="margin-bottom:18px"><div class="m-idxl">Nesta página você encontra</div>
-<div class="m-idxi"><div class="m-idxn">01</div><div><div class="m-idxt">Como abordar</div><div class="m-idxd">No privado, pessoalmente e no grupo</div></div></div>
-<div class="m-idxi"><div class="m-idxn">02</div><div><div class="m-idxt">Frases prontas</div><div class="m-idxd">Por situação e por produto</div></div></div>
-<div class="m-idxi"><div class="m-idxn">03</div><div><div class="m-idxt">Objeções</div><div class="m-idxd">Respostas para quando a cliente resiste</div></div></div>
-<div class="m-idxi"><div class="m-idxn">04</div><div><div class="m-idxt">O que indicar</div><div class="m-idxd">Produto certo para cada cliente</div></div></div>
-</div>
-<div class="m-lbl">01 · Como abordar</div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">No privado do WhatsApp</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Comece pelo contexto da pessoa. A abordagem mais natural parte de algo real.</div><div style="font-size:13px;font-weight:600;color:var(--wine);font-style:italic;padding-left:10px;border-left:2px solid var(--wine)">"Lembrei de você porque você comentou que estava procurando algo para a região dos olhos..."</div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Pessoalmente</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Quando elogiarem sua pele ou make, essa é a sua deixa.</div><div style="font-size:13px;font-weight:600;color:var(--wine);font-style:italic;padding-left:10px;border-left:2px solid var(--wine)">"Uso os produtos da Le Moritz, feitos para pele madura. Tenho desconto se quiser experimentar!"</div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">No grupo de amigas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Sem pressão, sem parecer propaganda.</div><div style="font-size:13px;font-weight:600;color:var(--wine);font-style:italic;padding-left:10px;border-left:2px solid var(--wine)">"Meninas, estou usando uma marca incrível para pele madura. Tenho desconto para quem quiser conhecer!"</div></div></div>
+
+<!-- M: MENSAGENS -->
+<div class="m-page" id="m-mensagens">
+<div class="m-hl"><div class="m-hlt">Mensagem Pronta</div><div class="m-hls">Copie e mande na hora</div></div>
+<div class="m-lbl">Como abordar</div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">No privado do WhatsApp</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Comece pelo contexto da pessoa. A abordagem mais natural parte de algo real.</div><div style="font-size:13px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Lembrei de você porque você comentou que estava procurando algo para a região dos olhos..."</div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Pessoalmente</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Quando elogiarem sua pele ou make, essa é a sua deixa.</div><div style="font-size:13px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Uso os produtos da Le Moritz, feitos para pele madura. Tenho desconto se quiser experimentar!"</div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">No grupo de amigas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Sem pressão, sem parecer propaganda.</div><div style="font-size:13px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Meninas, estou usando uma marca incrível para pele madura. Tenho desconto para quem quiser conhecer!"</div></div></div>
 <hr class="m-hr">
-<div class="m-lbl" style="margin-bottom:8px">02 · Frases prontas</div>
-<div class="m-clbl">Por situação</div>
+<div class="m-lbl">Mensagens por situação</div>
+<div class="m-clbl">Apresentando a marca</div>
 <div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Apresentando a marca</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!')">Copiar ↗</button></div><div class="m-envie"><div class="m-el">Envie também</div><div class="m-et">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!"</div><button class="m-cbtn" onclick="cp(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Quando elogiarem sua pele</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Eu tenho desconto nessa loja se quiser experimentar!"</div><button class="m-cbtn" onclick="cp(this,'Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Eu tenho desconto nessa loja se quiser experimentar!')">Copiar ↗</button></div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Quando elogiarem sua pele</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Tenho desconto nessa loja se quiser experimentar!"</div><button class="m-cbtn" onclick="cp(this,'Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Tenho desconto nessa loja se quiser experimentar!')">Copiar ↗</button></div></div></div>
 <div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Para grupo de amigas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Meninas, quem quiser conhecer uma linha de skincare e make feita para pele madura, eu tenho desconto nessa loja. Me chama no privado!"</div><button class="m-cbtn" onclick="cp(this,'Meninas, quem quiser conhecer uma linha de skincare e make feita para pele madura, eu tenho desconto nessa loja. Me chama no privado!')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Quando disser que vai pensar</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre!"</div><button class="m-cbtn" onclick="cp(this,'Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre!')">Copiar ↗</button></div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Quando disser que vai pensar</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Claro, sem pressa! Fica com o link e o meu cupom. O desconto é válido sempre!"</div><button class="m-cbtn" onclick="cp(this,'Claro, sem pressa! Fica com o link e o meu cupom. O desconto é válido sempre!')">Copiar ↗</button></div></div></div>
 <div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Pós venda</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!')">Copiar ↗</button></div></div></div>
 <div class="m-thin"></div>
 <div class="m-clbl">Por produto</div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Revitalizador de Olhos</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!')">Copiar ↗</button></div><div class="m-envie"><div class="m-el">Envie também</div><div class="m-et">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]."</div><button class="m-cbtn" onclick="cp(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM].')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Creme Antirrugas Multicamadas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Lift Instantâneo</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum da Le Moritz dá resultado na hora. Eu tenho desconto nessa loja!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum da Le Moritz dá resultado na hora. Eu tenho desconto nessa loja!')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Blush — Rosa Mauve, Terracota, Coral</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Eu tenho desconto nessa loja. Quer o link?"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Eu tenho desconto nessa loja. Quer o link?')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Iluminador — Rosê e Dourado</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você ama um glow natural? Uso o iluminador da Le Moritz e a pele fica incrível. Eu tenho desconto nessa loja!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você ama um glow natural? Uso o iluminador da Le Moritz e a pele fica incrível. Eu tenho desconto nessa loja!')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Máscara de Cílios Regenerativa</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! A Le Moritz tem uma máscara regenerativa que além de volume dá tratamento nos cílios. Eu tenho desconto lá!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! A Le Moritz tem uma máscara regenerativa que além de volume dá tratamento nos cílios. Eu tenho desconto lá!')">Copiar ↗</button></div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Revitalizador de Olhos</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Tenho desconto nessa loja!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Tenho desconto nessa loja!')">Copiar ↗</button></div><div class="m-envie"><div class="m-el">Envie também</div><div class="m-et">"lemoritz.com.br · cupom: [SEUCUPOM]"</div><button class="m-cbtn" onclick="cp(this,'lemoritz.com.br · cupom: [SEUCUPOM]')">Copiar ↗</button></div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Creme Antirrugas Multicamadas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Tenho desconto lá. Quer o link?"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Tenho desconto lá. Quer o link?')">Copiar ↗</button></div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Lift Instantâneo</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum dá resultado na hora. Tenho desconto nessa loja!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum dá resultado na hora. Tenho desconto nessa loja!')">Copiar ↗</button></div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Blush</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Tenho desconto nessa loja. Quer o link?"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Tenho desconto nessa loja. Quer o link?')">Copiar ↗</button></div><div class="nota-p">Pode falar do Rosa Mauve, Terracota ou Coral</div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Hidratante FPS 50</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você queria um protetor que não pesasse. Uso o Stick Hidratante FPS 50 da Le Moritz e é prático demais. Tenho desconto lá!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você queria um protetor que não pesasse. Uso o Stick Hidratante FPS 50 da Le Moritz e é prático demais. Tenho desconto lá!')">Copiar ↗</button></div></div></div>
 <hr class="m-hr">
-<div class="m-lbl" style="margin-bottom:8px">03 · Objeções</div>
+<div class="m-lbl" style="margin-bottom:8px">Objeções respondidas</div>
 <div class="m-body" style="margin-bottom:10px">Quando a cliente resistir, copie e mande.</div>
-<div class="m-obj"><div class="m-oq">"Tá caro..."</div><div class="m-or">"Com meu cupom já fica 10% mais barato! E frete grátis acima de R$100."</div></div>
+<div class="m-obj"><div class="m-oq">"Tá caro..."</div><div class="m-or">"Com meu cupom já fica 10% mais barato! Frete grátis acima de R$100."</div></div>
 <div class="m-obj"><div class="m-oq">"Não conheço essa marca..."</div><div class="m-or">"É a única no Brasil feita exclusivamente para pele madura. Dermatologicamente testada."</div></div>
 <div class="m-obj"><div class="m-oq">"Vou pensar..."</div><div class="m-or">"Claro! Fica com o link e meu cupom. O desconto é válido sempre."</div></div>
 <div class="m-obj"><div class="m-oq">"Já uso outra marca..."</div><div class="m-or">"Entendo! Essa é específica para pele madura, feita diferente. Posso te mandar mais informações?"</div></div>
 <div class="m-obj" style="margin-bottom:0"><div class="m-oq">"Não sei se funciona pra mim..."</div><div class="m-or">"Tem garantia de 90 dias. Se não gostar, devolve. Sem risco!"</div></div>
 <hr class="m-hr">
-<div class="m-lbl" style="margin-bottom:8px">04 · O que indicar</div>
-<div class="m-ind"><div class="m-indq">Região dos olhos</div><div class="m-inda"><strong>Sérum Revitalizador de Olhos</strong> para tratar a área. Para resultado na hora, indique também o <strong>Sérum Lift Instantâneo</strong> — não fazer expressão por 90 segundos após aplicar.</div></div>
+<div class="m-lbl" style="margin-bottom:8px">O que indicar</div>
+<div class="m-ind"><div class="m-indq">Região dos olhos</div><div class="m-inda"><strong>Sérum Revitalizador de Olhos</strong> para tratar. Para resultado na hora, <strong>Sérum Lift Instantâneo</strong> — não fazer expressão por 90 segundos após aplicar.</div></div>
 <div class="m-ind"><div class="m-indq">Pele sem hidratação</div><div class="m-inda"><strong>Creme Multicamadas + Rejuvenescedor Noturno + Tônico 8 em 1 + Hidratante FPS 50</strong></div></div>
-<div class="m-ind"><div class="m-indq">Pele sem viço e olhos cansados</div><div class="m-inda">Linha completa: <strong>Mousse, Tônico, Sérum de Olhos, Creme Multicamadas, Rejuvenescedor Noturno e Hidratante FPS 50</strong></div></div>
-<div style="background:var(--sand-deep);border-left:3px solid var(--wine);padding:12px;margin-top:12px;border-radius:0 6px 6px 0"><div style="font-size:12px;color:var(--ink-soft);line-height:1.7">Quer saber mais sobre os ativos de cada produto?</div><div onclick="mShow('produtos',document.querySelectorAll('.m-nav-item')[4])" style="color:var(--wine);font-size:12px;font-weight:700;margin-top:6px;cursor:pointer">Ver Conheça os Produtos →</div></div>
-<hr class="m-hr">
-<div class="m-lbl" style="margin-bottom:8px">Frete e prazos</div>
-<div class="m-fr"><div class="m-frl">Frete grátis</div><div class="m-frv">Para todo o Brasil acima de R$100</div></div>
-<div class="m-fr"><div class="m-frl">Prazo de entrega</div><div class="m-frv">4 a 15 dias úteis</div></div>
-<div class="m-fr"><div class="m-frl">Transportadora</div><div class="m-frv">Mandaê</div></div>
-<a href="https://wa.me/16364319911" target="_blank" class="m-btn m-btn-w" style="margin-top:14px;text-decoration:none"><span>Suporte · 9h às 17h</span><span>↗</span></a>
-</div>
-<!-- M PRODUTOS -->
-<div class="mobile-page" id="m-produtos">
-<div class="m-hl"><div class="m-hlt">Conheça os Produtos</div><div class="m-hls">Ativos, benefícios e como usar cada um</div></div>
-<div class="m-tag" style="margin-bottom:14px">Skincare</div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Mousse de Limpeza Revitalizante</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Limpa e hidrata ao mesmo tempo. A pele sai macia, sem sensação de aperto.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Glicerina</strong> — retém água na superfície, evitando ressecamento</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>D-Pantenol (B5)</strong> — acalma, repara e fortalece a barreira cutânea</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Ácido Hialurônico</strong> — hidrata enquanto limpa</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Niacinamida</strong> — uniformiza o tom e fortalece a barreira protetora</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Tripeptídeo de Cobre-1</strong> — estimula colágeno desde o primeiro passo</div></div><div class="m-lbl" style="margin-top:12px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Com a pele levemente úmida, massageie suavemente. Pode usar na área dos olhos. Enxágue. Manhã e noite.</div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Tônico Essência 8 em 1</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">8 funções em um só produto. Prepara, hidrata, firma e ilumina.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Glicerina</strong> — mantém hidratação e prepara para os próximos produtos</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Propanediol</strong> — umectante vegetal que aumenta a penetração dos ativos</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Ácido Hialurônico</strong> — hidratação profunda e preenchimento de linhas finas</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Aloe Vera</strong> — refresca, acalma e reduz vermelhidão</div></div><div class="m-lbl" style="margin-top:12px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Após o mousse, pressione com algodão ou mãos. Não enxágue. Prepara a pele para tudo que vem depois.</div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Revitalizador de Olhos</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Para bolsinhas, olheiras e linhas finas ao redor dos olhos.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Ecoffa (Extrato de Café)</strong> — ativa a microcirculação, reduz olheiras e desincha</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Nano Retinol</strong> — penetra 20x mais fundo, estimula colágeno sem irritar</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Epidermosil</strong> — hialurônico bio-vetorizado que restaura a densidade</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Nano BTX</strong> — efeito "botox-like" que suaviza linhas de expressão</div></div><div class="m-lbl" style="margin-top:12px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Roll-on de dentro para fora ao redor dos olhos. 2x ao dia como primeira camada.</div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Lift Instantâneo</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Efeito lifting visível em 3 minutos. Resultado por até 8 horas.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Silicato de Sódio</strong> — cria película tensora que promove lifting imediato</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Silicato de Mg e Al</strong> — prolonga o efeito por até 8 horas</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Argireline</strong> — inibe contrações musculares. Botox sem agulha</div></div><div class="m-lbl" style="margin-top:12px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Batidinhas suaves. Rosto imóvel por 90 segundos. Evite água por cima.</div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Creme Antirrugas Multicamadas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Hidratação profunda em camadas. Para pele ressecada que marca mais as rugas.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Epidermosil</strong> — hialurônico bio-vetorizado que penetra fundo e preenche rugas</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>WK Pep Erasin (veneno de cobra)</strong> — botox em creme que inibe contrações</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Plantcol (Acácia Senegal)</strong> — estimula colágeno e devolve firmeza</div></div><div class="m-lbl" style="margin-top:12px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">2x ao dia, rosto pescoço e colo de baixo para cima. Resultados em 28 dias.</div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Hidratante FPS 50</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Proteção solar e hidratação em stick. Protege também de luzes artificiais e telas.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Tinosorb S</strong> — filtro fotostável contra UVA, UVB e luz azul de telas</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Dióxido de Titânio</strong> — filtro físico adicional para peles sensíveis</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Ácido Hialurônico</strong> — hidratação com toque seco, sem oleosidade</div></div><div class="m-lbl" style="margin-top:12px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Após o creme, antes da make. Reaaplique ao longo do dia. Use todos os dias.</div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Retinol Noturno</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Trabalha enquanto você dorme. Renova, firma e rejuvenesce com uso contínuo.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Nano Retinol</strong> — penetra fundo sem irritar, estimula renovação e colágeno</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Retinol Like</strong> — alternativa suave que potencializa os resultados</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Manteiga de Karité</strong> — nutrição intensa durante a noite</div></div><div class="m-lbl" style="margin-top:12px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Exclusivamente à noite. Use protetor solar obrigatoriamente no dia seguinte.</div></div></div>
-<hr class="m-hr">
-<div class="m-tag" style="margin-bottom:14px">Maquiagem</div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sticks de Maquiagem</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Blush, Iluminador e Contorno. Todos hidratam enquanto maquia.</div><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px"><span style="background:var(--sand-deep);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Blush Rosa Mauve</span><span style="background:var(--sand-deep);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Blush Terracota</span><span style="background:var(--sand-deep);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Blush Coral</span><span style="background:var(--sand-deep);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Iluminador Rosê</span><span style="background:var(--sand-deep);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Iluminador Dourado</span><span style="background:var(--sand-deep);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink)">Contorno Marrom Café</span></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Contorno</strong> — testa, laterais do rosto e abaixo das maçãs</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Blush</strong> — maçãs esfumando em direção às têmporas</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Iluminador</strong> — nariz, queixo, arco do cupido e parte alta das maçãs</div></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Máscara de Cílios Pro-Age</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Para cílios mais finos e curtos, comuns após os 45 anos.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Raiz de Scutellaria</strong> — protege os folículos contra o envelhecimento</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Biotina (B7)</strong> — fortalece, reduz queda e estimula crescimento</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Pantenol (B5)</strong> — hidrata e aumenta a flexibilidade dos cílios</div></div><div class="m-lbl" style="margin-top:12px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Da raiz em zigue-zague. Remove com água e sabonete, sem removedor específico.</div></div></div>
-<hr class="m-hr">
-<div class="m-tag" style="margin-bottom:14px">Sugestão de rotina por tipo de pele</div>
-<div class="m-rcard"><h4>Pele Seca ou Ressecada</h4><div class="m-rq">"A pele seca perde água mais rápido e marca mais as rugas. Essa rotina foca em repor hidratação em camadas."</div><div class="m-rl">Manhã</div><div class="m-rs">Mousse · Tônico · Creme Multicamadas · Hidratante FPS 50 · Protetor solar de preferência</div><div class="m-rl">Noite</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Rejuvenescedor Noturno</div><div class="m-rd">Essas camadas de hidratação vão devolver o viço que foi se perdendo com o tempo.</div></div>
-<div class="m-rcard"><h4>Pele Sensível</h4><div class="m-rq">"Pele sensível reage fácil. O foco aqui é acalmar, fortalecer a barreira e usar o retinol de forma segura."</div><div class="m-rl">Manhã</div><div class="m-rs">Mousse · Tônico · Hidratante FPS 50 · Protetor solar de preferência</div><div class="m-rl">Noite</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Rejuvenescedor Noturno</div><div class="m-rd">Use o Mousse com a mão limpa na maioria dos dias e a escovinha no máximo 1x por semana.</div></div>
-<div class="m-rcard"><h4>Pele Mista</h4><div class="m-rq">"Oleosa no centro, seca nas bordas. A rotina equilibra sem pesar e sem ressecar."</div><div class="m-rl">Manhã</div><div class="m-rs">Mousse · Tônico · Hidratante FPS 50 · Protetor solar de preferência</div><div class="m-rl">Noite</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Rejuvenescedor Noturno</div><div class="m-rd">Evite cremes muito pesados na zona T e foque a hidratação nas bochechas e pescoço.</div></div>
-<div class="m-rcard"><h4>Pele com Manchas ou Sem Viço</h4><div class="m-rq">"A pele madura perde luminosidade com o tempo. Essa rotina foca em uniformizar o tom e devolver o brilho natural."</div><div class="m-rl">Manhã</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Hidratante FPS 50 · Protetor solar de preferência</div><div class="m-rl">Noite</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Rejuvenescedor Noturno</div><div class="m-rd">Manchas aparecem quando a melanina fica desregulada pela exposição solar. Hidratação e proteção diária são os dois pilares.</div></div>
+<div class="m-ind"><div class="m-indq">Pele sem viço e olhos cansados</div><div class="m-inda">Linha completa: <strong>Mousse, Tônico, Sérum de Olhos, Creme, Rejuvenescedor e FPS 50</strong></div></div>
 </div>
 
-<div class="footer"><a href="https://lemoritz.com.br" target="_blank">lemoritz.com.br</a> &nbsp;·&nbsp; <a href="https://instagram.com/lemoritz_oficial" target="_blank">@lemoritz_oficial</a></div>
+<!-- M: SKINCARE -->
+<div class="m-page" id="m-skincare">
+<div class="m-prod-top wine"><div class="m-prod-top-s">Conheça os produtos</div><div class="m-prod-top-t">Skincare</div><div class="m-prod-top-p">Ativos, benefícios e como usar cada produto</div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Mousse de Limpeza Revitalizante</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Limpa e hidrata ao mesmo tempo. Pele macia, sem sensação de aperto.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Glicerina</strong> — retém água, evita ressecamento</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>D-Pantenol (B5)</strong> — acalma e fortalece a barreira</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Niacinamida</strong> — uniformiza o tom</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Tripeptídeo de Cobre-1</strong> — estimula colágeno</div></div><div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Pele úmida, massageie suavemente. Enxágue. Manhã e noite.</div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Tônico Essência 8 em 1</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">8 funções em um só produto. Prepara a pele para absorver melhor tudo que vem depois.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Ácido Hialurônico</strong> — hidratação profunda</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Propanediol</strong> — aumenta penetração dos ativos</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Aloe Vera</strong> — acalma e reduz vermelhidão</div></div><div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Após o mousse, pressione com algodão ou mãos. Não enxágue.</div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Revitalizador de Olhos</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Para bolsinhas, olheiras e linhas finas ao redor dos olhos.</div><div class="m-lbl" style="margin-bottom:7px">Ativos e o que fazem</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Ecoffa (Extrato de Café)</strong> — reduz olheiras na hora</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Nano Retinol</strong> — penetra 20x mais fundo, sem irritar</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Nano BTX</strong> — efeito botox-like nas linhas</div></div><div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Roll-on de dentro para fora. 2x ao dia como primeira camada.</div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Lift Instantâneo</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Efeito lifting em 3 minutos. Resultado por até 8 horas.</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Silicato de Sódio</strong> — cria película tensora imediata</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Argireline</strong> — botox sem agulha</div></div><div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Batidinhas suaves. Rosto imóvel por 90 segundos. Evite água por cima.</div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Creme Antirrugas Multicamadas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Hidratação profunda em camadas. Para pele ressecada que marca mais as rugas.</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Epidermosil</strong> — hialurônico bio-vetorizado, penetra fundo</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>WK Pep Erasin</strong> — botox em creme</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Plantcol</strong> — estimula colágeno e elastina</div></div><div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">2x ao dia, rosto pescoço e colo de baixo para cima. Resultados em 28 dias.</div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Hidratante FPS 50</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Proteção solar e hidratação em stick. Protege de UVA, UVB e luz azul de telas.</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Tinosorb S</strong> — filtro fotostável de última geração</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Dióxido de Titânio</strong> — filtro físico adicional</div></div><div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Após o creme, antes da make. Reaaplique ao longo do dia.</div></div></div>
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Retinol Noturno</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Trabalha enquanto você dorme. Renova, firma e rejuvenesce com uso contínuo.</div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Nano Retinol</strong> — penetra fundo, estimula renovação</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Retinol Like</strong> — alternativa suave, potencializa</div></div><div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Manteiga de Karité</strong> — nutrição intensa noturna</div></div><div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como usar</div><div class="m-body" style="margin-bottom:0">Exclusivamente à noite. Use protetor solar no dia seguinte.</div></div></div>
+<hr class="m-hr">
+<div class="m-tag" style="margin-bottom:14px">Rotinas por tipo de pele</div>
+<div class="m-rc"><h4>Pele Seca ou Ressecada</h4><div class="m-rq">"A pele seca perde água mais rápido e marca mais as rugas."</div><div class="m-rl">Manhã</div><div class="m-rs">Mousse · Tônico · Creme Multicamadas · Hidratante FPS 50 · Protetor de preferência</div><div class="m-rl">Noite</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Rejuvenescedor Noturno</div><div class="m-rd">Essas camadas de hidratação vão devolver o viço que foi se perdendo com o tempo.</div></div>
+<div class="m-rc"><h4>Pele Sensível</h4><div class="m-rq">"O foco é acalmar, fortalecer a barreira e usar o retinol de forma segura."</div><div class="m-rl">Manhã</div><div class="m-rs">Mousse · Tônico · Hidratante FPS 50 · Protetor de preferência</div><div class="m-rl">Noite</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Rejuvenescedor Noturno</div><div class="m-rd">Use o Mousse com a mão limpa na maioria dos dias e a escovinha no máximo 1x por semana.</div></div>
+<div class="m-rc"><h4>Pele Mista</h4><div class="m-rq">"Oleosa no centro, seca nas bordas. A rotina equilibra sem pesar."</div><div class="m-rl">Manhã</div><div class="m-rs">Mousse · Tônico · Hidratante FPS 50 · Protetor de preferência</div><div class="m-rl">Noite</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Rejuvenescedor Noturno</div><div class="m-rd">Evite cremes pesados na zona T e foque a hidratação nas bochechas e pescoço.</div></div>
+<div class="m-rc"><h4>Pele com Manchas ou Sem Viço</h4><div class="m-rq">"Essa rotina foca em uniformizar o tom e devolver o brilho natural."</div><div class="m-rl">Manhã</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Hidratante FPS 50 · Protetor</div><div class="m-rl">Noite</div><div class="m-rs">Mousse · Tônico · Sérum de Olhos · Creme Multicamadas · Rejuvenescedor Noturno</div><div class="m-rd">Manchas aparecem quando a melanina fica desregulada pela exposição solar. Hidratação e proteção diária são os dois pilares.</div></div>
+</div>
+
+<!-- M: MAKE -->
+<div class="m-page" id="m-make">
+<div class="m-prod-top wine"><div class="m-prod-top-s">Conheça os produtos</div><div class="m-prod-top-t">Maquiagem</div><div class="m-prod-top-p">Sticks que hidratam enquanto maquia — feitos para pele madura 45+</div></div>
+
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Blush</div><div class="m-acarr">›</div></div><div class="m-acb">
+<div class="m-swatches" style="margin-bottom:10px"><div class="m-sw" style="background:#c9726b"></div><div class="m-sw" style="background:#c4895a"></div><div class="m-sw" style="background:#d4887a"></div></div>
+<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap"><span style="background:var(--sd);padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;color:var(--ink)">Rosa Mauve</span><span style="background:var(--sd);padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;color:var(--ink)">Terracota</span><span style="background:var(--sd);padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;color:var(--ink)">Coral</span></div>
+<div class="m-body">Esfuma com o dedo ou pincel. Hidrata enquanto maquia. Ideal para pele madura — não seca, não acentua linhas.</div>
+<div class="m-lbl" style="margin-bottom:7px">Ativos</div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Óleo de Farelo de Arroz</strong> — hidrata sem obstruir poros e protege contra radicais livres</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Manteiga de Karité</strong> — nutrição profunda e melhora da elasticidade</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Óleo de Rosa Mosqueta</strong> — regeneração celular para peles com manchas</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Cera de Girassol</strong> — não derrete e não marca linhas de expressão</div></div>
+<div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como aplicar</div>
+<div class="m-body">Aplique o stick diretamente nas maçãs do rosto e esfume com o dedo em movimentos circulares subindo em direção às têmporas. Comece com pouco e construa a cor aos poucos.</div>
+<div style="background:var(--sd);border-left:3px solid var(--w);padding:9px 12px;border-radius:0 8px 8px 0;font-size:12px;color:var(--is);font-style:italic;line-height:1.6">💡 Dica: para pele madura, o blush mais alto (próximo às têmporas) levanta o rosto visualmente. Evite aplicar só nas bochechas — fica pesado.</div>
+</div></div>
+
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Iluminador</div><div class="m-acarr">›</div></div><div class="m-acb">
+<div class="m-swatches" style="margin-bottom:10px"><div class="m-sw" style="background:#e8c88a"></div><div class="m-sw" style="background:#e0b8b0"></div></div>
+<div style="display:flex;gap:6px;margin-bottom:10px"><span style="background:var(--sd);padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;color:var(--ink)">Rosê</span><span style="background:var(--sd);padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;color:var(--ink)">Dourado</span></div>
+<div class="m-body">Glow natural e saudável. O Rosê ilumina com leveza, o Dourado dá profundidade. Ambos são sutis e não fazem efeito glitter.</div>
+<div class="m-lbl" style="margin-bottom:7px">Ativos</div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Seda de Arroz</strong> — suaviza a textura da pele e dá acabamento aveludado</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Vitamina E</strong> — proteção antioxidante e nutrição</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Manteiga de Karité</strong> — hidratação e luminosidade natural</div></div>
+<div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como aplicar</div>
+<div class="m-body">Aplique nas partes mais altas do rosto: nariz, queixo, arco do cupido e parte superior das maçãs. Esfume com o dedo ou deixe natural — os dois ficam bem.</div>
+<div style="background:var(--sd);border-left:3px solid var(--w);padding:9px 12px;border-radius:0 8px 8px 0;font-size:12px;color:var(--is);font-style:italic;line-height:1.6">💡 Dica: o Rosê fica incrível em pele mais clara e o Dourado valoriza tons médios e escuros. Mas experimente os dois — muitas amam misturar!</div>
+</div></div>
+
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Contorno Marrom Café</div><div class="m-acarr">›</div></div><div class="m-acb">
+<div class="m-swatches" style="margin-bottom:10px"><div class="m-sw" style="background:#4a3028"></div></div>
+<div class="m-body">Define o rosto de forma natural e discreta. Para pele madura, o contorno leve reposiciona visualmente as linhas do rosto sem parecer maquiagem pesada.</div>
+<div class="m-lbl" style="margin-bottom:7px">Ativos</div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Óleo de Farelo de Arroz</strong> — hidrata e desliza suave na pele</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Cera de Girassol</strong> — fixa sem pesar e não acentua linhas</div></div>
+<div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como aplicar</div>
+<div class="m-body">Aplique na testa (ao longo da linha do cabelo), nas laterais do rosto e abaixo das maçãs. Esfume bem com o dedo ou pincel para não ficar marcado.</div>
+<div style="background:var(--sd);border-left:3px solid var(--w);padding:9px 12px;border-radius:0 8px 8px 0;font-size:12px;color:var(--is);font-style:italic;line-height:1.6">💡 Dica: menos é mais. Aplique pouco, esfume muito. O contorno deve ser sentido, não visto.</div>
+</div></div>
+
+<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Máscara de Cílios Regenerativa Pro-Age</div><div class="m-acarr">›</div></div><div class="m-acb">
+<div class="m-body">Para cílios mais finos e curtos, comuns após os 45 anos. Volume, comprimento e tratamento em uma única aplicação.</div>
+<div class="m-lbl" style="margin-bottom:7px">Ativos</div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Biotina (B7)</strong> — fortalece, reduz queda e estimula crescimento</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Pantenol (B5)</strong> — hidrata e aumenta a flexibilidade dos cílios</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Raiz de Scutellaria</strong> — protege os folículos contra o envelhecimento</div></div>
+<div class="m-lbl" style="margin-top:10px;margin-bottom:5px">Como aplicar</div>
+<div class="m-body">Aplique partindo da raiz dos cílios em movimentos de zigue-zague para separar e volumizar cada fio. O aplicador alcança até os cílios menores. Remove com água e sabonete suave.</div>
+<div style="background:var(--sd);border-left:3px solid var(--w);padding:9px 12px;border-radius:0 8px 8px 0;font-size:12px;color:var(--is);font-style:italic;line-height:1.6">💡 Dica: para olhos marcantes em pele madura, aplique na raiz dos cílios superiores e só a ponta nos inferiores. Isso abre o olhar sem pesar.</div>
+</div></div>
+
+<hr class="m-hr">
+<div class="m-tag" style="margin-bottom:14px">Make completa em 3 produtos</div>
+<div class="m-rc">
+<h4>Trio Le Moritz</h4>
+<div class="m-rq">"A make mais rápida e elegante para o dia a dia. Três sticks, cinco minutos, resultado incrível."</div>
+<div class="m-rl">Passo a passo</div>
+<div class="m-li" style="border-top:1px solid var(--ln)"><div class="m-ldot"></div><div class="m-ltxt"><strong>Contorno Marrom Café</strong> — testa, laterais e abaixo das maçãs. Esfuma bem.</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Blush Rosa Mauve, Terracota ou Coral</strong> — nas maçãs subindo para as têmporas.</div></div>
+<div class="m-li"><div class="m-ldot"></div><div class="m-ltxt"><strong>Iluminador Rosê ou Dourado</strong> — nariz, queixo e parte alta das maçãs.</div></div>
+<div class="m-rd" style="margin-top:10px">Para finalizar: Máscara de Cílios na raiz. Resultado: pele com viço, rosto definido, olhar marcante.</div>
+</div>
+
+<hr class="m-hr">
+<div class="m-lbl" style="margin-bottom:12px">Dicas gerais para pele madura</div>
+<div class="m-faq"><div class="m-faqq">Preparação é tudo</div><div class="m-faqa">Antes da make, use o Tônico e o Sérum Lift. A pele hidratada e tensionada absorve melhor o produto e dura mais.</div></div>
+<div class="m-faq"><div class="m-faqq">Menos produto, mais esfumado</div><div class="m-faqa">Pele madura absorve cor de forma diferente. Comece com pouco e construa — é mais fácil adicionar do que tirar.</div></div>
+<div class="m-faq"><div class="m-faqq">O dedo é o melhor pincel</div><div class="m-faqa">O calor do dedo derrete levemente o produto e integra com a pele. Para os sticks Le Moritz, o resultado fica mais natural do que com pincel.</div></div>
+<div class="m-faq"><div class="m-faqq">Iluminador é rejuvenescedor</div><div class="m-faqa">Nas partes certas, o iluminador devolve o viço que a pele madura perde. Não é exagero — é estratégia.</div></div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="m-bnav">
+<div class="m-tab act" id="mt-inicio" onclick="mShow('inicio',0)"><div class="m-tab-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div><div class="m-tab-l">Início</div></div>
+<div class="m-tab" id="mt-vendas" onclick="mShow('vendas',1)"><div class="m-tab-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M16 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM6 15h4M14 15h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><div class="m-tab-l">Vendas</div></div>
+<div class="m-tab" id="mt-desafios" onclick="mShow('desafios',2)"><div class="m-tab-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div><div class="m-tab-l">Desafios</div></div>
+<div class="m-tab" id="mt-mensagens" onclick="mShow('mensagens',3)"><div class="m-tab-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="m-tab-l">Mensagens</div></div>
+<div class="m-tab" id="mt-skincare" onclick="mShow('skincare',4)"><div class="m-tab-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div><div class="m-tab-l">Skincare</div></div>
+<div class="m-tab" id="mt-make" onclick="mShow('make',5)"><div class="m-tab-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="10" rx="7" ry="8" stroke="currentColor" stroke-width="1.7"/><path d="M9 20h6M12 18v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8 7c1-1.5 6-1.5 7 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div><div class="m-tab-l">Make</div></div>
+</div>
+</div>
 
 <script>
+var mPages=['inicio','vendas','desafios','mensagens','skincare','make'];
+var mTabs=['inicio','vendas','desafios','mensagens','skincare','make'];
+function mShow(id,idx){
+  mPages.forEach(function(p){var el=document.getElementById('m-'+p);if(el)el.classList.remove('act')});
+  mTabs.forEach(function(t){var el=document.getElementById('mt-'+t);if(el)el.classList.remove('act')});
+  var pg=document.getElementById('m-'+id);if(pg)pg.classList.add('act');
+  var tb=document.getElementById('mt-'+id);if(tb)tb.classList.add('act');
+  window.scrollTo(0,0);
+}
+function mAc(h){var b=h.nextElementSibling,a=h.querySelector('.m-acarr');b.classList.toggle('open');a.classList.toggle('open')}
+var dPages=['inicio','vendas','desafios','mensagens','skincare','make'];
 function dShow(id){
-  document.querySelectorAll(".d-section").forEach(function(s){s.classList.remove("active")});
-  document.querySelectorAll(".nav-btn-d").forEach(function(b){b.classList.remove("active")});
-  var s=document.getElementById("d-"+id);if(s)s.classList.add("active");
-  var b=document.getElementById("d-b"+id[0]);if(b)b.classList.add("active");
+  dPages.forEach(function(p){var el=document.getElementById('d-'+p);if(el)el.classList.remove('act');var nb=document.getElementById('d-n-'+p);if(nb)nb.classList.remove('act')});
+  var hero=document.getElementById('d-hero');
+  if(hero)hero.style.display=(id==='inicio')?'block':'none';
+  var s=document.getElementById('d-'+id);if(s)s.classList.add('act');
+  var n=document.getElementById('d-n-'+id);if(n)n.classList.add('act');
   window.scrollTo(0,0);
 }
-function pClose(){document.querySelectorAll(".nav-item-d").forEach(function(i){i.classList.remove("open")})}
-document.getElementById("d-mat-item").querySelector(".nav-btn-d").addEventListener("click",function(e){e.stopPropagation();document.getElementById("d-pro-item").classList.remove("open");document.getElementById("d-mat-item").classList.toggle("open")});
-document.getElementById("d-pro-item").querySelector(".nav-btn-d").addEventListener("click",function(e){e.stopPropagation();document.getElementById("d-mat-item").classList.remove("open");document.getElementById("d-pro-item").classList.toggle("open")});
-document.addEventListener("click",function(){pClose()});
-function dAc(h){var b=h.nextElementSibling,a=h.querySelector(".d-acarr");b.classList.toggle("open");a.classList.toggle("open")}
-function mShow(id,el){
-  document.querySelectorAll(".mobile-page").forEach(function(p){p.classList.remove("active")});
-  document.querySelectorAll(".m-nav-item").forEach(function(n){n.classList.remove("active")});
-  var p=document.getElementById("m-"+id);if(p)p.classList.add("active");
-  if(el)el.classList.add("active");
-  window.scrollTo(0,0);
-}
-function mAc(h){var b=h.nextElementSibling,a=h.querySelector(".m-acarr");b.classList.toggle("open");a.classList.toggle("open")}
-function cp(btn,txt){navigator.clipboard.writeText(txt).then(function(){var o=btn.textContent;btn.textContent="Copiado!";setTimeout(function(){btn.textContent=o},2000)})}
+function dAc(h){var b=h.nextElementSibling,a=h.querySelector('.d-acarr');b.classList.toggle('open');a.classList.toggle('open')}
+function cp(btn,txt){navigator.clipboard.writeText(txt).then(function(){var o=btn.textContent;btn.textContent='Copiado!';setTimeout(function(){btn.textContent=o},2000)})}
 </script>
 </body>
 </html>
