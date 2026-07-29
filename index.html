@@ -290,7 +290,7 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <div id="d-hero" class="d-hero">
 <div class="d-hero-inner">
 <div>
-<div class="d-hero-badge">Semana 4 encerrada · Resultado disponível</div>
+<div class="d-hero-badge">Desafio ativo · Semana 5</div>
 <div class="d-hero-title">Oi, Representante<br>Le Moritz!</div>
 <div class="d-hero-sub">Tudo que você precisa para vender com confiança está aqui. Cupom, mensagens prontas, guia de produtos e muito mais.</div>
 <button class="d-hero-btn" onclick="dShow('desafios')">Ver o desafio da semana →</button>
@@ -382,12 +382,12 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <div class="d-sec-title">Desafios</div><div class="d-sec-sub">Meta semanal com prêmio em voucher</div>
 <div class="d-grid2">
 <div class="d-card">
-<div style="display:inline-block;background:var(--sd);color:var(--is);font-size:11px;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px">Encerrado</div>
-<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:8px">Semana 4 · 21 — 27/jul</div>
+<div class="badge-ativo">Desafio ativo</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:8px">Semana 5 · 28/jul — 03/ago</div>
 <div style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:16px;line-height:1.2">Venda 2 cupons essa semana</div>
 <div class="d-row"><div style="font-size:14px;font-weight:700">Prêmio</div><div style="font-size:14px;color:var(--is)">R$50 em voucher no site</div></div>
-<div class="d-row"><div style="font-size:14px;font-weight:700">Meta batida por</div><div style="font-size:14px;color:var(--w);font-weight:700">LUCIA10 · VIKA · MALU10</div></div>
-<div style="margin-top:18px"><a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="d-btn">Ver minhas vendas →</a></div>
+<div class="d-row"><div style="font-size:14px;font-weight:700">Resultado</div><div style="font-size:14px;color:var(--is)">03 de agosto</div></div>
+<div style="margin-top:18px"><a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="d-btn">Conferir minhas vendas →</a></div>
 </div>
 <div class="d-card">
 <h3>Histórico de vouchers</h3>
@@ -403,7 +403,7 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <div class="d-wcard"><h4>Semana 2 · 07 — 13/jul · R$50 · ENCERRADO</h4>
 <div class="d-wrow"><span>CLAUDIA10</span><span>4 cupons</span></div><div class="d-wrow"><span>LUCIA10</span><span>2 cupons</span></div><div class="d-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="d-wrow"><span>THAIS10</span><span>2 cupons</span></div><div class="d-wrow"><span>ANNALU10</span><span>2 cupons</span></div></div>
 <div class="d-row"><div style="font-size:14px;color:var(--ink)">Desafio da Copa · 29/jun — 06/jul</div><div style="font-size:13px;font-weight:700;color:var(--is)">R$50 · ENCERRADO</div></div>
-<div class="d-row"><div style="font-size:14px;color:var(--is)">Em breve · 28/jul — 03/ago</div><div style="color:var(--ln)">—</div></div>
+<div class="d-row"><div style="font-size:14px;color:var(--ink);font-weight:600">Semana 5 · 28/jul — 03/ago</div><div class="badge-ativo" style="font-size:10px;padding:3px 10px">Ativo</div></div>
 </div>
 </div>
 </div>
@@ -580,10 +580,10 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <div class="m-page act" id="m-inicio">
 <div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--ln)"><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:5px">Oi, Representante!</div><div class="m-body" style="margin-bottom:0">Tudo que você precisa para vender com confiança.</div></div>
 <div class="m-banner">
-<div class="m-badge">Desafio encerrado · Semana 4</div>
-<div class="m-banner-t">Resultado disponível!</div>
-<div class="m-banner-p">Confira quem bateu a meta e o histórico completo.</div>
-<button class="m-banner-btn" onclick="mShow('desafios',2)">Ver resultado →</button>
+<div class="m-badge">Desafio ativo agora</div>
+<div class="m-banner-t">Semana 5 · 28/jul — 03/ago</div>
+<div class="m-banner-p">Venda 2 cupons e ganhe R$50 em voucher no site.</div>
+<button class="m-banner-btn" onclick="mShow('desafios',2)">Ver o desafio →</button>
 </div>
 <div class="m-lbl" style="margin-bottom:12px">Por que ser Representante?</div>
 <div class="m-be"><div class="m-bei">💰</div><div><div class="m-bet">10% de comissão por venda</div><div class="m-bep">Recebe dia 10 do mês seguinte</div></div></div>
@@ -633,14 +633,13 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <!-- M: DESAFIOS -->
 <div class="m-page" id="m-desafios">
 <div class="m-hl"><div class="m-hlt">Desafios</div></div>
-<div style="font-size:10px;font-weight:800;color:var(--is);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">Desafio encerrado</div>
-<div style="border:1.5px solid var(--ln);padding:20px;margin-bottom:12px;border-radius:12px;background:var(--wh)">
-<div style="display:inline-block;background:var(--sd);color:var(--is);font-size:10px;font-weight:700;padding:3px 12px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">ENCERRADO</div>
-<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:6px">Semana 4 · 21 — 27/jul</div>
+<div style="font-size:10px;font-weight:800;color:var(--w);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">Desafio ativo</div>
+<div style="border:1.5px solid var(--ink);padding:20px;margin-bottom:12px;border-radius:12px">
+<div class="badge-ativo" style="font-size:10px;padding:4px 12px;margin-bottom:8px">Semana 5 · 28/jul — 03/ago</div>
 <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.2">Venda 2 cupons essa semana</div>
 <div class="m-fr" style="border-top:1px solid var(--ln)"><div class="m-frl">Prêmio</div><div class="m-frv">R$50 em voucher no site</div></div>
-<div class="m-fr"><div class="m-frl">Meta batida por</div><div style="font-size:13px;font-weight:700;color:var(--w)">LUCIA10 · VIKA · MALU10</div></div>
-<a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="m-btn" style="margin-top:14px">Ver minhas vendas →</a>
+<div class="m-fr"><div class="m-frl">Resultado</div><div class="m-frv">03 de agosto</div></div>
+<a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="m-btn" style="margin-top:14px">Conferir minhas vendas →</a>
 </div>
 <hr class="m-hr">
 <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:4px">Histórico de vouchers</div>
@@ -654,7 +653,7 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <div class="m-wcard"><h4>Semana 3 · 14 — 20/jul · R$50 · ENCERRADO</h4><div class="m-wrow"><span>LUCIA10</span><span>5 cupons</span></div><div class="m-wrow"><span>MALU10</span><span>2 cupons</span></div><div class="m-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="m-wrow"><span>ANNALU10</span><span>2 cupons</span></div><div class="m-wrow"><span>ROSICLEIDE</span><span>2 cupons</span></div></div>
 <div class="m-wcard"><h4>Semana 2 · 07 — 13/jul · R$50 · ENCERRADO</h4><div class="m-wrow"><span>CLAUDIA10</span><span>4 cupons</span></div><div class="m-wrow"><span>LUCIA10</span><span>2 cupons</span></div><div class="m-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="m-wrow"><span>THAIS10</span><span>2 cupons</span></div><div class="m-wrow"><span>ANNALU10</span><span>2 cupons</span></div></div>
 <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)"><div style="font-size:13px;color:var(--ink)">Copa · 29/jun — 06/jul</div><div style="font-size:12px;font-weight:700;color:var(--is)">R$50 · ENCERRADO</div></div>
-<div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--ln)"><div style="font-size:13px;color:var(--is)">Em breve · 28/jul — 03/ago</div><div style="color:var(--ln)">—</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--ln)"><div style="font-size:13px;font-weight:700;color:var(--ink)">Semana 5 · 28/jul — 03/ago</div><div class="badge-ativo" style="font-size:9px;padding:3px 10px;animation:none">Ativo</div></div>
 </div>
 
 <!-- M: MENSAGENS -->
