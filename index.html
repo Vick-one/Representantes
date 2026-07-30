@@ -128,6 +128,24 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 .d-sec-banner{background:var(--w);border-radius:18px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:36px}
 .d-sec-banner h2{font-family:"Fraunces",serif;font-size:26px;font-weight:600;color:#fff;margin-bottom:6px}
 .d-sec-banner p{font-size:14px;color:rgba(255,255,255,.85);max-width:420px;line-height:1.6}
+.v-ac{background:var(--wh);border:1px solid var(--ln);border-radius:14px;margin-bottom:10px}
+.v-ach{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 18px;cursor:pointer}
+.v-acl{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--is);line-height:1.4}
+.v-arr{font-size:17px;color:var(--w);transition:transform .2s;flex-shrink:0}
+.v-arr.open{transform:rotate(90deg)}
+.v-acb{display:none;padding:0 18px 14px}
+.v-acb.open{display:block}
+.mat-step{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--sd)}
+.mat-step:last-of-type{border:none}
+.mat-n{width:24px;height:24px;border-radius:50%;background:var(--w);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mat-t{font-size:13.5px;color:var(--is);line-height:1.65}
+.mat-t strong{color:var(--ink);font-weight:700}
+.cup-lb{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--w);margin-bottom:7px}
+.cup-in{width:100%;border:1.5px solid var(--w);border-radius:10px;padding:11px 14px;font-family:"Work Sans",sans-serif;font-size:15px;font-weight:700;color:var(--ink);text-transform:uppercase;background:#fff}
+.cup-hint{font-size:11.5px;color:var(--is);font-style:italic;margin-top:6px;line-height:1.5}
+.msg-box{background:var(--s);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.msg-h{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--w);margin-bottom:8px}
+.msg-t{font-size:13.5px;color:var(--is);line-height:1.7;white-space:pre-line;margin-bottom:11px}
 @keyframes piscar{0%,100%{background:var(--w);color:#fff}50%{background:#fff;color:var(--w);outline:2px solid var(--w)}}
 .badge-ativo{display:inline-block;background:var(--w);color:#fff;font-size:11px;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;animation:piscar 1.5s infinite}
 .d-hint{background:var(--sd);border-left:3px solid var(--w);padding:12px 16px;border-radius:0 10px 10px 0;margin-top:14px}
@@ -392,18 +410,49 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <div class="d-card">
 <h3>Histórico de vouchers</h3>
 <div style="font-size:12px;color:var(--is);margin-bottom:16px">Atualizado toda segunda-feira</div>
-<div class="d-wcard"><h4>Semana 4 · 21 — 27/jul · R$50 · ENCERRADO</h4>
+<div class="d-row" style="border-top:1px solid var(--ln)"><div style="font-size:14px;color:var(--ink);font-weight:600">Semana 5 · 28/jul — 03/ago</div><div class="badge-ativo" style="font-size:10px;padding:3px 10px;margin:0">Ativo</div></div>
+<div style="margin-top:14px">
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 4 · 21 — 27/jul · R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb">
 <div class="d-wrow"><span>LUCIA10</span><span>10 cupons 🏆</span></div>
 <div class="d-wrow"><span>VIKA</span><span>7 cupons 🏆</span></div>
 <div class="d-wrow"><span>MALU10</span><span>2 cupons 🏆</span></div>
 <div class="d-wrow"><span>HELO10</span><span>1 cupom</span></div>
+</div></div>
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 3 · 14 — 20/jul · R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb">
+<div class="d-wrow"><span>LUCIA10</span><span>5 cupons</span></div><div class="d-wrow"><span>MALU10</span><span>2 cupons</span></div><div class="d-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="d-wrow"><span>ANNALU10</span><span>2 cupons</span></div><div class="d-wrow"><span>ROSICLEIDE</span><span>2 cupons</span></div>
+</div></div>
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 2 · 07 — 13/jul · R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb">
+<div class="d-wrow"><span>CLAUDIA10</span><span>4 cupons</span></div><div class="d-wrow"><span>LUCIA10</span><span>2 cupons</span></div><div class="d-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="d-wrow"><span>THAIS10</span><span>2 cupons</span></div><div class="d-wrow"><span>ANNALU10</span><span>2 cupons</span></div>
+</div></div>
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Desafio da Copa · 29/jun — 06/jul · R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb"><div class="d-wrow"><span style="font-weight:400 !important;font-style:italic">Desafio encerrado</span><span>R$50</span></div></div></div>
 </div>
-<div class="d-wcard"><h4>Semana 3 · 14 — 20/jul · R$50 · ENCERRADO</h4>
-<div class="d-wrow"><span>LUCIA10</span><span>5 cupons</span></div><div class="d-wrow"><span>MALU10</span><span>2 cupons</span></div><div class="d-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="d-wrow"><span>ANNALU10</span><span>2 cupons</span></div><div class="d-wrow"><span>ROSICLEIDE</span><span>2 cupons</span></div></div>
-<div class="d-wcard"><h4>Semana 2 · 07 — 13/jul · R$50 · ENCERRADO</h4>
-<div class="d-wrow"><span>CLAUDIA10</span><span>4 cupons</span></div><div class="d-wrow"><span>LUCIA10</span><span>2 cupons</span></div><div class="d-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="d-wrow"><span>THAIS10</span><span>2 cupons</span></div><div class="d-wrow"><span>ANNALU10</span><span>2 cupons</span></div></div>
-<div class="d-row"><div style="font-size:14px;color:var(--ink)">Desafio da Copa · 29/jun — 06/jul</div><div style="font-size:13px;font-weight:700;color:var(--is)">R$50 · ENCERRADO</div></div>
-<div class="d-row"><div style="font-size:14px;color:var(--ink);font-weight:600">Semana 5 · 28/jul — 03/ago</div><div class="badge-ativo" style="font-size:10px;padding:3px 10px">Ativo</div></div>
+</div>
+<div class="d-card" style="grid-column:1;margin-top:24px">
+<div style="font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--w);margin-bottom:8px">Material do Desafio 5</div>
+<h3 style="margin-bottom:6px">Passo a passo</h3>
+<div style="font-size:13px;color:var(--is);margin-bottom:18px;line-height:1.6">Baixe o vídeo, escreva seu cupom e envie para as amigas. Leva 5 minutos.</div>
+<div class="mat-step"><div class="mat-n">1</div><div class="mat-t">Clique no botão <strong>Baixar o vídeo</strong> abaixo. Ele abre o vídeo no Google Drive.</div></div>
+<div class="mat-step"><div class="mat-n">2</div><div class="mat-t">No Drive, toque na <strong>setinha de download (⬇)</strong> no canto superior direito da tela. O vídeo é salvo no seu celular ou computador.</div></div>
+<div class="mat-step"><div class="mat-n">3</div><div class="mat-t">Escreva <strong>o seu cupom</strong> no campo abaixo. Ele entra automaticamente nas 3 mensagens.</div></div>
+<div class="mat-step"><div class="mat-n">4</div><div class="mat-t">Escolha <strong>uma</strong> das 3 mensagens e clique em <strong>Copiar</strong>.</div></div>
+<div class="mat-step"><div class="mat-n">5</div><div class="mat-t">No WhatsApp, <strong>envie primeiro o vídeo</strong> que você baixou e <strong>depois cole a mensagem</strong>. Mande no privado para as amigas e poste também no status e nos stories do Instagram.</div></div>
+<div class="mat-step"><div class="mat-n">6</div><div class="mat-t"><strong>Meta:</strong> 2 cupons usados até 03/ago = <strong>R$50 em voucher</strong> no site.</div></div>
+<div style="margin:20px 0"><a href="https://drive.google.com/file/d/1UkL1dcJAx4NZ2BL77dMKqaGO2lnEsGJe/view?usp=drive_link" target="_blank" class="d-btn">⬇ Baixar o vídeo</a></div>
+<div class="d-hint"><p>Não consegue baixar? Abra o link pelo celular, toque nos <strong>três pontinhos</strong> e escolha <strong>Fazer download</strong>. Se aparecer aviso de vírus, é normal com vídeo grande: toque em <strong>Fazer download mesmo assim</strong>.</p></div>
+<div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--ln)">
+<div class="cup-lb">Escreva o seu cupom</div>
+<input class="cup-in" id="cup-d" placeholder="EX: VIKA" oninput="upMsg('d')">
+<div class="cup-hint">Seu cupom aparece automaticamente nas 3 mensagens abaixo. Se você deixar em branco, vai copiar como [SEU CUPOM] e aí precisa trocar na mão.</div>
+</div>
+<div style="margin-top:20px">
+<div class="msg-box"><div class="msg-h">Mensagem 1</div><div class="msg-t" id="msg-d1"></div><button class="d-cbtn" onclick="cpm(this,'m1','cup-d')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 2</div><div class="msg-t" id="msg-d2"></div><button class="d-cbtn" onclick="cpm(this,'m2','cup-d')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 3</div><div class="msg-t" id="msg-d3"></div><button class="d-cbtn" onclick="cpm(this,'m3','cup-d')">Copiar ↗</button></div>
+</div>
 </div>
 </div>
 </div>
@@ -642,18 +691,44 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="m-btn" style="margin-top:14px">Conferir minhas vendas →</a>
 </div>
 <hr class="m-hr">
+<div style="font-size:10px;font-weight:800;color:var(--w);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Material do Desafio 5</div>
+<div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:4px">Passo a passo</div>
+<div style="font-size:12.5px;color:var(--is);margin-bottom:16px;line-height:1.6">Baixe o vídeo, escreva seu cupom e envie para as amigas. Leva 5 minutos.</div>
+<div class="mat-step"><div class="mat-n">1</div><div class="mat-t">Toque no botão <strong>Baixar o vídeo</strong> abaixo. Ele abre o vídeo no Google Drive.</div></div>
+<div class="mat-step"><div class="mat-n">2</div><div class="mat-t">No Drive, toque na <strong>setinha de download (⬇)</strong> no canto superior direito. O vídeo é salvo na galeria do seu celular.</div></div>
+<div class="mat-step"><div class="mat-n">3</div><div class="mat-t">Escreva <strong>o seu cupom</strong> no campo abaixo. Ele entra automaticamente nas 3 mensagens.</div></div>
+<div class="mat-step"><div class="mat-n">4</div><div class="mat-t">Escolha <strong>uma</strong> das 3 mensagens e toque em <strong>Copiar</strong>.</div></div>
+<div class="mat-step"><div class="mat-n">5</div><div class="mat-t">No WhatsApp, <strong>envie primeiro o vídeo</strong> que você baixou e <strong>depois cole a mensagem</strong>. Mande no privado para as amigas e poste também no status e nos stories.</div></div>
+<div class="mat-step"><div class="mat-n">6</div><div class="mat-t"><strong>Meta:</strong> 2 cupons usados até 03/ago = <strong>R$50 em voucher</strong> no site.</div></div>
+<a href="https://drive.google.com/file/d/1UkL1dcJAx4NZ2BL77dMKqaGO2lnEsGJe/view?usp=drive_link" target="_blank" class="m-btn" style="margin-top:18px">⬇ Baixar o vídeo</a>
+<div class="m-hint"><p>Não conseguiu baixar? Toque nos <strong>três pontinhos</strong> e escolha <strong>Fazer download</strong>. Se aparecer aviso de vírus, é normal com vídeo grande: toque em <strong>Fazer download mesmo assim</strong>.</p></div>
+<div style="margin-top:20px;padding-top:18px;border-top:1px solid var(--ln)">
+<div class="cup-lb">Escreva o seu cupom</div>
+<input class="cup-in" id="cup-m" placeholder="EX: VIKA" oninput="upMsg('m')">
+<div class="cup-hint">Seu cupom aparece automaticamente nas 3 mensagens abaixo. Se deixar em branco, vai copiar como [SEU CUPOM] e você precisa trocar na mão.</div>
+</div>
+<div style="margin-top:18px">
+<div class="msg-box"><div class="msg-h">Mensagem 1</div><div class="msg-t" id="msg-m1"></div><button class="m-cbtn" onclick="cpm(this,'m1','cup-m')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 2</div><div class="msg-t" id="msg-m2"></div><button class="m-cbtn" onclick="cpm(this,'m2','cup-m')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 3</div><div class="msg-t" id="msg-m3"></div><button class="m-cbtn" onclick="cpm(this,'m3','cup-m')">Copiar ↗</button></div>
+</div>
+<hr class="m-hr">
 <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:4px">Histórico de vouchers</div>
 <div style="font-size:11px;font-weight:700;color:var(--is);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px">Atualizado toda segunda-feira</div>
-<div class="m-wcard"><h4>Semana 4 · 21 — 27/jul · R$50 · ENCERRADO</h4>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);margin-bottom:14px"><div style="font-size:13px;font-weight:700;color:var(--ink)">Semana 5 · 28/jul — 03/ago</div><div class="badge-ativo" style="font-size:9px;padding:3px 10px;animation:none;margin:0">Ativo</div></div>
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 4 · 21 — 27/jul<br>R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb">
 <div class="m-wrow"><span>LUCIA10</span><span>10 cupons 🏆</span></div>
 <div class="m-wrow"><span>VIKA</span><span>7 cupons 🏆</span></div>
 <div class="m-wrow"><span>MALU10</span><span>2 cupons 🏆</span></div>
 <div class="m-wrow"><span>HELO10</span><span>1 cupom</span></div>
-</div>
-<div class="m-wcard"><h4>Semana 3 · 14 — 20/jul · R$50 · ENCERRADO</h4><div class="m-wrow"><span>LUCIA10</span><span>5 cupons</span></div><div class="m-wrow"><span>MALU10</span><span>2 cupons</span></div><div class="m-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="m-wrow"><span>ANNALU10</span><span>2 cupons</span></div><div class="m-wrow"><span>ROSICLEIDE</span><span>2 cupons</span></div></div>
-<div class="m-wcard"><h4>Semana 2 · 07 — 13/jul · R$50 · ENCERRADO</h4><div class="m-wrow"><span>CLAUDIA10</span><span>4 cupons</span></div><div class="m-wrow"><span>LUCIA10</span><span>2 cupons</span></div><div class="m-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="m-wrow"><span>THAIS10</span><span>2 cupons</span></div><div class="m-wrow"><span>ANNALU10</span><span>2 cupons</span></div></div>
-<div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)"><div style="font-size:13px;color:var(--ink)">Copa · 29/jun — 06/jul</div><div style="font-size:12px;font-weight:700;color:var(--is)">R$50 · ENCERRADO</div></div>
-<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--ln)"><div style="font-size:13px;font-weight:700;color:var(--ink)">Semana 5 · 28/jul — 03/ago</div><div class="badge-ativo" style="font-size:9px;padding:3px 10px;animation:none">Ativo</div></div>
+</div></div>
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 3 · 14 — 20/jul<br>R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb"><div class="m-wrow"><span>LUCIA10</span><span>5 cupons</span></div><div class="m-wrow"><span>MALU10</span><span>2 cupons</span></div><div class="m-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="m-wrow"><span>ANNALU10</span><span>2 cupons</span></div><div class="m-wrow"><span>ROSICLEIDE</span><span>2 cupons</span></div></div></div>
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 2 · 07 — 13/jul<br>R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb"><div class="m-wrow"><span>CLAUDIA10</span><span>4 cupons</span></div><div class="m-wrow"><span>LUCIA10</span><span>2 cupons</span></div><div class="m-wrow"><span>VIKA</span><span>2 cupons</span></div><div class="m-wrow"><span>THAIS10</span><span>2 cupons</span></div><div class="m-wrow"><span>ANNALU10</span><span>2 cupons</span></div></div></div>
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Desafio da Copa · 29/jun — 06/jul<br>R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb"><div class="m-wrow"><span style="font-weight:400 !important;font-style:italic">Desafio encerrado</span><span>R$50</span></div></div></div>
 </div>
 
 <!-- M: MENSAGENS -->
@@ -817,6 +892,17 @@ function dShow(id){
 }
 function dAc(h){var b=h.nextElementSibling,a=h.querySelector('.d-acarr');b.classList.toggle('open');a.classList.toggle('open')}
 function cp(btn,txt){navigator.clipboard.writeText(txt).then(function(){var o=btn.textContent;btn.textContent='Copiado!';setTimeout(function(){btn.textContent=o},2000)})}
+function vAc(h){var b=h.nextElementSibling,a=h.querySelector('.v-arr');b.classList.toggle('open');a.classList.toggle('open')}
+var MSG={
+m1:"Amiga, achei um produto que virou febre! \u{1F60D} Dizem que parece efeito de botox, mas sem agulhas. Olha esse v\u00eddeo!\n\nSe quiser comprar com desconto, usa meu cupom\n\nCupom: [SEU CUPOM]\nSite para comprar: https://lemoritz.com.br/",
+m2:"Da uma olhada nesse v\u00eddeo!!! \u{1F631} \u00c9 um efeito lifting super r\u00e1pido, parece um botox sem agulha! Achei muito legal o resultado\n\nConsegui um cupom de desconto exclusivo, v\u00e1lido at\u00e9 03/09, pra voc\u00ea garantir o seu mais barato \u{1F60D}\n\nCupom: [SEU CUPOM]\nSite oficial: lemoritz.com.br",
+m3:"Oiii! Vi esse v\u00eddeo hoje e fiquei impressionada! \u{1F631} \u00c9 um s\u00e9rum que t\u00e1 sendo chamado de \"botox sem agulhas\". D\u00e1 uma olhada porque o resultado \u00e9 muito legal\n\nE consegui um desconto exclusivo pra ele usando meu cupom abaixo:\n\nCupom: [SEU CUPOM]\nSite para garantir o seu: lemoritz.com.br"
+};
+function cupVal(inp){var c=document.getElementById(inp);return (c&&c.value.trim())?c.value.trim().toUpperCase():'[SEU CUPOM]'}
+function msgTxt(k,inp){return MSG[k].split('[SEU CUPOM]').join(cupVal(inp))}
+function upMsg(pre){['1','2','3'].forEach(function(i){var el=document.getElementById('msg-'+pre+i);if(el)el.textContent=msgTxt('m'+i,'cup-'+pre)})}
+function cpm(btn,k,inp){cp(btn,msgTxt(k,inp))}
+upMsg('d');upMsg('m');
 </script>
 </body>
 </html>
