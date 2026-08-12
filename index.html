@@ -304,6 +304,33 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 .nota-p{font-size:11px;color:var(--is);font-style:italic;margin-top:4px;margin-bottom:8px}
 .d-footer-bar{text-align:center;padding:28px 40px;border-top:1px solid var(--ln);margin-top:48px;font-size:13px;color:var(--is)}
 .d-footer-bar a{color:var(--w);text-decoration:none;font-weight:600}
+.nav-item-d{position:relative}
+.nav-btn-d{display:flex;align-items:center;gap:6px;background:none;border:none;font-family:"Work Sans",sans-serif;font-size:15px;font-weight:500;color:var(--ink);padding:10px 14px;border-radius:8px;cursor:pointer;transition:background .15s,color .15s}
+.nav-btn-d:hover,.nav-btn-d.act{background:var(--sd);color:var(--w)}
+.caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .18s}
+.nav-item-d.open .caret{transform:rotate(225deg) translateY(2px)}
+.cta-pill{background:var(--w);color:var(--wh);border:none;font-family:"Work Sans",sans-serif;font-weight:600;font-size:14px;padding:11px 22px;border-radius:999px;cursor:pointer;transition:background .15s;display:flex;align-items:center;gap:8px}
+.cta-pill:hover{background:var(--wd)}
+.panel{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);width:560px;background:var(--wh);border:1px solid var(--ln);border-radius:16px;box-shadow:0 18px 40px rgba(43,36,32,.14);padding:22px;display:none;grid-template-columns:1fr 1fr;gap:20px;z-index:200}
+.nav-item-d.open .panel{display:grid}
+.panel-col h4{font-family:"Fraunces",serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--is);margin-bottom:8px;padding-left:2px}
+.panel-link{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;border-radius:12px;text-decoration:none;color:var(--ink);transition:background .15s;cursor:pointer}
+.panel-link:hover{background:var(--sd)}
+.panel-icon{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--sd);display:flex;align-items:center;justify-content:center;color:var(--w);transition:background .15s,color .15s}
+.panel-link:hover .panel-icon{background:var(--w);color:var(--wh)}
+.panel-text strong{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.panel-text span{font-size:12px;color:var(--is);line-height:1.35}
+.cats-row{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:40px}
+.cat-link{display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer;color:var(--ink);width:82px;text-decoration:none}
+.cat-ring{width:68px;height:68px;border-radius:50%;border:1.5px solid var(--w);display:flex;align-items:center;justify-content:center;color:var(--w);background:var(--wh);transition:background .15s,color .15s}
+.cat-link:hover .cat-ring{background:var(--w);color:var(--wh)}
+.cat-link span{font-size:12px;font-weight:500;text-align:center;line-height:1.25}
+.banner-wine{background:var(--w);color:var(--wh);border-radius:18px;padding:28px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.banner-wine h2{font-family:"Fraunces",serif;font-size:24px;font-weight:600;margin-bottom:6px}
+.banner-wine p{font-size:14px;opacity:.85;max-width:400px;line-height:1.6}
+.banner-btn-w{background:var(--wh);color:var(--w);border:none;font-weight:600;font-size:14px;padding:11px 22px;border-radius:999px;cursor:pointer;white-space:nowrap;font-family:"Work Sans",sans-serif}
+.menu{display:flex;align-items:center;gap:6px}
+.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 32px}
 .img-gen{background:var(--wh);border:2px solid var(--w);border-radius:16px;padding:24px;margin-top:24px}
 .img-gen-t{font-family:"Fraunces",serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:6px}
 .img-gen-s{font-size:13px;color:var(--is);line-height:1.6;margin-bottom:16px}
@@ -319,53 +346,79 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <!-- DESKTOP -->
 <div class="dsk">
 <header class="dsk-hdr">
-<div class="dsk-hdr-inner">
+<div class="nav-inner">
 <div class="d-logo" onclick="dShow('inicio')"><span class="d-logo-s">Portal · Representante</span><strong class="d-logo-b">Le Moritz</strong></div>
-<nav class="d-nav">
-<div class="d-nl act" id="d-n-inicio" onclick="dShow('inicio')">Início</div>
-<div class="d-nl" id="d-n-vendas" onclick="dShow('vendas')">Minhas Vendas</div>
-<div class="d-nl" id="d-n-desafios" onclick="dShow('desafios')">Desafios</div>
-<div class="d-nl" id="d-n-mensagens" onclick="dShow('mensagens')">Mensagem Pronta</div>
-<div class="d-nl" id="d-n-skincare" onclick="dShow('skincare')">Skincare</div>
-<div class="d-nl" id="d-n-make" onclick="dShow('make')">Maquiagem</div>
+<nav class="menu">
+<div class="nav-item-d"><button class="nav-btn-d act" id="d-bi" onclick="dShow('inicio')">Início</button></div>
+<div class="nav-item-d"><button class="nav-btn-d" id="d-bv" onclick="dShow('vendas')">Minhas Vendas</button></div>
+<div class="nav-item-d"><button class="nav-btn-d" id="d-bd" onclick="dShow('desafios')">Desafios</button></div>
+<div class="nav-item-d" id="d-mat-item">
+<button class="nav-btn-d" id="d-bm">Materiais <span class="caret"></span></button>
+<div class="panel">
+<div class="panel-col"><h4>Como abordar</h4>
+<div class="panel-link" onclick="dShow('materiais');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/></svg></span><span class="panel-text"><strong>Venda pessoalmente</strong><span>Quando elogiarem sua pele ou make</span></span></div>
+<div class="panel-link" onclick="dShow('materiais');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="panel-text"><strong>Venda no WhatsApp</strong><span>Frases prontas no privado e no grupo</span></span></div>
+</div>
+<div class="panel-col"><h4>Ferramentas</h4>
+<div class="panel-link" onclick="dShow('materiais');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="panel-text"><strong>Frases prontas</strong><span>Por situação e por produto</span></span></div>
+<div class="panel-link" onclick="dShow('materiais');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 16v.01M12 8a2.2 2.2 0 0 1 2.2 2.2c0 1.6-2.2 1.9-2.2 3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="panel-text"><strong>Objeções respondidas</strong><span>Quando a cliente resiste</span></span></div>
+</div>
+</div>
+</div>
+<div class="nav-item-d" id="d-pro-item">
+<button class="nav-btn-d" id="d-bp">Conheça os Produtos <span class="caret"></span></button>
+<div class="panel">
+<div class="panel-col"><h4>Skincare</h4>
+<div class="panel-link" onclick="dShow('produtos');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="panel-text"><strong>Mousse · Tônico · Séruns · Creme</strong><span>Ativos, benefícios e como usar</span></span></div>
+<div class="panel-link" onclick="dShow('produtos');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="panel-text"><strong>Rotinas por tipo de pele</strong><span>Seca · Sensível · Mista · Manchas</span></span></div>
+</div>
+<div class="panel-col"><h4>Maquiagem</h4>
+<div class="panel-link" onclick="dShow('produtos');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="panel-text"><strong>Sticks de cor</strong><span>Blush · Iluminador · Contorno</span></span></div>
+<div class="panel-link" onclick="dShow('produtos');pClose()"><span class="panel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 20h6M12 3a6 6 0 0 0-3.5 10.9c.5.35.8.95.8 1.6v.5h5.4v-.5c0-.65.3-1.25.8-1.6A6 6 0 0 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="panel-text"><strong>Máscara de Cílios Pro-Age</strong><span>Volume, comprimento e tratamento</span></span></div>
+</div>
+</div>
+</div>
 </nav>
+<button class="cta-pill" onclick="dShow('vendas')">Minhas Vendas <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </div>
 </header>
-
-<!-- HERO (only on inicio) -->
-<div id="d-hero" class="d-hero">
-<div class="d-hero-inner">
-<div>
-<div class="d-hero-badge">Desafio ativo · Semana 7</div>
-<div class="d-hero-title">Oi, Representante<br>Le Moritz!</div>
-<div class="d-hero-sub">Tudo que você precisa para vender com confiança está aqui. Cupom, mensagens prontas, guia de produtos e muito mais.</div>
-<button class="d-hero-btn" onclick="dShow('desafios')">Ver o desafio da semana →</button>
-</div>
-<div class="d-hero-stats">
-<div class="d-stat"><div class="d-stat-n">10%</div><div class="d-stat-l">Comissão por venda</div></div>
-<div class="d-stat"><div class="d-stat-n">10%</div><div class="d-stat-l">Desconto clientes</div></div>
-<div class="d-stat"><div class="d-stat-n">R$50</div><div class="d-stat-l">Prêmio do desafio</div></div>
-</div>
-</div>
-</div>
 
 <div class="d-main">
 
 <!-- D: INICIO -->
 <div class="d-section act" id="d-inicio">
-<div class="d-grid5">
-<div class="d-bc"><div class="d-bi">💰</div><div><div class="d-bt">10% de comissão</div><div class="d-bp">Recebe dia 10 do mês seguinte</div></div></div>
-<div class="d-bc"><div class="d-bi">🎁</div><div><div class="d-bt">Cupom exclusivo</div><div class="d-bp">10% de desconto para suas clientes</div></div></div>
-<div class="d-bc"><div class="d-bi">✅</div><div><div class="d-bt">Sem estoque</div><div class="d-bp">Você só compartilha o link</div></div></div>
-<div class="d-bc"><div class="d-bi">⏰</div><div><div class="d-bt">No seu tempo</div><div class="d-bp">Vende quando e como quiser</div></div></div>
-<div class="d-bc"><div class="d-bi">💜</div><div><div class="d-bt">Produto que você ama</div><div class="d-bp">A venda parte da sua experiência</div></div></div>
+<div class="cats-row">
+<div class="cat-link" onclick="dShow('vendas')"><span class="cat-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM6 15h4M14 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Minhas Vendas</span></div>
+<div class="cat-link" onclick="dShow('desafios')"><span class="cat-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span>Desafios</span></div>
+<div class="cat-link" onclick="dShow('materiais')"><span class="cat-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span>Materiais</span></div>
+<div class="cat-link" onclick="dShow('produtos')"><span class="cat-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span>Conheça os Produtos</span></div>
 </div>
-<div class="d-grid3" style="margin-bottom:0">
-<div class="d-card" style="cursor:pointer" onclick="dShow('mensagens')"><div style="font-family:'Fraunces',serif;font-size:13px;font-weight:600;color:var(--w);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Mensagem Pronta</div><div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px">Como abordar e vender</div><div style="font-size:13px;color:var(--is);line-height:1.6">Frases por situação, por produto, objeções e o que indicar.</div><div style="margin-top:14px;color:var(--w);font-size:13px;font-weight:700">Acessar →</div></div>
-<div class="d-card" style="cursor:pointer" onclick="dShow('skincare')"><div style="font-family:'Fraunces',serif;font-size:13px;font-weight:600;color:var(--w);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Skincare</div><div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px">Guia completo dos produtos</div><div style="font-size:13px;color:var(--is);line-height:1.6">Ativos, benefícios, como usar e rotinas por tipo de pele.</div><div style="margin-top:14px;color:var(--w);font-size:13px;font-weight:700">Acessar →</div></div>
-<div class="d-card" style="cursor:pointer" onclick="dShow('make')"><div style="font-family:'Fraunces',serif;font-size:13px;font-weight:600;color:var(--w);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Maquiagem</div><div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px">Sticks e dicas de make</div><div style="font-size:13px;color:var(--is);line-height:1.6">Blush, iluminador, contorno e máscara — como aplicar em pele madura.</div><div style="margin-top:14px;color:var(--w);font-size:13px;font-weight:700">Acessar →</div></div>
+<div class="banner-wine">
+<div><div class="badge-ativo">Desafio ativo agora</div><h2>Semana 7 · 11 a 17 de agosto</h2><p>Venda 2 cupons essa semana e ganhe R$50 em voucher no site Le Moritz.</p></div>
+<button class="banner-btn-w" onclick="dShow('desafios')">Ver o desafio</button>
 </div>
-<div style="text-align:center;padding:32px 0;border-top:1px solid var(--ln);margin-top:48px;font-family:'Fraunces',serif;font-size:17px;color:var(--is);font-style:italic">Você não precisa ser influencer. Só precisa ser você.</div>
+<div class="d-grid2">
+<div>
+<div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:8px">Oi, Representante!</div>
+<div class="d-body">Aqui você encontra tudo que precisa para vender com confiança.</div>
+<div class="d-label" style="margin-top:20px;margin-bottom:14px">O que você encontra aqui</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;gap:12px"><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--w);width:22px;flex-shrink:0">01</div><div><div style="font-size:14px;font-weight:700;color:var(--ink)">Minhas Vendas</div><div style="font-size:13px;color:var(--is)">Cupom, comissão e quando recebe</div></div></div>
+<div style="display:flex;gap:12px"><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--w);width:22px;flex-shrink:0">02</div><div><div style="font-size:14px;font-weight:700;color:var(--ink)">Desafios</div><div style="font-size:13px;color:var(--is)">Meta da semana e histórico de prêmios</div></div></div>
+<div style="display:flex;gap:12px"><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--w);width:22px;flex-shrink:0">03</div><div><div style="font-size:14px;font-weight:700;color:var(--ink)">Materiais</div><div style="font-size:13px;color:var(--is)">Frases, objeções e abordagem</div></div></div>
+<div style="display:flex;gap:12px"><div style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--w);width:22px;flex-shrink:0">04</div><div><div style="font-size:14px;font-weight:700;color:var(--ink)">Conheça os Produtos</div><div style="font-size:13px;color:var(--is)">Ativos, benefícios e rotinas por tipo de pele</div></div></div>
+</div>
+</div>
+<div>
+<div class="d-label" style="margin-bottom:14px">Por que ser Representante Le Moritz?</div>
+<div class="d-bc"><div class="d-bi">💰</div><div><div class="d-bt">10% de comissão por venda</div><div class="d-bp">Você recebe no dia 10 do mês seguinte, sem burocracia</div></div></div>
+<div class="d-bc"><div class="d-bi">🎁</div><div><div class="d-bt">10% de desconto para suas clientes</div><div class="d-bp">Seu cupom exclusivo torna a oferta irresistível</div></div></div>
+<div class="d-bc"><div class="d-bi">✅</div><div><div class="d-bt">Sem estoque, sem investimento</div><div class="d-bp">Você só compartilha o link. A Le Moritz cuida do resto</div></div></div>
+<div class="d-bc"><div class="d-bi">⏰</div><div><div class="d-bt">Você vende no seu tempo</div><div class="d-bp">No privado, pessoalmente, quando e como quiser</div></div></div>
+<div class="d-bc"><div class="d-bi">💜</div><div><div class="d-bt">Produto que você usa e acredita</div><div class="d-bp">A venda mais fácil parte da sua própria experiência</div></div></div>
+</div>
+</div>
+<div style="text-align:center;padding:28px 0;border-top:1px solid var(--ln);margin-top:32px;font-family:'Fraunces',serif;font-size:17px;color:var(--is);font-style:italic">Você não precisa ser influencer. Só precisa ser você.</div>
 </div>
 
 <!-- D: VENDAS -->
@@ -517,9 +570,9 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 </div>
 </div>
 </div>
-<!-- D: MENSAGENS -->
-<div class="d-section" id="d-mensagens">
-<div class="d-sec-banner"><div><h2>Mensagem Pronta</h2><p>Copie, adapte e mande. Tudo que você precisa para abordar, apresentar e fechar a venda.</p></div></div>
+<!-- D: MATERIAIS -->
+<div class="d-section" id="d-materiais">
+<div class="d-sec-banner"><div><h2>Materiais</h2><p>Copie, adapte e mande. Tudo que você precisa para abordar, apresentar e fechar a venda.</p></div></div>
 <div class="d-grid2">
 <div>
 <div class="d-sec-title" style="font-size:20px;margin-bottom:16px">Como abordar</div>
@@ -553,9 +606,10 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 </div>
 </div>
 
-<!-- D: SKINCARE -->
-<div class="d-section" id="d-skincare">
-<div class="d-sec-banner"><div><h2>Skincare Le Moritz</h2><p>Produtos desenvolvidos para pele madura (45+). Ativos, benefícios e como usar cada um.</p></div></div>
+<!-- D: PRODUTOS -->
+<div class="d-section" id="d-produtos">
+<div class="d-sec-banner"><div><h2>Conheça os Produtos</h2><p>Ativos, benefícios e como usar cada produto. Skincare e maquiagem feitos para pele madura (45+).</p></div></div>
+<div class="d-tag">Skincare</div>
 <div class="d-grid2" style="margin-bottom:24px">
 <div class="d-prod-card"><div class="d-prod-img"><img src="imagens/mousse.jpg" alt="Mousse de Limpeza Revitalizante"></div><div class="d-prod-body"><div class="d-prod-tag">Limpeza</div><div class="d-prod-name">Mousse de Limpeza Revitalizante</div><div class="d-prod-desc">Limpa e hidrata ao mesmo tempo. Pele macia, sem sensação de aperto. Pode usar na área dos olhos.</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Glicerina</strong> — retém água, evita ressecamento</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Niacinamida</strong> — uniformiza o tom</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Tripeptídeo de Cobre-1</strong> — estimula colágeno</div></div><div class="usar-b"><div class="usar-h"><span>💡</span>Como usar</div><div class="usar-t">Pele úmida, massageie suavemente. Enxágue. Manhã e noite.</div></div></div></div>
 <div class="d-prod-card"><div class="d-prod-img"><img src="imagens/tonico.jpg" alt="Tônico Essência Hidratante 8 em 1"></div><div class="d-prod-body"><div class="d-prod-tag">Tônico</div><div class="d-prod-name">Tônico Essência Hidratante 8 em 1</div><div class="d-prod-desc">8 funções em um só produto. Prepara a pele para absorver melhor tudo que vem depois.</div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Ácido Hialurônico</strong> — hidratação profunda</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Propanediol</strong> — aumenta penetração dos ativos</div></div><div class="d-li"><div class="d-ldot"></div><div class="d-ltxt"><strong>Aloe Vera</strong> — acalma e reduz vermelhidão</div></div><div class="usar-b"><div class="usar-h"><span>💡</span>Como usar</div><div class="usar-t">Após o mousse, pressione nas mãos ou algodão. Não enxágue.</div></div></div></div>
@@ -593,11 +647,8 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 </div>
 </div>
 </div>
-</div>
-
-<!-- D: MAKE -->
-<div class="d-section" id="d-make">
-<div class="d-sec-banner"><div><h2>Maquiagem Le Moritz</h2><p>Sticks que hidratam enquanto maquia. Desenvolvidos para pele madura — não ressecam, não acentuam linhas, não exigem habilidade.</p></div></div>
+<div class="d-hr"></div>
+<div class="d-tag">Maquiagem</div>
 
 <div class="d-grid2" style="margin-bottom:24px">
 <div class="d-prod-card">
@@ -993,13 +1044,16 @@ function mShow(id,idx){
   window.scrollTo(0,0);
 }
 function mAc(h){var b=h.nextElementSibling,a=h.querySelector('.m-acarr');b.classList.toggle('open');a.classList.toggle('open')}
-var dPages=['inicio','vendas','desafios','mensagens','skincare','make'];
+var dPages=['inicio','vendas','desafios','materiais','produtos'];
+var dBtns=['d-bi','d-bv','d-bd','d-bm','d-bp'];
+function pClose(){document.querySelectorAll(".nav-item-d").forEach(function(i){i.classList.remove("open")})}
 function dShow(id){
-  dPages.forEach(function(p){var el=document.getElementById('d-'+p);if(el)el.classList.remove('act');var nb=document.getElementById('d-n-'+p);if(nb)nb.classList.remove('act')});
-  var hero=document.getElementById('d-hero');
-  if(hero)hero.style.display=(id==='inicio')?'block':'none';
+  dPages.forEach(function(p){var el=document.getElementById('d-'+p);if(el)el.classList.remove('act')});
+  dBtns.forEach(function(b){var el=document.getElementById(b);if(el)el.classList.remove('act')});
+  pClose();
   var s=document.getElementById('d-'+id);if(s)s.classList.add('act');
-  var n=document.getElementById('d-n-'+id);if(n)n.classList.add('act');
+  var map={inicio:'d-bi',vendas:'d-bv',desafios:'d-bd',materiais:'d-bm',produtos:'d-bp'};
+  var nb=document.getElementById(map[id]);if(nb)nb.classList.add('act');
   window.scrollTo(0,0);
 }
 function dAc(h){var b=h.nextElementSibling,a=h.querySelector('.d-acarr');b.classList.toggle('open');a.classList.toggle('open')}
@@ -1062,6 +1116,9 @@ function gerarImg(pre){
   baseImg.src='imagens/desafio6_kit_glow.png';
 }
 upMsg('d');upMsg('m');
+document.getElementById("d-mat-item").querySelector(".nav-btn-d").addEventListener("click",function(e){e.stopPropagation();document.getElementById("d-pro-item").classList.remove("open");document.getElementById("d-mat-item").classList.toggle("open")});
+document.getElementById("d-pro-item").querySelector(".nav-btn-d").addEventListener("click",function(e){e.stopPropagation();document.getElementById("d-mat-item").classList.remove("open");document.getElementById("d-pro-item").classList.toggle("open")});
+document.addEventListener("click",function(){pClose()});
 </script>
 </body>
 </html>
