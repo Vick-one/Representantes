@@ -466,24 +466,25 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <div style="font-size:13px;color:var(--is);margin-bottom:18px;line-height:1.6">Baixe o vídeo ou a imagem, escreva seu cupom e envie para as amigas. Leva 5 minutos.</div>
 <div class="mat-step"><div class="mat-n">1</div><div class="mat-t">Escolha o que prefere enviar: <strong>o vídeo</strong> ou <strong>a imagem</strong>. Pode mandar os dois se quiser — quanto mais gente ver, melhor.</div></div>
 <div class="mat-step"><div class="mat-n">2</div><div class="mat-t">Baixe usando o botão da opção escolhida, logo abaixo. No <strong>vídeo</strong>, abre o Google Drive: toque na <strong>setinha de download (⬇)</strong> no canto superior direito. Na <strong>imagem</strong>, ela é salva direto (no celular, segure o dedo em cima e escolha <strong>Salvar imagem</strong>).</div></div>
-<div class="mat-step"><div class="mat-n">3</div><div class="mat-t">Escreva <strong>o seu cupom</strong> no campo abaixo. Ele entra automaticamente nas 2 mensagens.</div></div>
-<div class="mat-step"><div class="mat-n">4</div><div class="mat-t">Escolha <strong>uma</strong> das 2 mensagens e clique em <strong>Copiar</strong>.</div></div>
+<div class="mat-step"><div class="mat-n">3</div><div class="mat-t">Escreva <strong>o seu cupom</strong> no campo abaixo. Ele entra automaticamente nas 3 mensagens.</div></div>
+<div class="mat-step"><div class="mat-n">4</div><div class="mat-t">Escolha <strong>uma</strong> das 3 mensagens e clique em <strong>Copiar</strong>.</div></div>
 <div class="mat-step"><div class="mat-n">5</div><div class="mat-t">No WhatsApp, <strong>envie primeiro o vídeo ou a imagem</strong> e <strong>depois cole a mensagem</strong>. Mande no privado para as amigas e poste também no status e nos stories do Instagram.</div></div>
 <div class="mat-step"><div class="mat-n">6</div><div class="mat-t"><strong>Meta:</strong> 2 cupons usados até 10/ago = <strong>R$50 em voucher</strong> no site.</div></div>
 <div class="mat-dl">
 <div class="mat-op"><div class="mat-op-t">Opção 1 · Vídeo</div><div class="mat-thumb">▶</div><div class="mat-op-d">Os cílios em movimento. Funciona muito bem no status e nos stories.</div><a href="https://drive.google.com/file/d/1qCmeVA-9mThD5vIvWPLwtLYw6YtrnWx6/view" target="_blank" class="d-btn">⬇ Baixar o vídeo</a></div>
-<div class="mat-op"><div class="mat-op-t">Opção 2 · Imagem</div><img src="imagens/desafio6_kit_cilios.jpg" alt="Kit Lifting e Firmeza para os Olhos e Máscara de Cílios Le Moritz"><div class="mat-op-d">Mostra o kit e os preços com desconto. Boa para quem já perguntou o valor.</div><a href="imagens/desafio6_kit_cilios.jpg" download="lemoritz-desafio6.jpg" class="d-btn">⬇ Baixar a imagem</a></div>
+<div class="mat-op"><div class="mat-op-t">Opção 2 · Imagem</div><img src="imagens/desafio6_kit_cilios.jpg" alt="Kit Pele Glow e Olhos Marcantes Le Moritz - Aniversário"><div class="mat-op-d">Kit Pele Glow & Olhos Marcantes com preço de aniversário. Boa para quem já perguntou o valor.</div><a href="imagens/desafio6_kit_cilios.jpg" download="lemoritz-desafio6.jpg" class="d-btn">⬇ Baixar a imagem</a></div>
 </div>
 <div class="mat-ou">Pode usar os dois — vídeo primeiro, imagem depois.</div>
 <div class="d-hint"><p>Não consegue baixar o vídeo? Abra o link pelo celular, toque nos <strong>três pontinhos</strong> e escolha <strong>Fazer download</strong>. Se aparecer aviso de vírus, é normal com vídeo grande: toque em <strong>Fazer download mesmo assim</strong>.</p></div>
 <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--ln)">
 <div class="cup-lb">Escreva o seu cupom</div>
 <input class="cup-in" id="cup-d" placeholder="EX: MEUCUPOM10" oninput="upMsg('d')">
-<div class="cup-hint">Seu cupom aparece automaticamente nas 2 mensagens abaixo. Se você deixar em branco, vai copiar como [SEU CUPOM] e aí precisa trocar na mão.</div>
+<div class="cup-hint">Seu cupom aparece automaticamente nas 3 mensagens abaixo. Se você deixar em branco, vai copiar como [SEU CUPOM] e aí precisa trocar na mão.</div>
 </div>
 <div style="margin-top:20px">
-<div class="msg-box"><div class="msg-h">Mensagem 1 · mais longa, para o status</div><div class="msg-t" id="msg-d1"></div><button class="d-cbtn" onclick="cpm(this,'m1','cup-d')">Copiar ↗</button></div>
-<div class="msg-box"><div class="msg-h">Mensagem 2 · mais curta, para o privado</div><div class="msg-t" id="msg-d2"></div><button class="d-cbtn" onclick="cpm(this,'m2','cup-d')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 1 · pele madura</div><div class="msg-t" id="msg-d1"></div><button class="d-cbtn" onclick="cpm(this,'m1','cup-d')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 2 · correria da manhã</div><div class="msg-t" id="msg-d2"></div><button class="d-cbtn" onclick="cpm(this,'m2','cup-d')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 3 · troca do pó</div><div class="msg-t" id="msg-d3"></div><button class="d-cbtn" onclick="cpm(this,'m3','cup-d')">Copiar ↗</button></div>
 </div>
 </div>
 </div>
@@ -739,24 +740,25 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink)}
 <div style="font-size:12.5px;color:var(--is);margin-bottom:16px;line-height:1.6">Baixe o vídeo ou a imagem, escreva seu cupom e envie para as amigas. Leva 5 minutos.</div>
 <div class="mat-step"><div class="mat-n">1</div><div class="mat-t">Escolha o que prefere enviar: <strong>o vídeo</strong> ou <strong>a imagem</strong>. Pode mandar os dois se quiser — quanto mais gente ver, melhor.</div></div>
 <div class="mat-step"><div class="mat-n">2</div><div class="mat-t">Baixe usando o botão da opção escolhida, logo abaixo. No <strong>vídeo</strong>, abre o Google Drive: toque na <strong>setinha de download (⬇)</strong> no canto superior direito. Na <strong>imagem</strong>, segure o dedo em cima dela e escolha <strong>Salvar imagem</strong>.</div></div>
-<div class="mat-step"><div class="mat-n">3</div><div class="mat-t">Escreva <strong>o seu cupom</strong> no campo abaixo. Ele entra automaticamente nas 2 mensagens.</div></div>
-<div class="mat-step"><div class="mat-n">4</div><div class="mat-t">Escolha <strong>uma</strong> das 2 mensagens e toque em <strong>Copiar</strong>.</div></div>
+<div class="mat-step"><div class="mat-n">3</div><div class="mat-t">Escreva <strong>o seu cupom</strong> no campo abaixo. Ele entra automaticamente nas 3 mensagens.</div></div>
+<div class="mat-step"><div class="mat-n">4</div><div class="mat-t">Escolha <strong>uma</strong> das 3 mensagens e toque em <strong>Copiar</strong>.</div></div>
 <div class="mat-step"><div class="mat-n">5</div><div class="mat-t">No WhatsApp, <strong>envie primeiro o vídeo ou a imagem</strong> e <strong>depois cole a mensagem</strong>. Mande no privado para as amigas e poste também no status e nos stories.</div></div>
 <div class="mat-step"><div class="mat-n">6</div><div class="mat-t"><strong>Meta:</strong> 2 cupons usados até 10/ago = <strong>R$50 em voucher</strong> no site.</div></div>
 <div class="mat-dl">
 <div class="mat-op"><div class="mat-op-t">Opção 1 · Vídeo</div><div class="mat-thumb">▶</div><div class="mat-op-d">Os cílios em movimento. Funciona muito bem no status e nos stories.</div><a href="https://drive.google.com/file/d/1qCmeVA-9mThD5vIvWPLwtLYw6YtrnWx6/view" target="_blank" class="m-btn">⬇ Baixar o vídeo</a></div>
-<div class="mat-op"><div class="mat-op-t">Opção 2 · Imagem</div><img src="imagens/desafio6_kit_cilios.jpg" alt="Kit Lifting e Firmeza para os Olhos e Máscara de Cílios Le Moritz"><div class="mat-op-d">Mostra o kit e os preços com desconto. Boa para quem já perguntou o valor.</div><a href="imagens/desafio6_kit_cilios.jpg" download="lemoritz-desafio6.jpg" class="m-btn">⬇ Baixar a imagem</a></div>
+<div class="mat-op"><div class="mat-op-t">Opção 2 · Imagem</div><img src="imagens/desafio6_kit_cilios.jpg" alt="Kit Pele Glow e Olhos Marcantes Le Moritz - Aniversário"><div class="mat-op-d">Kit Pele Glow & Olhos Marcantes com preço de aniversário. Boa para quem já perguntou o valor.</div><a href="imagens/desafio6_kit_cilios.jpg" download="lemoritz-desafio6.jpg" class="m-btn">⬇ Baixar a imagem</a></div>
 </div>
 <div class="mat-ou">Pode usar os dois — vídeo primeiro, imagem depois.</div>
 <div class="m-hint"><p>Não conseguiu baixar o vídeo? Toque nos <strong>três pontinhos</strong> e escolha <strong>Fazer download</strong>. Se aparecer aviso de vírus, é normal com vídeo grande: toque em <strong>Fazer download mesmo assim</strong>.</p></div>
 <div style="margin-top:20px;padding-top:18px;border-top:1px solid var(--ln)">
 <div class="cup-lb">Escreva o seu cupom</div>
 <input class="cup-in" id="cup-m" placeholder="EX: MEUCUPOM10" oninput="upMsg('m')">
-<div class="cup-hint">Seu cupom aparece automaticamente nas 2 mensagens abaixo. Se deixar em branco, vai copiar como [SEU CUPOM] e você precisa trocar na mão.</div>
+<div class="cup-hint">Seu cupom aparece automaticamente nas 3 mensagens abaixo. Se deixar em branco, vai copiar como [SEU CUPOM] e você precisa trocar na mão.</div>
 </div>
 <div style="margin-top:18px">
-<div class="msg-box"><div class="msg-h">Mensagem 1 · mais longa, para o status</div><div class="msg-t" id="msg-m1"></div><button class="m-cbtn" onclick="cpm(this,'m1','cup-m')">Copiar ↗</button></div>
-<div class="msg-box"><div class="msg-h">Mensagem 2 · mais curta, para o privado</div><div class="msg-t" id="msg-m2"></div><button class="m-cbtn" onclick="cpm(this,'m2','cup-m')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 1 · pele madura</div><div class="msg-t" id="msg-m1"></div><button class="m-cbtn" onclick="cpm(this,'m1','cup-m')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 2 · correria da manhã</div><div class="msg-t" id="msg-m2"></div><button class="m-cbtn" onclick="cpm(this,'m2','cup-m')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 3 · troca do pó</div><div class="msg-t" id="msg-m3"></div><button class="m-cbtn" onclick="cpm(this,'m3','cup-m')">Copiar ↗</button></div>
 </div>
 <hr class="m-hr">
 <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:4px">Histórico de vouchers</div>
@@ -955,12 +957,13 @@ function cp(btn,txt){navigator.clipboard.writeText(txt).then(function(){var o=bt
 function sw(el,alvo,arq){var img=document.getElementById(alvo);if(img)img.src='imagens/'+arq+'.jpg';var r=el.parentNode.querySelectorAll('.sw');for(var i=0;i<r.length;i++)r[i].classList.remove('on');el.classList.add('on')}
 function vAc(h){var b=h.nextElementSibling,a=h.querySelector('.v-arr');b.classList.toggle('open');a.classList.toggle('open')}
 var MSG={
-m1:"oiii. olha esse vídeo 😱 que cílios mais lindos!\n\ndepois dos 40 eu percebi que meus cílios também mudaram. ficaram mais finos, mais ralos, com menos volume que antes. e eu não sabia que isso também acontecia com os cílios, não só com a pele e o cabelo.\n\naí que conheci essa máscara da Le Moritz. além de dar aquele efeito de cílios mais cheios na hora, ela trata os fios enquanto maquia, ajudando a fortalecer e reduzir a quebra. ah, e ela faz parte do kit de cuidados maduros da marca, pensado pra quem tem linhas finas, pele opaca e sem viço.\n\nse quiser testar, usa meu cupom:\n\nCupom: [SEU CUPOM]\nSite oficial: lemoritz.com.br",
-m2:"Oi [Nome]!\n\nTestei essa máscara de cílios da Le Moritz e adorei!\n\nDepois dos 40 os fios ficam mais finos e demoram pra crescer, essa aqui fortalece e dá volume real, ela faz parte de um kit pra olhos que também trata linhas finas, tipo um \"botox sem agulha\".\n\nse quiser experimentar tenho um cupom pra você: [SEU CUPOM]\nSite oficial: lemoritz.com.br"
+m1:"oiii, encontrei uma maquiagem feita pra pele madura! 😱\n\na minha ia acumulando na ruguinha do olho durante o dia, eu tinha até parado de usar por causa disso. em foto então nem se fala, parecia que tinha uma linha desenhada no meu rosto\n\nfoi aí que conheci a Le Moritz. é um stick cremoso, aí não acumula nas linhas. e o kit ainda vem com um pincel 9 em 1 que faz a make inteira, fica tudo esfumadinho sem eu precisar saber nada\n\nE o site todo tá em promoção de aniversário, aí com o meu cupom fica mais barato:\n\nCupom: [SEU CUPOM]\nSite oficial: lemoritz.com.br",
+m2:"oiii, achei uma make que resolveu minha correria de manhã!\n\neu já tinha me conformado que ia acordar meia hora mais cedo pra me arrumar, e mesmo assim saía achando que faltava alguma coisa\n\nfoi aí que me indicaram a Le Moritz. são 3 bastõezinhos e um pincel só que faz tudo, do blush ao esfumado do olho. hoje eu fico pronta em 5 minutos, e o hidratante já vem com FPS 50, nem passo protetor separado quando tô na correria\n\no site todo tá em promoção de aniversário, e com o meu cupom fica mais em conta ainda:\n\nCupom: [SEU CUPOM]\nSite oficial: lemoritz.com.br",
+m3:"oiii, finalmente achei uma maquiagem pra pele madura 😍\n\neu usei pó a vida inteira, mas com o tempo ele começou a craquelar durante o dia e ia entrando nas minhas linhas, aí no fim tarde eu me olhava no espelho e parecia que tinha envelhecido 10 anos\n\nfoi aí que me falaram da Le Moritz. é em bastão, bem cremosa, aí não empoeira nem marca. no fim do dia minha pele continua igual de manhã\n\nE o site todo tá em promoção de aniversário, e eu tenho cupom pra economizar mais\n\nCupom: [SEU CUPOM]\nSite oficial: lemoritz.com.br"
 };
 function cupVal(inp){var c=document.getElementById(inp);return (c&&c.value.trim())?c.value.trim().toUpperCase():'[SEU CUPOM]'}
 function msgTxt(k,inp){return MSG[k].split('[SEU CUPOM]').join(cupVal(inp))}
-function upMsg(pre){['1','2'].forEach(function(i){var el=document.getElementById('msg-'+pre+i);if(el)el.textContent=msgTxt('m'+i,'cup-'+pre)})}
+function upMsg(pre){['1','2','3'].forEach(function(i){var el=document.getElementById('msg-'+pre+i);if(el)el.textContent=msgTxt('m'+i,'cup-'+pre)})}
 function cpm(btn,k,inp){cp(btn,msgTxt(k,inp))}
 upMsg('d');upMsg('m');
 </script>
