@@ -426,6 +426,68 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink);fon
  .ci-txt{max-height:210px}
 }
 
+
+/* ================= Mensagem Pronta · direção B ================= */
+.mp-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding-bottom:22px;border-bottom:1px solid var(--ln);margin-bottom:22px;flex-wrap:wrap}
+.mp-head h1{font-family:"Fraunces",serif;font-size:36px;font-weight:700;line-height:1.1;margin-bottom:6px}
+.mp-head p{font-size:15.5px;color:var(--is);line-height:1.6;max-width:56ch}
+.mp-cup{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--ln);border-radius:12px;padding:10px 14px;flex-shrink:0}
+.mp-cup svg{color:var(--w);flex-shrink:0}
+.mp-cup small{display:block;font-size:10.5px;color:var(--is);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:2px}
+.mp-cup input{border:none;background:none;font-family:"Work Sans",sans-serif;font-size:16px;font-weight:700;letter-spacing:.06em;color:var(--w);width:150px;padding:0;text-transform:uppercase}
+.mp-cup input:focus{outline:none}
+.mp-chips{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:24px}
+.mp-chip{border:1px solid var(--ln);background:#fff;border-radius:999px;padding:10px 20px;font-size:14.5px;font-weight:500;color:var(--is);cursor:pointer;transition:all .15s;user-select:none}
+.mp-chip:hover{border-color:var(--w);color:var(--w)}
+.mp-chip.on{background:var(--w);border-color:var(--w);color:#fff;font-weight:600}
+.mp-secl{display:flex;align-items:baseline;gap:12px;margin:30px 0 14px}
+.mp-secl h2{font-family:"Fraunces",serif;font-size:23px;font-weight:700}
+.mp-secl span{font-size:13px;color:var(--is)}
+.mp-secl i{flex:1;height:1px;background:var(--ln);font-style:normal}
+.mp-list{background:#fff;border:1px solid var(--ln);border-radius:16px;overflow:hidden}
+.mp-row{display:flex;align-items:center;gap:16px;padding:18px 22px;border-bottom:1px solid var(--ln);cursor:pointer}
+.mp-row:last-child{border-bottom:none}
+.mp-row:hover{background:var(--s)}
+.mp-ic{width:44px;height:44px;border-radius:50%;background:var(--sd);color:var(--w);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mp-b{flex:1;min-width:0}
+.mp-t{font-size:16.5px;font-weight:700;margin-bottom:3px;line-height:1.3}
+.mp-p{font-size:14px;color:var(--is);line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mp-cp{display:flex;align-items:center;gap:7px;border:1px solid var(--w);color:var(--w);background:#fff;border-radius:9px;padding:9px 16px;font-size:13.5px;font-weight:700;flex-shrink:0;font-family:"Work Sans",sans-serif;cursor:pointer}
+.mp-cp:hover{background:var(--w);color:#fff}
+a.mp-cp{text-decoration:none}
+.mp-x{width:34px;height:34px;border-radius:50%;border:1px solid var(--ln);display:flex;align-items:center;justify-content:center;color:var(--w);flex-shrink:0;transition:transform .2s}
+.mp-row.open .mp-x{transform:rotate(180deg)}
+.mp-row.open{background:var(--s)}
+.mp-body{display:none;background:var(--s);border-bottom:1px solid var(--ln);padding:4px 22px 22px 82px}
+.mp-body.open{display:block}
+.mp-lb{font-size:10.5px;color:var(--is);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:9px}
+.mp-bub{background:#fff;border:1px solid var(--ln);border-radius:6px 16px 16px 16px;padding:16px 19px;font-size:15px;line-height:1.75;color:var(--ink);white-space:pre-line;max-width:660px;margin-bottom:14px}
+.mp-acts{display:flex;gap:10px;flex-wrap:wrap}
+.mp-acts .mp-cp.solid{background:var(--w);color:#fff}
+.mp-ind{background:#fff;border:1px solid var(--ln);border-radius:16px;padding:24px 26px;margin-top:14px}
+.mp-ind .l{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--ln)}
+.mp-ind .l:last-child{border:none;padding-bottom:0}
+.mp-ind .l:first-child{padding-top:0}
+.mp-ind b{font-size:15.5px;display:block;margin-bottom:3px}
+.mp-ind span{font-size:14.5px;color:var(--is);line-height:1.6}
+@media(max-width:899px){
+ .mp-head{display:block;margin-bottom:18px}
+ .mp-head h1{font-size:28px}
+ .mp-cup{margin-top:14px;justify-content:flex-start}
+ .mp-cup input{width:130px}
+ .mp-chips{gap:7px;margin-bottom:18px}
+ .mp-chip{padding:9px 15px;font-size:13.5px}
+ .mp-row{padding:15px 16px;gap:12px}
+ .mp-ic{width:38px;height:38px}
+ .mp-t{font-size:15.5px}
+ .mp-p{font-size:13px}
+ .mp-cp{display:none}
+ .mp-body{padding:4px 16px 18px 16px}
+ .mp-bub{font-size:14.5px}
+ .mp-acts .mp-cp{display:flex;width:100%;justify-content:center;padding:13px}
+ .mp-secl h2{font-size:20px}
+}
+
 </style>
 </head>
 <body>
@@ -641,41 +703,22 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink);fon
 </div>
 <!-- D: MENSAGENS -->
 <div class="d-section" id="d-mensagens">
-<div class="d-sec-banner"><div><h2>Mensagem Pronta</h2><p>Copie, adapte e mande. Tudo que você precisa para abordar, apresentar e fechar a venda.</p></div></div>
-<div class="d-grid2">
-<div>
-<div class="d-sec-title" style="font-size:20px;margin-bottom:16px">Como abordar</div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">No privado do WhatsApp</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-body">Comece pelo contexto da pessoa. Se ela falou de pele seca, use isso. A abordagem mais natural parte de algo real.</div><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Lembrei de você porque você comentou que estava procurando algo para a região dos olhos..."</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'Lembrei de você porque você comentou que estava procurando algo para a região dos olhos...')">Copiar ↗</button></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Pessoalmente</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-body">Quando elogiarem sua pele ou make, essa é a sua deixa.</div><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Uso os produtos da Le Moritz, feitos para pele madura. Tenho desconto se quiser experimentar!"</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'Uso os produtos da Le Moritz, feitos para pele madura. Tenho desconto se quiser experimentar!')">Copiar ↗</button></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">No grupo de amigas</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-body">Sem pressão, sem parecer propaganda.</div><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Meninas, estou usando uma marca incrível para pele madura. Tenho desconto para quem quiser conhecer!"</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'Meninas, estou usando uma marca incrível para pele madura. Tenho desconto para quem quiser conhecer!')">Copiar ↗</button></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Fale da sua experiência</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-body">Você já está vendendo um produto que você usa, que você gosta, que você acredita. Use isso.</div><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w);margin-bottom:8px">"Uso todo dia e olha como minha pele está. Esse é o Sérum de Olhos, uso antes de dormir..."</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'Uso todo dia e olha como minha pele está. Esse é o Sérum de Olhos, uso antes de dormir...')">Copiar ↗</button><div style="font-size:14px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Eu procurava algo feito para a nossa pele, não adaptado. Foi quando conheci a Le Moritz..."</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'Eu procurava algo feito para a nossa pele, não adaptado. Foi quando conheci a Le Moritz...')">Copiar ↗</button></div></div>
-<div class="d-hr"></div>
-<div class="d-sec-title" style="font-size:20px;margin-bottom:16px">O que indicar</div>
-<div class="d-ind"><div class="d-indq">Região dos olhos</div><div class="d-inda"><strong>Sérum Revitalizador de Olhos</strong> para tratar. Para resultado na hora, indique também o <strong>Sérum Lift Instantâneo</strong> — não fazer expressão por 90 segundos após aplicar.</div></div>
-<div class="d-ind"><div class="d-indq">Pele sem hidratação</div><div class="d-inda"><strong>Creme Multicamadas + Rejuvenescedor Noturno + Tônico 8 em 1 + Hidratante FPS 50</strong></div></div>
-<div class="d-ind"><div class="d-indq">Pele sem viço e olhos cansados</div><div class="d-inda">Linha completa: <strong>Mousse, Tônico, Sérum de Olhos, Creme Multicamadas, Rejuvenescedor Noturno e Hidratante FPS 50</strong></div></div>
+<div class="mp-head">
+<div><h1>Mensagem Pronta</h1><p>Copie, adapte e mande. Escrito para conversa no privado, com jeito de mensagem de amiga — não de propaganda.</p></div>
+<div class="mp-cup"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 11.4V4.6h6.8l9.5 9.5-6.8 6.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7.6" cy="8.4" r="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+<div><small>O seu cupom</small><input id="mp-cup-d" placeholder="MEUCUPOM" oninput="mpRender('d')"></div></div>
 </div>
-<div>
-<div class="d-sec-title" style="font-size:20px;margin-bottom:10px">Mensagens por situação</div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Apresentando a marca</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!')">Copiar ↗</button></div><div class="d-envie"><div class="d-el">Envie também</div><div class="d-et">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!"</div><button class="d-cbtn" onclick="cp(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Quando elogiarem sua pele</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Tenho desconto nessa loja se quiser experimentar!"</div><button class="d-cbtn" onclick="cp(this,'Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Tenho desconto nessa loja se quiser experimentar!')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Quando disser que vai pensar</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre!"</div><button class="d-cbtn" onclick="cp(this,'Claro, sem pressa! Fica com o link e o meu cupom para quando quiser. O desconto é válido sempre!')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Pós venda</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Sérum Revitalizador de Olhos</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Eu tenho desconto nessa loja!')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Creme Antirrugas Multicamadas</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Eu tenho desconto lá. Quer o link?')">Copiar ↗</button></div></div></div>
-<div class="d-ac"><div class="d-ach" onclick="dAc(this)"><div class="d-act">Stick Blush</div><div class="d-acarr">›</div></div><div class="d-acb"><div class="d-cit"><div class="d-ctxt">"Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Eu tenho desconto nessa loja. Quer o link?"</div><button class="d-cbtn" onclick="cp(this,'Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Eu tenho desconto nessa loja. Quer o link?')">Copiar ↗</button></div><div class="nota-p">Pode falar do Rosa Mauve, Terracota ou Coral</div></div></div>
-<div class="d-hr"></div>
-<div class="d-sec-title" style="font-size:20px;margin-bottom:16px">Objeções respondidas</div>
-<div class="d-obj"><div class="d-oq">"Tá caro..."</div><div class="d-or">"Com meu cupom já fica 10% mais barato! Frete grátis acima de R$100. Vale muito pela qualidade."</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'Com meu cupom já fica 10% mais barato! Frete grátis acima de R$100. Vale muito pela qualidade.')">Copiar ↗</button></div>
-<div class="d-obj"><div class="d-oq">"Não conheço essa marca..."</div><div class="d-or">"É a única no Brasil feita exclusivamente para pele madura. Dermatologicamente testada."</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'É a única no Brasil feita exclusivamente para pele madura. Dermatologicamente testada.')">Copiar ↗</button></div>
-<div class="d-obj"><div class="d-oq">"Vou pensar..."</div><div class="d-or">"Claro! Fica com o link e meu cupom. O desconto é válido sempre."</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'Claro! Fica com o link e meu cupom. O desconto é válido sempre.')">Copiar ↗</button></div>
-<div class="d-obj"><div class="d-oq">"Já uso outra marca..."</div><div class="d-or">"Entendo! Essa é específica para pele madura, feita diferente. Posso te mandar mais informações?"</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'Entendo! Essa é específica para pele madura, feita diferente. Posso te mandar mais informações?')">Copiar ↗</button></div>
-<div class="d-obj" style="margin-bottom:0"><div class="d-oq">"Não sei se funciona pra mim..."</div><div class="d-or">"Tem garantia de 90 dias. Se não gostar, devolve. Sem risco!"</div><button class="d-cbtn" style="margin-top:9px" onclick="cp(this,'Tem garantia de 90 dias. Se não gostar, devolve. Sem risco!')">Copiar ↗</button></div>
-</div>
+<div class="mp-chips" id="mp-chips-d"><div class="mp-chip on" data-c="todos" onclick="mpFiltro('d','todos')">Tudo</div><div class="mp-chip" data-c="abordar" onclick="mpFiltro('d','abordar')">Abordagem no privado</div><div class="mp-chip" data-c="produto" onclick="mpFiltro('d','produto')">Por produto</div><div class="mp-chip" data-c="objecao" onclick="mpFiltro('d','objecao')">Objeções</div><div class="mp-chip" data-c="duvida" onclick="mpFiltro('d','duvida')">Dúvidas da cliente</div><div class="mp-chip" data-c="depois" onclick="mpFiltro('d','depois')">Depois do primeiro contato</div></div>
+<div id="mp-lists-d"></div>
+
+<div class="mp-secl"><h2>O que indicar</h2><span>por necessidade da cliente</span><i></i></div>
+<div class="mp-ind">
+<div class="l"><div><b>Região dos olhos</b><span><strong>Sérum Revitalizador de Olhos</strong> para tratar. Para resultado na hora, indique também o <strong>Sérum Lift Instantâneo</strong> — não fazer expressão por 90 segundos após aplicar.</span></div></div>
+<div class="l"><div><b>Pele sem hidratação</b><span>Creme Multicamadas + Rejuvenescedor Noturno + Tônico 8 em 1 + Hidratante FPS 50</span></div></div>
+<div class="l"><div><b>Pele sem viço e olhos cansados</b><span>Linha completa: Mousse, Tônico, Sérum de Olhos, Creme Multicamadas, Rejuvenescedor Noturno e Hidratante FPS 50</span></div></div>
 </div>
 </div>
 
-<!-- D: SKINCARE -->
 <div class="d-section" id="d-imagem">
 <div class="d-crumb">Materiais › <b>Crie sua imagem</b></div>
 <div class="d-sec-title">Crie sua imagem</div>
@@ -1047,42 +1090,22 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink);fon
 
 <!-- M: MENSAGENS -->
 <div class="m-page" id="m-mensagens">
-<div class="m-hl"><div class="m-hlt">Mensagem Pronta</div><div class="m-hls">Copie e mande na hora</div></div>
-<div class="m-lbl">Como abordar</div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">No privado do WhatsApp</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Comece pelo contexto da pessoa. A abordagem mais natural parte de algo real.</div><div style="font-size:13px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Lembrei de você porque você comentou que estava procurando algo para a região dos olhos..."</div><button class="m-cbtn" style="margin-top:9px" onclick="cp(this,'Lembrei de você porque você comentou que estava procurando algo para a região dos olhos...')">Copiar ↗</button></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Pessoalmente</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Quando elogiarem sua pele ou make, essa é a sua deixa.</div><div style="font-size:13px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Uso os produtos da Le Moritz, feitos para pele madura. Tenho desconto se quiser experimentar!"</div><button class="m-cbtn" style="margin-top:9px" onclick="cp(this,'Uso os produtos da Le Moritz, feitos para pele madura. Tenho desconto se quiser experimentar!')">Copiar ↗</button></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">No grupo de amigas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-body">Sem pressão, sem parecer propaganda.</div><div style="font-size:13px;font-weight:600;color:var(--w);font-style:italic;padding-left:10px;border-left:2px solid var(--w)">"Meninas, estou usando uma marca incrível para pele madura. Tenho desconto para quem quiser conhecer!"</div><button class="m-cbtn" style="margin-top:9px" onclick="cp(this,'Meninas, estou usando uma marca incrível para pele madura. Tenho desconto para quem quiser conhecer!')">Copiar ↗</button></div></div>
-<hr class="m-hr">
-<div class="m-lbl">Mensagens por situação</div>
-<div class="m-clbl">Apresentando a marca</div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Apresentando a marca</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você conhece a Le Moritz? É uma marca brasileira de skincare e make feita especialmente para pele madura. Eu tenho desconto nessa loja se quiser conhecer!')">Copiar ↗</button></div><div class="m-envie"><div class="m-el">Envie também</div><div class="m-et">"Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!"</div><button class="m-cbtn" onclick="cp(this,'Esse é o site: lemoritz.com.br e meu cupom é [SEUCUPOM]. É só adicionar no carrinho!')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Quando elogiarem sua pele</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Tenho desconto nessa loja se quiser experimentar!"</div><button class="m-cbtn" onclick="cp(this,'Obrigada! Uso os produtos da Le Moritz, uma linha de skincare feita para pele madura. Tenho desconto nessa loja se quiser experimentar!')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Para grupo de amigas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Meninas, quem quiser conhecer uma linha de skincare e make feita para pele madura, eu tenho desconto nessa loja. Me chama no privado!"</div><button class="m-cbtn" onclick="cp(this,'Meninas, quem quiser conhecer uma linha de skincare e make feita para pele madura, eu tenho desconto nessa loja. Me chama no privado!')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Quando disser que vai pensar</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Claro, sem pressa! Fica com o link e o meu cupom. O desconto é válido sempre!"</div><button class="m-cbtn" onclick="cp(this,'Claro, sem pressa! Fica com o link e o meu cupom. O desconto é válido sempre!')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Pós venda</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Como você está gostando dos produtos? Qualquer dúvida sobre como usar me fala!')">Copiar ↗</button></div></div></div>
-<div class="m-thin"></div>
-<div class="m-clbl">Por produto</div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Revitalizador de Olhos</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Tenho desconto nessa loja!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você comentou que estava procurando algo para os olhos. Uso o sérum da Le Moritz e adorei. Tenho desconto nessa loja!')">Copiar ↗</button></div><div class="m-envie"><div class="m-el">Envie também</div><div class="m-et">"lemoritz.com.br · cupom: [SEUCUPOM]"</div><button class="m-cbtn" onclick="cp(this,'lemoritz.com.br · cupom: [SEUCUPOM]')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Creme Antirrugas Multicamadas</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Tenho desconto lá. Quer o link?"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você falou que sua pele anda ressecada. Uso o creme da Le Moritz e a diferença é absurda. Tenho desconto lá. Quer o link?')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Sérum Lift Instantâneo</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum dá resultado na hora. Tenho desconto nessa loja!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você mencionou que queria algo para as linhas de expressão. Esse sérum dá resultado na hora. Tenho desconto nessa loja!')">Copiar ↗</button></div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Blush</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Tenho desconto nessa loja. Quer o link?"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Uso um blush da Le Moritz e amei. É uma marca feita para pele madura. Tenho desconto nessa loja. Quer o link?')">Copiar ↗</button></div><div class="nota-p">Pode falar do Rosa Mauve, Terracota ou Coral</div></div></div>
-<div class="m-ac"><div class="m-ach" onclick="mAc(this)"><div class="m-act">Stick Hidratante FPS 50</div><div class="m-acarr">›</div></div><div class="m-acb"><div class="m-cit"><div class="m-ctxt">"Oi [nome]! Você queria um protetor que não pesasse. Uso o Stick Hidratante FPS 50 da Le Moritz e é prático demais. Tenho desconto lá!"</div><button class="m-cbtn" onclick="cp(this,'Oi [nome]! Você queria um protetor que não pesasse. Uso o Stick Hidratante FPS 50 da Le Moritz e é prático demais. Tenho desconto lá!')">Copiar ↗</button></div></div></div>
-<hr class="m-hr">
-<div class="m-lbl" style="margin-bottom:8px">Objeções respondidas</div>
-<div class="m-body" style="margin-bottom:10px">Quando a cliente resistir, copie e mande.</div>
-<div class="m-obj"><div class="m-oq">"Tá caro..."</div><div class="m-or">"Com meu cupom já fica 10% mais barato! Frete grátis acima de R$100."</div><button class="m-cbtn" style="margin-top:9px" onclick="cp(this,'Com meu cupom já fica 10% mais barato! Frete grátis acima de R$100.')">Copiar ↗</button></div>
-<div class="m-obj"><div class="m-oq">"Não conheço essa marca..."</div><div class="m-or">"É a única no Brasil feita exclusivamente para pele madura. Dermatologicamente testada."</div><button class="m-cbtn" style="margin-top:9px" onclick="cp(this,'É a única no Brasil feita exclusivamente para pele madura. Dermatologicamente testada.')">Copiar ↗</button></div>
-<div class="m-obj"><div class="m-oq">"Vou pensar..."</div><div class="m-or">"Claro! Fica com o link e meu cupom. O desconto é válido sempre."</div><button class="m-cbtn" style="margin-top:9px" onclick="cp(this,'Claro! Fica com o link e meu cupom. O desconto é válido sempre.')">Copiar ↗</button></div>
-<div class="m-obj"><div class="m-oq">"Já uso outra marca..."</div><div class="m-or">"Entendo! Essa é específica para pele madura, feita diferente. Posso te mandar mais informações?"</div><button class="m-cbtn" style="margin-top:9px" onclick="cp(this,'Entendo! Essa é específica para pele madura, feita diferente. Posso te mandar mais informações?')">Copiar ↗</button></div>
-<div class="m-obj" style="margin-bottom:0"><div class="m-oq">"Não sei se funciona pra mim..."</div><div class="m-or">"Tem garantia de 90 dias. Se não gostar, devolve. Sem risco!"</div><button class="m-cbtn" style="margin-top:9px" onclick="cp(this,'Tem garantia de 90 dias. Se não gostar, devolve. Sem risco!')">Copiar ↗</button></div>
-<hr class="m-hr">
-<div class="m-lbl" style="margin-bottom:8px">O que indicar</div>
-<div class="m-ind"><div class="m-indq">Região dos olhos</div><div class="m-inda"><strong>Sérum Revitalizador de Olhos</strong> para tratar. Para resultado na hora, <strong>Sérum Lift Instantâneo</strong> — não fazer expressão por 90 segundos após aplicar.</div></div>
-<div class="m-ind"><div class="m-indq">Pele sem hidratação</div><div class="m-inda"><strong>Creme Multicamadas + Rejuvenescedor Noturno + Tônico 8 em 1 + Hidratante FPS 50</strong></div></div>
-<div class="m-ind"><div class="m-indq">Pele sem viço e olhos cansados</div><div class="m-inda">Linha completa: <strong>Mousse, Tônico, Sérum de Olhos, Creme, Rejuvenescedor e FPS 50</strong></div></div>
+<div class="mp-head">
+<div><h1>Mensagem Pronta</h1><p>Copie, adapte e mande. Escrito para conversa no privado, com jeito de mensagem de amiga — não de propaganda.</p></div>
+<div class="mp-cup"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 11.4V4.6h6.8l9.5 9.5-6.8 6.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7.6" cy="8.4" r="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+<div><small>O seu cupom</small><input id="mp-cup-m" placeholder="MEUCUPOM" oninput="mpRender('m')"></div></div>
+</div>
+<div class="mp-chips" id="mp-chips-m"><div class="mp-chip on" data-c="todos" onclick="mpFiltro('m','todos')">Tudo</div><div class="mp-chip" data-c="abordar" onclick="mpFiltro('m','abordar')">Abordagem no privado</div><div class="mp-chip" data-c="produto" onclick="mpFiltro('m','produto')">Por produto</div><div class="mp-chip" data-c="objecao" onclick="mpFiltro('m','objecao')">Objeções</div><div class="mp-chip" data-c="duvida" onclick="mpFiltro('m','duvida')">Dúvidas da cliente</div><div class="mp-chip" data-c="depois" onclick="mpFiltro('m','depois')">Depois do primeiro contato</div></div>
+<div id="mp-lists-m"></div>
+
+<div class="mp-secl"><h2>O que indicar</h2><span>por necessidade da cliente</span><i></i></div>
+<div class="mp-ind">
+<div class="l"><div><b>Região dos olhos</b><span><strong>Sérum Revitalizador de Olhos</strong> para tratar. Para resultado na hora, indique também o <strong>Sérum Lift Instantâneo</strong> — não fazer expressão por 90 segundos após aplicar.</span></div></div>
+<div class="l"><div><b>Pele sem hidratação</b><span>Creme Multicamadas + Rejuvenescedor Noturno + Tônico 8 em 1 + Hidratante FPS 50</span></div></div>
+<div class="l"><div><b>Pele sem viço e olhos cansados</b><span>Linha completa: Mousse, Tônico, Sérum de Olhos, Creme Multicamadas, Rejuvenescedor Noturno e Hidratante FPS 50</span></div></div>
+</div>
 </div>
 
-<!-- M: SKINCARE -->
 <div class="m-page" id="m-imagem">
 <div class="d-crumb">Materiais › <b>Crie sua imagem</b></div>
 <div class="d-sec-title">Crie sua imagem</div>
@@ -1418,7 +1441,68 @@ function mSheetClose(){
   var bg=document.getElementById('m-sheet-bg'); if(bg)bg.classList.remove('open');
 }
 
-upMsg('d');upMsg('m');ciUp('d');ciUp('m');
+
+/* ===== Mensagem Pronta (direção B) ===== */
+var MP_DATA=[{"c": "abordar", "i": "wpp", "t": "Ela comentou de um incômodo nos olhos", "x": "oiii, lembrei de você porque você comentou que a área dos olhos estava te incomodando\n\ndescobri uma marca brasileira que é feita só para pele madura, a Le Moritz. estou usando o sérum de olhos deles, é roll-on, passo de manhã e antes de dormir\n\nse você quiser experimentar eu tenho um cupom que te dá 10% de desconto"}, {"c": "abordar", "i": "drop", "t": "Ela falou de pele ressecada", "x": "oiii, você tinha comentado que sua pele andava ressecada, né?\n\neu estava com o mesmo problema, principalmente no inverno. comecei a usar o creme multicamadas da Le Moritz e ele hidrata em camadas, aí não fica aquela sensação de repuxar\n\né uma marca feita para pele madura mesmo, não é fórmula adaptada. quer que eu te mande o link? tenho um cupom de 10% para você"}, {"c": "abordar", "i": "heart", "t": "Quando elogiarem a sua pele", "x": "aaah obrigada! é a Le Moritz, uma marca brasileira feita só para pele madura\n\ncomecei a usar faz um tempo e a diferença que mais senti foi na hidratação, minha pele não fica mais aquela coisa opaca no fim do dia\n\nse você quiser experimentar eu tenho cupom, dá 10% de desconto para você"}, {"c": "abordar", "i": "star", "t": "Sem gancho nenhum, só a descoberta", "x": "oiii, preciso te contar uma coisa\n\nachei uma marca de skincare feita exclusivamente para pele madura, a única do Brasil assim. o resto do mercado é tudo fórmula adaptada, sabe?\n\nestou usando há um tempo e virei representante deles. tenho um cupom que dá 10% de desconto, se você quiser conhecer eu te mando o link"}, {"c": "abordar", "i": "users", "t": "No grupo de amigas", "x": "meninas, achei uma marca brasileira de skincare feita para a nossa pele\n\nnão é adaptada não, é desenvolvida para pele madura mesmo — a única do Brasil assim. estou usando e gostando muito\n\ntenho um cupom de 10% de desconto para quem quiser conhecer, é só me chamar"}, {"c": "abordar", "i": "tag", "t": "Mandar o link e o cupom", "x": "o site é lemoritz.com.br e o meu cupom é [CUPOM]\n\né só colar o código antes de finalizar a compra que o desconto entra na hora"}, {"c": "produto", "i": "drop", "t": "Sérum Revitalizador de Olhos", "x": "oiii, você comentou dos olhos né?\n\neu uso o sérum revitalizador da Le Moritz, é um roll-on gelado que passo de manhã e à noite. usei para bolsinha e linha fininha\n\nse quiser testar, meu cupom dá 10% de desconto"}, {"c": "produto", "i": "drop", "t": "Creme Antirrugas Multicamadas", "x": "oiii, sobre o que você falou da pele ressecada\n\nuso o creme multicamadas da Le Moritz, ele hidrata em camadas em vez de só passar por cima. foi feito pensando em pele madura, que perde água mais rápido\n\nquer o link? tenho cupom de 10% para você"}, {"c": "produto", "i": "make", "t": "Stick Blush", "x": "oiii, você perguntou do meu blush\n\né o stick da Le Moritz. é cremoso, esfumo com o dedo e não acumula nas linhas, que era o meu problema com blush em pó\n\ntem Rosa Mauve, Terracota e Coral. se quiser experimentar tenho cupom de 10%"}, {"c": "objecao", "i": "tag", "t": "\"Tá caro...\"", "x": "eu entendi, também achei no começo\n\nmas o creme me durou uns dois meses de uso todo dia, aí saiu menos de dois reais por dia. e com o meu cupom você ainda tira 10%, e acima de R$100 o frete é grátis"}, {"c": "objecao", "i": "chat", "t": "\"Não conheço essa marca...\"", "x": "é brasileira, dermatologicamente testada, e é a única do Brasil feita exclusivamente para pele madura\n\nse quiser eu te mando o que tem em cada produto e como usar, aí você olha com calma"}, {"c": "objecao", "i": "clock", "t": "\"Vou pensar...\"", "x": "claro, sem pressa\n\nfica com o link e o meu cupom, o desconto vale sempre. qualquer dúvida me chama"}, {"c": "objecao", "i": "users", "t": "\"Já uso outra marca...\"", "x": "que bom que você já cuida da pele\n\nposso te perguntar o que você usa hoje? e o que ainda te incomoda? aí eu te falo com sinceridade se vale trocar ou não"}, {"c": "objecao", "i": "check", "t": "\"Não sei se funciona pra mim...\"", "x": "você tem 90 dias para testar\n\nse não gostar, devolve e recebe o dinheiro de volta. vale com o cupom também, então não tem risco nenhum"}, {"c": "duvida", "i": "box", "t": "Dúvida de entrega e frete", "x": "a entrega leva de 4 a 15 dias úteis, vai pela Mandaê\n\nacima de R$100 o frete é grátis. quando sair o pedido você recebe o código de rastreio no e-mail"}, {"c": "duvida", "i": "tag", "t": "Como usar o cupom no carrinho", "x": "na hora de finalizar a compra aparece um campo perguntando se você tem cupom\n\né só colar o código ali antes de pagar, que o desconto entra na hora"}, {"c": "duvida", "i": "drop", "t": "Receio com o retinol", "x": "essa dúvida é super comum\n\no retinol da linha é nanoencapsulado, que é uma versão mais suave. usa só à noite e protetor solar no dia seguinte\n\nse a sua pele for sensível dá para começar em dias alternados, que foi o que eu fiz"}, {"c": "depois", "i": "clock", "t": "Pediu o link e sumiu · 2 a 3 dias depois", "x": "oiii, você conseguiu dar uma olhada no site?\n\nse ficou em dúvida de qual produto combina mais com a sua pele me fala, que eu te ajudo a escolher"}, {"c": "depois", "i": "heart", "t": "Pós venda · logo que receber", "x": "oiii, como você está se dando com os produtos?\n\nqualquer dúvida de como usar é só me chamar"}, {"c": "depois", "i": "clock", "t": "Comprou e não voltou · uns 60 dias depois", "x": "oiii, tudo bem?\n\nfaz uns dois meses que você comprou, e o creme costuma durar mais ou menos isso. se estiver acabando, o cupom continua valendo"}];
+var MP_CATS=[["abordar", "Abordagem no privado"], ["produto", "Por produto"], ["objecao", "Objeções"], ["duvida", "Dúvidas da cliente"], ["depois", "Depois do primeiro contato"]];
+var MP_IC={
+ wpp:'<path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
+ drop:'<path d="M12 3.4c3.2 3.6 5.6 6.5 5.6 9.4a5.6 5.6 0 0 1-11.2 0c0-2.9 2.4-5.8 5.6-9.4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
+ heart:'<path d="M12 20s-7.2-4.4-7.2-9.2A3.9 3.9 0 0 1 12 8.3a3.9 3.9 0 0 1 7.2 2.5C19.2 15.6 12 20 12 20Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
+ star:'<path d="m12 3 2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.9 6.2 20.9l1.1-6.5-4.7-4.6 6.5-.95z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
+ users:'<circle cx="9.4" cy="8.6" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.8 19.6c.8-3.2 3.4-5 6.6-5s5.8 1.8 6.6 5M16 5.6a3.4 3.4 0 0 1 0 6.6M18 14.9c2.3.5 3.6 2.2 4.1 4.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+ tag:'<path d="M3.6 11.4V4.6h6.8l9.5 9.5-6.8 6.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7.6" cy="8.4" r="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/>',
+ make:'<ellipse cx="12" cy="10" rx="7" ry="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 20h6M12 18v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+ chat:'<path d="M4 5.6h16v11H9.4L4.8 20v-3.4H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
+ clock:'<circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.4v4.9l3.2 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+ check:'<circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.3 12.2 2.5 2.5 4.8-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+ box:'<path d="M12 2.6 21 7v10l-9 4.4L3 17V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 7l9 4.4L21 7M12 11.4v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'
+};
+var MP_F={d:'todos',m:'todos'};
+function mpEsc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function mpCupom(s){var e=document.getElementById('mp-cup-'+s);return (e&&e.value.trim())?e.value.trim().toUpperCase():'MEUCUPOM'}
+function mpTexto(i,s){return MP_DATA[i].x.split('[CUPOM]').join(mpCupom(s))}
+function mpRender(s){
+  var alvo=document.getElementById('mp-lists-'+s); if(!alvo)return;
+  var html='';
+  for(var c=0;c<MP_CATS.length;c++){
+    var key=MP_CATS[c][0], nome=MP_CATS[c][1];
+    if(MP_F[s]!=='todos'&&MP_F[s]!==key)continue;
+    var itens=[];
+    for(var i=0;i<MP_DATA.length;i++){if(MP_DATA[i].c===key)itens.push(i)}
+    if(!itens.length)continue;
+    html+='<div class="mp-secl"><h2>'+nome+'</h2><span>'+itens.length+(itens.length>1?' mensagens':' mensagem')+'</span><i></i></div><div class="mp-list">';
+    for(var k=0;k<itens.length;k++){
+      var idx=itens[k], d=MP_DATA[idx], txt=mpTexto(idx,s);
+      var previa=txt.split('\n')[0];
+      html+='<div class="mp-row" id="mp-r-'+s+'-'+idx+'" onclick="mpAbrir(\''+s+'\','+idx+')">'+
+        '<div class="mp-ic"><svg width="21" height="21" viewBox="0 0 24 24">'+MP_IC[d.i]+'</svg></div>'+
+        '<div class="mp-b"><div class="mp-t">'+mpEsc(d.t)+'</div><div class="mp-p">'+mpEsc(previa)+'</div></div>'+
+        '<button class="mp-cp" onclick="event.stopPropagation();mpCopiar(this,\''+s+'\','+idx+')">Copiar</button>'+
+        '<div class="mp-x"><svg width="17" height="17" viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'+
+      '</div>'+
+      '<div class="mp-body" id="mp-c-'+s+'-'+idx+'"><div class="mp-lb">Mande assim</div>'+
+        '<div class="mp-bub">'+mpEsc(txt)+'</div>'+
+        '<div class="mp-acts"><button class="mp-cp solid" onclick="mpCopiar(this,\''+s+'\','+idx+')">Copiar a mensagem</button>'+
+        '<a class="mp-cp" target="_blank" href="https://wa.me/?text='+encodeURIComponent(txt)+'">Abrir no WhatsApp</a></div></div>';
+    }
+    html+='</div>';
+  }
+  alvo.innerHTML=html;
+}
+function mpAbrir(s,i){
+  var r=document.getElementById('mp-r-'+s+'-'+i), c=document.getElementById('mp-c-'+s+'-'+i);
+  if(!r||!c)return; r.classList.toggle('open'); c.classList.toggle('open');
+}
+function mpCopiar(btn,s,i){cp(btn,mpTexto(i,s))}
+function mpFiltro(s,k){
+  MP_F[s]=k;
+  var chips=document.querySelectorAll('#mp-chips-'+s+' .mp-chip');
+  for(var i=0;i<chips.length;i++){chips[i].classList.toggle('on',chips[i].getAttribute('data-c')===k)}
+  mpRender(s);
+}
+
+upMsg('d');upMsg('m');ciUp('d');ciUp('m');mpRender('d');mpRender('m');
 </script>
 </body>
 </html>
