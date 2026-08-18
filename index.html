@@ -390,7 +390,7 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink);fon
 .ci-n{width:30px;height:30px;border-radius:50%;background:var(--sd);color:var(--w);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
 .ci-st{font-size:15px;font-weight:700;margin-bottom:4px}
 .ci-sd{font-size:13.5px;color:var(--is);line-height:1.55}
-.ci-fields{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;margin-bottom:30px}
+.ci-fields{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;margin-bottom:30px}
 .ci-fl{font-size:13px;font-weight:600;margin-bottom:8px;display:block}
 .ci-in,.ci-sel{width:100%;border:1px solid var(--w);border-radius:11px;padding:15px 16px;font-family:"Work Sans",sans-serif;font-size:16px;font-weight:600;color:var(--ink);background:#fff;appearance:none}
 .ci-sel{background-image:linear-gradient(45deg,transparent 50%,var(--w) 50%),linear-gradient(135deg,var(--w) 50%,transparent 50%);background-position:calc(100% - 20px) calc(1.35em),calc(100% - 14px) calc(1.35em);background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:44px}
@@ -405,7 +405,8 @@ body{font-family:"Work Sans",sans-serif;background:var(--s);color:var(--ink);fon
 .ci-aviso{background:var(--sd);border-radius:14px;padding:20px 24px;margin-bottom:20px}
 .ci-aviso b{display:block;font-family:"Fraunces",serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px}
 .ci-aviso p{font-size:14.5px;color:var(--is);line-height:1.7}
-.ci-two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ci-two{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ci-txt{max-height:250px}
 .ci-pbox{background:#fff;border:1px solid var(--ln);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column}
 .ci-ptit{font-family:"Fraunces",serif;font-size:19px;font-weight:700;margin-bottom:3px}
 .ci-psub{font-size:13.5px;color:var(--is);margin-bottom:14px;line-height:1.5}
@@ -488,6 +489,11 @@ a.mp-cp{text-decoration:none}
  .mp-secl h2{font-size:20px}
 }
 
+
+.ci-tog{display:flex;gap:6px;background:var(--s);border:1px solid var(--ln);border-radius:10px;padding:4px;margin-bottom:14px}
+.ci-tg{flex:1;text-align:center;padding:9px 8px;border-radius:7px;font-size:13px;font-weight:600;color:var(--is);cursor:pointer;user-select:none;font-family:"Work Sans",sans-serif;border:none;background:none;line-height:1.3}
+.ci-tg.on{background:var(--w);color:#fff}
+
 </style>
 </head>
 <body>
@@ -520,7 +526,7 @@ a.mp-cp{text-decoration:none}
 <div id="d-hero" class="d-hero">
 <div class="d-hero-inner">
 <div>
-<div class="d-hero-badge">Desafio ativo · Semana 7</div>
+<div class="d-hero-badge">Desafio ativo · Semana 8</div>
 <div class="d-hero-title">Oi, Representante<br>Le Moritz!</div>
 <div class="d-hero-sub">Tudo que você precisa para vender com confiança está aqui. Cupom, mensagens prontas, guia de produtos e muito mais.</div>
 <button class="d-hero-btn" onclick="dShow('desafios')">Ver o desafio da semana →</button>
@@ -588,10 +594,10 @@ a.mp-cp{text-decoration:none}
 <div>
 <div class="d-card">
 <h3>Top 3 da semana</h3>
-<div class="d-pod"><div class="d-podl"><div class="d-podp">1</div><div><div class="d-podn">Lucia Helena</div><div class="d-podc">LUCIA10</div></div></div><div class="d-podv">15</div></div>
-<div class="d-pod"><div class="d-podl"><div class="d-podp">2</div><div><div class="d-podn">Vika</div><div class="d-podc">VIKA</div></div></div><div class="d-podv">8</div></div>
-<div class="d-pod"><div class="d-podl"><div class="d-podp">3</div><div><div class="d-podn">Malu</div><div class="d-podc">MALU10</div></div></div><div class="d-podv">4</div></div>
-<div style="font-size:12px;color:var(--is);letter-spacing:1px;text-transform:uppercase;margin-top:12px">Semana 6 · <span style="color:var(--w)">04 a 10 de agosto</span></div>
+<div class="d-pod"><div class="d-podl"><div class="d-podp">1</div><div><div class="d-podn">Lucia Helena</div><div class="d-podc">LUCIA10</div></div></div><div class="d-podv">8</div></div>
+<div class="d-pod"><div class="d-podl"><div class="d-podp">2</div><div><div class="d-podn">Malu</div><div class="d-podc">MALU10</div></div></div><div class="d-podv">3</div></div>
+<div class="d-pod"><div class="d-podl"><div class="d-podp">3</div><div><div class="d-podn">Vika</div><div class="d-podc">VIKA</div></div></div><div class="d-podv">3</div></div>
+<div style="font-size:12px;color:var(--is);letter-spacing:1px;text-transform:uppercase;margin-top:12px">Semana 7 · <span style="color:var(--w)">11 a 17 de agosto</span></div>
 </div>
 <div class="d-card" style="margin-top:20px">
 <h3>Frete e prazos</h3>
@@ -613,17 +619,32 @@ a.mp-cp{text-decoration:none}
 <div class="d-grid2">
 <div class="d-card">
 <div class="badge-ativo">Desafio ativo</div>
-<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:8px">Semana 7 · 11/ago — 17/ago</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--is);margin-bottom:8px">Semana 8 · 18/ago — 24/ago</div>
 <div style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:16px;line-height:1.2">Venda 2 cupons essa semana</div>
 <div class="d-row"><div style="font-size:14px;font-weight:700">Prêmio</div><div style="font-size:14px;color:var(--is)">R$50 em voucher no site</div></div>
-<div class="d-row"><div style="font-size:14px;font-weight:700">Resultado</div><div style="font-size:14px;color:var(--is)">17 de agosto</div></div>
+<div class="d-row"><div style="font-size:14px;font-weight:700">Resultado</div><div style="font-size:14px;color:var(--is)">24 de agosto</div></div>
 <div style="margin-top:18px"><a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="d-btn">Conferir minhas vendas →</a></div>
 </div>
 <div class="d-card">
 <h3>Histórico de vouchers</h3>
 <div style="font-size:14px;color:var(--is);margin-bottom:18px">Atualizado toda segunda-feira</div>
-<div class="d-row" style="border-top:1px solid var(--ln)"><div style="font-size:14px;color:var(--ink);font-weight:600">Semana 7 · 11/ago — 17/ago</div><div class="badge-ativo" style="font-size:10px;padding:3px 10px;margin:0">Ativo</div></div>
+<div class="d-row" style="border-top:1px solid var(--ln)"><div style="font-size:14px;color:var(--ink);font-weight:600">Semana 8 · 18/ago — 24/ago</div><div class="badge-ativo" style="font-size:10px;padding:3px 10px;margin:0">Ativo</div></div>
 <div style="margin-top:14px">
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 7 · 11/ago — 17/ago · R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb">
+<div class="d-wrow"><span>LUCIA10</span><span>8 cupons<span class="meta-ok">meta</span></span></div>
+<div class="d-wrow"><span>MALU10</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="d-wrow"><span>JACI10</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="d-wrow"><span>LUIZA10</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="d-wrow"><span>VEROTA10</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="d-wrow"><span>VIKA</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="d-wrow"><span>AVALS10</span><span>2 cupons<span class="meta-ok">meta</span></span></div>
+<div class="d-wrow"><span>BETEBARROS10</span><span>2 cupons<span class="meta-ok">meta</span></span></div>
+<div class="d-wrow"><span>GENTIL10</span><span>1 cupom</span></div>
+<div class="d-wrow"><span>LEFILIPA10</span><span>1 cupom</span></div>
+<div class="d-wrow"><span>BELEZA10</span><span>1 cupom</span></div>
+<div class="d-wrow"><span>ELO07</span><span>1 cupom</span></div>
+</div></div>
 <div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 6 · 04/ago — 10/ago · R$50 · encerrado</div><div class="v-arr">›</div></div>
 <div class="v-acb">
 <div class="d-wrow"><span>LUCIA10</span><span>15 cupons<span class="meta-ok">meta</span></span></div>
@@ -659,7 +680,7 @@ a.mp-cp{text-decoration:none}
 </div>
 </div>
 <div class="d-card" style="grid-column:1;margin-top:24px">
-<div style="font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--w);margin-bottom:8px">Material do Desafio 7</div>
+<div style="font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--w);margin-bottom:8px">Material do Desafio 8</div>
 <h3 style="margin-bottom:6px">Passo a passo</h3>
 <div style="font-size:13px;color:var(--is);margin-bottom:18px;line-height:1.6">Baixe o vídeo ou a imagem, escreva seu cupom e envie para as amigas. Leva 5 minutos.</div>
 <div class="mat-step"><div class="mat-n">1</div><div class="mat-t">Escolha o que prefere enviar: <strong>o vídeo</strong> ou <strong>a imagem</strong>. Pode mandar os dois se quiser — quanto mais gente ver, melhor.</div></div>
@@ -667,10 +688,10 @@ a.mp-cp{text-decoration:none}
 <div class="mat-step"><div class="mat-n">3</div><div class="mat-t">Escreva <strong>o seu cupom</strong> no campo abaixo. Ele entra automaticamente nas 3 mensagens.</div></div>
 <div class="mat-step"><div class="mat-n">4</div><div class="mat-t">Escolha <strong>uma</strong> das 3 mensagens e clique em <strong>Copiar</strong>.</div></div>
 <div class="mat-step"><div class="mat-n">5</div><div class="mat-t">No WhatsApp, <strong>envie primeiro o vídeo ou a imagem</strong> e <strong>depois cole a mensagem</strong>. Mande no privado para as amigas e poste também no status e nos stories do Instagram.</div></div>
-<div class="mat-step"><div class="mat-n">6</div><div class="mat-t"><strong>Meta:</strong> 2 cupons usados até 17/ago = <strong>R$50 em voucher</strong> no site.</div></div>
+<div class="mat-step"><div class="mat-n">6</div><div class="mat-t"><strong>Meta:</strong> 2 cupons usados até 24/ago = <strong>R$50 em voucher</strong> no site.</div></div>
 <div class="mat-dl">
 <div class="mat-op"><div class="mat-op-t">Opção 1 · Vídeo</div><div class="mat-thumb">▶</div><div class="mat-op-d">Os cílios em movimento. Funciona muito bem no status e nos stories.</div><a href="https://drive.google.com/file/d/1qCmeVA-9mThD5vIvWPLwtLYw6YtrnWx6/view" target="_blank" class="d-btn">Baixar o vídeo</a></div>
-<div class="mat-op"><div class="mat-op-t">Opção 2 · Imagem</div><img src="imagens/desafio6_kit_glow.png" alt="Kit Pele Glow e Olhos Marcantes Le Moritz - Aniversário"><div class="mat-op-d">Kit Pele Glow & Olhos Marcantes com preço de aniversário. Boa para quem já perguntou o valor.</div><a href="imagens/desafio6_kit_glow.png" download="lemoritz-desafio6.jpg" class="d-btn">Baixar a imagem</a></div>
+<div class="mat-op"><div class="mat-op-t">Opção 2 · Imagem</div><img src="imagens/desafio8_aniversario.png" alt="Aniversário Le Moritz - 15% OFF no site todo"><div class="mat-op-d">Promoção de aniversário Le Moritz com os kits e preços. Boa para quem já perguntou o valor.</div><a href="imagens/desafio8_aniversario.png" download="lemoritz-desafio8.png" class="d-btn">Baixar a imagem</a></div>
 </div>
 <div class="mat-ou">Pode usar os dois — vídeo primeiro, imagem depois.</div>
 <div class="d-hint"><p>Não consegue baixar o vídeo? Abra o link pelo celular, toque nos <strong>três pontinhos</strong> e escolha <strong>Fazer download</strong>. Se aparecer aviso de vírus, é normal com vídeo grande: toque em <strong>Fazer download mesmo assim</strong>.</p></div>
@@ -694,9 +715,9 @@ a.mp-cp{text-decoration:none}
 <div class="cup-hint">Seu cupom aparece automaticamente nas 3 mensagens abaixo. Se você deixar em branco, vai copiar como [SEU CUPOM] e aí precisa trocar na mão.</div>
 </div>
 <div style="margin-top:20px">
-<div class="msg-box"><div class="msg-h">Mensagem 1 · pele madura</div><div class="msg-t" id="msg-d1"></div><button class="d-cbtn" onclick="cpm(this,'m1','cup-d')">Copiar ↗</button></div>
-<div class="msg-box"><div class="msg-h">Mensagem 2 · correria da manhã</div><div class="msg-t" id="msg-d2"></div><button class="d-cbtn" onclick="cpm(this,'m2','cup-d')">Copiar ↗</button></div>
-<div class="msg-box"><div class="msg-h">Mensagem 3 · troca do pó</div><div class="msg-t" id="msg-d3"></div><button class="d-cbtn" onclick="cpm(this,'m3','cup-d')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 1 · lembrei de você</div><div class="msg-t" id="msg-d1"></div><button class="d-cbtn" onclick="cpm(this,'m1','cup-d')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 2 · antes que acabe</div><div class="msg-t" id="msg-d2"></div><button class="d-cbtn" onclick="cpm(this,'m2','cup-d')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 3 · novidades</div><div class="msg-t" id="msg-d3"></div><button class="d-cbtn" onclick="cpm(this,'m3','cup-d')">Copiar ↗</button></div>
 </div>
 </div>
 </div>
@@ -725,7 +746,7 @@ a.mp-cp{text-decoration:none}
 <div class="d-sec-sub">Crie a sua própria imagem de divulgação, com o seu rosto e o seu cupom, usando a inteligência artificial que você já tem no celular. O portal escreve o texto, você só copia e cola.</div>
 
 <div class="ci-steps">
-<div class="ci-step"><div class="ci-n">1</div><div><div class="ci-st">Escolha o produto</div><div class="ci-sd">E escreva o seu nome e o seu cupom.</div></div></div>
+<div class="ci-step"><div class="ci-n">1</div><div><div class="ci-st">Escolha o produto</div><div class="ci-sd">E escreva o seu cupom.</div></div></div>
 <div class="ci-step"><div class="ci-n">2</div><div><div class="ci-st">Baixe a foto</div><div class="ci-sd">A foto oficial vai para a sua galeria.</div></div></div>
 <div class="ci-step"><div class="ci-n">3</div><div><div class="ci-st">Copie o texto</div><div class="ci-sd">Já sai com o seu cupom escrito dentro.</div></div></div>
 <div class="ci-step"><div class="ci-n">4</div><div><div class="ci-st">Cole no ChatGPT</div><div class="ci-sd">Com uma foto sua. A arte fica pronta.</div></div></div>
@@ -733,7 +754,6 @@ a.mp-cp{text-decoration:none}
 
 <div class="ci-fields">
 <div><label class="ci-fl">Escolha o produto</label><select class="ci-sel" id="ci-prod-d" onchange="ciUp('d')"><optgroup label="Skincare"><option value="mousse">Mousse de Limpeza Revitalizante</option><option value="tonico">Tônico Essência Hidratante 8 em 1</option><option value="serum_olhos">Sérum Revitalizador de Olhos</option><option value="serum_lift">Sérum Lift Instantâneo</option><option value="creme">Creme Antirrugas Multicamadas</option><option value="fps">Stick Hidratante FPS 50</option><option value="retinol">Stick Retinol Noturno</option></optgroup><optgroup label="Maquiagem"><option value="blush">Stick Blush</option><option value="ilum">Stick Iluminador</option><option value="contorno">Stick Contorno Marrom Café</option><option value="cilios">Máscara de Cílios Regenerativa Pro-Age</option></optgroup><optgroup label="Kits"><option value="k_olhos">Kit Lifting e Firmeza para Olhos</option><option value="k_prot">Protocolo de Rejuvenescimento</option><option value="k_hidra">Kit Rejuvenescimento + Hidratante</option><option value="k_completo">Kit Completo da Pele Madura</option><option value="k_sticks">Kit 6 Sticks de Cor</option></optgroup></select></div>
-<div><label class="ci-fl">O seu nome</label><input class="ci-in" id="ci-nome-d" placeholder="SEU NOME" oninput="ciUp('d')"></div>
 <div><label class="ci-fl">O seu cupom</label><input class="ci-in" id="ci-cup-d" placeholder="MEUCUPOM" oninput="ciUp('d')"></div>
 </div>
 
@@ -748,21 +768,34 @@ a.mp-cp{text-decoration:none}
 
 <div>
 <div class="ci-aviso">
-<b>Dois jeitos de criar</b>
-<p>O primeiro deixa a arte mais completa, com benefícios, selo e botão. O segundo é mais limpo, com o produto em destaque. Use o que combina mais com você, ou os dois em dias diferentes. E fique à vontade para mudar o texto: só mantenha o nome do produto e o parágrafo sobre a embalagem.</p>
+<b>Cinco jeitos de criar</b>
+<p>Cada um serve para uma coisa: arte completa para o feed, produto em destaque, depoimento seu, story rápido para o status e a sua rotina com vários produtos. Em cada um você escolhe se aparece na arte ou se mostra só o produto. Use o que combina mais com você, ou varie ao longo da semana. E fique à vontade para mudar o texto: só mantenha o nome do produto e o parágrafo sobre a embalagem.</p>
 </div>
 <div class="ci-two">
 <div class="ci-pbox">
 <div class="ci-ptit">Estilo 1 · Vitrine completa</div>
-<div class="ci-psub">Arte cheia, com quatro benefícios, selo e botão.</div>
-<div class="ci-txt" id="ci-t1-d"></div>
+<div class="ci-psub">Arte cheia, com quatro benefícios, selo e botão.</div><div class="ci-tog" id="ci-tog-d-1"><button class="ci-tg on" data-m="com" onclick="ciSetModo('d',1,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('d',1,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t1-d"></div>
 <button class="d-btn" onclick="ciCopy(this,'d',1)">Copiar o texto</button>
 </div>
 <div class="ci-pbox">
 <div class="ci-ptit">Estilo 2 · Produto em destaque</div>
-<div class="ci-psub">Arte limpa, com três benefícios e o produto grande.</div>
-<div class="ci-txt" id="ci-t2-d"></div>
+<div class="ci-psub">Arte limpa, com três benefícios e o produto grande.</div><div class="ci-tog" id="ci-tog-d-2"><button class="ci-tg on" data-m="com" onclick="ciSetModo('d',2,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('d',2,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t2-d"></div>
 <button class="d-btn" onclick="ciCopy(this,'d',2)">Copiar o texto</button>
+</div>
+<div class="ci-pbox">
+<div class="ci-ptit">Estilo 3 · Depoimento</div>
+<div class="ci-psub">Uma frase sua em destaque. Vende pela confiança.</div><div class="ci-tog" id="ci-tog-d-3"><button class="ci-tg on" data-m="com" onclick="ciSetModo('d',3,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('d',3,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t3-d"></div>
+<button class="d-btn" onclick="ciCopy(this,'d',3)">Copiar o texto</button>
+</div>
+<div class="ci-pbox">
+<div class="ci-ptit">Estilo 4 · Story para o status</div>
+<div class="ci-psub">Vertical, poucas palavras, cupom gigante.</div><div class="ci-tog" id="ci-tog-d-4"><button class="ci-tg on" data-m="com" onclick="ciSetModo('d',4,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('d',4,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t4-d"></div>
+<button class="d-btn" onclick="ciCopy(this,'d',4)">Copiar o texto</button>
+</div>
+<div class="ci-pbox">
+<div class="ci-ptit">Estilo 5 · A minha rotina</div>
+<div class="ci-psub">Vários produtos numerados. Baixe a foto de cada um.</div><div class="ci-tog" id="ci-tog-d-5"><button class="ci-tg on" data-m="com" onclick="ciSetModo('d',5,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('d',5,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t5-d"></div>
+<button class="d-btn" onclick="ciCopy(this,'d',5)">Copiar o texto</button>
 </div>
 </div>
 </div>
@@ -953,7 +986,7 @@ a.mp-cp{text-decoration:none}
 <div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--ln)"><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:5px">Oi, Representante!</div><div class="m-body" style="margin-bottom:0">Tudo que você precisa para vender com confiança.</div></div>
 <div class="m-banner">
 <div class="m-badge">Desafio ativo agora</div>
-<div class="m-banner-t">Semana 7 · 11/ago — 17/ago</div>
+<div class="m-banner-t">Semana 8 · 18/ago — 24/ago</div>
 <div class="m-banner-p">Venda 2 cupons e ganhe R$50 em voucher no site.</div>
 <button class="m-banner-btn" onclick="mShow('desafios',2)">Ver o desafio →</button>
 </div>
@@ -981,10 +1014,10 @@ a.mp-cp{text-decoration:none}
 <button class="m-btn-out" onclick="navigator.clipboard.writeText('https://lemoritz.com.br').then(()=>alert('Copiado!'))">Copiar link da loja ↗</button>
 <hr class="m-hr">
 <div class="m-tag">Top 3 da semana</div>
-<div class="m-pod"><div class="m-podl"><div class="m-podp">1</div><div><div class="m-podn">Lucia Helena</div><div class="m-podc">LUCIA10</div></div></div><div class="m-podv">15</div></div>
-<div class="m-pod"><div class="m-podl"><div class="m-podp">2</div><div><div class="m-podn">Vika</div><div class="m-podc">VIKA</div></div></div><div class="m-podv">8</div></div>
-<div class="m-pod"><div class="m-podl"><div class="m-podp">3</div><div><div class="m-podn">Malu</div><div class="m-podc">MALU10</div></div></div><div class="m-podv">4</div></div>
-<div style="font-size:11px;color:var(--is);letter-spacing:1px;text-transform:uppercase;margin-top:10px">Semana 6 · <span style="color:var(--w)">04 a 10 de agosto</span></div>
+<div class="m-pod"><div class="m-podl"><div class="m-podp">1</div><div><div class="m-podn">Lucia Helena</div><div class="m-podc">LUCIA10</div></div></div><div class="m-podv">8</div></div>
+<div class="m-pod"><div class="m-podl"><div class="m-podp">2</div><div><div class="m-podn">Malu</div><div class="m-podc">MALU10</div></div></div><div class="m-podv">3</div></div>
+<div class="m-pod"><div class="m-podl"><div class="m-podp">3</div><div><div class="m-podn">Vika</div><div class="m-podc">VIKA</div></div></div><div class="m-podv">3</div></div>
+<div style="font-size:11px;color:var(--is);letter-spacing:1px;text-transform:uppercase;margin-top:10px">Semana 7 · <span style="color:var(--w)">11 a 17 de agosto</span></div>
 <hr class="m-hr">
 <div class="m-lbl">Quando vou receber</div>
 <div class="m-tl"><div class="m-tli"><div class="m-tlc">Ago</div><div class="m-tll">Você vende</div><div class="m-tls">mês atual</div></div><div class="m-tln"></div><div class="m-tli"><div class="m-tlc r">10</div><div class="m-tll">Você recebe</div><div class="m-tls">dia 10 de setembro</div></div></div>
@@ -1007,14 +1040,14 @@ a.mp-cp{text-decoration:none}
 <div class="m-hl"><div class="m-hlt">Desafios</div></div>
 <div style="font-size:10px;font-weight:800;color:var(--w);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">Desafio ativo</div>
 <div style="border:1px solid var(--w);border-top:2px solid var(--w);padding:24px 22px;margin-bottom:14px">
-<div class="badge-ativo" style="font-size:10px;padding:4px 12px;margin-bottom:8px">Semana 7 · 11/ago — 17/ago</div>
+<div class="badge-ativo" style="font-size:10px;padding:4px 12px;margin-bottom:8px">Semana 8 · 18/ago — 24/ago</div>
 <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.2">Venda 2 cupons essa semana</div>
 <div class="m-fr" style="border-top:1px solid var(--ln)"><div class="m-frl">Prêmio</div><div class="m-frv">R$50 em voucher no site</div></div>
-<div class="m-fr"><div class="m-frl">Resultado</div><div class="m-frv">17 de agosto</div></div>
+<div class="m-fr"><div class="m-frl">Resultado</div><div class="m-frv">24 de agosto</div></div>
 <a href="https://dashboard-influ-lemoritz.vercel.app/" target="_blank" class="m-btn" style="margin-top:14px">Conferir minhas vendas →</a>
 </div>
 <hr class="m-hr">
-<div style="font-size:10px;font-weight:800;color:var(--w);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Material do Desafio 7</div>
+<div style="font-size:10px;font-weight:800;color:var(--w);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Material do Desafio 8</div>
 <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:4px">Passo a passo</div>
 <div style="font-size:14.5px;color:var(--is);margin-bottom:18px;line-height:1.7">Baixe o vídeo ou a imagem, escreva seu cupom e envie para as amigas. Leva 5 minutos.</div>
 <div class="mat-step"><div class="mat-n">1</div><div class="mat-t">Escolha o que prefere enviar: <strong>o vídeo</strong> ou <strong>a imagem</strong>. Pode mandar os dois se quiser — quanto mais gente ver, melhor.</div></div>
@@ -1022,10 +1055,10 @@ a.mp-cp{text-decoration:none}
 <div class="mat-step"><div class="mat-n">3</div><div class="mat-t">Escreva <strong>o seu cupom</strong> no campo abaixo. Ele entra automaticamente nas 3 mensagens.</div></div>
 <div class="mat-step"><div class="mat-n">4</div><div class="mat-t">Escolha <strong>uma</strong> das 3 mensagens e toque em <strong>Copiar</strong>.</div></div>
 <div class="mat-step"><div class="mat-n">5</div><div class="mat-t">No WhatsApp, <strong>envie primeiro o vídeo ou a imagem</strong> e <strong>depois cole a mensagem</strong>. Mande no privado para as amigas e poste também no status e nos stories.</div></div>
-<div class="mat-step"><div class="mat-n">6</div><div class="mat-t"><strong>Meta:</strong> 2 cupons usados até 17/ago = <strong>R$50 em voucher</strong> no site.</div></div>
+<div class="mat-step"><div class="mat-n">6</div><div class="mat-t"><strong>Meta:</strong> 2 cupons usados até 24/ago = <strong>R$50 em voucher</strong> no site.</div></div>
 <div class="mat-dl">
 <div class="mat-op"><div class="mat-op-t">Opção 1 · Vídeo</div><div class="mat-thumb">▶</div><div class="mat-op-d">Os cílios em movimento. Funciona muito bem no status e nos stories.</div><a href="https://drive.google.com/file/d/1qCmeVA-9mThD5vIvWPLwtLYw6YtrnWx6/view" target="_blank" class="m-btn">Baixar o vídeo</a></div>
-<div class="mat-op"><div class="mat-op-t">Opção 2 · Imagem</div><img src="imagens/desafio6_kit_glow.png" alt="Kit Pele Glow e Olhos Marcantes Le Moritz - Aniversário"><div class="mat-op-d">Kit Pele Glow & Olhos Marcantes com preço de aniversário. Boa para quem já perguntou o valor.</div><a href="imagens/desafio6_kit_glow.png" download="lemoritz-desafio6.jpg" class="m-btn">Baixar a imagem</a></div>
+<div class="mat-op"><div class="mat-op-t">Opção 2 · Imagem</div><img src="imagens/desafio8_aniversario.png" alt="Aniversário Le Moritz - 15% OFF no site todo"><div class="mat-op-d">Promoção de aniversário Le Moritz com os kits e preços. Boa para quem já perguntou o valor.</div><a href="imagens/desafio8_aniversario.png" download="lemoritz-desafio8.png" class="m-btn">Baixar a imagem</a></div>
 </div>
 <div class="mat-ou">Pode usar os dois — vídeo primeiro, imagem depois.</div>
 <div class="m-hint"><p>Não conseguiu baixar o vídeo? Toque nos <strong>três pontinhos</strong> e escolha <strong>Fazer download</strong>. Se aparecer aviso de vírus, é normal com vídeo grande: toque em <strong>Fazer download mesmo assim</strong>.</p></div>
@@ -1050,14 +1083,29 @@ a.mp-cp{text-decoration:none}
 <div class="cup-hint">Seu cupom aparece automaticamente nas 3 mensagens abaixo. Se deixar em branco, vai copiar como [SEU CUPOM] e você precisa trocar na mão.</div>
 </div>
 <div style="margin-top:18px">
-<div class="msg-box"><div class="msg-h">Mensagem 1 · pele madura</div><div class="msg-t" id="msg-m1"></div><button class="m-cbtn" onclick="cpm(this,'m1','cup-m')">Copiar ↗</button></div>
-<div class="msg-box"><div class="msg-h">Mensagem 2 · correria da manhã</div><div class="msg-t" id="msg-m2"></div><button class="m-cbtn" onclick="cpm(this,'m2','cup-m')">Copiar ↗</button></div>
-<div class="msg-box"><div class="msg-h">Mensagem 3 · troca do pó</div><div class="msg-t" id="msg-m3"></div><button class="m-cbtn" onclick="cpm(this,'m3','cup-m')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 1 · lembrei de você</div><div class="msg-t" id="msg-m1"></div><button class="m-cbtn" onclick="cpm(this,'m1','cup-m')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 2 · antes que acabe</div><div class="msg-t" id="msg-m2"></div><button class="m-cbtn" onclick="cpm(this,'m2','cup-m')">Copiar ↗</button></div>
+<div class="msg-box"><div class="msg-h">Mensagem 3 · novidades</div><div class="msg-t" id="msg-m3"></div><button class="m-cbtn" onclick="cpm(this,'m3','cup-m')">Copiar ↗</button></div>
 </div>
 <hr class="m-hr">
 <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:4px">Histórico de vouchers</div>
 <div style="font-size:11px;font-weight:700;color:var(--is);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px">Atualizado toda segunda-feira</div>
-<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);margin-bottom:14px"><div style="font-size:13px;font-weight:700;color:var(--ink)">Semana 7 · 11/ago — 17/ago</div><div class="badge-ativo" style="font-size:9px;padding:3px 10px;animation:none;margin:0">Ativo</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);margin-bottom:14px"><div style="font-size:13px;font-weight:700;color:var(--ink)">Semana 8 · 18/ago — 24/ago</div><div class="badge-ativo" style="font-size:9px;padding:3px 10px;animation:none;margin:0">Ativo</div></div>
+<div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 7 · 11/ago — 17/ago<br>R$50 · encerrado</div><div class="v-arr">›</div></div>
+<div class="v-acb">
+<div class="m-wrow"><span>LUCIA10</span><span>8 cupons<span class="meta-ok">meta</span></span></div>
+<div class="m-wrow"><span>MALU10</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="m-wrow"><span>JACI10</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="m-wrow"><span>LUIZA10</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="m-wrow"><span>VEROTA10</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="m-wrow"><span>VIKA</span><span>3 cupons<span class="meta-ok">meta</span></span></div>
+<div class="m-wrow"><span>AVALS10</span><span>2 cupons<span class="meta-ok">meta</span></span></div>
+<div class="m-wrow"><span>BETEBARROS10</span><span>2 cupons<span class="meta-ok">meta</span></span></div>
+<div class="m-wrow"><span>GENTIL10</span><span>1 cupom</span></div>
+<div class="m-wrow"><span>LEFILIPA10</span><span>1 cupom</span></div>
+<div class="m-wrow"><span>BELEZA10</span><span>1 cupom</span></div>
+<div class="m-wrow"><span>ELO07</span><span>1 cupom</span></div>
+</div></div>
 <div class="v-ac"><div class="v-ach" onclick="vAc(this)"><div class="v-acl">Semana 6 · 04/ago — 10/ago<br>R$50 · encerrado</div><div class="v-arr">›</div></div>
 <div class="v-acb">
 <div class="m-wrow"><span>LUCIA10</span><span>15 cupons<span class="meta-ok">meta</span></span></div>
@@ -1112,7 +1160,7 @@ a.mp-cp{text-decoration:none}
 <div class="d-sec-sub">Crie a sua própria imagem de divulgação, com o seu rosto e o seu cupom, usando a inteligência artificial que você já tem no celular. O portal escreve o texto, você só copia e cola.</div>
 
 <div class="ci-steps">
-<div class="ci-step"><div class="ci-n">1</div><div><div class="ci-st">Escolha o produto</div><div class="ci-sd">E escreva o seu nome e o seu cupom.</div></div></div>
+<div class="ci-step"><div class="ci-n">1</div><div><div class="ci-st">Escolha o produto</div><div class="ci-sd">E escreva o seu cupom.</div></div></div>
 <div class="ci-step"><div class="ci-n">2</div><div><div class="ci-st">Baixe a foto</div><div class="ci-sd">A foto oficial vai para a sua galeria.</div></div></div>
 <div class="ci-step"><div class="ci-n">3</div><div><div class="ci-st">Copie o texto</div><div class="ci-sd">Já sai com o seu cupom escrito dentro.</div></div></div>
 <div class="ci-step"><div class="ci-n">4</div><div><div class="ci-st">Cole no ChatGPT</div><div class="ci-sd">Com uma foto sua. A arte fica pronta.</div></div></div>
@@ -1120,7 +1168,6 @@ a.mp-cp{text-decoration:none}
 
 <div class="ci-fields">
 <div><label class="ci-fl">Escolha o produto</label><select class="ci-sel" id="ci-prod-m" onchange="ciUp('m')"><optgroup label="Skincare"><option value="mousse">Mousse de Limpeza Revitalizante</option><option value="tonico">Tônico Essência Hidratante 8 em 1</option><option value="serum_olhos">Sérum Revitalizador de Olhos</option><option value="serum_lift">Sérum Lift Instantâneo</option><option value="creme">Creme Antirrugas Multicamadas</option><option value="fps">Stick Hidratante FPS 50</option><option value="retinol">Stick Retinol Noturno</option></optgroup><optgroup label="Maquiagem"><option value="blush">Stick Blush</option><option value="ilum">Stick Iluminador</option><option value="contorno">Stick Contorno Marrom Café</option><option value="cilios">Máscara de Cílios Regenerativa Pro-Age</option></optgroup><optgroup label="Kits"><option value="k_olhos">Kit Lifting e Firmeza para Olhos</option><option value="k_prot">Protocolo de Rejuvenescimento</option><option value="k_hidra">Kit Rejuvenescimento + Hidratante</option><option value="k_completo">Kit Completo da Pele Madura</option><option value="k_sticks">Kit 6 Sticks de Cor</option></optgroup></select></div>
-<div><label class="ci-fl">O seu nome</label><input class="ci-in" id="ci-nome-m" placeholder="SEU NOME" oninput="ciUp('m')"></div>
 <div><label class="ci-fl">O seu cupom</label><input class="ci-in" id="ci-cup-m" placeholder="MEUCUPOM" oninput="ciUp('m')"></div>
 </div>
 
@@ -1135,21 +1182,34 @@ a.mp-cp{text-decoration:none}
 
 <div>
 <div class="ci-aviso">
-<b>Dois jeitos de criar</b>
-<p>O primeiro deixa a arte mais completa, com benefícios, selo e botão. O segundo é mais limpo, com o produto em destaque. Use o que combina mais com você, ou os dois em dias diferentes. E fique à vontade para mudar o texto: só mantenha o nome do produto e o parágrafo sobre a embalagem.</p>
+<b>Cinco jeitos de criar</b>
+<p>Cada um serve para uma coisa: arte completa para o feed, produto em destaque, depoimento seu, story rápido para o status e a sua rotina com vários produtos. Em cada um você escolhe se aparece na arte ou se mostra só o produto. Use o que combina mais com você, ou varie ao longo da semana. E fique à vontade para mudar o texto: só mantenha o nome do produto e o parágrafo sobre a embalagem.</p>
 </div>
 <div class="ci-two">
 <div class="ci-pbox">
 <div class="ci-ptit">Estilo 1 · Vitrine completa</div>
-<div class="ci-psub">Arte cheia, com quatro benefícios, selo e botão.</div>
-<div class="ci-txt" id="ci-t1-m"></div>
+<div class="ci-psub">Arte cheia, com quatro benefícios, selo e botão.</div><div class="ci-tog" id="ci-tog-m-1"><button class="ci-tg on" data-m="com" onclick="ciSetModo('m',1,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('m',1,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t1-m"></div>
 <button class="m-btn" onclick="ciCopy(this,'m',1)">Copiar o texto</button>
 </div>
 <div class="ci-pbox">
 <div class="ci-ptit">Estilo 2 · Produto em destaque</div>
-<div class="ci-psub">Arte limpa, com três benefícios e o produto grande.</div>
-<div class="ci-txt" id="ci-t2-m"></div>
+<div class="ci-psub">Arte limpa, com três benefícios e o produto grande.</div><div class="ci-tog" id="ci-tog-m-2"><button class="ci-tg on" data-m="com" onclick="ciSetModo('m',2,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('m',2,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t2-m"></div>
 <button class="m-btn" onclick="ciCopy(this,'m',2)">Copiar o texto</button>
+</div>
+<div class="ci-pbox">
+<div class="ci-ptit">Estilo 3 · Depoimento</div>
+<div class="ci-psub">Uma frase sua em destaque. Vende pela confiança.</div><div class="ci-tog" id="ci-tog-m-3"><button class="ci-tg on" data-m="com" onclick="ciSetModo('m',3,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('m',3,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t3-m"></div>
+<button class="m-btn" onclick="ciCopy(this,'m',3)">Copiar o texto</button>
+</div>
+<div class="ci-pbox">
+<div class="ci-ptit">Estilo 4 · Story para o status</div>
+<div class="ci-psub">Vertical, poucas palavras, cupom gigante.</div><div class="ci-tog" id="ci-tog-m-4"><button class="ci-tg on" data-m="com" onclick="ciSetModo('m',4,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('m',4,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t4-m"></div>
+<button class="m-btn" onclick="ciCopy(this,'m',4)">Copiar o texto</button>
+</div>
+<div class="ci-pbox">
+<div class="ci-ptit">Estilo 5 · A minha rotina</div>
+<div class="ci-psub">Vários produtos numerados. Baixe a foto de cada um.</div><div class="ci-tog" id="ci-tog-m-5"><button class="ci-tg on" data-m="com" onclick="ciSetModo('m',5,'com')">Com a minha foto</button><button class="ci-tg" data-m="sem" onclick="ciSetModo('m',5,'sem')">Só o produto</button></div><div class="ci-txt" id="ci-t5-m"></div>
+<button class="m-btn" onclick="ciCopy(this,'m',5)">Copiar o texto</button>
 </div>
 </div>
 </div>
@@ -1337,13 +1397,32 @@ function dShow(id){
   window.scrollTo(0,0);
 }
 function dAc(h){var b=h.nextElementSibling,a=h.querySelector('.d-acarr');b.classList.toggle('open');a.classList.toggle('open')}
-function cp(btn,txt){navigator.clipboard.writeText(txt).then(function(){var o=btn.textContent;btn.textContent='Copiado!';setTimeout(function(){btn.textContent=o},2000)})}
+function cp(btn,txt){
+  function ok(){if(!btn)return;var o=btn.getAttribute('data-lbl')||btn.textContent;btn.setAttribute('data-lbl',o);btn.textContent='Copiado!';setTimeout(function(){btn.textContent=o},2000)}
+  function velho(){
+    try{
+      var ta=document.createElement('textarea');
+      ta.value=txt;ta.setAttribute('readonly','');ta.contentEditable=true;
+      ta.style.position='fixed';ta.style.top='0';ta.style.left='0';ta.style.width='1px';ta.style.height='1px';ta.style.opacity='0';
+      document.body.appendChild(ta);
+      var ios=/iPad|iPhone|iPod/.test(navigator.userAgent);
+      if(ios){var r=document.createRange();r.selectNodeContents(ta);var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);ta.setSelectionRange(0,999999)}
+      else{ta.focus();ta.select()}
+      var feito=document.execCommand('copy');
+      document.body.removeChild(ta);
+      if(feito){ok()}else{avisa()}
+    }catch(e){avisa()}
+  }
+  function avisa(){alert('Não consegui copiar sozinho neste navegador. Selecione o texto com o dedo e use Copiar.')}
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(ok).catch(velho)}
+  else{velho()}
+}
 function sw(el,alvo,arq){var img=document.getElementById(alvo);if(img)img.src='imagens/'+arq+'.jpg';var r=el.parentNode.querySelectorAll('.sw');for(var i=0;i<r.length;i++)r[i].classList.remove('on');el.classList.add('on')}
 function vAc(h){var b=h.nextElementSibling,a=h.querySelector('.v-arr');b.classList.toggle('open');a.classList.toggle('open')}
 var MSG={
-m1:"oiii, encontrei uma maquiagem feita pra pele madura! 😱\n\na minha ia acumulando na ruguinha do olho durante o dia, eu tinha até parado de usar por causa disso. em foto então nem se fala, parecia que tinha uma linha desenhada no meu rosto\n\nfoi aí que conheci a Le Moritz. é um stick cremoso, aí não acumula nas linhas. e o kit ainda vem com um pincel 9 em 1 que faz a make inteira, fica tudo esfumadinho sem eu precisar saber nada\n\nE o site todo tá em promoção de aniversário, aí com o meu cupom fica mais barato:\n\nCupom: [SEU CUPOM]\nSite oficial: lemoritz.com.br",
-m2:"oiii, achei uma make que resolveu minha correria de manhã!\n\neu já tinha me conformado que ia acordar meia hora mais cedo pra me arrumar, e mesmo assim saía achando que faltava alguma coisa\n\nfoi aí que me indicaram a Le Moritz. são 3 bastõezinhos e um pincel só que faz tudo, do blush ao esfumado do olho. hoje eu fico pronta em 5 minutos, e o hidratante já vem com FPS 50, nem passo protetor separado quando tô na correria\n\no site todo tá em promoção de aniversário, e com o meu cupom fica mais em conta ainda:\n\nCupom: [SEU CUPOM]\nSite oficial: lemoritz.com.br",
-m3:"oiii, finalmente achei uma maquiagem pra pele madura 😍\n\neu usei pó a vida inteira, mas com o tempo ele começou a craquelar durante o dia e ia entrando nas minhas linhas, aí no fim tarde eu me olhava no espelho e parecia que tinha envelhecido 10 anos\n\nfoi aí que me falaram da Le Moritz. é em bastão, bem cremosa, aí não empoeira nem marca. no fim do dia minha pele continua igual de manhã\n\nE o site todo tá em promoção de aniversário, e eu tenho cupom pra economizar mais\n\nCupom: [SEU CUPOM]\nSite oficial: lemoritz.com.br"
+m1:"oiii, lembrei de você!!\n\nSabe aquela marca que eu uso, feita só pra pele madura, tá com o site todo em promoção de aniversário. 15% off, e com o meu cupom mais 10% em cima\n\nCupom: [SEU CUPOM]\nsite oficial: lemoritz.com.br",
+m2:"oiii, vim te avisar antes que acabe\na Le Moritz, aquela marca feita só pra pele madura, tá com o site todo em promoção de aniversário. 15% off, e com o meu cupom mais 10%\n\nCupom: [SEU CUPOM]\nsite oficial: lemoritz.com.br",
+m3:"oiii, tudo bem? tenho novidadess!\ntá tudo em promoção de aniversário na Le Moritz, a marca feita só pra pele madura que eu uso. 15% no site inteiro, e mais 10% com o meu cupom\n\nCupom: [SEU CUPOM]\nsite oficial: lemoritz.com.br"
 };
 function cupVal(inp){var c=document.getElementById(inp);return (c&&c.value.trim())?c.value.trim().toUpperCase():'[SEU CUPOM]'}
 function msgTxt(k,inp){return MSG[k].split('[SEU CUPOM]').join(cupVal(inp))}
@@ -1398,8 +1477,10 @@ function gerarImg(pre){
 
 /* ===== Crie sua imagem ===== */
 var CI_PROD=[{"id": "mousse", "n": "Mousse de Limpeza Revitalizante", "g": "Skincare", "img": "mousse.jpg", "b": ["Limpa e hidrata na mesma etapa", "Não deixa a pele repuxada", "Pode usar na área dos olhos", "Desenvolvido para a pele madura"]}, {"id": "tonico", "n": "Tônico Essência Hidratante 8 em 1", "g": "Skincare", "img": "tonico.jpg", "b": ["Oito funções em um só passo", "Hidratação com ácido hialurônico", "Prepara a pele para o que vem depois", "Desenvolvido para a pele madura"]}, {"id": "serum_olhos", "n": "Sérum Revitalizador de Olhos", "g": "Skincare", "img": "serum_olhos.jpg", "b": ["Cuidado específico para a área dos olhos", "Aplicador roll-on, fácil de usar", "Para bolsinhas, olheiras e linhas finas", "Desenvolvido para a pele madura"]}, {"id": "serum_lift", "n": "Sérum Lift Instantâneo", "g": "Skincare", "img": "serum_lift.jpg", "b": ["O passo antes da maquiagem", "Sensação de firmeza na pele", "Textura leve, absorve rápido", "Desenvolvido para a pele madura"]}, {"id": "creme", "n": "Creme Antirrugas Multicamadas", "g": "Skincare", "img": "creme_multicamadas.jpg", "b": ["Hidratação profunda em camadas", "Mais firmeza e elasticidade", "Ativos que estimulam colágeno", "Desenvolvido para a pele madura"]}, {"id": "fps", "n": "Stick Hidratante FPS 50", "g": "Skincare", "img": "stick_hidratante.jpg", "b": ["Proteção solar e hidratação em um gesto", "Protege de UVA, UVB e luz azul", "Prático, cabe na bolsa", "Desenvolvido para a pele madura"]}, {"id": "retinol", "n": "Stick Retinol Noturno", "g": "Skincare", "img": "stick_retinol.jpg", "b": ["O cuidado da noite, enquanto você dorme", "Renovação suave com nano retinol", "Nutrição com manteiga de karité", "Desenvolvido para a pele madura"]}, {"id": "blush", "n": "Stick Blush", "g": "Maquiagem", "img": "blush_rosa_mauve.jpg", "b": ["Cor que hidrata enquanto maquia", "Esfuma com o dedo, sem pincel", "Não acentua linhas de expressão", "Desenvolvido para a pele madura"]}, {"id": "ilum", "n": "Stick Iluminador", "g": "Maquiagem", "img": "iluminador_rose.jpg", "b": ["Viço natural, sem glitter", "Acabamento aveludado", "Esfuma com o dedo, sem pincel", "Desenvolvido para a pele madura"]}, {"id": "contorno", "n": "Stick Contorno Marrom Café", "g": "Maquiagem", "img": "contorno_marrom_cafe.jpg", "b": ["Definição discreta e natural", "Esfuma com o dedo, sem pincel", "Não pesa e não marca linhas", "Desenvolvido para a pele madura"]}, {"id": "cilios", "n": "Máscara de Cílios Regenerativa Pro-Age", "g": "Maquiagem", "img": "mascara_cilios.jpg", "b": ["Volume e cuidado para cílios finos", "Biotina e pantenol na fórmula", "Remove com água e sabonete", "Desenvolvido para a pele madura"]}, {"id": "k_olhos", "n": "Kit Lifting e Firmeza para Olhos", "g": "Kits", "img": "kit_lifting_olhos.png", "kit": "Sérum Revitalizador de Olhos · Sérum Redutor Instantâneo de Linhas · Máscara de Cílios Regenerativa", "b": ["O cuidado completo da área dos olhos", "Três produtos que se completam", "Para bolsinhas, olheiras e cílios", "Desenvolvido para a pele madura"]}, {"id": "k_prot", "n": "Protocolo de Rejuvenescimento", "g": "Kits", "img": "kit_protocolo.png", "kit": "Sérum Redutor Instantâneo de Linhas · Creme Antirrugas Multicamadas · Stick Rejuvenescedor Noturno", "b": ["Três passos para a pele madura", "Cuidado de dia e de noite", "Hidratação profunda em camadas", "Desenvolvido para a pele madura"]}, {"id": "k_hidra", "n": "Kit Rejuvenescimento + Hidratante", "g": "Kits", "img": "kit_protocolo.png", "kit": "Sérum Redutor Instantâneo de Linhas · Creme Antirrugas Multicamadas · Stick Rejuvenescedor Noturno · Stick Hidratante FPS 50", "b": ["Quatro passos, do cuidado à proteção", "Proteção solar inclusa", "Hidratação profunda em camadas", "Desenvolvido para a pele madura"]}, {"id": "k_completo", "n": "Kit Completo da Pele Madura", "g": "Kits", "img": "kit_completo.png", "kit": "Mousse · Tônico 8 em 1 · Sérum Redutor Instantâneo de Linhas · Sérum Revitalizador de Olhos · Creme Antirrugas Multicamadas · Stick Hidratante FPS 50 · Sticks de Maquiagem · Máscara de Cílios · Pincel Multifuncional · Nécessaire", "b": ["Do skincare à maquiagem em um só kit", "Rotina completa para a pele madura", "Vem com pincel e nécessaire", "Desenvolvido para a pele madura"]}, {"id": "k_sticks", "n": "Kit 6 Sticks de Cor", "g": "Kits", "img": "kit_6sticks.png", "kit": "Seis sticks multiuso de cor", "b": ["Seis cores universais", "Servem como blush, sombra e batom", "Hidratam enquanto maquiam", "Desenvolvido para a pele madura"]}];
-var CI_E1="Arte publicitária vertical 1080x1920 para {PROD} da marca brasileira Le Moritz.\n\nAS FOTOS ANEXADAS\nUma mostra o produto, a outra mostra uma mulher.\nA mulher: use o rosto dela como está — mesmos traços, cabelo, tom de pele e idade. Não rejuvenesça nem apague linhas de expressão. Coloque dentro de um círculo com moldura dourada.\nO produto: recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes.\n\nLAYOUT\nTopo: marca centralizada. Canto superior direito: selo circular dourado. Esquerda: nome do produto grande, frase em cursiva abaixo e, mais abaixo, o rosto dela no círculo com uma faixa dourada. Direita: o produto sobre um pedestal de pedra e, abaixo, os quatro benefícios com ícones em círculos roxos. Base: caixa tracejada com o cupom, botão arredondado com uma seta apontando para baixo e, logo abaixo dele, o endereço do site oficial. Deixe espaço entre os elementos.\n\nESTILO\nRoxo profundo (#3D2963), dourado e creme. Fundo de tecido claro com sombra de folhagem e brilhos discretos. Elegante, sem neon, sem cor saturada.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nCONFIE NA SUA BELEZA\nSelo: CUIDADO FEITO PARA A PELE MADURA\n{PROD}\nCursiva: Sua rotina de cuidados com propósito\nBenefícios: {B1} / {B2} / {B3} / {B4}\nFaixa: Indicado por {NOME} · Representante Le Moritz\nCupom: Com o meu cupom {CUPOM} você tem mais 10% OFF em todo o site!\nBotão: GARANTA O SEU AGORA! (com uma seta para baixo ao lado do texto)\nRodapé: Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45.";
-var CI_E2="Arte publicitária vertical 1080x1350 para {PROD} da marca brasileira Le Moritz.\n\nAS FOTOS ANEXADAS\nUma mostra o produto, a outra mostra uma mulher.\nA mulher: use o rosto dela como está — mesmos traços, cabelo, tom de pele e idade. Não rejuvenesça nem apague linhas de expressão. Coloque dentro de um círculo com moldura dourada fina.\nO produto: recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes.\n\nLAYOUT\nMarca no topo. O produto grande no centro, sobre um pedestal de pedra clara. Embaixo à esquerda, o rosto dela no círculo com o nome abaixo. À direita do círculo, os três benefícios com ícones dourados de traço fino. Na base, o cupom em destaque e o link. Muito espaço vazio: a arte deve respirar.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo de tecido claro com sombra suave de folhagem, luz natural. Sem neon, sem glitter.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nSCIENCE & BEAUTY\n{PROD}\nBenefícios: {B1} / {B2} / {B3}\nAbaixo do círculo: {NOME} · Representante Le Moritz\nBase: cupom {CUPOM} · 10% de desconto em todo o site\nRodapé: Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45.";
+var CI_E1="Arte publicitária vertical 1080x1920 para {PROD} da marca brasileira Le Moritz.\n\nAS FOTOS ANEXADAS\nUma mostra o produto, a outra mostra uma mulher.\nA mulher: use o rosto dela como está — mesmos traços, cabelo, tom de pele e idade. Não rejuvenesça nem apague linhas de expressão. Coloque dentro de um círculo com moldura dourada.\nO produto: recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes.\n\nLAYOUT\nTopo: marca centralizada. Canto superior direito: selo circular dourado. Esquerda: nome do produto grande, frase em cursiva abaixo e, mais abaixo, o rosto dela no círculo dourado. Direita: o produto sobre um pedestal de pedra e, abaixo, os quatro benefícios com ícones em círculos roxos. Base: caixa tracejada com o cupom, botão arredondado com uma seta apontando para baixo e, logo abaixo dele, o endereço do site oficial. Deixe espaço entre os elementos.\n\nESTILO\nRoxo profundo (#3D2963), dourado e creme. Fundo de tecido claro com sombra de folhagem e brilhos discretos. Elegante, sem neon, sem cor saturada.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nCONFIE NA SUA BELEZA\nSelo: CUIDADO FEITO PARA A PELE MADURA\n{PROD}\nCursiva: Sua rotina de cuidados com propósito\nBenefícios: {B1} / {B2} / {B3} / {B4}\nCupom: Com o meu cupom {CUPOM} você tem mais 10% OFF em todo o site!\nBotão: GARANTA O SEU AGORA! (com uma seta para baixo ao lado do texto)\nRodapé: Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45.";
+var CI_E2="Arte publicitária vertical 1080x1350 para {PROD} da marca brasileira Le Moritz.\n\nAS FOTOS ANEXADAS\nUma mostra o produto, a outra mostra uma mulher.\nA mulher: use o rosto dela como está — mesmos traços, cabelo, tom de pele e idade. Não rejuvenesça nem apague linhas de expressão. Coloque dentro de um círculo com moldura dourada fina.\nO produto: recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes.\n\nLAYOUT\nMarca no topo. O produto grande no centro, sobre um pedestal de pedra clara. Embaixo à esquerda, o rosto dela no círculo. À direita do círculo, os três benefícios com ícones dourados de traço fino. Na base, o cupom em destaque e o link. Muito espaço vazio: a arte deve respirar.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo de tecido claro com sombra suave de folhagem, luz natural. Sem neon, sem glitter.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nSCIENCE & BEAUTY\n{PROD}\nBenefícios: {B1} / {B2} / {B3}\nBase: cupom {CUPOM} · 10% de desconto em todo o site\nRodapé: Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45.";
+var CI_T=[{"n": 1, "tit": "Vitrine completa", "sub": "Arte cheia, com quatro benefícios, selo e botão.", "com": "Arte publicitária vertical 1080x1920 para {PROD} da marca brasileira Le Moritz.\n\nAS FOTOS ANEXADAS\nUma mostra o produto, a outra mostra uma mulher.\nA mulher: use o rosto dela como está — mesmos traços, cabelo, tom de pele e idade. Não rejuvenesça nem apague linhas de expressão. Coloque dentro de um círculo com moldura dourada.\nO produto: recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte.\n\nLAYOUT\nTopo: marca centralizada. Canto superior direito: selo circular dourado. Esquerda: nome do produto grande, frase em cursiva abaixo e, mais abaixo, o rosto dela no círculo dourado. Direita: o produto sobre um pedestal de pedra e, abaixo, os quatro benefícios com ícones em círculos roxos. Base: caixa tracejada com o cupom, botão arredondado com uma seta apontando para baixo e, logo abaixo dele, o endereço do site oficial. Deixe espaço entre os elementos.\n\nESTILO\nRoxo profundo (#3D2963), dourado e creme. Fundo de tecido claro com sombra de folhagem e brilhos discretos. Elegante, sem neon, sem cor saturada.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nCONFIE NA SUA BELEZA\nSelo: CUIDADO FEITO PARA A PELE MADURA\n{PROD}\nCursiva: Sua rotina de cuidados com propósito\nBenefícios: {B1} / {B2} / {B3} / {B4}\nCupom: Com o meu cupom {CUPOM} você tem mais 10% OFF em todo o site!\nBotão: GARANTA O SEU AGORA! (com uma seta para baixo ao lado do texto)\nRodapé: Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45.", "sem": "Arte publicitária vertical 1080x1920 para {PROD} da marca brasileira Le Moritz.\n\nA FOTO ANEXADA\nAnexei a foto do produto. Recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte.\nNão coloque nenhuma pessoa, nenhum rosto e nenhuma mão na arte.\n\nLAYOUT\nTopo: marca centralizada. Canto superior direito: selo circular dourado. Esquerda: nome do produto grande e frase em cursiva abaixo. Direita: o produto sobre um pedestal de pedra, grande e em destaque, e abaixo os quatro benefícios com ícones em círculos roxos. Base: caixa tracejada com o cupom, botão arredondado com uma seta apontando para baixo e, logo abaixo, o endereço do site oficial. Deixe espaço entre os elementos.\n\nESTILO\nRoxo profundo (#3D2963), dourado e creme. Fundo de tecido claro com sombra de folhagem e brilhos discretos. Elegante, sem neon, sem cor saturada.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nCONFIE NA SUA BELEZA\nSelo: CUIDADO FEITO PARA A PELE MADURA\n{PROD}\nCursiva: Sua rotina de cuidados com propósito\nBenefícios: {B1} / {B2} / {B3} / {B4}\nCupom: Com o meu cupom {CUPOM} você tem mais 10% OFF em todo o site!\nBotão: GARANTA O SEU AGORA! (com uma seta para baixo ao lado do texto)\nRodapé: Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45."}, {"n": 2, "tit": "Produto em destaque", "sub": "Arte limpa, com três benefícios e o produto grande.", "com": "Arte publicitária vertical 1080x1350 para {PROD} da marca brasileira Le Moritz.\n\nAS FOTOS ANEXADAS\nUma mostra o produto, a outra mostra uma mulher.\nA mulher: use o rosto dela como está — mesmos traços, cabelo, tom de pele e idade. Não rejuvenesça nem apague linhas de expressão. Coloque dentro de um círculo com moldura dourada fina.\nO produto: recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte.\n\nLAYOUT\nMarca no topo. O produto grande no centro, sobre um pedestal de pedra clara. Embaixo à esquerda, o rosto dela no círculo. À direita do círculo, os três benefícios com ícones dourados de traço fino. Na base, o cupom em destaque e o endereço do site. Muito espaço vazio: a arte deve respirar.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo de tecido claro com sombra suave de folhagem, luz natural. Sem neon, sem glitter.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nSCIENCE & BEAUTY\n{PROD}\nBenefícios: {B1} / {B2} / {B3}\nBase: cupom {CUPOM} · 10% de desconto em todo o site\nRodapé: Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45.", "sem": "Arte publicitária vertical 1080x1350 para {PROD} da marca brasileira Le Moritz.\n\nA FOTO ANEXADA\nAnexei a foto do produto. Recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte.\nNão coloque nenhuma pessoa, nenhum rosto e nenhuma mão na arte.\n\nLAYOUT\nMarca no topo. O produto grande no centro, sobre um pedestal de pedra clara, como protagonista absoluto. Abaixo, os três benefícios em coluna com ícones dourados de traço fino. Na base, o cupom em destaque e o endereço do site. Muito espaço vazio: a arte deve respirar.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo de tecido claro com sombra suave de folhagem, luz natural. Sem neon, sem glitter.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nSCIENCE & BEAUTY\n{PROD}\nBenefícios: {B1} / {B2} / {B3}\nBase: cupom {CUPOM} · 10% de desconto em todo o site\nRodapé: Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45."}, {"n": 3, "tit": "Depoimento", "sub": "Uma frase sua em destaque. Vende pela confiança.", "com": "Arte publicitária vertical 1080x1350 no formato de depoimento pessoal, para {PROD} da marca brasileira Le Moritz.\n\nAS FOTOS ANEXADAS\nUma mostra o produto, a outra mostra uma mulher.\nA mulher é a protagonista desta arte. A mulher: use o rosto dela como está — mesmos traços, cabelo, tom de pele e idade. Não rejuvenesça nem apague linhas de expressão. Recorte-a do fundo original e coloque sobre um fundo novo, ocupando a metade esquerda da arte.\nO produto: recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte. Ele aparece pequeno, no canto inferior direito.\n\nLAYOUT\nEla grande à esquerda, olhando para a câmera. À direita, uma aspa dourada grande e o depoimento em letras médias. No canto inferior direito, o produto pequeno. Na base, uma faixa fina com o cupom e o endereço do site.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo de tecido claro com sombra suave, luz natural, clima íntimo e verdadeiro. Sem neon, sem glitter, sem moldura carregada.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nDepoimento entre aspas: Não quero parecer mais nova. Quero gostar do que vejo no espelho hoje.\n{PROD}\nBase: cupom {CUPOM} · 10% de desconto · Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45.", "sem": "Arte publicitária vertical 1080x1350 no formato de depoimento, para {PROD} da marca brasileira Le Moritz.\n\nA FOTO ANEXADA\nAnexei a foto do produto. Recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte.\nNão coloque nenhuma pessoa, nenhum rosto e nenhuma mão na arte.\n\nLAYOUT\nO depoimento é o protagonista: uma aspa dourada grande no alto e a frase ocupando a metade de cima da arte, em letras grandes. Na metade de baixo, o produto sobre uma bancada clara, com sombra suave. Na base, uma faixa fina com o cupom e o endereço do site.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo de tecido claro com sombra suave, luz natural, clima íntimo. Sem neon, sem glitter, sem moldura carregada.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nDepoimento entre aspas: Não quero parecer mais nova. Quero gostar do que vejo no espelho hoje.\n{PROD}\nBase: cupom {CUPOM} · 10% de desconto · Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45."}, {"n": 4, "tit": "Story para o status", "sub": "Vertical, poucas palavras, cupom gigante.", "com": "Arte vertical 1080x1920 para stories do Instagram e status do WhatsApp, divulgando {PROD} da marca brasileira Le Moritz. Precisa ser entendida em dois segundos.\n\nAS FOTOS ANEXADAS\nUma mostra o produto, a outra mostra uma mulher.\nA mulher: use o rosto dela como está — mesmos traços, cabelo, tom de pele e idade. Não rejuvenesça nem apague linhas de expressão. Ela aparece pequena, dentro de um círculo com moldura dourada.\nO produto: recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte.\n\nLAYOUT\nPoucos elementos, todos grandes. No terço de cima, o produto ocupando bastante espaço, sobre fundo de tecido claro. No meio, o nome do produto em letras grandes. Logo abaixo, o cupom no maior destaque da arte, dentro de uma caixa arredondada. Na base, o rosto dela no círculo pequeno e o endereço do site.\nDeixe os 250 pixels do topo e os 250 pixels da base livres de texto, porque essa área fica coberta pela interface do Instagram.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo limpo, luz natural, bastante espaço vazio. Sem neon, sem glitter.\n\nTEXTOS — no máximo estes, e nada além\nLE MORITZ\n{PROD}\n10% OFF com o cupom {CUPOM}\nCompre no site oficial · lemoritz.com.br\n\nSem benefícios, sem frases extras, sem promessas de resultado. Quanto menos texto, melhor. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45.", "sem": "Arte vertical 1080x1920 para stories do Instagram e status do WhatsApp, divulgando {PROD} da marca brasileira Le Moritz. Precisa ser entendida em dois segundos.\n\nA FOTO ANEXADA\nAnexei a foto do produto. Recorte e mantenha a embalagem idêntica. Não redesenhe o rótulo nem invente nomes. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte.\nNão coloque nenhuma pessoa, nenhum rosto e nenhuma mão na arte.\n\nLAYOUT\nPoucos elementos, todos grandes. No terço de cima, o produto ocupando bastante espaço, sobre fundo de tecido claro. No meio, o nome do produto em letras grandes. Logo abaixo, o cupom no maior destaque da arte, dentro de uma caixa arredondada. Na base, o endereço do site.\nDeixe os 250 pixels do topo e os 250 pixels da base livres de texto, porque essa área fica coberta pela interface do Instagram.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo limpo, luz natural, bastante espaço vazio. Sem neon, sem glitter.\n\nTEXTOS — no máximo estes, e nada além\nLE MORITZ\n{PROD}\n10% OFF com o cupom {CUPOM}\nCompre no site oficial · lemoritz.com.br\n\nSem benefícios, sem frases extras, sem promessas de resultado. Quanto menos texto, melhor. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45."}, {"n": 5, "tit": "A minha rotina", "sub": "Vários produtos numerados. Baixe a foto de cada um.", "com": "Arte quadrada 1080x1080 mostrando uma rotina de cuidados com produtos da marca brasileira Le Moritz.\n\nAS FOTOS ANEXADAS\nAnexei a foto de cada produto da minha rotina e uma foto minha. Identifique cada imagem pelo conteúdo, não pela ordem.\nOs produtos: recorte cada um e mantenha todas as embalagens idênticas às fotos. Não redesenhe rótulos, não invente nomes e não acrescente nenhum produto que não esteja nas fotos. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte.\nA mulher: use o rosto dela como está — mesmos traços, cabelo, tom de pele e idade. Não rejuvenesça nem apague linhas de expressão. Coloque dentro de um círculo com moldura dourada fina.\n\nLAYOUT\nOs produtos alinhados em sequência, da esquerda para a direita, sobre uma bancada clara, cada um com um número dourado acima indicando a ordem de uso. Título acima da fileira. Abaixo dos produtos, o rosto dela no círculo. Na base, o cupom e o endereço do site. Bastante espaço vazio entre os elementos.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo de tecido claro com sombra suave de folhagem, luz natural difusa. Sem neon, sem glitter.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nTítulo: A minha rotina\nNumere os produtos de 1 em diante, apenas os números — não escreva o nome de nenhum produto na arte.\nBase: cupom {CUPOM} · 10% de desconto · Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45.", "sem": "Arte quadrada 1080x1080 mostrando uma rotina de cuidados com produtos da marca brasileira Le Moritz.\n\nAS FOTOS ANEXADAS\nAnexei a foto de cada produto da minha rotina. Recorte cada um e mantenha todas as embalagens idênticas às fotos. Não redesenhe rótulos, não invente nomes e não acrescente nenhum produto que não esteja nas fotos. Se na foto do produto aparecer uma mão segurando, recorte apenas o produto e não inclua a mão na arte.\nNão coloque nenhuma pessoa, nenhum rosto e nenhuma mão na arte.\n\nLAYOUT\nOs produtos alinhados em sequência, da esquerda para a direita, sobre uma bancada clara, cada um com um número dourado acima indicando a ordem de uso. Título acima da fileira.  Na base, o cupom e o endereço do site. Bastante espaço vazio entre os elementos.\n\nESTILO\nVinho profundo (#7A2E3D), dourado e areia clara (#FAF5F0). Fundo de tecido claro com sombra suave de folhagem, luz natural difusa. Sem neon, sem glitter.\n\nTEXTOS — exatamente estes, mais nenhum\nLE MORITZ\nTítulo: A minha rotina\nNumere os produtos de 1 em diante, apenas os números — não escreva o nome de nenhum produto na arte.\nBase: cupom {CUPOM} · 10% de desconto · Compre no site oficial · lemoritz.com.br\n\nSem promessas de resultado, prazo ou porcentagem. Escreva tudo corretamente em português. Marca pro-aging para mulheres a partir dos 45."}];
+var CI_MODO={};
 function ciFind(id){for(var i=0;i<CI_PROD.length;i++){if(CI_PROD[i].id===id)return CI_PROD[i]}return CI_PROD[0]}
 function ciFill(tpl,pr,nome,cup){
   return tpl.split('{PROD}').join(pr.n)
@@ -1407,11 +1488,18 @@ function ciFill(tpl,pr,nome,cup){
             .split('{B3}').join(pr.b[2]).split('{B4}').join(pr.b[3])
             .split('{NOME}').join(nome).split('{CUPOM}').join(cup);
 }
+function ciModo(s,n){return CI_MODO[s+'-'+n]||'com'}
+function ciSetModo(s,n,m){
+  CI_MODO[s+'-'+n]=m;
+  var box=document.getElementById('ci-tog-'+s+'-'+n);
+  if(box){var bs=box.querySelectorAll('.ci-tg');for(var i=0;i<bs.length;i++){bs[i].classList.toggle('on',bs[i].getAttribute('data-m')===m)}}
+  ciUp(s);
+}
 function ciUp(s){
   var sel=document.getElementById('ci-prod-'+s); if(!sel)return;
   var pr=ciFind(sel.value);
-  var nEl=document.getElementById('ci-nome-'+s), cEl=document.getElementById('ci-cup-'+s);
-  var nome=(nEl&&nEl.value.trim())?nEl.value.trim().toUpperCase():'SEU NOME';
+  var cEl=document.getElementById('ci-cup-'+s);
+  var nome='';
   var cup=(cEl&&cEl.value.trim())?cEl.value.trim().toUpperCase():'MEUCUPOM';
   var shot=document.getElementById('ci-shot-'+s), img=document.getElementById('ci-img-'+s);
   var kit=document.getElementById('ci-kit-'+s), dl=document.getElementById('ci-dl-'+s);
@@ -1419,17 +1507,19 @@ function ciUp(s){
     shot.style.display='flex'; img.src='imagens/'+pr.img; kit.style.display='none';
     dl.style.display='flex'; dl.href='imagens/'+pr.img; dl.setAttribute('download','le-moritz-'+pr.id+'.jpg');
   }else{
-    shot.style.display='none'; dl.style.display='none';
-    kit.style.display='block';
+    shot.style.display='none'; dl.style.display='none'; kit.style.display='block';
     kit.innerHTML='<b>A foto deste kit ainda não está no portal.</b><br>Por enquanto, baixe a foto de cada produto do kit aqui mesmo, na lista acima, e anexe todas no ChatGPT.<br><br><b>O kit tem:</b> '+pr.kit;
   }
-  document.getElementById('ci-t1-'+s).textContent=ciFill(CI_E1,pr,nome,cup);
-  document.getElementById('ci-t2-'+s).textContent=ciFill(CI_E2,pr,nome,cup);
+  for(var q=0;q<CI_T.length;q++){
+    var t=CI_T[q], el=document.getElementById('ci-t'+t.n+'-'+s);
+    if(el)el.textContent=ciFill(ciModo(s,t.n)==='sem'?t.sem:t.com,pr,nome,cup);
+  }
 }
 function ciCopy(btn,s,qual){
   var el=document.getElementById('ci-t'+qual+'-'+s);
   cp(btn,el.textContent);
 }
+
 /* ===== navegação nova ===== */
 function mSheet(k){
   mSheetClose();
