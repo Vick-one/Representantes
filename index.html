@@ -249,6 +249,8 @@ details .corpo{padding:0 0 16px}
 .barra-leg .resta{font-weight:700}
 .barra-leg .resta.urgente{color:#b23a3a}
 .nota-vendas{font-size:14px;color:var(--fraca);margin:18px 0 10px;line-height:1.5}
+.msg-cat{font-family:var(--ui);font-size:15px;font-weight:700;color:var(--vinho);margin:22px 0 10px;line-height:1.4}
+.msg-cat:first-child{margin-top:0}
 .etapas{list-style:none;margin:22px 0 0;padding:0;position:relative}
 .etapas::before{content:"";position:absolute;left:13px;top:12px;bottom:16px;width:2px;background:var(--linha)}
 .etapas li{position:relative;padding:0 0 20px 42px}
@@ -838,7 +840,7 @@ details .corpo{padding:0 0 16px}
 
     <div class="msg-des">
       <h3>Mensagem deste desafio</h3>
-      <p class="ss so-com">O seu cupom já entra escrito. As duas primeiras são para mandar no privado, a terceira é para o status.</p>
+      <p class="ss so-com">O seu cupom já entra escrito. Escolha a mensagem certa para cada situação.</p>
       <p class="ss so-sem">O seu cupom já entra escrito. É só copiar e mandar.</p>
       <div id="msg-desafio"></div>
       <div class="mat-bts">
@@ -1174,8 +1176,9 @@ function fechar(){
   document.body.style.overflow = "";
 }
 document.addEventListener("keydown", function(e){ if (e.key === "Escape"){ fechar(); fecharLupa(); } });
-function copiarDesafio(k){
-  copiar(DES_TXT[k].replace(/\[CUPOM\]|\[SEUCUPOM\]|\bSEUCUPOM\b/gi, cupom), "Mensagem copiada");
+function copiarDesafio(k,tipo){
+  var arr = tipo === 'status' ? DES_STATUS : DES_PRIVADO;
+  copiar(arr[k].replace(/\[CUPOM\]|\[SEUCUPOM\]|\bSEUCUPOM\b/gi, cupom), "Mensagem copiada");
 }
 function copiarMsg(){
   var t = MP[aberta].x
@@ -1281,25 +1284,38 @@ function copiar(t, aviso){
 
 /* ---------- mensagens do desafio (vêm do Mensagem Pronta) ---------- */
 var DES_MSG = [];
-var DES_TXT = [
+var DES_PRIVADO = [
   "Oi, amiga! Tudo bem?\nEu conheci o colágeno da Le Moritz que achei muito bom, pq ele tem Verisol, um tipo específico de colágeno voltado para o cuidado da pele, dos cabelos e das unhas. Sabe quando a pele vai ficando mais fininha, o cabelo perde volume e as unhas quebram com facilidade? É justamente nesse cuidado que ele ajuda. E eu ainda consigo um desconto pra você com o meu cupom [CUPOM]. Quer que eu te mande o link?",
-  "Amiga, tudo bem?\nConheci o Colágeno da Le Moritz e fui olhar melhor a fórmula dele, ele tem Verisol e foi pensado especialmente para mulheres que começaram a sentir a pele menos firme, o cabelo mais fino e as unhas mais frágeis. Achei bem completo e ainda tenho um cupom que dá desconto: [CUPOM]. Se quiser conhecer, te mando o link",
+  "Amiga, tudo bem?\nConheci o Colágeno da Le Moritz e fui olhar melhor a fórmula dele, ele tem Verisol e foi pensado especialmente para mulheres que começaram a sentir a pele menos firme, o cabelo mais fino e as unhas mais frágeis. Achei bem completo e ainda tenho um cupom que dá desconto: [CUPOM]. Se quiser conhecer, te mando o link"
+];
+var DES_STATUS = [
   "Pra quem anda sentindo a pele diferente, o cabelo mais fininho ou as unhas quebrando… olha esse colágeno da Le Moritz, achei que valia compartilhar. Quem quiser saber mais ou pegar meu cupom [CUPOM], me chama"
 ];
 function msgDesafio(){
   var alvo = document.getElementById("msg-desafio");
   if (!alvo) return;
-  var proprias = DES_TXT.map(function(t,k){
-    return '<div class="md-cx"><div class="t">' + comCupom(t) + '</div>' +
-           '<button class="cta peq" onclick="copiarDesafio(' + k + ')">Copiar</button></div>';
-  });
+  var html = '';
+  if (DES_PRIVADO.length) {
+    html += '<p class="msg-cat">Mensagem para enviar no privado para sua amiga!</p>';
+    html += DES_PRIVADO.map(function(t,k){
+      return '<div class="md-cx"><div class="t">' + comCupom(t) + '</div>' +
+             '<button class="cta peq" onclick="copiarDesafio(' + k + ',\'privado\')">Copiar</button></div>';
+    }).join("");
+  }
+  if (DES_STATUS.length) {
+    html += '<p class="msg-cat">Mensagem para você colocar no status do seu WhatsApp ou redes sociais.</p>';
+    html += DES_STATUS.map(function(t,k){
+      return '<div class="md-cx"><div class="t">' + comCupom(t) + '</div>' +
+             '<button class="cta peq" onclick="copiarDesafio(' + k + ',\'status\')">Copiar</button></div>';
+    }).join("");
+  }
   var doBanco = DES_MSG.map(function(i){
     var m = MP[i];
     if (!m) return "";
     return '<div class="md-cx"><div class="t">' + comCupom(m.x) + '</div>' +
            '<button class="cta peq" onclick="abrir(' + i + ')">Abrir</button></div>';
   });
-  alvo.innerHTML = proprias.concat(doBanco).join("");
+  alvo.innerHTML = html + doBanco.join("");
 }
 
 function contaDesafio(){
