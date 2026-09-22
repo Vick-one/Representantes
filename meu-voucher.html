@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Meu voucher | Le Moritz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--vinho:#7a2e3d;--vinho-esc:#5c2230;--rosa:#d4a0a0;--bege:#faf5f0;--bege-med:#f3e7de;
+--linha:#e8ddd2;--tinta:#2b2420;--fraca:#6b6058;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bege);color:var(--tinta);font-family:"Work Sans",system-ui,sans-serif;
+font-size:16px;line-height:1.5;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+.w{max-width:520px;margin:0 auto;padding:28px 20px 56px}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:26px;margin:0 0 4px;color:var(--vinho-esc)}
+.sub{color:var(--fraca);font-size:14.5px;margin:0 0 22px}
+.card{background:#fff;border:1px solid var(--linha);border-radius:16px;padding:20px}
+label{display:block;font-size:13px;color:var(--fraca);margin:0 0 5px}
+input{width:100%;font-family:inherit;font-size:17px;color:var(--tinta);background:var(--bege);
+border:1px solid var(--linha);border-radius:10px;padding:12px 14px;margin-bottom:14px}
+input:focus{outline:2px solid var(--rosa);outline-offset:1px}
+button{width:100%;font-family:inherit;font-size:16px;font-weight:600;padding:14px;border:0;
+border-radius:10px;background:var(--vinho);color:#fff;cursor:pointer}
+button:hover{background:var(--vinho-esc)}
+.erro{color:var(--vinho);font-size:14.5px;margin-top:12px;min-height:1.2em}
+.saldo{text-align:center;padding:10px 0 18px;border-bottom:1px solid var(--linha);margin-bottom:18px}
+.saldo .v{font-family:"Fraunces",Georgia,serif;font-size:46px;font-weight:600;color:var(--vinho);line-height:1.1}
+.saldo .l{font-size:14px;color:var(--fraca)}
+.oi{font-size:15px;color:var(--fraca);margin:0 0 4px}
+.oi b{color:var(--tinta);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+td{padding:11px 0;border-bottom:1px solid var(--linha);vertical-align:baseline}
+tr:last-child td{border-bottom:0}
+.num{text-align:right;white-space:nowrap;font-weight:600}
+.mais{color:#2f6248}.menos{color:#8c3a2e}
+.q{color:var(--fraca);font-size:13.5px}
+.como{background:var(--bege-med);border-radius:12px;padding:16px 18px;margin-top:18px;font-size:14.5px;line-height:1.6}
+.como b{color:var(--vinho-esc)}
+.voltar{background:none;color:var(--vinho);font-weight:500;padding:14px 0 0;width:auto;font-size:14.5px}
+.rodape{text-align:center;color:var(--fraca);font-size:12.5px;margin-top:22px}
+</style></head><body><div class="w">
+<h1>Meu voucher</h1>
+<p class="sub">Consulte o seu saldo de voucher Le Moritz.</p>
+<div id="app"></div>
+<p class="rodape">Saldo atualizado em 22/09/2026</p>
+</div>
+<script>
+const D = [{"c": "MALU10", "n": "Maria Luiza Adami", "s": 50, "p": "7700", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (6 cupons)", "vc": ""}, {"d": "2026-09-17", "v": -500, "m": "Resgate", "vc": "VOUCHERMALU"}, {"d": "2026-09-14", "v": 50, "m": "Desafio · Semana 11 · 08 a 14 de setembro (7 cupons)", "vc": ""}, {"d": "2026-09-07", "v": 50, "m": "Desafio · Semana 10 · 01 a 07 de setembro (21 cupons)", "vc": ""}, {"d": "2026-08-31", "v": 50, "m": "Desafio · Semana 9 · 25 a 31 de agosto (22 cupons)", "vc": ""}, {"d": "2026-08-24", "v": 50, "m": "Desafio · Semana 8 · 18 a 24 de agosto (5 cupons)", "vc": ""}, {"d": "2026-08-17", "v": 50, "m": "Desafio · Semana 7 · 11 a 17 de agosto (3 cupons)", "vc": ""}, {"d": "2026-08-10", "v": 50, "m": "Desafio · Semana 6 · 04 a 10 de agosto (4 cupons)", "vc": ""}, {"d": "2026-08-03", "v": 50, "m": "Desafio · Semana 5 · 28/jul a 03/ago (3 cupons)", "vc": ""}, {"d": "2026-07-27", "v": 50, "m": "Desafio · Semana 4 · 21 a 27 de julho (2 cupons)", "vc": ""}, {"d": "2026-07-20", "v": 50, "m": "Desafio · Semana 3 · 14 a 20 de julho (2 cupons)", "vc": ""}, {"d": "2026-07-06", "v": 50, "m": "Desafio da Copa · 29/jun a 06/jul", "vc": ""}]}, {"c": "LUCIA10", "n": "Lucia Helena da Silva Azevedo Martinez", "s": 450, "p": "2733", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (4 cupons)", "vc": ""}, {"d": "2026-09-14", "v": 50, "m": "Desafio · Semana 11 · 08 a 14 de setembro (8 cupons)", "vc": ""}, {"d": "2026-09-07", "v": 50, "m": "Desafio · Semana 10 · 01 a 07 de setembro (3 cupons)", "vc": ""}, {"d": "2026-09-01", "v": -150, "m": "Resgate", "vc": "VOUCHERLUCIA"}, {"d": "2026-08-31", "v": 50, "m": "Desafio · Semana 9 · 25 a 31 de agosto (9 cupons)", "vc": ""}, {"d": "2026-08-24", "v": 50, "m": "Desafio · Semana 8 · 18 a 24 de agosto (4 cupons)", "vc": ""}, {"d": "2026-08-17", "v": 50, "m": "Desafio · Semana 7 · 11 a 17 de agosto (8 cupons)", "vc": ""}, {"d": "2026-08-10", "v": 50, "m": "Desafio · Semana 6 · 04 a 10 de agosto (15 cupons)", "vc": ""}, {"d": "2026-08-03", "v": 50, "m": "Desafio · Semana 5 · 28/jul a 03/ago (14 cupons)", "vc": ""}, {"d": "2026-07-27", "v": 50, "m": "Desafio · Semana 4 · 21 a 27 de julho (10 cupons)", "vc": ""}, {"d": "2026-07-20", "v": 50, "m": "Desafio · Semana 3 · 14 a 20 de julho (5 cupons)", "vc": ""}, {"d": "2026-07-13", "v": 50, "m": "Desafio · Semana 2 · 07 a 13 de julho (2 cupons)", "vc": ""}, {"d": "2026-07-06", "v": 50, "m": "Desafio da Copa · 29/jun a 06/jul", "vc": ""}]}, {"c": "VIKA", "n": "Virginia Xavier Rodrigues", "s": 600, "p": "1049", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (31 cupons)", "vc": ""}, {"d": "2026-09-14", "v": 50, "m": "Desafio · Semana 11 · 08 a 14 de setembro (17 cupons)", "vc": ""}, {"d": "2026-09-07", "v": 50, "m": "Desafio · Semana 10 · 01 a 07 de setembro (18 cupons)", "vc": ""}, {"d": "2026-08-31", "v": 50, "m": "Desafio · Semana 9 · 25 a 31 de agosto (3 cupons)", "vc": ""}, {"d": "2026-08-24", "v": 50, "m": "Desafio · Semana 8 · 18 a 24 de agosto (6 cupons)", "vc": ""}, {"d": "2026-08-17", "v": 50, "m": "Desafio · Semana 7 · 11 a 17 de agosto (3 cupons)", "vc": ""}, {"d": "2026-08-10", "v": 50, "m": "Desafio · Semana 6 · 04 a 10 de agosto (8 cupons)", "vc": ""}, {"d": "2026-08-03", "v": 50, "m": "Desafio · Semana 5 · 28/jul a 03/ago (10 cupons)", "vc": ""}, {"d": "2026-07-27", "v": 50, "m": "Desafio · Semana 4 · 21 a 27 de julho (7 cupons)", "vc": ""}, {"d": "2026-07-20", "v": 50, "m": "Desafio · Semana 3 · 14 a 20 de julho (2 cupons)", "vc": ""}, {"d": "2026-07-13", "v": 50, "m": "Desafio · Semana 2 · 07 a 13 de julho (2 cupons)", "vc": ""}, {"d": "2026-07-06", "v": 50, "m": "Desafio da Copa · 29/jun a 06/jul", "vc": ""}]}, {"c": "ANNALU10", "n": "Anna Lucia Antunes da Silva", "s": 150, "p": "0715", "e": [{"d": "2026-09-14", "v": 50, "m": "Desafio · Semana 11 · 08 a 14 de setembro (2 cupons)", "vc": ""}, {"d": "2026-07-20", "v": 50, "m": "Desafio · Semana 3 · 14 a 20 de julho (2 cupons)", "vc": ""}, {"d": "2026-07-13", "v": 50, "m": "Desafio · Semana 2 · 07 a 13 de julho (2 cupons)", "vc": ""}]}, {"c": "ROSICLEIDE", "n": "Rosicleide de Carvalho Lima", "s": 50, "p": "9349", "e": [{"d": "2026-07-20", "v": 50, "m": "Desafio · Semana 3 · 14 a 20 de julho (2 cupons)", "vc": ""}]}, {"c": "GAUGER10", "n": "Marcial Raquel Gauger", "s": 50, "p": "2215", "e": [{"d": "2026-08-10", "v": 50, "m": "Desafio · Semana 6 · 04 a 10 de agosto (3 cupons)", "vc": ""}]}, {"c": "JACI10", "n": "Jaciara de Moraes Alves", "s": 50, "p": "2520", "e": [{"d": "2026-08-17", "v": 50, "m": "Desafio · Semana 7 · 11 a 17 de agosto (3 cupons)", "vc": ""}]}, {"c": "LUIZA10", "n": "Luiza Louro Rahman", "s": 200, "p": "7034", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (2 cupons)", "vc": ""}, {"d": "2026-09-18", "v": 150, "m": "Estorno: o código INBZ0168BC não funcionou", "vc": ""}, {"d": "2026-09-14", "v": -150, "m": "Resgate", "vc": "INBZ0168BC"}, {"d": "2026-09-07", "v": 50, "m": "Desafio · Semana 10 · 01 a 07 de setembro (2 cupons)", "vc": ""}, {"d": "2026-08-31", "v": 50, "m": "Desafio · Semana 9 · 25 a 31 de agosto (2 cupons)", "vc": ""}, {"d": "2026-08-17", "v": 50, "m": "Desafio · Semana 7 · 11 a 17 de agosto (3 cupons)", "vc": ""}]}, {"c": "VEROTA10", "n": "Vera Lúcia Barreto Motta", "s": 300, "p": "3420", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (4 cupons)", "vc": ""}, {"d": "2026-09-14", "v": 50, "m": "Desafio · Semana 11 · 08 a 14 de setembro (7 cupons)", "vc": ""}, {"d": "2026-09-07", "v": 50, "m": "Desafio · Semana 10 · 01 a 07 de setembro (13 cupons)", "vc": ""}, {"d": "2026-08-31", "v": 50, "m": "Desafio · Semana 9 · 25 a 31 de agosto (2 cupons)", "vc": ""}, {"d": "2026-08-24", "v": 50, "m": "Desafio · Semana 8 · 18 a 24 de agosto (4 cupons)", "vc": ""}, {"d": "2026-08-17", "v": 50, "m": "Desafio · Semana 7 · 11 a 17 de agosto (3 cupons)", "vc": ""}]}, {"c": "AVALS10", "n": "Luciane Silva", "s": 0, "p": "2968", "e": [{"d": "2026-08-25", "v": -50, "m": "Resgate", "vc": "VOUCHERAVALS"}, {"d": "2026-08-17", "v": 50, "m": "Desafio · Semana 7 · 11 a 17 de agosto (2 cupons)", "vc": ""}]}, {"c": "BETEBARROS10", "n": "Elisabete Ferreira Campos Barros", "s": 50, "p": "9404", "e": [{"d": "2026-08-17", "v": 50, "m": "Desafio · Semana 7 · 11 a 17 de agosto (2 cupons)", "vc": ""}]}, {"c": "SANDRA10", "n": "Sandra Helena Mêrces", "s": 150, "p": "7620", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (4 cupons)", "vc": ""}, {"d": "2026-09-07", "v": 50, "m": "Desafio · Semana 10 · 01 a 07 de setembro (7 cupons)", "vc": ""}, {"d": "2026-08-31", "v": 50, "m": "Desafio · Semana 9 · 25 a 31 de agosto (4 cupons)", "vc": ""}]}, {"c": "PROFDEISE", "n": "Deise Picolotto", "s": 0, "p": "7004", "e": [{"d": "2026-09-18", "v": -50, "m": "Resgate", "vc": "VOUCHERDEISE"}, {"d": "2026-08-31", "v": 50, "m": "Desafio · Semana 9 · 25 a 31 de agosto (3 cupons)", "vc": ""}]}, {"c": "ROZANGELA10", "n": "Rozangela Ferreira Noleto", "s": 50, "p": "1353", "e": [{"d": "2026-08-31", "v": 50, "m": "Desafio · Semana 9 · 25 a 31 de agosto (2 cupons)", "vc": ""}]}, {"c": "FLAVIARACHEL10", "n": "FLAVIA RACHEL Moreira LAMARAO", "s": 0, "p": "0794", "e": [{"d": "2026-09-10", "v": -50, "m": "Resgate", "vc": "VOUCHERFLAVIA"}, {"d": "2026-09-07", "v": 50, "m": "Desafio · Semana 10 · 01 a 07 de setembro (2 cupons)", "vc": ""}]}, {"c": "KIKA10", "n": "Eliane Kaoru", "s": 50, "p": "6809", "e": [{"d": "2026-09-14", "v": 50, "m": "Desafio · Semana 11 · 08 a 14 de setembro (2 cupons)", "vc": ""}]}, {"c": "LUCURY10", "n": "Luciene Cury", "s": 50, "p": "7787", "e": [{"d": "2026-09-14", "v": 50, "m": "Desafio · Semana 11 · 08 a 14 de setembro (2 cupons)", "vc": ""}]}, {"c": "DANIELLA10", "n": "Daniella Morais Dutra", "s": 50, "p": "0601", "e": [{"d": "2026-09-14", "v": 50, "m": "Desafio · Semana 11 · 08 a 14 de setembro (2 cupons)", "vc": ""}]}, {"c": "FER10", "n": "Fernanda Morais", "s": 50, "p": "0782", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (11 cupons)", "vc": ""}]}, {"c": "MEUGLOW10", "n": "Adriana Leal", "s": 50, "p": "5400", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (3 cupons)", "vc": ""}]}, {"c": "ADELAIDE10", "n": "Adelaide Fernandes Gusmão", "s": 50, "p": "3870", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (2 cupons)", "vc": ""}]}, {"c": "MARI10", "n": "Marileia Raica", "s": 50, "p": "0901", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (2 cupons)", "vc": ""}]}, {"c": "LUCARDOSO10", "n": "Luciane Cristina", "s": 50, "p": "7880", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (2 cupons)", "vc": ""}]}, {"c": "EDINALVA", "n": "EDINALVA DA SILVA FERREIRA", "s": 50, "p": "2572", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (2 cupons)", "vc": ""}]}, {"c": "ANDREACM10", "n": "Andrea Caminha Medawar", "s": 50, "p": "2791", "e": [{"d": "2026-09-21", "v": 50, "m": "Desafio · Semana 12 · 15 a 21 de setembro (2 cupons)", "vc": ""}]}];
+const brl=n=>(n||0).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+const dia=s=>s?s.slice(8,10)+"/"+s.slice(5,7)+"/"+s.slice(0,4):"";
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const app=document.getElementById("app");
+let vendo=null;
+
+function form(msg){
+  app.innerHTML=`<div class="card">
+    <label for="cp">Seu cupom</label>
+    <input id="cp" placeholder="Ex.: MARIA10" autocomplete="off" autocapitalize="characters">
+    <label for="doc">4 últimos números do seu CPF</label>
+    <input id="doc" placeholder="0000" inputmode="numeric" maxlength="4" autocomplete="off">
+    <button id="ver">Ver meu saldo</button>
+    <p class="erro">${msg?esc(msg):""}</p>
+  </div>`;
+  const go=()=>{
+    const c=(document.getElementById("cp").value||"").trim().toUpperCase();
+    const d=(document.getElementById("doc").value||"").replace(/\D/g,"");
+    if(!c||d.length<4){form("Preencha o cupom e os 4 números do CPF.");return;}
+    const p=D.find(x=>x.c===c&&x.p===d);
+    if(!p){form("Não encontrei. Confira o cupom e os 4 últimos números do CPF. Se continuar assim, chama a gente no WhatsApp.");return;}
+    vendo=p; tela();
+  };
+  document.getElementById("ver").onclick=go;
+  document.getElementById("doc").onkeydown=e=>{if(e.key==="Enter")go();};
+}
+
+function tela(){
+  const p=vendo;
+  app.innerHTML=`<div class="card">
+    <p class="oi">Oi, <b>${esc(p.n.split(" ")[0])}</b> · cupom ${esc(p.c)}</p>
+    <div class="saldo"><div class="v">R$ ${brl(p.s)}</div>
+      <div class="l">${p.s>0?"disponível para usar no site":"você já usou todo o seu saldo"}</div></div>
+    <table><tbody>${p.e.map(l=>`<tr>
+      <td>${esc(l.m.replace(/^Desafio · /,"").replace(/ \(\d+ cupons\)/,""))}
+        ${l.vc?`<br><span class="q">código ${esc(l.vc)}</span>`:""}
+        <br><span class="q">${dia(l.d)}</span></td>
+      <td class="num ${l.v>=0?"mais":"menos"}">${l.v>=0?"+":"−"} R$ ${brl(Math.abs(l.v))}</td></tr>`).join("")}
+    </tbody></table>
+    ${p.s>0?`<div class="como"><b>Como resgatar:</b> entre em contato com a coordenação do programa no WhatsApp
+      e solicite o seu voucher. Você recebe um código no seu nome para usar no site, junto com as suas
+      compras. Pode resgatar tudo de uma vez ou em partes, e o saldo não vence.</div>`
+    :`<div class="como"><b>Como ganhar mais:</b> o desafio começa toda terça e vai até segunda.
+      Quem tiver 2 cupons usados na semana ganha R$ 50 para gastar no site.</div>`}
+    <button class="voltar" id="volta">← Consultar outro cupom</button>
+  </div>`;
+  document.getElementById("volta").onclick=()=>{vendo=null;form("");};
+}
+form("");
+</script></body></html>
