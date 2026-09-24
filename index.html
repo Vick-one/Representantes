@@ -52,7 +52,7 @@ input,select{font:inherit}
 
 /* navegação de celular, mantida do portal atual */
 .m-bnav{display:none;position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--linha);z-index:200;padding:9px 0 calc(11px + env(safe-area-inset-bottom))}
-.m-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--fraca);padding:4px 2px;position:relative;min-height:52px}
+.m-tab{flex:1 0 auto;min-width:76px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--fraca);padding:4px 2px;position:relative;min-height:52px}
 .m-tab.act{color:var(--vinho)}
 .m-tab-l{font-size:11px;font-weight:600;display:flex;align-items:center;gap:3px}
 .m-tabdot{position:absolute;top:2px;right:calc(50% - 22px);width:7px;height:7px;border-radius:50%;background:var(--vinho)}
@@ -499,7 +499,7 @@ details .corpo{padding:0 0 16px}
   .in,.banner-in,.conf-in,.blk-in,.nums-in,.fita-g,.rod-in{padding-left:18px;padding-right:18px}
   body{padding-bottom:78px}
   .d-navbar{display:none}
-  .m-bnav{display:flex}
+  .m-bnav{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.m-bnav::-webkit-scrollbar{display:none}
   .d-logo-wrap{padding:13px 18px 12px}
   .d-logo-b{font-size:21px}
   .topo-portal{position:static}
@@ -601,7 +601,7 @@ details .corpo{padding:0 0 16px}
   <button class="m-tab" id="mt-desafios" onclick="ir('desafios')"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.9 6.2 20.9l1.1-6.5-4.7-4.6 6.5-.95z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="m-tab-l">Desafios</span><span class="m-tabdot"></span></button>
   <button class="m-tab" id="mt-materiais" onclick="mSheet('materiais')"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6h5.4A2.6 2.6 0 0 1 11 7.2v12a2 2 0 0 0-2-2H3zM21 4.6h-5.4A2.6 2.6 0 0 0 13 7.2v12a2 2 0 0 1 2-2h6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="m-tab-l">Materiais <svg width="9" height="9" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
   <button class="m-tab" id="mt-produtos" onclick="mSheet('produtos')"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6 21 7v10l-9 4.4L3 17V7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 7l9 4.4L21 7M12 11.4v10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="m-tab-l">Produtos <svg width="9" height="9" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-  <button class="m-tab" id="mt-vendas" onclick="ir('vendas')"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="5.4" width="18.8" height="13.2" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M2.6 9.8h18.8M6.4 14.6h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span class="m-tab-l">Vendas</span></button>
+  <button class="m-tab" id="mt-vendas" onclick="ir('vendas')"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="5.4" width="18.8" height="13.2" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M2.6 9.8h18.8M6.4 14.6h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span class="m-tab-l">Vendas</span></button><button class="m-tab" id="mt-voucher" onclick="window.open('meu-voucher.html','_blank')"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8.5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1a2 2 0 0 0 0 4v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1a2 2 0 0 0 0-4v-1Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M14 8.5v7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-dasharray="2 2"/></svg><span class="m-tab-l">Voucher</span></button>
 </nav>
 
 <div class="m-sheet-bg" id="m-sheet-bg" onclick="mSheetClose()"></div>
