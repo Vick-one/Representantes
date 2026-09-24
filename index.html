@@ -330,6 +330,14 @@ details .corpo{padding:0 0 16px}
 .at b{font-family:var(--ds);font-size:18px;font-weight:600;line-height:1.25}
 .at span{font-size:13.5px;color:var(--fraca);line-height:1.5;flex:1}
 .at i{font-style:normal;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--vinho)}
+.rotina-ban{max-width:var(--lg);margin:0 auto;padding:18px 28px 0}
+.rotina-ban a{display:flex;align-items:center;gap:24px;background:linear-gradient(135deg,var(--vinho),#5c2230);border-radius:16px;padding:28px 30px;color:#fff;text-decoration:none;transition:opacity .15s}
+.rotina-ban a:hover{opacity:.92}
+.rotina-ban .rb-ico{flex-shrink:0;width:60px;height:60px;border-radius:14px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center}
+.rotina-ban .rb-ico svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.rotina-ban .rb-olho{font-family:var(--ui);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa);margin-bottom:4px}
+.rotina-ban h3{font-family:var(--ds);font-size:20px;font-weight:600;margin:0 0 6px;line-height:1.25}
+.rotina-ban p{font-size:14px;line-height:1.55;margin:0;color:rgba(255,255,255,.82)}
 
 .primeiros{max-width:var(--lg);margin:0 auto;padding:24px 28px 40px}
 .primeiros details{border:1px solid var(--linha);background:var(--bege);overflow:hidden;transition:border-color .18s}
@@ -383,6 +391,10 @@ details .corpo{padding:0 0 16px}
   .at-g{grid-template-columns:1fr 1fr;gap:12px}
   .at{min-height:0;padding:16px}
   .at b{font-size:16px}
+  .rotina-ban{padding-left:18px;padding-right:18px}
+  .rotina-ban a{flex-direction:column;align-items:flex-start;gap:14px;padding:22px 20px}
+  .rotina-ban .rb-ico{width:48px;height:48px}
+  .rotina-ban h3{font-size:18px}
   .primeiros summary{padding:16px 18px;gap:14px;min-height:78px}
   .pp-ico{width:44px;height:44px}
   .pp-tit b{font-size:18px}
@@ -666,6 +678,17 @@ details .corpo{padding:0 0 16px}
       <button class="at" onclick="ir('skincare')"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6c3.4 4 5.6 6.7 5.6 9.6a5.6 5.6 0 0 1-11.2 0c0-2.9 2.2-5.6 5.6-9.6z"/></svg><b>Skincare</b><span>Ativos, benefícios e modo de usar de cada produto.</span><i>Abrir ›</i></button>
       <button class="at" onclick="ir('make')"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="10" rx="7" ry="8"/><path d="M9 20h6M12 18v2"/></svg><b>Maquiagem</b><span>Sticks, tons e como aplicar em pele madura.</span><i>Abrir ›</i></button>
     </div>
+  </div>
+
+  <div class="rotina-ban">
+    <a href="como-usar.html" target="_blank" rel="noopener">
+      <div class="rb-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2.8" width="16" height="18.4" rx="2.2"/><path d="M8 7.6h8M8 12h8M8 16.4h5"/></svg></div>
+      <div>
+        <div class="rb-olho">Ajude sua cliente</div>
+        <h3>Encontre a rotina ideal para cada pele</h3>
+        <p>Cards prontos com a ordem de uso dos produtos Le Moritz. Escolha uma rotina, baixe a imagem e compartilhe pelo WhatsApp ou nos stories.</p>
+      </div>
+    </a>
   </div>
 
   <div class="primeiros">
