@@ -839,24 +839,10 @@ details .corpo{padding:0 0 16px}
     <div class="mat-cx">
       <div>
         <span class="olho">Material &middot; Esquenta Black</span>
-        <h2>Pegue o que voc&ecirc; vai enviar</h2>
-        <p class="so-com">Baixe a imagem, escreva o seu cupom e mande junto com a mensagem abaixo. Leva cinco minutos.</p>
-        <p class="so-sem">Esta semana não tem vídeo nem imagem prontos. Escreva o seu cupom, escolha uma das mensagens abaixo e mande. Se quiser uma arte, você monta a sua em Crie sua imagem.</p>
-        <div class="campo-cupom" style="margin-bottom:4px">
-          <label for="cup-des">O seu cupom</label>
-          <input id="cup-des" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)">
-        </div>
+        <h2>Imagens para enviar</h2>
+        <p class="so-com">Baixe a imagem no celular e mande junto com a mensagem. Toque no bot&atilde;o para baixar.</p>
+        <p class="so-sem">Esta semana n&atilde;o tem imagem pronta. Escolha uma das mensagens abaixo e mande, ou crie a sua arte em Crie sua imagem.</p>
       </div>
-      <ol class="mat-passos so-com">
-        <li><b>Baixe a imagem no celular</b><i>Toque no botão abaixo para baixar a arte que combina com a sua mensagem.</i></li>
-        <li><b>Escreva o seu cupom</b><i>Ele entra automaticamente nas mensagens deste desafio, aqui embaixo.</i></li>
-        <li><b>Poste no status ou mande no privado</b><i>Use a imagem no status com a mensagem de status, ou mande a mensagem no privado para suas amigas.</i></li>
-      </ol>
-      <ol class="mat-passos so-sem">
-        <li><b>Escreva o seu cupom</b><i>Ele entra automaticamente nas mensagens deste desafio, aqui embaixo.</i></li>
-        <li><b>Escolha uma mensagem</b><i>Copie a que combina mais com a pessoa para quem você vai mandar.</i></li>
-        <li><b>Monte a sua arte, se quiser</b><i>Em Crie sua imagem você faz a sua própria em quatro passos, com o seu rosto e o seu cupom.</i></li>
-      </ol>
     </div>
 
     <div class="pecas">
@@ -922,10 +908,14 @@ details .corpo{padding:0 0 16px}
       O desafio está valendo normalmente. Use uma das mensagens abaixo, ou crie a sua arte em Crie sua imagem.
     </div>
 
-    <div class="msg-des">
-      <h3>Mensagem deste desafio</h3>
-      <p class="ss so-com">O seu cupom já entra escrito. Escolha a mensagem certa para cada situação.</p>
-      <p class="ss so-sem">O seu cupom já entra escrito. É só copiar e mandar.</p>
+    <div class="msg-des" style="background:rgba(76,59,94,.06);border:1px solid rgba(76,59,94,.15);border-radius:14px;padding:26px 24px;margin-top:24px">
+      <div style="font-family:var(--ds);font-size:20px;font-weight:700;color:var(--vinho);margin-bottom:4px">Mensagens do Desafio</div>
+      <p class="ss so-com" style="margin-bottom:14px">Escreva o seu cupom, escolha a mensagem e mande. O cupom j&aacute; entra escrito.</p>
+      <p class="ss so-sem" style="margin-bottom:14px">Escreva o seu cupom abaixo. &Eacute; s&oacute; copiar e mandar.</p>
+      <div class="campo-cupom" style="margin-bottom:16px">
+        <label for="cup-des">O seu cupom</label>
+        <input id="cup-des" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)">
+      </div>
       <div id="msg-desafio"></div>
       <div class="mat-bts">
         <button class="cta vazio peq" onclick="ir('mensagens')">Ver as 20 mensagens</button>
