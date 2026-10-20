@@ -481,10 +481,6 @@ details .corpo{padding:0 0 16px}
 .rank li .tro{font-size:11px;font-weight:700;letter-spacing:.05em;padding:4px 10px;border-radius:2px;background:var(--ok-fundo);color:var(--ok);white-space:nowrap}
 .rank li .nada{font-size:12.5px;color:#a89c92;white-space:nowrap}
 .sem-nota{font-size:13px;color:var(--fraca);padding:10px 0 2px;border-top:1px solid var(--linha);margin-top:10px}
-.hist-res{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border:1px solid var(--linha);background:var(--bege);padding:20px 24px;margin-bottom:20px}
-.hist-res div{text-align:center}
-.hist-res b{display:block;font-family:var(--ds);font-size:27px;font-weight:600;color:var(--vinho);line-height:1}
-.hist-res span{display:block;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--fraca);margin-top:7px}
 .btn-hist-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 24px;margin:0 0 4px;border:1.5px solid var(--linha);background:#fff;font-family:var(--ui);font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--vinho);cursor:pointer;transition:background .2s,border-color .2s}
 .btn-hist-toggle:hover{background:var(--bege);border-color:var(--rosa)}
 .btn-hist-toggle.aberto svg{transform:rotate(180deg)}
@@ -808,16 +804,22 @@ details .corpo{padding:0 0 16px}
         <p class="nota-vendas">Quer saber quantas vendas voc&ecirc; j&aacute; fez?</p>
         <button class="cta vazio peq" onclick="ir('vendas')">Conferir minhas vendas</button>
       </div>
-      <div class="d">
-        <div class="v" style="font-size:36px">At&eacute; R$700</div>
-        <div class="r">Em pr&ecirc;mios</div>
-        <div style="margin:18px 0 0;font-size:13.5px;color:var(--fraca);line-height:1.6;text-align:left;max-width:28ch">
-          <b style="display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--vinho);margin-bottom:8px">Regras no Instagram</b>
-          N&atilde;o comentar cupom no perfil da marca.<br>
-          N&atilde;o comentar nos conte&uacute;dos de outras parceiras.<br>
-          N&atilde;o repostar v&iacute;deos de outras parceiras.
-        </div>
-        <a class="cta" href="#" onclick="ir('mensagens');return false" style="margin-top:18px">Pegar uma mensagem</a>
+      <div class="d" style="text-align:left;padding:30px 34px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--vinho);margin-bottom:12px">Regras do Desafio 1 &mdash; No Instagram</div>
+        <ul style="list-style:none;margin:0 0 18px;padding:0;font-size:14px;line-height:1.65;color:var(--tinta)">
+          <li style="padding:6px 0"><b style="color:#b23a3a">N&Atilde;O</b> comentar o seu cupom no Instagram oficial da marca. Republicar com o cupom pode (stories e republicados).</li>
+          <li style="padding:6px 0"><b style="color:#b23a3a">N&Atilde;O</b> comentar o seu cupom nos conte&uacute;dos de outras parceiras da marca.</li>
+          <li style="padding:6px 0"><b style="color:#b23a3a">N&Atilde;O</b> repostar nos stories v&iacute;deos de outras parceiras da marca.</li>
+        </ul>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ok);margin-bottom:10px">&Eacute; permitido e recomendado</div>
+        <ul style="list-style:none;margin:0 0 18px;padding:0;font-size:14px;line-height:1.65;color:var(--tinta)">
+          <li style="padding:4px 0">Entrar em contato no privado com mulheres interessadas para oferecer o seu cupom e ajudar na finaliza&ccedil;&atilde;o da compra.</li>
+          <li style="padding:4px 0">Republicar v&iacute;deos oficiais da marca + seu cupom (no seu Instagram pr&oacute;prio).</li>
+          <li style="padding:4px 0">Criar conte&uacute;do pr&oacute;prio nas suas redes sociais.</li>
+          <li style="padding:4px 0">Publicar sobre os produtos no seu status do WhatsApp.</li>
+          <li style="padding:4px 0">Entrar em contato com sua lista de amigas e clientes, divulgando as ofertas e recomendando os seus produtos preferidos.</li>
+        </ul>
+        <a class="cta" href="#" onclick="ir('mensagens');return false">Pegar uma mensagem</a>
       </div>
     </div>
   </div>
@@ -825,7 +827,6 @@ details .corpo{padding:0 0 16px}
   <div class="hist">
     <h2>Histórico de vouchers</h2>
     <p class="ss">Hist&oacute;rico dos desafios semanais anteriores.</p>
-    <div class="hist-res" id="hist-resumo"></div>
     <button class="btn-hist-toggle" id="btn-hist" onclick="toggleHist()">Resultado dos desafios <svg width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-1px"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div id="historico" style="display:none"></div>
   </div>
@@ -1294,10 +1295,6 @@ document.getElementById("historico").innerHTML = HIST.map(function(h,i){
     pessoas[t[0]] = 1;
     if (t[1] >= META) premios++;
   }); });
-  document.getElementById("hist-resumo").innerHTML =
-    '<div><b>'+semanas+'</b><span>Semanas realizadas</span></div>'+
-    '<div><b>'+Object.keys(pessoas).length+'</b><span>Representantes participaram</span></div>'+
-    '<div><b>R$ '+(premios*50).toLocaleString("pt-BR")+'</b><span>Distribuídos em voucher</span></div>';
 })();
 
 /* ---------- crie sua imagem ---------- */
