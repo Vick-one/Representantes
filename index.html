@@ -487,6 +487,13 @@ details .corpo{padding:0 0 16px}
 .des-tabs button:not(.dt-on):hover{border-color:var(--bege-med);background:var(--bege-med)}
 .des-tab-panel{display:none}
 .des-tab-panel.dt-vis{display:block}
+.premio-box{margin:22px 0 0;border:1px solid var(--linha);background:var(--bege);border-radius:10px;overflow:hidden}
+.premio-tit{padding:16px 20px 6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fraca)}
+.premio-rows{padding:0 20px 16px}
+.premio-row{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--linha);font-size:14.5px}
+.premio-row.ultimo{border-bottom:none}
+.premio-n{white-space:nowrap;font-weight:600;flex-shrink:0;min-width:70px}
+.premio-row b{color:var(--vinho);font-weight:600}
 
 @media (max-width:900px){
   .pecas{grid-template-columns:repeat(2,1fr);gap:8px}
@@ -533,6 +540,22 @@ details .corpo{padding:0 0 16px}
   body{padding-bottom:78px}
   .des-tabs{margin:0;padding:0 18px;gap:6px}
   .des-tabs button{padding:11px 6px;font-size:13px;border-radius:9px}
+  .premio-row{flex-direction:column;gap:4px}
+  .premio-n{min-width:unset}
+  .premio-row b{font-size:13.5px}
+  .desaf-cx .d{padding:20px 16px !important;gap:14px !important}
+  .desaf-cx .d > div[style*="border"]{padding:14px !important;border-radius:10px !important}
+  .desaf-cx .d > div[style*="border"] ul{font-size:14.5px !important;line-height:1.65 !important}
+  .desaf-cx .d > div[style*="font-family"]{font-size:19px !important}
+  .etapas li{padding:0 0 16px 36px}
+  .etapas b{font-size:14.5px}
+  .etapas .pt{width:24px;height:24px;font-size:11px}
+  .etapas::before{left:11px}
+  .barra-leg{flex-wrap:wrap;gap:4px}
+  .dt-msgs-in{padding:18px !important}
+  .sem summary{padding:14px 16px;gap:10px;min-height:48px}
+  .sem summary .t{font-size:14px}
+  .sem .corpo{padding:0 16px 14px}
   .d-navbar{display:none}
   .m-bnav{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.m-bnav::-webkit-scrollbar{display:none}
   .d-logo-wrap{padding:13px 18px 12px}
@@ -824,13 +847,13 @@ details .corpo{padding:0 0 16px}
           <span class="resta" data-desafio-resta>Faltam 11 dias</span>
           <span>Encerra 31 de outubro &agrave;s 23h59</span>
         </div>
-        <div style="margin:22px 0 0;border:1px solid var(--linha);background:var(--bege)">
-          <div style="padding:16px 20px 6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fraca)">Premia&ccedil;&atilde;o</div>
-          <div style="padding:0 20px 16px">
-            <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--linha);font-size:14.5px"><span>8 cupons</span><b style="color:var(--vinho)">sua comiss&atilde;o + 1 produto + R$100 no Pix</b></div>
-            <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--linha);font-size:14.5px"><span>12 cupons</span><b style="color:var(--vinho)">sua comiss&atilde;o + 2 produtos + R$250 no Pix</b></div>
-            <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--linha);font-size:14.5px"><span>20 cupons</span><b style="color:var(--vinho)">sua comiss&atilde;o + 3 produtos + R$400 no Pix</b></div>
-            <div style="display:flex;justify-content:space-between;padding:10px 0;font-size:14.5px"><span>30 cupons</span><b style="color:var(--vinho)">sua comiss&atilde;o + 4 produtos + R$700 no Pix</b></div>
+        <div class="premio-box">
+          <div class="premio-tit">Premia&ccedil;&atilde;o</div>
+          <div class="premio-rows">
+            <div class="premio-row"><span class="premio-n">8 cupons</span><b>sua comiss&atilde;o + 1 produto + R$100 no Pix</b></div>
+            <div class="premio-row"><span class="premio-n">12 cupons</span><b>sua comiss&atilde;o + 2 produtos + R$250 no Pix</b></div>
+            <div class="premio-row"><span class="premio-n">20 cupons</span><b>sua comiss&atilde;o + 3 produtos + R$400 no Pix</b></div>
+            <div class="premio-row ultimo"><span class="premio-n">30 cupons</span><b>sua comiss&atilde;o + 4 produtos + R$700 no Pix</b></div>
           </div>
         </div>
         <p class="nota-vendas">Quer saber quantas vendas voc&ecirc; j&aacute; fez?</p>
@@ -868,7 +891,7 @@ details .corpo{padding:0 0 16px}
   </div>
 
   <div class="des-tab-panel" id="dt-msgs">
-    <div style="padding:24px">
+    <div class="dt-msgs-in" style="padding:24px">
       <div class="campo-cupom" style="margin-bottom:16px">
         <label for="cup-tab">O seu cupom</label>
         <input id="cup-tab" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)" onblur="cupomBlur(this)">
