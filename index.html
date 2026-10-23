@@ -480,6 +480,13 @@ details .corpo{padding:0 0 16px}
 .wpp-area .wpp-time{text-align:right;font-size:10px;color:#8696a0;margin-top:3px}
 .wpp-area .wpp-cp{display:none;position:absolute;top:6px;right:8px;background:rgba(7,94,84,.15);color:#075e54;border:none;padding:3px 8px;border-radius:4px;font-family:var(--ss);font-size:10px;font-weight:700;cursor:pointer}
 .wpp-area .wpp-b:hover .wpp-cp{display:block}
+/* abas do desafio */
+.des-tabs{display:flex;border-bottom:2px solid var(--linha);background:var(--bege);margin:0 -24px;padding:0 24px}
+.des-tabs button{flex:1;padding:13px 8px;font-family:var(--ss);font-size:13.5px;font-weight:600;border:none;background:transparent;color:var(--fraca);cursor:pointer;position:relative;transition:color .2s}
+.des-tabs button.dt-on{color:var(--vinho)}
+.des-tabs button.dt-on::after{content:'';position:absolute;bottom:-2px;left:18%;right:18%;height:3px;background:var(--vinho);border-radius:3px 3px 0 0}
+.des-tab-panel{display:none}
+.des-tab-panel.dt-vis{display:block}
 
 @media (max-width:900px){
   .pecas{grid-template-columns:repeat(2,1fr);gap:8px}
@@ -524,6 +531,7 @@ details .corpo{padding:0 0 16px}
 @media (max-width:900px){
   .in,.banner-in,.conf-in,.blk-in,.nums-in,.fita-g,.rod-in{padding-left:18px;padding-right:18px}
   body{padding-bottom:78px}
+  .des-tabs{margin:0 -18px;padding:0 18px}
   .d-navbar{display:none}
   .m-bnav{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.m-bnav::-webkit-scrollbar{display:none}
   .d-logo-wrap{padding:13px 18px 12px}
@@ -608,8 +616,8 @@ details .corpo{padding:0 0 16px}
 
     <div class="d-ni" id="d-n-materiais"><svg width="25" height="25" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6h5.4A2.6 2.6 0 0 1 11 7.2v12a2 2 0 0 0-2-2H3zM21 4.6h-5.4A2.6 2.6 0 0 0 13 7.2v12a2 2 0 0 1 2-2h6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Materiais <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       <div class="d-drop">
-        <button class="d-dropi" id="d-n-mensagens" onclick="ir('mensagens')"><svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span><b style="font-weight:inherit">Mensagem Pronta</b><small>Frases por situação e por produto</small></span></button>
-        <button class="d-dropi" id="d-n-imagem" onclick="ir('imagem')"><svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.6" width="18" height="15" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4 16 4.6-4.6 3.6 3.6 3-3L20 16.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="9" cy="9.2" r="1.4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span><b style="font-weight:inherit">Crie sua imagem</b><small>Sua arte com o seu cupom</small></span></button>
+        <button class="d-dropi" id="d-n-mensagens" onclick="ir('mensagens')"><svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span><b style="font-weight:inherit">Mensagem Pronta</b><small>Abre na aba Mensagens do desafio</small></span></button>
+        <button class="d-dropi" id="d-n-imagem" onclick="ir('imagem')"><svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.6" width="18" height="15" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4 16 4.6-4.6 3.6 3.6 3-3L20 16.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="9" cy="9.2" r="1.4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span><b style="font-weight:inherit">Imagens do desafio</b><small>Baixe e envie para as clientes</small></span></button>
       </div>
     </div>
 
@@ -636,8 +644,8 @@ details .corpo{padding:0 0 16px}
 <div class="m-sheet-bg" id="m-sheet-bg" onclick="mSheetClose()"></div>
 <div class="m-sheet" id="m-sheet-materiais">
   <div class="m-sheet-h"></div><div class="m-sheet-t">Materiais</div>
-  <button class="m-sheet-i" id="ms-mensagens" onclick="ir('mensagens')"><svg width="23" height="23" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span><b style="font-weight:inherit">Mensagem Pronta</b><small>Frases por situação e por produto</small></span></button>
-  <button class="m-sheet-i" id="ms-imagem" onclick="ir('imagem')"><svg width="23" height="23" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.6" width="18" height="15" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m4 16 4.6-4.6 3.6 3.6 3-3L20 16.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="9" cy="9.2" r="1.4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span><b style="font-weight:inherit">Crie sua imagem</b><small>Sua arte com o seu cupom</small></span></button>
+  <button class="m-sheet-i" id="ms-mensagens" onclick="ir('mensagens')"><svg width="23" height="23" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.32-3.87-.9L4 20l1.05-4.2A8.5 8.5 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span><b style="font-weight:inherit">Mensagem Pronta</b><small>Abre na aba Mensagens do desafio</small></span></button>
+  <button class="m-sheet-i" id="ms-imagem" onclick="ir('imagem')"><svg width="23" height="23" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.6" width="18" height="15" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m4 16 4.6-4.6 3.6 3.6 3-3L20 16.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="9" cy="9.2" r="1.4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span><b style="font-weight:inherit">Imagens do desafio</b><small>Baixe e envie para as clientes</small></span></button>
 </div>
 <div class="m-sheet" id="m-sheet-produtos">
   <div class="m-sheet-h"></div><div class="m-sheet-t">Produtos</div>
@@ -797,6 +805,13 @@ details .corpo{padding:0 0 16px}
     <p data-desafio-periodo>1&ordf; Fase &middot; Desafio de conte&uacute;do &middot; 16 a 31 de outubro</p>
   </div></div>
 
+  <div class="des-tabs">
+    <button class="dt-on" onclick="desTab('regras',this)">Regras</button>
+    <button onclick="desTab('msgs',this)">Mensagens</button>
+    <button onclick="desTab('imgs',this)">Imagens</button>
+  </div>
+
+  <div class="des-tab-panel dt-vis" id="dt-regras">
   <div class="desaf">
     <div class="desaf-cx">
       <div class="e">
@@ -839,7 +854,6 @@ details .corpo{padding:0 0 16px}
             <li style="padding:5px 0">Entrar em contato com sua lista de amigas e clientes, divulgando as ofertas e recomendando os seus produtos preferidos.</li>
           </ul>
         </div>
-        <a class="cta" href="#" onclick="ir('mensagens');return false">Pegar uma mensagem</a>
       </div>
     </div>
   </div>
@@ -850,7 +864,19 @@ details .corpo{padding:0 0 16px}
     <button class="btn-hist-toggle" id="btn-hist" onclick="toggleHist()">Resultado dos desafios <svg width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-1px"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div id="historico" style="display:none"></div>
   </div>
+  </div>
 
+  <div class="des-tab-panel" id="dt-msgs">
+    <div style="padding:24px">
+      <div class="campo-cupom" style="margin-bottom:16px">
+        <label for="cup-tab">O seu cupom</label>
+        <input id="cup-tab" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)">
+      </div>
+      <div id="msg-desafio-full"></div>
+    </div>
+  </div>
+
+  <div class="des-tab-panel" id="dt-imgs">
   <div class="mat-des" id="mat-des" data-mat="sim">
     <div class="mat-cx">
       <div>
@@ -1095,20 +1121,7 @@ details .corpo{padding:0 0 16px}
       O desafio está valendo normalmente. Use uma das mensagens abaixo, ou crie a sua arte em Crie sua imagem.
     </div>
 
-    <div class="msg-des" style="background:rgba(76,59,94,.06);border:1px solid rgba(76,59,94,.15);border-radius:14px;padding:26px 24px;margin-top:24px">
-      <div style="font-family:var(--ds);font-size:20px;font-weight:700;color:var(--vinho);margin-bottom:4px">Mensagens do Desafio</div>
-      <p class="ss so-com" style="margin-bottom:14px">Escreva o seu cupom, escolha a mensagem e mande. O cupom j&aacute; entra escrito.</p>
-      <p class="ss so-sem" style="margin-bottom:14px">Escreva o seu cupom abaixo. &Eacute; s&oacute; copiar e mandar.</p>
-      <div class="campo-cupom" style="margin-bottom:16px">
-        <label for="cup-des">O seu cupom</label>
-        <input id="cup-des" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)">
-      </div>
-      <div id="msg-desafio"></div>
-      <div class="mat-bts">
-        <button class="cta vazio peq" onclick="ir('mensagens')">Ver as 20 mensagens</button>
-        <button class="cta peq so-sem" onclick="ir('imagem')">Criar a minha imagem</button>
-      </div>
-    </div>
+  </div>
   </div>
 </section>
 
@@ -1301,8 +1314,11 @@ function esc(t){ return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").rep
 function toggleHist(){var h=document.getElementById("historico"),b=document.getElementById("btn-hist");if(h.style.display==="none"){h.style.display="";b.classList.add("aberto")}else{h.style.display="none";b.classList.remove("aberto")}}
 
 /* ---------- navegação (mantida do portal atual) ---------- */
-var GRUPO = {inicio:"inicio",vendas:"vendas",desafios:"desafios",mensagens:"materiais",imagem:"materiais",skincare:"produtos",make:"produtos"};
+var GRUPO = {inicio:"inicio",vendas:"vendas",desafios:"desafios",mensagens:"desafios",imagem:"desafios",skincare:"produtos",make:"produtos"};
 function ir(a){
+  var desTabId = null;
+  if (a === "mensagens") { desTabId = "msgs"; a = "desafios"; }
+  if (a === "imagem") { desTabId = "imgs"; a = "desafios"; }
   document.querySelectorAll(".sec").forEach(function(s){ s.classList.remove("on"); });
   var el = document.getElementById("s-" + a);
   if (el) el.classList.add("on");
@@ -1320,6 +1336,11 @@ function ir(a){
 
   mSheetClose();
   window.scrollTo(0,0);
+  if (desTabId) {
+    var btns = document.querySelectorAll(".des-tabs button");
+    var idx = desTabId === "msgs" ? 1 : 2;
+    desTab(desTabId, btns[idx]);
+  }
 }
 function mSheet(g){
   var ja = document.getElementById("m-sheet-" + g).classList.contains("open");
@@ -1334,14 +1355,26 @@ function mSheetClose(){
   document.getElementById("m-sheet-bg").classList.remove("open");
 }
 
+/* ---------- abas do desafio ---------- */
+function desTab(id, btn){
+  document.querySelectorAll(".des-tab-panel").forEach(function(p){ p.classList.remove("dt-vis"); });
+  var panel = document.getElementById("dt-" + id);
+  if (panel) panel.classList.add("dt-vis");
+  document.querySelectorAll(".des-tabs button").forEach(function(b){ b.classList.remove("dt-on"); });
+  if (btn) btn.classList.add("dt-on");
+  if (id === "msgs") msgDesafioFull();
+}
+
 /* ---------- cupom compartilhado ---------- */
 function setCupom(v){
   cupom = (v || "SEUCUPOM").toUpperCase().trim() || "SEUCUPOM";
-  ["cup","ci-c","cup-des"].forEach(function(id){
+  ["cup","ci-c","cup-des","cup-tab"].forEach(function(id){
     var el = document.getElementById(id);
     if (el && el.value.toUpperCase() !== cupom) el.value = cupom;
   });
   msgDesafio();
+  var fullEl = document.getElementById("msg-desafio-full");
+  if (fullEl) { fullEl.innerHTML = ""; msgDesafioFull(); }
 }
 
 
@@ -1599,6 +1632,24 @@ function msgDesafio(){
       '<div class="wpp-num">' + num + ' · ' + esc(m.t) + '</div>' +
       '<div class="wpp-txt">' + txt + '</div>' +
       '<div class="wpp-time">14:' + String(31+k).padStart(2,"0") + ' ✓✓</div></div>';
+  }
+  html += '</div>';
+  alvo.innerHTML = html;
+}
+function msgDesafioFull(){
+  var alvo = document.getElementById("msg-desafio-full");
+  if (!alvo || alvo.innerHTML) return;
+  var html = '<div class="wpp-area" style="max-height:none">';
+  var lastG = "";
+  for (var k = 0; k < DES_WPP.length; k++){
+    var m = DES_WPP[k];
+    if (m.g !== lastG){ html += '<div class="wpp-div">' + esc(m.g) + '</div>'; lastG = m.g; }
+    var txt = comCupom(m.x);
+    html += '<div class="wpp-b" onclick="copiarDesafioWpp(' + k + ')">'
+          + '<button class="wpp-cp" onclick="event.stopPropagation();copiarDesafioWpp(' + k + ')">Copiar</button>'
+          + '<div class="wpp-num">' + String(k+1).padStart(2,"0") + ' · ' + esc(m.t) + '</div>'
+          + '<div class="wpp-txt">' + txt + '</div>'
+          + '<div class="wpp-time">14:' + String(31+k).padStart(2,"0") + ' ✓✓</div></div>';
   }
   html += '</div>';
   alvo.innerHTML = html;
