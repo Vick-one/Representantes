@@ -469,6 +469,17 @@ details .corpo{padding:0 0 16px}
 .md-cx .t{flex:1;font-size:15px;line-height:1.7;color:var(--tinta);white-space:pre-line}
 .md-cx .t .cup{background:var(--bege-med);color:var(--vinho-esc);font-weight:700;padding:1px 6px}
 .md-cx .cta{flex:0 0 auto}
+.wpp-area{background:#e5ddd5;border-radius:12px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;max-height:420px;overflow-y:auto}
+.wpp-area .wpp-div{text-align:center;font-size:11px;font-weight:600;color:#8696a0;background:rgba(225,218,209,.85);padding:4px 14px;border-radius:8px;align-self:center;margin:4px 0}
+.wpp-area .wpp-b{background:#dcf8c6;border-radius:8px 8px 0 8px;padding:10px 12px;max-width:90%;align-self:flex-end;position:relative;cursor:pointer;transition:transform .1s}
+.wpp-area .wpp-b:hover{transform:scale(1.01)}
+.wpp-area .wpp-b:active{background:#c8edb0}
+.wpp-area .wpp-num{font-size:10px;font-weight:700;color:#075e54;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.wpp-area .wpp-txt{font-size:13px;line-height:1.55;color:#303030}
+.wpp-area .wpp-txt .cup{background:rgba(7,94,84,.15);color:#075e54;font-weight:700;padding:1px 5px;border-radius:2px}
+.wpp-area .wpp-time{text-align:right;font-size:10px;color:#8696a0;margin-top:3px}
+.wpp-area .wpp-cp{display:none;position:absolute;top:6px;right:8px;background:rgba(7,94,84,.15);color:#075e54;border:none;padding:3px 8px;border-radius:4px;font-family:var(--ss);font-size:10px;font-weight:700;cursor:pointer}
+.wpp-area .wpp-b:hover .wpp-cp{display:block}
 
 @media (max-width:900px){
   .pecas{grid-template-columns:repeat(2,1fr);gap:8px}
@@ -1538,55 +1549,59 @@ function copiar(t, aviso){
   } else { velho(); }
 }
 
-/* ---------- mensagens do desafio (vêm do Mensagem Pronta) ---------- */
+/* ---------- mensagens do desafio (estilo WhatsApp) ---------- */
 var DES_MSG = [];
-var DES_PRIVADO = [
-  "Oi, [NOME]! Como você tá? Vi que você usa produtos para todos os tipos de pele e lembrei de te mandar a Le Moritz. Eles têm skincare, maquiagem e suplementos feitos exclusivamente para peles maduras, com cuidados para a pele mais fininha e ressecada 💜\n\nTe mandei algumas promoções na imagem, mas no site tem mais. Usando meu cupom *[CUPOM]*, você ganha *10% de desconto*:\nhttps://www.lemoritz.com\n\nSe tiver alguma dúvida sobre os produtos, pode me chamar.",
-  "Oi, [NOME]! Tudo bem? Lembrei de você quando vi esses kits da Le Moritz. A marca tem skincare, maquiagem e suplementos feitos exclusivamente para peles maduras 💜\n\nSe você sente a pele mais ressecada ou a maquiagem marcando as linhas, vale conhecer. Te mandei algumas opções na imagem!\n\nNo site tem mais, e meu cupom *[CUPOM]* dá *10% de desconto*:\nhttps://www.lemoritz.com\n\nQualquer dúvida sobre os produtos, pode me chamar.",
-  "Oi, [NOME]! Como você tá? Quis te mandar essas opções da Le Moritz porque eles têm cuidados específicos para pele madura, sabe aquela pele mais fininha e com sensação de ressecamento?\n\nTem skincare, maquiagem e suplementos 💜 Essas são algumas promoções, mas você pode ver outras opções no site e usar meu cupom *[CUPOM]* para ganhar *10% de desconto*:\nhttps://www.lemoritz.com\n\nSe precisar de ajuda para escolher, pode me chamar."
+var DES_WPP = [
+  {g:"Abordagem",t:"Ela comentou sobre a região dos olhos",x:"Oi, lembrei de você porque comentou que a região dos olhos estava te incomodando, aí quis te mostrar esse sérum da Le Moritz, uma marca voltada para pele madura. Vou te mandar a imagem, se quiser conhecer melhor, tenho o cupom [CUPOM], que dá 10% de desconto no site."},
+  {g:"Abordagem",t:"Ela falou de pele ressecada",x:"Oi, você tinha comentado que sua pele andava ressecada, né? Vi esse creme da Le Moritz e lembrei de te mandar, ele ajuda na hidratação e no cuidado com as linhas finas, além de servir para rosto, pescoço e colo. Dá uma olhada, se gostar, meu cupom [CUPOM] dá 10% de desconto."},
+  {g:"Abordagem",t:"Quando elogiarem a sua pele",x:"Ah, obrigada! Se você estiver procurando algum cuidado para a sua também, posso te mostrar as opções da Le Moritz, sou representante deles e tenho um cupom de 10%. Me conta o que você costuma usar hoje?"},
+  {g:"Abordagem",t:"Para puxar assunto com uma amiga",x:"Oi, como você tá? Quis te mandar essas opções da Le Moritz, que tem skincare, maquiagem e suplementos pensados para pele madura. Dá uma olhada na imagem, no site tem mais e, com meu cupom [CUPOM], você ganha 10% de desconto: https://lemoritz.com.br"},
+  {g:"Abordagem",t:"No grupo de amigas",x:"Meninas, olha essas opções da Le Moritz, uma marca com skincare e maquiagem para pele madura. Vou deixar a imagem aqui, se alguma quiser saber mais sobre um produto, pode me chamar, tenho o cupom [CUPOM], que dá 10% de desconto no site."},
+  {g:"Abordagem",t:"Mandar o link e o cupom",x:"Aqui está o site: https://lemoritz.com.br\n\nMeu cupom é [CUPOM], é só colocar antes de finalizar para ganhar 10% de desconto. Confere se ele entrou certinho e, se precisar de ajuda, me chama."},
+  {g:"Produto",t:"Sérum Revitalizador de Olhos",x:"Sobre o sérum de olhos que você perguntou, é esse aqui da imagem, ele tem um aplicador roll-on para passar direto na região dos olhos. Vou te mandar o link com os detalhes e o modo de usar, se quiser comprar, meu cupom [CUPOM] dá 10% de desconto."},
+  {g:"Produto",t:"Creme Antirrugas Multicamadas",x:"Esse é o Multicamadas que te falei, ele ajuda a hidratar e suavizar a aparência das linhas finas, dá para usar no rosto, pescoço e colo. Você está procurando algo mais para o ressecamento ou para as linhas? Me conta que te ajudo a olhar, meu cupom [CUPOM] dá 10% de desconto."},
+  {g:"Produto",t:"Stick Blush",x:"É esse aqui, o blush em stick da Le Moritz, ele é cremoso e dá para espalhar com os dedos, bem prático para o dia a dia. Vou te mandar as cores para você escolher, se gostar de alguma, usa meu cupom [CUPOM] para ganhar 10% de desconto."},
+  {g:"Objeção",t:"“Tá caro…”",x:"Entendo, você tinha pensado em gastar até quanto? Posso te ajudar a olhar uma opção dentro desse valor, começando pelo cuidado que você mais procura, sem precisar levar uma rotina inteira. Com meu cupom [CUPOM], você ainda ganha 10% de desconto."},
+  {g:"Objeção",t:"“Não conheço essa marca…”",x:"Ela é brasileira e desenvolve produtos específicos para pele madura, tem skincare, maquiagem e suplementos. Vou te mandar o site para você conhecer melhor, lá tem os detalhes de cada produto e, se algum chamar sua atenção, me fala: https://lemoritz.com.br"},
+  {g:"Objeção",t:"“Vou pensar…”",x:"Claro, olha com calma, vou deixar meu cupom [CUPOM] aqui e, se ficar alguma dúvida antes de decidir, pode me chamar."},
+  {g:"Objeção",t:"“Já uso outra marca…”",x:"E você está gostando dos produtos que usa? Me conta como é sua rotina hoje e se tem alguma coisa que ainda está procurando, assim posso te mostrar uma opção daqui que faça sentido para você."},
+  {g:"Objeção",t:"“Não sei se funciona pra mim…”",x:"Entendo, ainda mais quando você não conhece a marca, me conta o que está procurando para eu te passar os detalhes do produto. A Le Moritz também tem 90 dias de garantia, se quiser, te mando as condições para você entender como funciona."},
+  {g:"Dúvida",t:"Dúvida de entrega e frete",x:"Você consegue ver o frete e a previsão de entrega colocando seu CEP no site, antes de pagar. Se não encontrar onde consultar, me chama que te ajudo a olhar."},
+  {g:"Dúvida",t:"Como usar o cupom no carrinho",x:"Antes de pagar, procure o campo de cupom, coloque [CUPOM] e toque em aplicar, depois confira se os 10% de desconto apareceram no resumo. Se não encontrar o campo, me chama antes de concluir que te ajudo."},
+  {g:"Dúvida",t:"Receio com o retinol",x:"Você já usa retinol ou seria a primeira vez? Posso te mandar a composição e o modo de uso desse para você conhecer melhor, se sua pele for sensível ou você já fizer algum tratamento, vale conferir com seu dermatologista antes de começar."},
+  {g:"Pós-venda",t:"Pediu o link e não respondeu",x:"Oi, conseguiu dar uma olhadinha no que te mandei? Se ficou alguma dúvida ou não era bem o que você estava procurando, me conta que posso te ajudar a olhar outras opções."},
+  {g:"Pós-venda",t:"Depois que receber",x:"Oi, chegou tudo certinho por aí? Se precisar de ajuda para saber como usar ou em qual ordem aplicar, me chama, depois quero saber o que você achou também!"},
+  {g:"Pós-venda",t:"Comprou há algum tempo",x:"Oi, como você tá? Queria saber como você se deu com os produtos, se gostou e se conseguiu incluir na rotina. Se estiver acabando algum e quiser repor, me chama que te mando o link e meu cupom."}
 ];
-var DES_STATUS = [
-  "Pele mais ressecada ou maquiagem marcando as linhas? A Le Moritz tem skincare, maquiagem e suplementos desenvolvidos exclusivamente para peles maduras 💜\n\nConfira algumas promoções na imagem! No site tem mais, e com meu cupom *[CUPOM]* você ganha *10% de desconto*:\nhttps://www.lemoritz.com\n\nSe tiver alguma dúvida sobre os produtos, pode me chamar.",
-  "Sua pele mudou e os produtos de sempre já não funcionam tão bem?\n\nVale conhecer a Le Moritz, com skincare, maquiagem e suplementos feitos exclusivamente para peles maduras 💜\n\nDeixei algumas opções na imagem. Confira mais no site e ganhe *10% de desconto com meu cupom [CUPOM]*:\nhttps://www.lemoritz.com\n\nDúvidas sobre algum produto? Pode me chamar.",
-  "Sabe aquela sensação de pele seca mesmo depois de passar hidratante?\n\nA Le Moritz tem cuidados desenvolvidos para as necessidades da pele madura, além de maquiagem e suplementos 💜\n\nConfira os kits na imagem e use meu cupom *[CUPOM]* para ganhar *10% de desconto*:\nhttps://www.lemoritz.com\n\nSe precisar de ajuda para escolher, pode me chamar."
-];
-var DES_REDES = [
-  "Oi, [NOME]! Tudo bem? Vi seu comentário sobre o *[PRODUTO]* e quis te mandar meu cupom *[CUPOM]*. Se você for comprar, consegue *10% de desconto* no site 💜\n\nhttps://www.lemoritz.com\n\nSe precisar de ajuda ou tiver alguma dúvida sobre o produto, pode me chamar!",
-  "Oi, [NOME]! Como você tá? Vi que você ficou interessada no *[PRODUTO]* da Le Moritz. Sou representante e posso te ajudar se tiver alguma dúvida 💜\n\nSe decidir comprar, use meu cupom *[CUPOM]* para ganhar *10% de desconto*:\nhttps://www.lemoritz.com",
-  "Oi, [NOME]! Vi que você perguntou sobre o *[PRODUTO]* nos comentários e passei aqui para oferecer ajuda. Ficou com alguma dúvida sobre ele?\n\nTambém tenho um cupom que dá *10% de desconto*: *[CUPOM]* 💜\nhttps://www.lemoritz.com\n\nSe precisar, pode me chamar!"
-];
+var DES_PRIVADO = [];
+var DES_STATUS = [];
+var DES_REDES = [];
+function copiarDesafioWpp(k){
+  var m = DES_WPP[k];
+  if (!m) return;
+  copiar(m.x.replace(/\[CUPOM\]|\[SEUCUPOM\]|\bSEUCUPOM\b/gi, cupom), "Mensagem copiada ✔");
+}
 function msgDesafio(){
   var alvo = document.getElementById("msg-desafio");
   if (!alvo) return;
-  var html = '';
-  if (DES_PRIVADO.length) {
-    html += '<p class="msg-cat">Mensagem para enviar no privado para sua amiga!</p>';
-    html += DES_PRIVADO.map(function(t,k){
-      return '<div class="md-cx"><div class="t">' + comCupom(t) + '</div>' +
-             '<button class="cta peq" onclick="copiarDesafio(' + k + ',\'privado\')">Copiar</button></div>';
-    }).join("");
+  var html = '<div class="wpp-area">';
+  var lastG = "";
+  for (var k = 0; k < DES_WPP.length; k++){
+    var m = DES_WPP[k];
+    if (m.g !== lastG){
+      html += '<div class="wpp-div">' + esc(m.g) + '</div>';
+      lastG = m.g;
+    }
+    var num = String(k+1).padStart(2,"0");
+    var txt = comCupom(m.x);
+    html += '<div class="wpp-b" onclick="copiarDesafioWpp('+k+')">' +
+      '<button class="wpp-cp" onclick="event.stopPropagation();copiarDesafioWpp('+k+')">Copiar</button>' +
+      '<div class="wpp-num">' + num + ' · ' + esc(m.t) + '</div>' +
+      '<div class="wpp-txt">' + txt + '</div>' +
+      '<div class="wpp-time">14:' + String(31+k).padStart(2,"0") + ' ✓✓</div></div>';
   }
-  if (DES_STATUS.length) {
-    html += '<p class="msg-cat">Mensagem para você colocar no status do seu WhatsApp ou redes sociais.</p>';
-    html += DES_STATUS.map(function(t,k){
-      return '<div class="md-cx"><div class="t">' + comCupom(t) + '</div>' +
-             '<button class="cta peq" onclick="copiarDesafio(' + k + ',\'status\')">Copiar</button></div>';
-    }).join("");
-  }
-  if (DES_REDES && DES_REDES.length) {
-    html += '<p class="msg-cat">Mensagem para chamar uma interessada no Instagram, Facebook ou outras redes.</p>';
-    html += DES_REDES.map(function(t,k){
-      return '<div class="md-cx"><div class="t">' + comCupom(t) + '</div>' +
-             '<button class="cta peq" onclick="copiarDesafio(' + k + ',\'redes\')">Copiar</button></div>';
-    }).join("");
-  }
-  var doBanco = DES_MSG.map(function(i){
-    var m = MP[i];
-    if (!m) return "";
-    return '<div class="md-cx"><div class="t">' + comCupom(m.x) + '</div>' +
-           '<button class="cta peq" onclick="abrir(' + i + ')">Abrir</button></div>';
-  });
-  alvo.innerHTML = html + doBanco.join("");
+  html += '</div>';
+  alvo.innerHTML = html;
 }
 
 function contaDesafio(){
