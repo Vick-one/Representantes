@@ -501,6 +501,11 @@ details .corpo{padding:0 0 16px}
 .pecas.uma{grid-template-columns:minmax(0,330px)}
 .peca.vertical .th{aspect-ratio:9/16}
 .peca.vertical .th img{object-fit:cover}
+.filtro-pecas{display:flex;gap:8px;margin:18px 0 0;flex-wrap:wrap}
+.filtro-pecas button{font-family:var(--ss);font-size:13.5px;font-weight:600;padding:7px 16px;border-radius:20px;border:1.5px solid var(--linha);background:#fff;color:var(--fraca);cursor:pointer;transition:all .2s}
+.filtro-pecas button.on{background:var(--vinho);color:#fff;border-color:var(--vinho)}
+.filtro-pecas button:hover:not(.on){border-color:var(--rosa);color:var(--rosa)}
+.peca.hide{display:none!important}
 @media (max-width:900px){ .pecas.uma{grid-template-columns:1fr} }
 
 /* ============ CELULAR ============ */
@@ -844,8 +849,14 @@ details .corpo{padding:0 0 16px}
       </div>
     </div>
 
+    <div class="filtro-pecas">
+      <button class="on" onclick="filtrarPecas('todos',this)">Todos <span style="opacity:.55">(10)</span></button>
+      <button onclick="filtrarPecas('produtos',this)">Produtos <span style="opacity:.55">(8)</span></button>
+      <button onclick="filtrarPecas('kits',this)">Kits <span style="opacity:.55">(2)</span></button>
+    </div>
+
     <div class="pecas">
-      <article class="peca vertical">
+      <article class="peca vertical" data-cat="produtos">
         <div class="th" onclick="abrirLupa(this)">
           <img src="imagens/esquenta_tonico_essencia.webp" alt="Tônico Essência Hidratante 8 em 1">
           <span class="tipo">Imagem</span>
@@ -856,7 +867,18 @@ details .corpo{padding:0 0 16px}
           <a class="cta" href="imagens/esquenta_tonico_essencia.webp" download>Baixar a imagem</a>
         </div>
       </article>
-      <article class="peca vertical">
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/esquenta_tonico_v2.webp" alt="Tônico Essência – Pele sem viço? Acende na hora">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>T&ocirc;nico Ess&ecirc;ncia &middot; v2</b>
+          <span class="d">Pele sem vi&ccedil;o? Acende na hora. De R$117 por R$105,30 com cupom.</span>
+          <a class="cta" href="imagens/esquenta_tonico_v2.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
         <div class="th" onclick="abrirLupa(this)">
           <img src="imagens/esquenta_serum_olhos.webp" alt="Sérum Revitalizador de Olhos">
           <span class="tipo">Imagem</span>
@@ -867,7 +889,18 @@ details .corpo{padding:0 0 16px}
           <a class="cta" href="imagens/esquenta_serum_olhos.webp" download>Baixar a imagem</a>
         </div>
       </article>
-      <article class="peca vertical">
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/esquenta_serum_olhos_v2.webp" alt="Sérum de Olhos – Adeus, bolsas e olheiras">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>S&eacute;rum de Olhos &middot; v2</b>
+          <span class="d">Adeus, bolsas e olheiras. De R$117 por R$105,30 com cupom.</span>
+          <a class="cta" href="imagens/esquenta_serum_olhos_v2.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
         <div class="th" onclick="abrirLupa(this)">
           <img src="imagens/esquenta_stick_hidratante.webp" alt="Stick Hidratante FPS 50">
           <span class="tipo">Imagem</span>
@@ -878,7 +911,40 @@ details .corpo{padding:0 0 16px}
           <a class="cta" href="imagens/esquenta_stick_hidratante.webp" download>Baixar a imagem</a>
         </div>
       </article>
-      <article class="peca vertical">
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/esquenta_mousse_limpeza.webp" alt="Mousse de Limpeza – Pele repuxada? Nunca mais">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Mousse de Limpeza</b>
+          <span class="d">Pele repuxada? Nunca mais. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/esquenta_mousse_limpeza.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/esquenta_protocolo_rejuvenescimento.webp" alt="Protocolo de Rejuvenescimento – Apague o seu cansaço">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Protocolo de Rejuvenescimento</b>
+          <span class="d">Apague o seu cansa&ccedil;o. De R$227 por R$204,30 com cupom.</span>
+          <a class="cta" href="imagens/esquenta_protocolo_rejuvenescimento.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/esquenta_necessaire.webp" alt="Nécessaire Le Moritz – Chega de bolsa bagunçada">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>N&eacute;cessaire Le Moritz</b>
+          <span class="d">Chega de bolsa bagun&ccedil;ada. De R$97 por R$87,30 com cupom.</span>
+          <a class="cta" href="imagens/esquenta_necessaire.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
         <div class="th" onclick="abrirLupa(this)">
           <img src="imagens/esquenta_kits_skincare.webp" alt="Segredos de Beleza para Peles Maduras">
           <span class="tipo">Imagem</span>
@@ -889,7 +955,7 @@ details .corpo{padding:0 0 16px}
           <a class="cta" href="imagens/esquenta_kits_skincare.webp" download>Baixar a imagem</a>
         </div>
       </article>
-      <article class="peca vertical">
+      <article class="peca vertical" data-cat="kits">
         <div class="th" onclick="abrirLupa(this)">
           <img src="imagens/esquenta_kits_maquiagem.webp" alt="Maquiagem para Peles Maduras">
           <span class="tipo">Imagem</span>
@@ -1205,6 +1271,16 @@ function abrirLupa(cx){
 function fecharLupa(){
   document.getElementById("lupa").classList.remove("on");
   document.body.style.overflow = "";
+}
+function filtrarPecas(cat,btn){
+  var bts=btn.parentNode.querySelectorAll("button");
+  for(var i=0;i<bts.length;i++)bts[i].classList.remove("on");
+  btn.classList.add("on");
+  var ps=document.querySelectorAll(".pecas .peca");
+  for(var i=0;i<ps.length;i++){
+    if(cat==="todos")ps[i].classList.remove("hide");
+    else{if(ps[i].dataset.cat===cat)ps[i].classList.remove("hide");else ps[i].classList.add("hide");}
+  }
 }
 document.getElementById("f-skincare").innerHTML = SK.map(function(p){ return ficha(p); }).join("");
 document.getElementById("f-make").innerHTML     = MK.map(function(p){ return ficha(p); }).join("");
