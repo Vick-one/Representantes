@@ -481,7 +481,7 @@ details .corpo{padding:0 0 16px}
 .wpp-area .wpp-cp{display:none;position:absolute;top:6px;right:8px;background:rgba(7,94,84,.15);color:#075e54;border:none;padding:3px 8px;border-radius:4px;font-family:var(--ss);font-size:10px;font-weight:700;cursor:pointer}
 .wpp-area .wpp-b:hover .wpp-cp{display:block}
 /* abas do desafio */
-.des-tabs{display:flex;gap:8px;margin:4px 0 0;padding:0}
+.des-tabs{display:flex;gap:8px;margin:4px auto 0;padding:0 28px;max-width:var(--lg);box-sizing:border-box}
 .des-tabs button{flex:1;padding:12px 8px;font-family:var(--ss);font-size:13.5px;font-weight:600;border:2px solid var(--linha);background:var(--bege);color:var(--fraca);cursor:pointer;border-radius:10px;transition:all .2s}
 .des-tabs button.dt-on{color:var(--vinho);border-color:var(--vinho);background:rgba(76,59,94,.08)}
 .des-tabs button:not(.dt-on):hover{border-color:var(--bege-med);background:var(--bege-med)}
@@ -531,7 +531,8 @@ details .corpo{padding:0 0 16px}
 @media (max-width:900px){
   .in,.banner-in,.conf-in,.blk-in,.nums-in,.fita-g,.rod-in{padding-left:18px;padding-right:18px}
   body{padding-bottom:78px}
-  .des-tabs{margin:0 -18px;padding:0 18px}
+  .des-tabs{margin:0;padding:0 18px;gap:6px}
+  .des-tabs button{padding:11px 6px;font-size:13px;border-radius:9px}
   .d-navbar{display:none}
   .m-bnav{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.m-bnav::-webkit-scrollbar{display:none}
   .d-logo-wrap{padding:13px 18px 12px}
@@ -870,7 +871,7 @@ details .corpo{padding:0 0 16px}
     <div style="padding:24px">
       <div class="campo-cupom" style="margin-bottom:16px">
         <label for="cup-tab">O seu cupom</label>
-        <input id="cup-tab" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)">
+        <input id="cup-tab" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)" onblur="cupomBlur(this)">
       </div>
       <div id="msg-desafio-full"></div>
     </div>
@@ -1136,7 +1137,7 @@ details .corpo{padding:0 0 16px}
   <div class="mp-topo"><div class="in">
     <div class="campo-cupom">
       <label for="cup">O seu cupom</label>
-      <input id="cup" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)">
+      <input id="cup" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)" onblur="cupomBlur(this)">
     </div>
     <div class="chips" id="chips"></div>
   </div></div>
@@ -1191,7 +1192,7 @@ details .corpo{padding:0 0 16px}
       </div>
       <div>
         <label for="ci-c">O seu cupom</label>
-        <input id="ci-c" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)">
+        <input id="ci-c" value="SEUCUPOM" maxlength="20" oninput="setCupom(this.value)" onblur="cupomBlur(this)">
       </div>
       <div>
         <label for="ci-n">O seu nome</label>
@@ -1367,14 +1368,19 @@ function desTab(id, btn){
 
 /* ---------- cupom compartilhado ---------- */
 function setCupom(v){
-  cupom = (v || "SEUCUPOM").toUpperCase().trim() || "SEUCUPOM";
+  var limpo = (v || "").toUpperCase().trim();
+  cupom = limpo || "SEUCUPOM";
   ["cup","ci-c","cup-des","cup-tab"].forEach(function(id){
     var el = document.getElementById(id);
-    if (el && el.value.toUpperCase() !== cupom) el.value = cupom;
+    if (!el) return;
+    if (limpo) { if (el.value.toUpperCase() !== cupom) el.value = cupom; }
   });
   msgDesafio();
   var fullEl = document.getElementById("msg-desafio-full");
   if (fullEl) { fullEl.innerHTML = ""; msgDesafioFull(); }
+}
+function cupomBlur(el){
+  if (!el.value.trim()) { el.value = "SEUCUPOM"; setCupom("SEUCUPOM"); }
 }
 
 
