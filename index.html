@@ -448,18 +448,19 @@ details .corpo{padding:0 0 16px}
 
 
 /* material do desafio: peças para baixar */
-.pecas{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0 0}
-.peca{border:1px solid var(--linha);background:#fff;display:flex;flex-direction:column}
+.pecas{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 0}
+.peca{border:1.5px solid var(--linha);background:#fff;display:flex;flex-direction:column;border-radius:8px;overflow:hidden;transition:transform .15s,box-shadow .15s}
+.peca:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(76,59,94,.13)}
 .peca .th{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bege-med);cursor:zoom-in}
 .peca .th img{width:100%;height:100%;object-fit:contain;background:var(--bege)}
-.peca .tipo{position:absolute;top:10px;left:10px;background:rgba(43,36,32,.82);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:5px 10px;border-radius:2px}
+.peca .tipo{position:absolute;top:6px;left:6px;background:rgba(65,2,90,.82);color:#fff;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;border-radius:3px}
 .peca .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
 .peca .play span{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 3px 14px rgba(43,36,32,.24)}
 .peca .play svg{width:20px;height:20px;fill:var(--vinho);margin-left:3px}
-.peca .c{padding:15px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
-.peca b{font-family:var(--ds);font-size:17px;font-weight:600}
-.peca span.d{font-size:13.5px;color:var(--fraca);line-height:1.5;flex:1}
-.peca .cta{margin-top:8px;width:100%}
+.peca .c{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.peca b{font-family:var(--ds);font-size:14px;font-weight:600}
+.peca span.d{display:none}
+.peca .cta{margin-top:4px;width:100%;font-size:12px;padding:7px 10px}
 
 .msg-des{margin:26px 0 0}
 .msg-des h3{font-family:var(--ds);font-size:20px;font-weight:600;margin:0 0 4px;letter-spacing:-.012em}
@@ -499,7 +500,7 @@ details .corpo{padding:0 0 16px}
 
 
 .pecas.uma{grid-template-columns:minmax(0,330px)}
-.peca.vertical .th{aspect-ratio:9/16}
+.peca.vertical .th{aspect-ratio:1}
 .peca.vertical .th img{object-fit:cover}
 .filtro-pecas{display:flex;gap:8px;margin:18px 0 0;flex-wrap:wrap}
 .filtro-pecas button{font-family:var(--ss);font-size:13.5px;font-weight:600;padding:7px 16px;border-radius:20px;border:1.5px solid var(--linha);background:#fff;color:var(--fraca);cursor:pointer;transition:all .2s}
