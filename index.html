@@ -481,10 +481,10 @@ details .corpo{padding:0 0 16px}
 .wpp-area .wpp-cp{display:none;position:absolute;top:6px;right:8px;background:rgba(7,94,84,.15);color:#075e54;border:none;padding:3px 8px;border-radius:4px;font-family:var(--ss);font-size:10px;font-weight:700;cursor:pointer}
 .wpp-area .wpp-b:hover .wpp-cp{display:block}
 /* abas do desafio */
-.des-tabs{display:flex;border-bottom:2px solid var(--linha);background:var(--bege);margin:0 -24px;padding:0 24px}
-.des-tabs button{flex:1;padding:13px 8px;font-family:var(--ss);font-size:13.5px;font-weight:600;border:none;background:transparent;color:var(--fraca);cursor:pointer;position:relative;transition:color .2s}
-.des-tabs button.dt-on{color:var(--vinho)}
-.des-tabs button.dt-on::after{content:'';position:absolute;bottom:-2px;left:18%;right:18%;height:3px;background:var(--vinho);border-radius:3px 3px 0 0}
+.des-tabs{display:flex;gap:8px;margin:4px 0 0;padding:0}
+.des-tabs button{flex:1;padding:12px 8px;font-family:var(--ss);font-size:13.5px;font-weight:600;border:2px solid var(--linha);background:var(--bege);color:var(--fraca);cursor:pointer;border-radius:10px;transition:all .2s}
+.des-tabs button.dt-on{color:var(--vinho);border-color:var(--vinho);background:rgba(76,59,94,.08)}
+.des-tabs button:not(.dt-on):hover{border-color:var(--bege-med);background:var(--bege-med)}
 .des-tab-panel{display:none}
 .des-tab-panel.dt-vis{display:block}
 
