@@ -912,12 +912,320 @@ details .corpo{padding:0 0 16px}
     </div>
 
     <div class="filtro-pecas">
-      <button class="on" onclick="filtrarPecas('todos',this)">Todos <span style="opacity:.55">(20)</span></button>
-      <button onclick="filtrarPecas('produtos',this)">Produtos <span style="opacity:.55">(9)</span></button>
-      <button onclick="filtrarPecas('kits',this)">Kits <span style="opacity:.55">(11)</span></button>
+      <button class="on" onclick="filtrarPecas('todos',this)">Todos <span style="opacity:.55">(48)</span></button>
+      <button onclick="filtrarPecas('produtos',this)">Produtos <span style="opacity:.55">(27)</span></button>
+      <button onclick="filtrarPecas('kits',this)">Kits <span style="opacity:.55">(21)</span></button>
     </div>
 
     <div class="pecas">
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_serum_lift.webp" alt="Sérum Redutor Instantâneo – Olhar cansado? Olha o que 90s fazem" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Sérum Redutor Instantâneo</b>
+          <span class="d">Olhar cansado? Olha o que 90s fazem. De R$157 por R$141,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_serum_lift.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_colageno.webp" alt="Colágeno + Ácido Hialurônico – Menopausa bagunçou tudo? Olha o que 1 scoop faz" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Colágeno + Ácido Hialurônico</b>
+          <span class="d">Menopausa bagunçou tudo? Olha o que 1 scoop faz. De R$167 por R$150,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_colageno.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_serum_olhos.webp" alt="Sérum Revitalizador de Olhos – Adeus, bolsas e olheiras" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Sérum Revitalizador de Olhos</b>
+          <span class="d">Adeus, bolsas e olheiras. De R$117 por R$105,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_serum_olhos.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_creme_antirrugas.webp" alt="Creme Antirrugas Multicamadas – Pare de aceitar as rugas" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Creme Antirrugas Multicamadas</b>
+          <span class="d">Pare de aceitar as rugas. De R$117 por R$105,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_creme_antirrugas.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_stick_reparador_pes.webp" alt="Stick Reparador para Pés – Adeus à lixa de pé" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Stick Reparador para Pés</b>
+          <span class="d">Adeus à lixa de pé. De R$167 por R$150,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_stick_reparador_pes.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_mascara_cilios.webp" alt="Máscara de Cílios Regenerativa – Cílios ralos? Olha o que 1 passada faz" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Máscara de Cílios Regenerativa</b>
+          <span class="d">Cílios ralos? Olha o que 1 passada faz. De R$107 por R$96,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_mascara_cilios.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_stick_retinol_noturno.webp" alt="Stick Rejuvenescedor Noturno – Rejuveneça enquanto dorme" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Stick Rejuvenescedor Noturno</b>
+          <span class="d">Rejuveneça enquanto dorme. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_stick_retinol_noturno.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_stick_hidratante_fps50.webp" alt="Stick Hidratante FPS 50 – O sol está te envelhecendo" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Stick Hidratante FPS 50</b>
+          <span class="d">O sol está te envelhecendo. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_stick_hidratante_fps50.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_tonico_8_em_1.webp" alt="Tônico Essência 8 em 1 – Pele sem viço? Acende em 3 passos" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Tônico Essência 8 em 1</b>
+          <span class="d">Pele sem viço? Acende em 3 passos. De R$117 por R$105,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_tonico_8_em_1.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_mousse_de_limpeza.webp" alt="Mousse de Limpeza – Pele repuxada? Olha como limpa" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Mousse de Limpeza</b>
+          <span class="d">Pele repuxada? Olha como limpa. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_mousse_de_limpeza.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_stick_blush_rosa_mauve.webp" alt="Stick Blush Rosa Mauve – Bochecha corada em 1 gesto" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Stick Blush Rosa Mauve</b>
+          <span class="d">Bochecha corada em 1 gesto. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_stick_blush_rosa_mauve.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_stick_blush_marrom_cafe.webp" alt="Stick Blush Marrom Café – Rosto esculpido sem pincel" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Stick Blush Marrom Café</b>
+          <span class="d">Rosto esculpido sem pincel. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_stick_blush_marrom_cafe.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_stick_blush_terracota.webp" alt="Stick Blush Terracota – Adeus, cara pálida" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Stick Blush Terracota</b>
+          <span class="d">Adeus, cara pálida. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_stick_blush_terracota.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_stick_blush_coral.webp" alt="Stick Blush Coral – Cor que acende o rosto" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Stick Blush Coral</b>
+          <span class="d">Cor que acende o rosto. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_stick_blush_coral.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_stick_iluminador_dourado.webp" alt="Stick Iluminador Dourado – Pele sem viço? Nunca mais" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Stick Iluminador Dourado</b>
+          <span class="d">Pele sem viço? Nunca mais. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_stick_iluminador_dourado.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_stick_iluminador_rose.webp" alt="Stick Iluminador Rosê – Luz onde a pele apagou" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Stick Iluminador Rosê</b>
+          <span class="d">Luz onde a pele apagou. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_stick_iluminador_rose.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_pincel_9_em_1.webp" alt="Pincel 9 em 1 – Troque 9 pincéis por 1" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Pincel 9 em 1</b>
+          <span class="d">Troque 9 pincéis por 1. De R$87 por R$78,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_pincel_9_em_1.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_necessaire.webp" alt="Nécessaire Le Moritz – Chega de bolsa bagunçada" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Nécessaire Le Moritz</b>
+          <span class="d">Chega de bolsa bagunçada. De R$97 por R$87,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_necessaire.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_kit_lifting_firmeza_olhos.webp" alt="Kit Lifting e Firmeza para Olhos – Olhar cansado? Olha o que 3 passos fazem" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Kit Lifting e Firmeza para Olhos</b>
+          <span class="d">Olhar cansado? Olha o que 3 passos fazem. De R$247 por R$222,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_kit_lifting_firmeza_olhos.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_protocolo_rejuvenescimento.webp" alt="Protocolo de Rejuvenescimento – Apague o seu cansaço, dia e noite" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Protocolo de Rejuvenescimento</b>
+          <span class="d">Apague o seu cansaço, dia e noite. De R$227 por R$204,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_protocolo_rejuvenescimento.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_kit_reposicao_colageno.webp" alt="Kit Reposição de Colágeno – Colágeno por dentro e por fora" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Kit Reposição de Colágeno</b>
+          <span class="d">Colágeno por dentro e por fora. De R$317 por R$285,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_kit_reposicao_colageno.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_kit_rotina_hidratacao.webp" alt="Kit Rotina de Hidratação – Sua pele está com sede?" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Kit Rotina de Hidratação</b>
+          <span class="d">Sua pele está com sede?. De R$267 por R$240,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_kit_rotina_hidratacao.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_kit_limpeza_hidratante.webp" alt="Kit de Limpeza Hidratante – Limpeza profunda sem repuxar" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Kit de Limpeza Hidratante</b>
+          <span class="d">Limpeza profunda sem repuxar. De R$157 por R$141,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_kit_limpeza_hidratante.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_kit_trio_rosto_pes.webp" alt="Kit Trio Rosto &amp; Pés – Rosto e pés sem ressecar" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Kit Trio Rosto &amp; Pés</b>
+          <span class="d">Rosto e pés sem ressecar. De R$257 por R$231,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_kit_trio_rosto_pes.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_kit_make_essencial.webp" alt="Kit Make Essencial – Make que não marca ruga" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Kit Make Essencial</b>
+          <span class="d">Make que não marca ruga. De R$177 por R$159,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_kit_make_essencial.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_kit_transformacao_instantanea.webp" alt="Kit Transformação Instantânea – Pareça descansada em minutos" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Kit Transformação Instantânea</b>
+          <span class="d">Pareça descansada em minutos. De R$297 por R$267,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_kit_transformacao_instantanea.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_kit_6_sticks_de_cor.webp" alt="Kit 6 Sticks de Cor – Uma make inteira em 6 sticks" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Kit 6 Sticks de Cor</b>
+          <span class="d">Uma make inteira em 6 sticks. De R$267 por R$240,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_kit_6_sticks_de_cor.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="kits">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/tempo_kit_completo_pele_madura.webp" alt="Kit Completo da Pele Madura – Tudo que a pele 40+ precisa" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Kit Completo da Pele Madura</b>
+          <span class="d">Tudo que a pele 40+ precisa. De R$707 por R$636,30 com cupom.</span>
+          <a class="cta" href="imagens/tempo_kit_completo_pele_madura.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
       <article class="peca vertical" data-cat="produtos">
         <div class="th" onclick="abrirLupa(this)">
           <img src="imagens/esquenta_tonico_essencia.webp" alt="Tônico Essência Hidratante 8 em 1">
