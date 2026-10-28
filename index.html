@@ -912,12 +912,67 @@ details .corpo{padding:0 0 16px}
     </div>
 
     <div class="filtro-pecas">
-      <button class="on" onclick="filtrarPecas('todos',this)">Todos <span style="opacity:.55">(48)</span></button>
-      <button onclick="filtrarPecas('produtos',this)">Produtos <span style="opacity:.55">(27)</span></button>
+      <button class="on" onclick="filtrarPecas('todos',this)">Todos <span style="opacity:.55">(53)</span></button>
+      <button onclick="filtrarPecas('produtos',this)">Produtos <span style="opacity:.55">(32)</span></button>
       <button onclick="filtrarPecas('kits',this)">Kits <span style="opacity:.55">(21)</span></button>
     </div>
 
     <div class="pecas">
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/bf_colageno.webp" alt="Colágeno + Ácido Hialurônico – Estimule seu colágeno com R$ 6 por dia" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Colágeno + Ácido Hialurônico</b>
+          <span class="d">Esquenta Black Friday: Estimule seu colágeno com R$ 6 por dia. De R$247 por R$150,30 com cupom.</span>
+          <a class="cta" href="imagens/bf_colageno.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/bf_serum_lift.webp" alt="Sérum Redutor Instantâneo – Mesmo rosto, 90 segundos depois" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Sérum Redutor Instantâneo</b>
+          <span class="d">Esquenta Black Friday: Mesmo rosto, 90 segundos depois. De R$197 por R$141,30 com cupom.</span>
+          <a class="cta" href="imagens/bf_serum_lift.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/bf_mascara_cilios.webp" alt="Máscara de Cílios Regenerativa – Cílios ralos? Nunca mais" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Máscara de Cílios Regenerativa</b>
+          <span class="d">Esquenta Black Friday: Cílios ralos? Nunca mais. De R$147 por R$96,30 com cupom.</span>
+          <a class="cta" href="imagens/bf_mascara_cilios.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/bf_creme_multicamadas.webp" alt="Creme Antirrugas Multicamadas – Suas rugas precisam disso" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Creme Antirrugas Multicamadas</b>
+          <span class="d">Esquenta Black Friday: Suas rugas precisam disso. De R$147 por R$105,30 com cupom.</span>
+          <a class="cta" href="imagens/bf_creme_multicamadas.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="produtos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/bf_serum_olhos.webp" alt="Sérum Revitalizador de Olhos – Adeus, bolsas e olheiras" loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Sérum Revitalizador de Olhos</b>
+          <span class="d">Esquenta Black Friday: Adeus, bolsas e olheiras. De R$147 por R$105,30 com cupom.</span>
+          <a class="cta" href="imagens/bf_serum_olhos.webp" download>Baixar a imagem</a>
+        </div>
+      </article>
       <article class="peca vertical" data-cat="produtos">
         <div class="th" onclick="abrirLupa(this)">
           <img src="imagens/tempo_serum_lift.webp" alt="Sérum Redutor Instantâneo – Olhar cansado? Olha o que 90s fazem" loading="lazy">
@@ -1922,6 +1977,21 @@ function copiar(t, aviso){
 /* ---------- mensagens do desafio (estilo WhatsApp) ---------- */
 var DES_MSG = [];
 var DES_WPP = [
+  {g:"Status do WhatsApp",t:"Skincare e make para pele madura",x:"Skincare e maquiagem pensados para pele madura, com 10% de desconto usando meu cupom [CUPOM]. Quer conhecer a Le Moritz? Me chama!"},
+  {g:"Status do WhatsApp",t:"Separei algumas ofertas",x:"Separei algumas ofertas da Le Moritz pra compartilhar por aqui, se algum produto chamar sua atenção, me chama que te conto mais e te passo meu desconto!"},
+  {g:"Status do WhatsApp",t:"Procurando um cuidado ou uma make nova?",x:"Procurando um cuidado para a pele ou uma maquiagem nova? A Le Moritz é voltada para peles maduras, e com meu cupom [CUPOM] você economiza 10% na compra."},
+  {g:"Status do WhatsApp",t:"Gostou de algum produto da imagem?",x:"Gostou de algum produto dessa imagem? Me chama que te ajudo a conhecer melhor, tenho um cupom de 10% de desconto na Le Moritz!"},
+  {g:"Status do WhatsApp",t:"Fica a indicação",x:"Pra quem quer conhecer produtos feitos para pele madura, fica a indicação da Le Moritz. Tem skincare e maquiagem, e meu cupom [CUPOM] dá 10% de desconto!"},
+  {g:"No privado de uma amiga",t:"Separei ofertas pra você",x:"Oi, amiga! Como você tá? Separei algumas ofertas da Le Moritz, uma marca para pele madura, e quis te mandar. Se gostar de alguma coisa, me chama que tenho desconto na loja!"},
+  {g:"No privado de uma amiga",t:"Você já conhece a Le Moritz?",x:"Amiga, você já conhece a Le Moritz? Eles têm skincare e maquiagem para pele madura, quer que eu te mande algumas opções? Tenho um cupom de desconto também!"},
+  {g:"No privado de uma amiga",t:"Procurando algo pra pele?",x:"Oi, amiga! Você tá procurando algum produto pra cuidar da pele? Estou divulgando a Le Moritz e posso te mostrar algumas opções, se quiser conhecer."},
+  {g:"No privado de uma amiga",t:"Vou te mandar algumas ofertas",x:"Amiga, vou te mandar algumas ofertas de skincare e maquiagem da Le Moritz, tudo pensado para pele madura. Se quiser saber mais sobre algum produto, pode me perguntar!"},
+  {g:"No privado de uma amiga",t:"Vim compartilhar essas ofertas",x:"Oi, amiga! Vim compartilhar essas ofertas com você, são da Le Moritz, uma marca voltada para pele madura. Se alguma te interessar, te ajudo a ver os detalhes e consigo 10% de desconto com meu cupom!"},
+  {g:"Para quem já comprou",t:"Como foi a experiência?",x:"Oi, [NOME]! Como foi sua experiência com o [PRODUTO]? Queria saber o que você achou e se conseguiu incluir na sua rotina."},
+  {g:"Para quem já comprou",t:"Comprar de novo",x:"Oi, [NOME]! Tem algumas ofertas na Le Moritz, quer que eu te mande? Pode ser uma boa oportunidade pra comprar novamente aquele produto que você gostou."},
+  {g:"Para quem já comprou",t:"Mostrar outras opções",x:"Oi, [NOME]! Como você tá? Queria te mostrar outras opções da Le Moritz, tem algum cuidado ou produto que você está procurando agora?"},
+  {g:"Para quem já comprou",t:"Ainda está rendendo?",x:"Oi, [NOME]! O seu [PRODUTO] ainda está rendendo por aí? Se estiver pensando em comprar de novo, posso te ajudar a conferir o valor com meu desconto."},
+  {g:"Para quem já comprou",t:"Ofertas com o meu cupom",x:"Oi, [NOME]! Separei algumas ofertas da Le Moritz, quer dar uma olhada? Se estiver precisando de alguma coisa, meu cupom [CUPOM] dá 10% de desconto."},
   {g:"Abordagem",t:"Ela comentou sobre a região dos olhos",x:"Oi, lembrei de você porque comentou que a região dos olhos estava te incomodando, aí quis te mostrar esse sérum da Le Moritz, uma marca voltada para pele madura. Vou te mandar a imagem, se quiser conhecer melhor, tenho o cupom [CUPOM], que dá 10% de desconto no site."},
   {g:"Abordagem",t:"Ela falou de pele ressecada",x:"Oi, você tinha comentado que sua pele andava ressecada, né? Vi esse creme da Le Moritz e lembrei de te mandar, ele ajuda na hidratação e no cuidado com as linhas finas, além de servir para rosto, pescoço e colo. Dá uma olhada, se gostar, meu cupom [CUPOM] dá 10% de desconto."},
   {g:"Abordagem",t:"Quando elogiarem a sua pele",x:"Ah, obrigada! Se você estiver procurando algum cuidado para a sua também, posso te mostrar as opções da Le Moritz, sou representante deles e tenho um cupom de 10%. Me conta o que você costuma usar hoje?"},
