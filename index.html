@@ -495,6 +495,41 @@ details .corpo{padding:0 0 16px}
 .premio-n{white-space:nowrap;font-weight:600;flex-shrink:0;min-width:70px}
 .premio-row b{color:var(--vinho);font-weight:600}
 
+/* ===== pele do Mês Black (cores tiradas do site da Le Moritz) ===== */
+.bk-dark{background:radial-gradient(80% 65% at 50% 100%,rgba(202,162,230,.20) 0%,rgba(202,162,230,0) 70%),linear-gradient(135deg,#2A1838 0%,#13041D 100%);border-color:#43225A;color:#F4EEFA}
+.bk-dark h2,.bk-dark h3{color:#fff}
+.bk-dark .per,.bk-dark .barra-leg,.bk-dark .barra-leg .resta{color:#E6D5F3}
+.bk-dark .olho{color:#CAA2E6}
+.bk-dark .barra{background:rgba(202,162,230,.22)}
+.bk-dark .barra i{background:linear-gradient(90deg,#CAA2E6,#9B6FC0)}
+.dsw-cx.bk-dark .lado{border-left-color:rgba(202,162,230,.3)}
+.dsw-cx.bk-dark .lado .v{color:#CAA2E6}
+.dsw-cx.bk-dark .lado .r{color:#E6D5F3}
+.bk-dark .cta{background:linear-gradient(135deg,#CAA2E6,#9B6FC0);color:#13041D}
+.bk-faixa{background:radial-gradient(80% 70% at 50% 100%,rgba(202,162,230,.20) 0%,rgba(202,162,230,0) 70%),linear-gradient(135deg,#2A1838 0%,#13041D 100%);border-bottom-color:#43225A}
+.bk-faixa h1{color:#fff}
+.bk-faixa p{color:#E6D5F3}
+.bk-faixa .olho{color:#CAA2E6}
+/* escada de descontos no formato dos selos do site */
+.bk-escada{display:flex;flex-direction:column;gap:9px;margin:18px 0 0}
+.bk-l{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.bk-q{font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#E6D5F3}
+.bk-selo{display:inline-flex;align-items:stretch;background:#F4EEFA;border-radius:7px;overflow:hidden;min-width:118px;flex-shrink:0}
+.bk-selo b{flex:1;display:flex;align-items:center;justify-content:center;padding:8px 14px;font-family:var(--ds);font-size:20px;font-weight:700;color:#13041D;letter-spacing:-.01em}
+.bk-selo i{display:flex;align-items:center;justify-content:center;padding:0 6px;border-left:2px dashed #CAA2E6;font-style:normal;font-size:9px;font-weight:700;letter-spacing:.12em;color:#43225A;writing-mode:vertical-rl;text-orientation:mixed}
+.bk-selo.on{background:linear-gradient(135deg,#CAA2E6,#9B6FC0)}
+.bk-selo.on i{border-left-color:rgba(19,4,29,.45);color:#13041D}
+.bk-nota{font-size:14px;line-height:1.6;color:#E6D5F3;margin:18px 0 0}
+.bk-sub{font-size:15px;line-height:1.6;color:#E6D5F3;margin:0 0 4px}
+.premio-row.black{background:linear-gradient(90deg,rgba(202,162,230,.28),rgba(202,162,230,0));margin:0 -20px;padding-left:20px;padding-right:20px;border-radius:6px}
+.premio-row.black b{color:#43225A}
+@media (max-width:900px){
+  .bk-l{gap:10px}
+  .bk-selo{min-width:102px}
+  .bk-selo b{font-size:18px;padding:7px 11px}
+}
+
+
 @media (max-width:900px){
   .pecas{grid-template-columns:repeat(2,1fr);gap:8px}
   .md-cx{flex-direction:column;gap:14px}
@@ -624,7 +659,7 @@ details .corpo{padding:0 0 16px}
 </head>
 <body>
 
-<div class="tarja" style="background:linear-gradient(90deg,#8C2A5A,#41025A);font-size:14px;letter-spacing:.14em">M&Ecirc;S BLACK &middot; AT&Eacute; 50% OFF E O SEU CUPOM SOMA MAIS 10%</div>
+<div class="tarja" style="background:radial-gradient(60% 120% at 50% 100%,rgba(202,162,230,.30) 0%,rgba(202,162,230,0) 72%),linear-gradient(90deg,#2A1838 0%,#13041D 55%,#43225A 100%);font-size:14px;letter-spacing:.14em">M&Ecirc;S BLACK &nbsp;&#10022;&nbsp; AT&Eacute; 50% OFF NO SITE &nbsp;&#10022;&nbsp; O SEU CUPOM SOMA MAIS 10%</div>
 
 <header class="topo-portal">
   <div class="d-logo-wrap">
@@ -700,7 +735,7 @@ details .corpo{padding:0 0 16px}
   </div>
 
   <div class="dsw">
-    <div class="dsw-cx">
+    <div class="dsw-cx bk-dark">
       <div>
         <span class="olho"><span class="viva"></span>Desafio ativo</span>
         <h2 data-desafio-meta>Desafio 2 &middot; M&ecirc;s Black</h2>
@@ -824,7 +859,7 @@ details .corpo{padding:0 0 16px}
 
 <!-- ==================== DESAFIOS ==================== -->
 <section class="sec" id="s-desafios">
-  <div class="faixa-tit"><div class="in">
+  <div class="faixa-tit bk-faixa"><div class="in">
     <span class="olho"><span class="viva"></span>Desafio ativo</span>
     <h1 data-desafio-meta>Desafio 2 &middot; M&ecirc;s Black</h1>
     <p data-desafio-periodo>2&ordf; Fase &middot; 01 a 19 de novembro</p>
@@ -855,7 +890,7 @@ details .corpo{padding:0 0 16px}
             <div class="premio-row"><span class="premio-n">Bronze &middot; 5 pedidos</span><b>sua comiss&atilde;o + 1 produto + R$150 no Pix</b></div>
             <div class="premio-row"><span class="premio-n">Prata &middot; 10 pedidos</span><b>sua comiss&atilde;o + 2 produtos + R$350 no Pix</b></div>
             <div class="premio-row"><span class="premio-n">Ouro &middot; 20 pedidos</span><b>sua comiss&atilde;o + 3 produtos + R$750 no Pix</b></div>
-            <div class="premio-row ultimo"><span class="premio-n">Black Diamond &middot; 35 pedidos</span><b>sua comiss&atilde;o + 4 produtos + R$1.300 no Pix</b></div>
+            <div class="premio-row ultimo black"><span class="premio-n">Black Diamond &middot; 35 pedidos</span><b>sua comiss&atilde;o + 4 produtos + R$1.300 no Pix</b></div>
           </div>
         </div>
         <p style="font-size:13.5px;color:var(--fraca);line-height:1.6;margin:16px 0 0">Vale a maior faixa que voc&ecirc; bater. S&oacute; contam pedidos aprovados no seu cupom entre 01 e 19/11, sem cancelamento ou reembolso. O Pix cai em 10 de dezembro e os produtos s&atilde;o escolhidos por voc&ecirc;.</p>
@@ -886,19 +921,18 @@ details .corpo{padding:0 0 16px}
   </div>
 
   <div class="duas">
-    <div class="painel">
+    <div class="painel bk-dark">
       <h3>A Black que est&aacute; no ar</h3>
-      <p style="font-size:15px;color:var(--fraca);line-height:1.6;margin:0 0 16px">No site, o desconto cresce conforme a cliente coloca mais produtos no carrinho. E o seu cupom soma 10% em cima disso.</p>
-      <ul class="linhas">
-        <li><span>1 produto</span><b>10% OFF</b></li>
-        <li><span>2 produtos</span><b>20% OFF</b></li>
-        <li><span>3 produtos</span><b>30% OFF</b></li>
-        <li><span>4 produtos</span><b>40% OFF</b></li>
-        <li><span>5 ou mais</span><b>50% OFF</b></li>
-        <li><span>O seu cupom</span><b>+10% em cima</b></li>
-        <li><span>Frete gr&aacute;tis</span><b>Acima de R$199</b></li>
-      </ul>
-      <p style="font-size:14px;color:var(--fraca);line-height:1.6;margin:16px 0 0">Monte o carrinho junto com ela. Quanto mais produtos levar, mais barato sai cada um, e a sua comiss&atilde;o sobe junto.</p>
+      <p class="bk-sub">No site, o desconto cresce conforme a cliente coloca mais produtos no carrinho. E o seu cupom soma 10% em cima disso.</p>
+      <div class="bk-escada">
+        <div class="bk-l"><span class="bk-q">1 produto</span><span class="bk-selo"><b>10%</b><i>OFF</i></span></div>
+        <div class="bk-l"><span class="bk-q">2 produtos</span><span class="bk-selo"><b>20%</b><i>OFF</i></span></div>
+        <div class="bk-l"><span class="bk-q">3 produtos</span><span class="bk-selo"><b>30%</b><i>OFF</i></span></div>
+        <div class="bk-l"><span class="bk-q">4 produtos</span><span class="bk-selo"><b>40%</b><i>OFF</i></span></div>
+        <div class="bk-l"><span class="bk-q">5 ou mais</span><span class="bk-selo"><b>50%</b><i>OFF</i></span></div>
+        <div class="bk-l"><span class="bk-q">O seu cupom</span><span class="bk-selo on"><b>+10%</b><i>SOMA</i></span></div>
+      </div>
+      <p class="bk-nota">Frete gr&aacute;tis acima de R$199. Monte o carrinho junto com ela: quanto mais produtos levar, mais barato sai cada um, e a sua comiss&atilde;o sobe junto.</p>
     </div>
     <div class="painel">
       <h3>Rel&acirc;mpago do 11.11</h3>
