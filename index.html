@@ -1013,13 +1013,110 @@ details .corpo{padding:0 0 16px}
     </div>
 
     <div class="filtro-pecas">
-      <button class="on" onclick="filtrarPecas('todos',this)">Todos <span style="opacity:.55">(35)</span></button>
+      <button class="on" onclick="filtrarPecas('todos',this)">Todos <span style="opacity:.55">(43)</span></button>
+      <button onclick="filtrarPecas('novos',this)">Novidades <span style="opacity:.55">(8)</span></button>
       <button onclick="filtrarPecas('destaques',this)">Mais vendidos <span style="opacity:.55">(5)</span></button>
       <button onclick="filtrarPecas('produtos',this)">Produtos <span style="opacity:.55">(18)</span></button>
       <button onclick="filtrarPecas('kits',this)">Kits <span style="opacity:.55">(12)</span></button>
     </div>
 
     <div class="pecas">
+      <article class="peca vertical" data-cat="novos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/black_mod_lapis.webp" alt="L&#225;pis Batom Ultra Precis&#227;o &#8211; O vermelho que n&#227;o escorre." loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>L&#225;pis Batom Ultra Precis&#227;o</b>
+          <span class="d">O vermelho que n&#227;o escorre. De R$127 por R$87,30 cada com cupom.</span>
+          <a class="cta" href="imagens/black_mod_lapis.webp" download>Baixar a imagem</a>
+          <button class="cta vazio tx-bt" onclick="abrirTextos('lapis_batom')">Textos prontos</button>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="novos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/black_mod_creme.webp" alt="Creme Antirrugas Multicamadas &#8211; +14,5% de firmeza em 28 dias." loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Creme Antirrugas Multicamadas</b>
+          <span class="d">+14,5% de firmeza em 28 dias. De R$147 por R$105,30 com cupom.</span>
+          <a class="cta" href="imagens/black_mod_creme.webp" download>Baixar a imagem</a>
+          <button class="cta vazio tx-bt" onclick="abrirTextos('creme_multicamadas')">Textos prontos</button>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="novos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/black_mod_serum_lift.webp" alt="S&#233;rum Redutor Instant&#226;neo de Linhas &#8211; Antes e depois: 90 segundos, nenhuma agulha." loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>S&#233;rum Redutor Instant&#226;neo de Linhas</b>
+          <span class="d">Antes e depois: 90 segundos, nenhuma agulha. De R$197 por R$141,30 com cupom.</span>
+          <a class="cta" href="imagens/black_mod_serum_lift.webp" download>Baixar a imagem</a>
+          <button class="cta vazio tx-bt" onclick="abrirTextos('serum_redutor')">Textos prontos</button>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="novos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/black_mod_colageno.webp" alt="Col&#225;geno + &#193;cido Hialur&#244;nico &#8211; Pele, cabelo e unhas em 1 scoop por dia." loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Col&#225;geno + &#193;cido Hialur&#244;nico</b>
+          <span class="d">Pele, cabelo e unhas em 1 scoop por dia. De R$247 por R$150,30 com cupom.</span>
+          <a class="cta" href="imagens/black_mod_colageno.webp" download>Baixar a imagem</a>
+          <button class="cta vazio tx-bt" onclick="abrirTextos('colageno')">Textos prontos</button>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="novos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/black_agr_serum_lift.webp" alt="S&#233;rum Redutor Instant&#226;neo de Linhas &#8211; Pare de pagar R$3 mil na cl&#237;nica." loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>S&#233;rum Redutor Instant&#226;neo de Linhas</b>
+          <span class="d">Pare de pagar R$3 mil na cl&#237;nica. De R$197 por R$141,30 com cupom.</span>
+          <a class="cta" href="imagens/black_agr_serum_lift.webp" download>Baixar a imagem</a>
+          <button class="cta vazio tx-bt" onclick="abrirTextos('serum_redutor')">Textos prontos</button>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="novos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/black_agr_creme.webp" alt="Creme Antirrugas Multicamadas &#8211; 28 dias ou seu dinheiro de volta." loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Creme Antirrugas Multicamadas</b>
+          <span class="d">28 dias ou seu dinheiro de volta. De R$147 por R$105,30 com cupom.</span>
+          <a class="cta" href="imagens/black_agr_creme.webp" download>Baixar a imagem</a>
+          <button class="cta vazio tx-bt" onclick="abrirTextos('creme_multicamadas')">Textos prontos</button>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="novos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/black_agr_colageno.webp" alt="Col&#225;geno + &#193;cido Hialur&#244;nico &#8211; A menopausa leva at&#233; 30% do col&#225;geno." loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>Col&#225;geno + &#193;cido Hialur&#244;nico</b>
+          <span class="d">A menopausa leva at&#233; 30% do col&#225;geno. De R$247 por R$150,30 com cupom.</span>
+          <a class="cta" href="imagens/black_agr_colageno.webp" download>Baixar a imagem</a>
+          <button class="cta vazio tx-bt" onclick="abrirTextos('colageno')">Textos prontos</button>
+        </div>
+      </article>
+      <article class="peca vertical" data-cat="novos">
+        <div class="th" onclick="abrirLupa(this)">
+          <img src="imagens/black_agr_lapis.webp" alt="L&#225;pis Batom Ultra Precis&#227;o &#8211; Seu batom escorre no c&#243;digo de barras? Esse n&#227;o." loading="lazy">
+          <span class="tipo">Imagem</span>
+        </div>
+        <div class="c">
+          <b>L&#225;pis Batom Ultra Precis&#227;o</b>
+          <span class="d">Seu batom escorre no c&#243;digo de barras? Esse n&#227;o. De R$127 por R$87,30 cada com cupom.</span>
+          <a class="cta" href="imagens/black_agr_lapis.webp" download>Baixar a imagem</a>
+          <button class="cta vazio tx-bt" onclick="abrirTextos('lapis_batom')">Textos prontos</button>
+        </div>
+      </article>
       <article class="peca vertical" data-cat="destaques">
         <div class="th" onclick="abrirLupa(this)">
           <img src="imagens/black_best_serum_redutor.webp" alt="S&#233;rum Redutor Instant&#226;neo de Linhas &#8211; Esque&#231;a a agulha." loading="lazy">
@@ -1913,6 +2010,14 @@ function copiarPrompt(i){
 /* ---------- textos prontos das imagens do Mês Black ---------- */
 var TX_TIPOS = ["Status do WhatsApp","No privado de uma amiga","Para quem já comprou"];
 var TX_PECA = {
+"lapis_batom": {
+"t": "Lápis Batom Ultra Precisão",
+"m": [
+"Chegou o Lápis Batom da Le Moritz: contorna, colore e hidrata em 1, e não escorre pras linhas da boca. Tem Vermelho Cereja, Nude e Rosa Nude. Tá na Black e meu cupom [CUPOM] dá mais 10%. Me chama!",
+"Oi, amiga! Lembrei de você.\n\nA Le Moritz lançou um lápis batom que contorna, colore e hidrata em 1 só, e não escorre pras linhas da boca. Tem nas cores Vermelho Cereja, Nude e Rosa Nude.\n\nTá na Black e com meu cupom [CUPOM] você ganha mais 10%. Quer que eu te mande o link?",
+"Oi, [NOME]! Já viu o lápis batom novo da Le Moritz? Contorna, colore e hidrata em 1 e não escorre pras linhas da boca. Agora na Black, meu cupom [CUPOM] ainda tira mais 10%."
+]
+},
 "desconto_progressivo": {
 "t": "Monte seu Kit · Desconto progressivo",
 "m": [
